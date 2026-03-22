@@ -47,7 +47,7 @@ layout: default
       <section class="page__content" itemprop="text">
         {{ content }}
         
-        {% assign citation_text = page.citation | replace: "Fome, A. D.", "<strong>Fome, A. D.</strong>" %}
+        {% assign citation_text = page.citation| replace: "Fome, A. D.", "**Fome, A. D.**"| markdownify %}
         {% if page.citation and page.paperurl and page.slidesurl and page.bibtexurl %}
           <p style="font-size: smaller">Recommended citation: {{ citation_text }}<br /><a href="{{ page.paperurl }}">Download Paper</a> | <a href="{{ page.slidesurl }}">Download Slides</a> | <a href="{{ page.bibtexurl }}">Download Bibtex</a></p>
         {% elsif page.citation and page.paperurl and page.slidesurl %}
