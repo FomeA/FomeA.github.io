@@ -3,7 +3,7 @@ title: "The interplay of influenza and COVID-19 in Germany, January 2020–Decem
 collection: publications
 category: manuscripts
 permalink: /publication/2025-influenza-covid-interplay
-excerpt: 'Mathematical and epidemiological analysis of the competitive dynamics between influenza and COVID-19 incorporating quarantine interventions and partial cross-immunity.'
+excerpt: 'Mathematical modelling study analysing competitive transmission dynamics of influenza and COVID-19 under quarantine measures and partial cross-immunity.'
 date: 2025-02-01
 venue: 'BMC Public Health'
 paperurl: 'https://doi.org/10.1186/s12889-025-24362-z'
