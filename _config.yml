@@ -11,8 +11,8 @@ locale                   : "en-US"
 site_theme               : "default" # The available themes options are "default", "air", "sunrise", "mint", "dirt" and "contrast"
 title                    : "Anna Daniel Fome" #"Your Name / Site Title"
 title_separator          : "-"
-name                     : &name "Anna Daniel Fome"
-description              : &description "Academic website of Anna Daniel Fome"   # Update this with a general description of your site, this is the default if not overridden by a page
+name                     : &name "Your Name"
+description              : &description "Your Name's academic portfolio" # "Academic website of Anna Daniel Fome"   # Update this with a general description of your site, this is the default if not overridden by a page
 url                      : https://FomeA.github.io #https://academicpages.github.io # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
                                                            # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
