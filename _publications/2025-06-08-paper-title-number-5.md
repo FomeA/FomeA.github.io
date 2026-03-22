@@ -1,13 +1,11 @@
 ---
-title: "Paper Title Number 5, with math $$E=mc^2$$"
+title: "The interplay of influenza and COVID-19 in Germany, January 2020–December 2022: a study of competitive disease dynamics with quarantine measures and partial cross-immunity"
 collection: publications
-category: conferences
-permalink: /publication/2024-02-17-paper-title-number-4
-excerpt: 'This paper is about a famous math equation, $$E=mc^2$$'
-date: 2024-02-17
-venue: 'GitHub Journal of Bugs'
-paperurl: 'https://academicpages.github.io/files/paper3.pdf'
-citation: 'Your Name, You. (2024). &quot;Paper Title Number 3.&quot; <i>GitHub Journal of Bugs</i>. 1(3).'
+category: manuscripts
+permalink: /publication/2025-influenza-covid-interplay
+excerpt: 'Mathematical and epidemiological analysis of the competitive dynamics between influenza and COVID-19 incorporating quarantine interventions and partial cross-immunity.'
+date: 2025-02-01
+venue: 'BMC Public Health'
+paperurl: 'https://doi.org/10.1186/s12889-025-23044-7'
+citation: 'Fome, A. D., Rodiah, I., Bock, W., Lange, B., & Klar, A. (2025). "The interplay of influenza and COVID-19 in Germany, January 2020–December 2022: a study of competitive disease dynamics with quarantine measures and partial cross-immunity." <i>BMC Public Health</i>, 25(1), 3044.'
 ---
-
-Using [MathJax](https://www.mathjax.org/) in the description is supported - $$E=mc^2$$ - however, the use must be mindful that the default delimiters are `$$...$$` and `\\[...\\]` which differs from the `$...$` that is typically expected.
