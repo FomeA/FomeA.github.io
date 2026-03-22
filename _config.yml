@@ -23,7 +23,7 @@ repository               : "FomeA/FomeA.github.io" #"academicpages/academicpages
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "https://raw.githubusercontent.com/FomeA/FomeA.github.io/main/images/159.png" #"/images/159.png" #avatar: "https://raw.githubusercontent.com/FomeA/FomeA.github.io/main/assets/images/159.png"
+  avatar           : "/images/159.png" #avatar: "https://raw.githubusercontent.com/FomeA/FomeA.github.io/main/assets/images/159.png"
   name             : "Anna D Fome"
   # pronouns         : # example: "she/her"  
   bio              : "PhD in Biomathematics"
