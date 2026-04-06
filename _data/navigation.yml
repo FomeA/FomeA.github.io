@@ -23,24 +23,14 @@ main:
 qms101:
   - title: "Introduction"
     url: /teaching/qms101/
-  - title: "Topic 1: Basic Concepts"
-    url: /teaching/qms101/topic1/
-  - title: "Topic 2"
-    url: /teaching/qms101/topic2/
-  - title: "Topic 3"
-    url: /teaching/qms101/topic3/
 
 mat102:
   - title: "Course Overview"
     url: /teaching/mat102/
-  - title: "Topic 1"
-    url: /teaching/mat102/topic1/
 
 mat103:
   - title: "Course Overview"
     url: /teaching/mat103/
-  - title: "Topic 1"
-    url: /teaching/mat103/topic1/
     
   # - title: "Portfolio"
   #  url: /portfolio/
