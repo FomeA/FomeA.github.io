@@ -21,11 +21,6 @@ Through my academic and professional experience at Jordan University College and
 
 ## Mentorship Activities
 
-<ul>
-  {% for item in site.mentorship %}
-    <li>
-      <a href="{{ item.url }}">{{ item.title }}</a>  
-      ({{ item.type }} – {{ item.status }})
-    </li>
-  {% endfor %}
-</ul>
+{% for post in site.mentorship reversed %}
+  {% include archive-single.html %}
+{% endfor %}
