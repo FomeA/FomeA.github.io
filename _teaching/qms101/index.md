@@ -1,6 +1,6 @@
 ---
 title: "QMS 101 – Statistics"
-permalink: /teaching/qms101/
+permalink: /teaching/
 layout: single
 author_profile: true
 sidebar:
