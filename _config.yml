@@ -227,7 +227,7 @@ collections:
   publications:
     output: true
     permalink: /:collection/:path/
-  portfolio:
+  mentorship:
     output: true
     permalink: /:collection/:path/
   talks:
@@ -273,10 +273,10 @@ defaults:
       author_profile: true
       share: true
       comments: true
-  # _portfolio
+  # _mentorship
   - scope:
       path: ""
-      type: portfolio
+      type: mentorship
     values:
       layout: single
       author_profile: true
