@@ -15,5 +15,4 @@ Through my academic and professional experience at Jordan University College and
 - Biostatistics and data analysis  
 - Public health research  
 - Academic writing and research methodology
--  
 
