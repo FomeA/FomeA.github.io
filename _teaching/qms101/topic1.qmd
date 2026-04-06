@@ -1,15 +1,9 @@
 ---
-title: "QMS 101 Statistics"
-subtitle: "Topic I: Basic Concepts in Statistics"
-author: "Dr. Anna Fome"
-format: 
-  html:
-    toc: true
-    number-sections: true
-    theme: cosmo
-  pdf:
-    documentclass: article
-    toc: true
+title: "Topic 1: Basic Concepts"
+permalink: /teaching/qms101/topic1/
+layout: single
+sidebar:
+  nav: qms101
 ---
 
 # Introduction
