@@ -1,6 +1,6 @@
 ---
 title: "Topic 1: Basic Concepts"
-permalink: /teaching/qms101/topic1/
+permalink: /teaching/qms101/
 layout: single
 sidebar:
   nav: qms101
