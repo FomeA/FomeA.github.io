@@ -60,7 +60,7 @@ It involves:
 -   Collecting data
 
 -   Organizing data
-
+ 
 -   Presenting data
 
 -   Analyzing data
