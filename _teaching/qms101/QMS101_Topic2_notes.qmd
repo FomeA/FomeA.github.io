@@ -1,0 +1,618 @@
+---
+title: "QMS 101 Statistics"
+subtitle: "Topic II: Measures of Central Tendency and Variation"
+author: "Dr. Anna Fome"
+format: 
+  html:
+    toc: true
+    number-sections: true
+    theme: cosmo
+    math: mathjax
+  pdf:
+    documentclass: article
+    toc: true
+---
+
+------------------------------------------------------------------------
+
+# Introduction
+
+Once we have collected and summarized data, the next step is to **describe it using numbers**.
+
+-   **Measures of Central Tendency** → Typical value
+
+-   **Measures of Variation** → Spread of data
+
+These are essential in business for:
+
+-   Understanding average performance
+
+-   Measuring consistency
+
+-   Comparing results
+
+## How We Will Learn This Topic
+
+This topic will be studied in **simple steps**:
+
+### Step 1: Measures of Central Tendency (Ungrouped Data)
+
+-   Mean
+-   Median
+-   Mode
+
+### Step 2: Measures of Central Tendency (Grouped Data)
+
+-   Mean
+-   Median
+-   Mode
+
+### Step 3: Measures of Variation
+
+-   Range
+-   Quartiles and IQR
+-   Mean Deviation
+-   Standard Deviation
+
+We start with simple data, then move to more complex cases.
+
+# Measures of Central Tendency
+
+A measure of central tendency is a single value that represents the **typical or average value of a dataset**. The main measures are:
+
+-   **Mean (Average)** → considers all values
+
+-   **Median (Middle)** → ignores extreme values
+
+-   **Mode (Most frequent)** → most common value
+
+## **Mean**
+
+**Definition:** The mean is the sum of all values divided by the number of values.
+
+**Formula (Ungrouped Data)**
+
+$$
+\bar{x} = \frac{\text{Sum of all observed values}}{\text{Number of observations}}
+$$
+
+**Example (Business):** Daily sales (units) for a small shop: 5, 7, 8, 6, 9
+
+$$
+\text{Mean} = \frac{\sum x}{n}=\frac{5+7+8+6+9}{5} = \frac{35}{5} = 7 \text{ units}
+$$
+
+**Interpretation:** On average, the shop sells **7 units per day**.
+
+**Formula (Grouped Data)**
+
+$$
+\bar{x} = \frac{\sum f x}{\sum f}
+$$
+
+Symbols Explained
+
+-   $f$ = Frequency
+
+-   $x$ = Midpoint of class/class mark
+
+-   $\sum fx$ = Sum of (frequency × midpoint)
+
+-   $\sum f$ = Total frequency
+
+### Example
+
+-   Given Frequency Table
+
+    | Class Interval | Frequency (f) |
+    |----------------|---------------|
+    | 0 – 10         | 2             |
+    | 10 – 20        | 3             |
+    | 20 – 30        | 4             |
+    | 30 – 40        | 1             |
+
+**Use the data given above to calculate Mean**
+
+We start by Calculating $fx$
+
+|        |     |     |      |
+|--------|-----|-----|------|
+| Class  | $f$ | $x$ | $fx$ |
+| 0–10   | 2   | 5   | 10   |
+| 10–20  | 3   | 15  | 45   |
+| 20–30  | 4   | 25  | 100  |
+| 30–40  | 1   | 35  | 35   |
+| $\sum$ | 10  |     | 190  |
+
+Calculation:
+
+$$\bar{x} = \frac{\sum fx}{\sum f}= \frac{190}{10} = 19$$
+
+\
+**Mean = 19**
+
+::: callout-note
+### Important Note
+
+For grouped data, we do NOT use original values.\
+We use **midpoints (class marks)** to represent each class.
+:::
+
+## Median
+
+**Definition:** The median is the **middle value** when data is arranged in order.
+
+-   If odd number of observations → the middle value
+-   If even number → average of two middle values
+
+**Example (ungrouped):** Daily sales: 5, 7, 8, 6, 9 → Arrange: 5, 6, 7, 8, 9 → Median = 7
+
+**Interpretation:** Half the days have sales **below 7 units** and half **above 7 units**.
+
+**Median (Grouped Data)**
+
+$$
+\text{Median} = L_{me} + \left(\frac{\frac{n}{2} - F_b}{f_{me}}\right) \times w
+$$
+
+**Symbols Explained**
+
+-   $L_{me}$ = Lower boundary of median class
+
+-   $n$ = Total frequency
+
+-   $F_b$ = Cumulative frequency before median class
+
+-   $f_{me}$ = Frequency of median class
+
+-   $w$ = Class width
+
+### Example:
+
+**Use the data given above to calculate Median**
+
+**Step 1: Find cumulative frequency (cf)**
+
+|       |     |      |
+|-------|-----|------|
+| Class | $f$ | $cf$ |
+| 0–10  | 2   | 2    |
+| 10–20 | 3   | 5    |
+| 20–30 | 4   | 9    |
+| 30–40 | 1   | 10   |
+
+**Step 2: Identify Median Class**
+
+$$
+\frac{n}{2} = \frac{\sum f}{2}=\frac{10}{2} = 5
+$$
+
+Median class = **10–20**
+
+**Step 3: Apply Formula**
+
+$$
+\text{Median} = L_{me} + \left(\frac{\frac{n}{2} - F_b}{f_{me}}\right) w=10 + \left(\frac{5 - 2}{3}\right) 10=20
+$$
+
+ **Median = 20**
+
+## Mode
+
+**Definition:** Mode is the value that **occurs most frequently**.
+
+**Example:** Daily sales: 5, 7, 7, 6, 9 → Mode = 7
+
+**Interpretation:** 7 units is the **most common daily sale**.
+
+**Grouped Data Formula**
+
+$$
+\text{Mode} = L_{mo} + \left(\frac{f_{mo} - f_b}{2f_{mo} - f_b - f_a}\right) \times w
+$$
+
+**Symbols Explained**
+
+-   $L$ = Lower boundary of modal class (Class with highest frequency)
+
+-   $f_{mo}$ = Frequency of modal class
+
+-   $f_b$ = Frequency before modal class
+
+-   $f_a$ = Frequency after modal class
+
+-   $w$ = Class width
+
+### Example
+
+From the example above
+
+Modal class = **20–30** (highest frequency = 4)\
+
+$$
+\text{Mode} = 20 + \left(\frac{4-3}{2(4)-3-1}\right)\times 10=22.5
+$$
+
+**Mode = 22.5**
+
+::: callout-note
+### Interpretation of Results
+
+After calculating values, we must explain what they mean:
+
+-   **Mean (19)** → Average value of the data
+-   **Median (20)** → Middle value (less affected by extreme values)
+-   **Mode (22.5)** → Most common range of values
+
+The values are close to each other, so the data is **fairly balanced**.
+:::
+
+# Measures of Variation
+
+Measures of variation tell us **how spread out the data is**.
+
+::: callout-important
+Two datasets can have the same average but behave very differently.
+
+Example
+
+Dataset A: 7, 7, 7, 7, 7\
+Dataset B: 3, 5, 7, 9, 11
+
+Both have mean = 7
+
+But:
+
+-   A = no variation (all values same)
+
+-   B = high variation (values spread out)
+:::
+
+Main measures:
+
+1.  Range
+2.  Quartiles
+3.  Interquartile Range (IQR)
+4.  Mean Deviation
+5.  Standard Deviation
+
+## Range
+
+**Definition:** Difference between **largest and smallest values**.
+
+$$
+\text{Range} = \text{Max value} - \text{Min value}
+$$
+
+**Example:** Daily sales: 5, 7, 8, 6, 9 → Range = 9 − 5 = 4 units
+
+**Interpretation:** Sales vary by 4 units between lowest and highest days.
+
+::: callout-warning
+### Limitation
+
+❗ Range only uses **two values** → ignores all others
+:::
+
+## Quartiles
+
+**Quartiles → Understanding position**
+
+Quartiles Divide data into **4 equal parts**.
+
+-   Q1 = 25th percentile
+-   Q2 = 50th percentile (Median)
+-   Q3 = 75th percentile
+
+### For Ungrouped Data (Step-by-Step)
+
+Example:
+
+Data: 8, 5, 7, 6, 9
+
+**Step 1: Arrange Data in Ascending Order**
+
+Arrange: 5, 6, 7, 8, 9
+
+**Step 2: Find Median (**$Q_2$**)**
+
+Middle value:
+
+$$
+Q_2 = 7
+$$
+
+**Step 3: Find** $Q_1$ **(Lower Quartile)**
+
+Take the lower half (excluding median**(**$Q_2$**)**):
+
+5, 6
+
+Median of this group:
+
+$$
+Q_1 = \frac{5 + 6}{2} = 5.5
+$$
+
+**Step 4: Find** $Q_3$ **(Upper Quartile)**
+
+Take upper half:
+
+8, 9
+
+Median:
+
+$$
+Q_3 = \frac{8 + 9}{2} = 8.5
+$$
+
+**Final Answer**
+
+-   $Q_1 = 5.5$
+
+-   $Q_2 = 7$
+
+-   $Q_3 = 8.5$
+
+### Interpretation
+
+-   25% of values are below 5.5
+
+-   50% are below 7
+
+-   75% are below 8.5
+
+    ::: callout-note
+    ### Shortcut Formula
+
+    For \$n\$ observations:
+
+    \$\$\
+    Q_1 = \\frac{n+1}{4} \\quad,\\quad Q_3 = \\frac{3(n+1)}{4}\
+    \$\$
+    :::
+
+## **Interquartile Range (IQR)**
+
+Measures spread of the **middle 50% of data**
+
+$$
+\text{IQR} = Q3 - Q1
+$$
+
+**Example:** Daily sales: 5, 6, 7, 8, 9
+
+-   Q1 = 5.5
+-   Q3 = 8.5
+-   IQR = 8.5 − 5.5 = 3 units
+
+**Interpretation:** Middle 50% of sales **fall within 3 units**.
+
+## Percentiles
+
+Percentiles divide data into **100 parts.** It indicate the **relative position of a value**.
+
+-   Useful in **salary distribution, customer spending, exam scores**
+
+Example:
+
+-   If your salary is at the 80th percentile:
+-   You earn more than **80% of people**
+
+## Mean Deviation
+
+**Definition:** Average of **absolute deviations from the mean** (Average of how far values are from the mean)
+
+$$ \text{Mean Deviation} = \frac{\sum |x_i - \bar{x}|}{n} $$
+
+**Symbols Explained**
+
+-   $x_i$ = each value
+
+-   $\bar{x}$ = mean
+
+-   $|x_i - \bar{x}|$ = distance from mean (ignore sign)
+
+-   $n$ = number of values
+
+**Example:** Daily sales: 5, 7, 8, 6, 9 → Mean = 7 Absolute deviations: 2, 0, 1, 1, 2 → Sum = 6 Mean deviation = 6 / 5 = 1.2 units
+
+**Interpretation:** On average, sales deviate **1.2 units** from the mean.
+
+## Standard Deviation
+
+::: callout-important
+# Student Warning
+
+Standard Deviation is one of the most important topics in statistics.
+
+Many students find it difficult because:
+
+-   It involves several steps
+-   It uses squares and square roots
+
+🛑 Do not rush. Follow each step carefully.
+:::
+
+::: callout-note
+## Simple Idea of Standard Deviation
+
+Standard deviation answers this question:
+
+“How far are values from the average?”
+
+-   Small SD → values are close to the mean (consistent data)
+-   Large SD → values are far from the mean (high variation)
+:::
+
+### **Steps to calculate SD**
+
+**Step 1:** Average of squared deviations from the mean. This gives you variance.
+
+**Formula:**
+
+$$
+\sigma^2 = \frac{\sum (x_i - \mu)^2}{N}
+$$
+
+**Step 2:** Find the Square root of variance ($\sigma^2$). This gives you a **Standard Deviation (SD)**
+
+**Formula:**
+
+$$
+\text{SD}=\sigma = \sqrt{\frac{\sum (x_i - \mu)^2}{N}}
+$$
+
+**Symbols explained**
+
+-   $\sigma$ = standard deviation
+
+-   $\sigma^2$ = variance
+
+-   $x_i$ = each value
+
+-   $\mu$ = mean
+
+-   $N$ = total observations
+
+### Step-by-Step Example
+
+Data: 5, 7, 8, 6, 9
+
+Mean ($\mu$)= 7
+
+| x   | x−mean | (x−mean)² |
+|-----|--------|-----------|
+| 5   | -2     | 4         |
+| 7   | 0      | 0         |
+| 8   | 1      | 1         |
+| 6   | -1     | 1         |
+| 9   | 2      | 4         |
+
+Sum = 10
+
+$$
+\text{Variance} = \frac{10}{5} = 2
+$$
+
+$$
+\text{SD} = \sqrt{2} \approx 1.41
+$$
+
+::: callout-important
+### Interpretation
+
+Values are typically **1.41 units away from the mean**
+:::
+
+::: callout-tip
+# Quick Tips (Summary)
+
+### **Mean**
+
+-   Shows overall average performance
+
+-   Used to compare general results (e.g., average sales, average cost)
+
+-   Can be affected by very high or very low values
+
+### **Median**
+
+-   Shows the typical or middle value
+
+-   Useful when data has extreme values
+
+-   Gives a more realistic picture in cases like salaries or prices
+
+### **Mode**
+
+-   Shows the most common value
+
+-   Helps identify popular products or trends
+
+-   Useful for business decisions like stocking inventory
+
+### **Range**
+
+-   Shows the difference between highest and lowest values
+
+-   Gives a quick idea of variation
+
+-   Not very reliable because it ignores most data
+
+### **Interquartile Range (IQR)**
+
+-   Shows the spread of the middle group of data
+
+-   Ignores extreme values
+
+-   Useful for understanding typical customer behavior
+
+### **Standard Deviation (SD)**
+
+-   Shows how consistent or stable the data is
+
+-   Low value → stable performance
+
+-   High value → unpredictable performance
+
+-   Very useful in business for risk and decision-making
+
+-   Example:
+
+    A business prefers **low variation** because it means **stable performance**.
+:::
+
+# Practice Questions
+
+## Conceptual
+
+1.  What is the difference between mean, median, and mode?
+2.  Why is SD preferred over range as a measure of variation?
+3.  Explain the difference between quartiles and percentiles.
+
+## Calculation
+
+Use the sales data: 10, 12, 15, 10, 18, 12, 20
+
+1.  Find **Mean, Median, Mode**
+2.  Find **Range**
+3.  Find **Q1, Q3, and IQR**
+4.  Find **Mean Deviation**
+5.  Find **SD**
+
+## Application
+
+1.  A manager wants to analyze daily revenue (in TZS) for a week (day 1 to day 7): 1500, 1700, 1600, 2000, 1800, 1500, 1900
+
+    1.  Compute measures of **central tendency**
+
+    2.  Compute measures of **variation**
+
+    3.  Interpret results: Which day is closest to average? Which day is unusual?
+
+2.  A retail shop recorded the **daily sales (in TZS ‘000)** for 20 days as follows:
+
+    12, 18, 25, 22, 30, 28, 35, 40, 18, 20, 15, 27, 33, 38, 45, 50, 42, 36, 29, 24
+
+Required
+
+\(a\) Construct a Frequency Distribution Table
+
+-   Use **class width = 10**
+
+-   Start from **10–19**
+
+\(b\) Calculate the Following (Grouped Data)
+
+1.  Mean
+
+2.  Median
+
+3.  Mode
+
+\(c\) Interpretation
+
+-   What is the **typical daily sales**?
+
+-   Which measure best represents the data? Explain.
