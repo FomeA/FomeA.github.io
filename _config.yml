@@ -25,10 +25,10 @@ author:
   # Biographic information
   avatar           : "https://FomeA.github.io/images/159.png" #"/FomeA.github.io/images/159.png" #"/images/159.png" #avatar: "https://raw.githubusercontent.com/FomeA/FomeA.github.io/main/assets/images/159.png"
   name             : "Anna D Fome"
-  # pronouns         : # example: "she/her"  
+  pronouns         : "she/her"  
   bio              : "PhD in Biomathematics"
   location         : "Tanzania"
-  employer         : "Jordan University College"
+  employer         : "<a href="https://www.juco.ac.tz">Jordan University College</a>"
   uri              : # URL
   email            : "anna.fome@juco.ac.tz" 
 
