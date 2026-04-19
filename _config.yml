@@ -25,10 +25,10 @@ author:
   # Biographic information
   avatar           : "https://FomeA.github.io/images/159.png" #"/FomeA.github.io/images/159.png" #"/images/159.png" #avatar: "https://raw.githubusercontent.com/FomeA/FomeA.github.io/main/assets/images/159.png"
   name             : "Anna D Fome"
-  pronouns         : "she/her"  
+  pronouns         : "She/her"  
   bio              : "PhD in Biomathematics"
-  location         : "<a href="https://www.google.com/maps/place/Tanzania/@-6.2632947,24.3088019,5z/data=!3m1!4b1!4m6!3m5!1s0x184b51314869a111:0x885a17314bc1c430!8m2!3d-6.369028!4d34.888822!16zL20vMDdkemY?entry=ttu&g_ep=EgoyMDI2MDQxNS4wIKXMDSoASAFQAw%3D%3D">Tanzania</a>
-  employer         : "https://www.juco.ac.tz" #"Jordan University College"  
+  location         : "Tanzania"
+  employer         : "Jordan University College"  
   url              : "https://www.juco.ac.tz"
   email            : "anna.fome@juco.ac.tz" 
 
