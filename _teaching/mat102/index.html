@@ -1,127 +1,335 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>MAT 102 – Ordinary Differential Equations</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MAT 102 – Ordinary Differential Equations</title>
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
-      line-height: 1.6;
-      background: #f9f9f9;
-      color: #333;
-    }
+<style>
+body{
+font-family:Arial,sans-serif;
+max-width:1100px;
+margin:auto;
+padding:20px;
+background:#f4f7fb;
+color:#333;
+line-height:1.6;
+}
 
-    h1 {
-      text-align: center;
-      color: #2c3e50;
-    }
+.hero{
+background:linear-gradient(135deg,#6a1b9a,#8e24aa);
+color:white;
+padding:35px 20px;
+border-radius:12px;
+text-align:center;
+margin-bottom:25px;
+}
 
-    h2 {
-      margin-top: 30px;
-      color: #34495e;
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 5px;
-    }
+.hero h1{
+margin:0 0 10px;
+}
 
-    ul {
-      margin-left: 20px;
-    }
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:15px;
+margin:20px 0;
+}
 
-    li {
-      margin-bottom: 8px;
-    }
+.card{
+background:white;
+padding:18px;
+border-radius:12px;
+box-shadow:0 3px 10px rgba(0,0,0,.06);
+transition:.2s;
+}
 
-    a {
-      color: #0077cc;
-      text-decoration: none;
-    }
+.card:hover{
+transform:translateY(-4px);
+}
 
-    a:hover {
-      text-decoration: underline;
-    }
+.card h3{
+margin-top:0;
+color:#6a1b9a;
+}
 
-    .container {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    }
-  </style>
+h2{
+margin-top:30px;
+color:#4a148c;
+border-bottom:2px solid #ddd;
+padding-bottom:6px;
+}
+
+.search input{
+width:100%;
+padding:12px;
+border-radius:8px;
+border:1px solid #ccc;
+font-size:16px;
+margin-bottom:15px;
+}
+
+.topic{
+display:block;
+text-decoration:none;
+color:#222;
+}
+
+.topic span{
+display:inline-block;
+margin-top:10px;
+padding:4px 10px;
+background:#f3e5f5;
+border-radius:20px;
+font-size:.8rem;
+}
+
+.notice{
+background:#fff8e1;
+padding:15px;
+border-left:5px solid #f9a825;
+border-radius:8px;
+}
+
+.btn{
+display:inline-block;
+padding:10px 16px;
+background:#43a047;
+color:white;
+text-decoration:none;
+border-radius:8px;
+margin-top:10px;
+}
+
+.plan-card{
+background:white;
+padding:18px;
+border-left:6px solid #8e24aa;
+border-radius:10px;
+box-shadow:0 3px 10px rgba(0,0,0,.06);
+margin-bottom:12px;
+}
+
+.plan-card.test{border-color:#d32f2f;}
+.plan-card.seminar{border-color:#2e7d32;}
+.plan-card.review{border-color:#fb8c00;}
+
+.plan-card h3{
+margin:0 0 8px;
+color:#6a1b9a;
+}
+
+.week{
+font-weight:bold;
+margin-bottom:8px;
+color:#444;
+}
+</style>
 </head>
 
 <body>
 
-<div class="container">
+<section class="hero">
+<h1>MAT 102 – Ordinary Differential Equations</h1>
+<p>Mathematical Modelling, Change, Growth & Dynamic Systems</p>
+</section>
 
-  <h1>MAT 102 – Ordinary Differential Equations</h1>
+<h2>Course Description</h2>
+<p>
+This course introduces ordinary differential equations arising from physical,
+biological and engineering systems. Students learn analytical methods for solving
+first and second order equations, Laplace transforms, and qualitative analysis of solutions.
+</p>
 
-  <h2>Course Description</h2>
-  <p>
-    This course introduces students to ordinary differential equations arising from 
-    a wide variety of physical and real-world phenomena. It develops both theoretical 
-    understanding and practical techniques for solving different types of differential 
-    equations, with applications in science and engineering.
-  </p>
+<div class="grid">
 
-  <h2>Learning Outcomes</h2>
-  <p>By the end of the course, students will be able to:</p>
-  <ol>
-      <li>Explain how ordinary differential equations arise from real-world problems.</li>
-      <li>Understand key concepts such as order, linearity, and classification of equations.</li>
-      <li>Describe analytical methods for solving differential equations.</li>
-      <li>Solve first and second order differential equations using appropriate methods.</li>
-      <li>Apply Laplace transforms to solve differential equations.</li>
-      <li>Interpret solutions in applied contexts.</li>
-  </ol>
+<div class="card">
+<h3>5 Topics</h3>
+<p>Core ODE modules</p>
+</div>
 
-  <h2>Course Content</h2>
-  <ul>
-    <li>Topic I: Introduction to Differential Equations: Access the <a href="/teaching/mat102/MAT102_ODE_Notes_C1.pdf">Lecture Notes</a> | <a href="/teaching/mat102/MAT102_ODE_Questions_C1.pdf">Tutorial questions</a>.</li>
-    <li>Topic II: First Order Differential Equations</li>
-    <li>Topic III: Second Order Linear Differential Equations</li>
-    <li>Topic IV: Laplace Transforms</li>
-    <li>Topic V: Qualitative Theory of Differential Equations</li>
-  </ul>
+<div class="card">
+<h3>Applications</h3>
+<p>Science, Engineering & Population Models</p>
+</div>
 
-  <!-- OPTIONAL: Uncomment when you upload materials -->
-  <!--
-  <h2>Lecture Materials</h2>
-  <ul>
-    <li>Topic I: <a href="/teaching/mat102/topic1/">Slides & Notes</a></li>
-    <li>Topic II: <a href="/teaching/mat102/topic2/">Slides & Notes</a></li>
-  </ul>
-  -->
+<div class="card">
+<h3>Assessment</h3>
+<p>Test + Assignment + Final Exam</p>
+</div>
 
-  <h2>Assessment</h2>
-  <ul>
-    <li>Test – 20%</li>
-    <li>Assignment – 20%</li>
-    <li>Final Examination – 60%</li>
-  </ul>
-
-  <h2>Mode of Delivery</h2>
-  <p>Lectures, seminars, and case studies.</p>
-
-  <!-- OPTIONAL -->
-  <!--
-  <h2>Teaching Schedule</h2>
-  Download it <a href="/teaching/mat102/MAT102_schedule.pdf">here</a>
-  -->
-
-  <h2>References</h2>
-  <ol>
-    <li>Ross, S.L. <i>Introduction to Ordinary Differential Equations</i>, Wiley (1989).</li>
-    <li>Massawe, E.S. & Manja, B.A. <i>Elementary Ordinary Differential Equations</i>, UDSM (2001).</li>
-    <li>Boyce, W.E. & DiPrima, R.C. <i>Elementary Differential Equations and Boundary Value Problems</i>, Wiley (1986).</li>
-    <li>Derrick, W.R. & Grossman, S.I. <i>Introduction to Differential Equations</i>, West (1987).</li>
-    <li>Kreyszig, E. <i>Advanced Engineering Mathematics</i>, Wiley (1988).</li>
-  </ol>
+<div class="card">
+<h3>Skills</h3>
+<p>Modelling and analytical solution methods</p>
+</div>
 
 </div>
+
+<h2>Learning Outcomes</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Concepts</h3>
+<p>Understand order, linearity and classification of ODEs.</p>
+</div>
+
+<div class="card">
+<h3>Methods</h3>
+<p>Solve first and second order differential equations.</p>
+</div>
+
+<div class="card">
+<h3>Transforms</h3>
+<p>Apply Laplace transforms to differential equations.</p>
+</div>
+
+<div class="card">
+<h3>Interpretation</h3>
+<p>Use solutions in applied real-world contexts.</p>
+</div>
+
+</div>
+
+<h2>Search Topics</h2>
+
+<div class="search">
+<input type="text" id="searchBox" placeholder="Search topic or keyword...">
+</div>
+
+<h2>Course Topics</h2>
+
+<div class="grid" id="topics">
+
+<a class="card topic" href="/teaching/mat102/MAT102_ODE_Notes_C1.pdf">
+<h3>Topic I</h3>
+<p>Introduction to Differential Equations</p>
+<span>Lecture Notes</span>
+</a>
+
+<a class="card topic" href="/teaching/mat102/MAT102_ODE_Questions_C1.pdf">
+<h3>Topic I Tutorial</h3>
+<p>Practice Questions</p>
+<span>Tutorial</span>
+</a>
+
+<div class="card topic">
+<h3>Topic II</h3>
+<p>First Order Differential Equations</p>
+<span>Module</span>
+</div>
+
+<div class="card topic">
+<h3>Topic III</h3>
+<p>Second Order Linear Differential Equations</p>
+<span>Module</span>
+</div>
+
+<div class="card topic">
+<h3>Topic IV</h3>
+<p>Laplace Transforms</p>
+<span>Module</span>
+</div>
+
+<div class="card topic">
+<h3>Topic V</h3>
+<p>Qualitative Theory of Differential Equations</p>
+<span>Module</span>
+</div>
+
+</div>
+
+<h2>Assessment</h2>
+
+<div class="notice">
+<ul>
+<li>Test – 20%</li>
+<li>Assignment – 20%</li>
+<li>Final Examination – 60%</li>
+</ul>
+</div>
+
+<h2>Mode of Delivery</h2>
+<p>Lectures, seminars, tutorials and case studies.</p>
+
+<h2>Interactive Teaching Plan</h2>
+
+<div class="search">
+<input type="text" id="planSearch" placeholder="Search week or topic...">
+</div>
+
+<div id="planContainer"></div>
+
+<h2>References</h2>
+
+<ul>
+<li>Ross – Introduction to Ordinary Differential Equations</li>
+<li>Massawe & Manja – Elementary Ordinary Differential Equations</li>
+<li>Boyce & DiPrima – Differential Equations and Boundary Value Problems</li>
+<li>Derrick & Grossman – Introduction to Differential Equations</li>
+<li>Kreyszig – Advanced Engineering Mathematics</li>
+</ul>
+
+<script>
+const topicSearch = document.getElementById("searchBox");
+const topics = document.querySelectorAll(".topic");
+
+topicSearch.addEventListener("input", function(){
+let text = this.value.toLowerCase();
+
+topics.forEach(card=>{
+let content = card.innerText.toLowerCase();
+card.style.display = content.includes(text) ? "block" : "none";
+});
+});
+
+const sessions = [
+{week:1,type:"lecture",topic:"Introduction",date:"Week 1",details:"Definitions, order, degree, modelling examples."},
+{week:2,type:"lecture",topic:"First Order ODE",date:"Week 2",details:"Separable equations and exact equations."},
+{week:3,type:"seminar",topic:"Linear First Order",date:"Week 3",details:"Integrating factor method and applications."},
+{week:4,type:"lecture",topic:"Second Order ODE",date:"Week 4",details:"Homogeneous linear equations."},
+{week:5,type:"lecture",topic:"Repeated Roots",date:"Week 5",details:"Characteristic equation methods."},
+{week:6,type:"seminar",topic:"Nonhomogeneous ODE",date:"Week 6",details:"Undetermined coefficients."},
+{week:7,type:"test",topic:"TEST 1",date:"Week 7",details:"Assessment covering Topics I–III."},
+{week:8,type:"lecture",topic:"Laplace Transform",date:"Week 8",details:"Definitions and solving IVPs."},
+{week:9,type:"lecture",topic:"Inverse Laplace",date:"Week 9",details:"Partial fractions and transforms."},
+{week:10,type:"lecture",topic:"Systems & Applications",date:"Week 10",details:"Population and motion models."},
+{week:11,type:"seminar",topic:"Slope Fields",date:"Week 11",details:"Qualitative analysis."},
+{week:12,type:"review",topic:"Revision",date:"Week 12",details:"Comprehensive review and exam prep."}
+];
+
+const plan = document.getElementById("planContainer");
+const planSearch = document.getElementById("planSearch");
+
+function renderPlan(){
+let text = planSearch.value.toLowerCase();
+plan.innerHTML = "";
+
+const filtered = sessions.filter(item =>
+item.topic.toLowerCase().includes(text) ||
+item.details.toLowerCase().includes(text) ||
+String(item.week).includes(text)
+);
+
+filtered.forEach(item=>{
+plan.innerHTML += `
+<div class="plan-card ${item.type}">
+<div class="week">Week ${item.week}</div>
+<h3>${item.topic}</h3>
+<p><strong>${item.date}</strong></p>
+<p>${item.details}</p>
+</div>
+`;
+});
+
+if(filtered.length===0){
+plan.innerHTML="<p>No matching sessions found.</p>";
+}
+}
+
+planSearch.addEventListener("input", renderPlan);
+renderPlan();
+</script>
+
 </body>
 </html>
