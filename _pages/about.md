@@ -179,31 +179,6 @@ box-shadow:0 8px 22px rgba(0,0,0,.06);
   </p>
 </section>
 
-<!--<h2>Research Focus Areas</h2>
-
-<div class="grid">
-
-<div class="card">
-  <h3>📊 Biostatistics</h3>
-  <p>Statistical methods for health and biological data analysis.</p>
-</div>
-
-<div class="card">
-  <h3>🦠 Epidemiological Modelling</h3>
-  <p>Mathematical modelling of infectious diseases.</p>
-</div>
-
-<div class="card">
-  <h3>🎓 Education Analytics</h3>
-  <p>Analysis of student performance and learning outcomes.</p>
-</div>
-
-<div class="card">
-  <h3>📈 Data Science</h3>
-  <p>Applied data analysis for decision making.</p>
-</div>
-
-</div> -->
 
 <h2>Explore</h2>
 
