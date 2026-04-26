@@ -7,152 +7,154 @@ author_profile: true
 
 <div class="page__content">
 
-<section class="hero-box">
+<!-- HERO -->
+<section class="hero">
   <h2>Teaching and Training</h2>
   <p>
-    I teach Applied Mathematics, Mathematics Education, and Statistics at
-    <strong>Jordan University College</strong>.
-  </p>
-  <p>
-    My teaching emphasizes conceptual understanding, analytical reasoning,
-    and practical problem-solving skills.
+    Academic teaching in Applied Mathematics and Statistics, and capacity-building training for students and professionals.
   </p>
 </section>
 
-<section class="stats-grid">
-  <div class="stat-card">
-    <h3>3+</h3>
-    <p>Courses Offered</p>
-  </div>
+<!-- SEARCH -->
+<div class="search-box">
+  <input type="text" id="searchInput" placeholder="Search teaching or training...">
+</div>
 
-  <div class="stat-card">
-    <h3>100+</h3>
-    <p>Students Taught</p>
-  </div>
+<!-- ===================== -->
+<!-- TEACHING SECTION -->
+<!-- ===================== -->
+<h2 class="section-title">🎓 Teaching (University Courses)</h2>
 
-  <div class="stat-card">
-    <h3>STEM</h3>
-    <p>Focus Area</p>
-  </div>
-</section>
+<div class="grid" id="teaching">
 
-<section class="search-box">
-  <input type="text" id="courseSearch" placeholder="Search courses...">
-</section>
-
-<section class="courses-grid" id="courseList">
-
-<a class="course-card" href="/teaching/qms101/">
-  <h3>QMS 101</h3>
-  <p>Introductory Statistics</p>
-  <span>Statistics</span>
-</a>
-
-<a class="course-card" href="/teaching/mat103/">
+<a class="card teaching" href="/teaching/mat103/">
   <h3>MAT 103</h3>
   <p>Numerical Analysis I</p>
   <span>Applied Mathematics</span>
 </a>
 
-<a class="course-card" href="/teaching/mat102/">
+<a class="card teaching" href="/teaching/mat102/">
   <h3>MAT 102</h3>
   <p>Ordinary Differential Equations</p>
   <span>Mathematics</span>
 </a>
 
-</section>
+<a class="card teaching" href="/teaching/qms101/">
+  <h3>QMS 101</h3>
+  <p>Introductory Statistics</p>
+  <span>Statistics</span>
+</a>
 
 </div>
 
+<!-- ===================== -->
+<!-- TRAINING SECTION -->
+<!-- ===================== -->
+<h2 class="section-title">📊 Training (Capacity Building)</h2>
+
+<div class="grid" id="training">
+
+<div class="card training">
+  <h3>Data Analysis with Excel</h3>
+  <p>Basic to advanced Excel for research and reporting.</p>
+  <span>Short Course</span>
+</div>
+
+<div class="card training">
+  <h3>Research Data Analysis</h3>
+  <p>Statistical analysis using SPSS and R.</p>
+  <span>Workshop</span>
+</div>
+
+<div class="card training">
+  <h3>Mathematical Modeling</h3>
+  <p>Introduction to modeling real-world problems using mathematics.</p>
+  <span>Capacity Building</span>
+</div>
+
+</div>
+
+</div>
+
+<!-- ===================== -->
+<!-- STYLE -->
+<!-- ===================== -->
 <style>
-.hero-box{
-background:#f4f8ff;
+.hero{
+background:#eef5ff;
 padding:25px;
 border-radius:12px;
-margin-bottom:25px;
-border-left:6px solid #1565c0;
-}
-
-.stats-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-gap:15px;
-margin-bottom:25px;
-}
-
-.stat-card{
-background:white;
-padding:20px;
-border-radius:12px;
-box-shadow:0 3px 10px rgba(0,0,0,.06);
-text-align:center;
-}
-
-.stat-card h3{
-font-size:2rem;
-margin:0;
-color:#1565c0;
-}
-
-.search-box{
 margin-bottom:20px;
+border-left:6px solid #1565c0;
 }
 
 .search-box input{
 width:100%;
 padding:12px;
 font-size:16px;
-border:1px solid #ccc;
 border-radius:8px;
+border:1px solid #ccc;
+margin-bottom:20px;
 }
 
-.courses-grid{
+.section-title{
+margin-top:30px;
+margin-bottom:15px;
+color:#0d47a1;
+}
+
+.grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:18px;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:15px;
 }
 
-.course-card{
-display:block;
-text-decoration:none;
+.card{
 background:white;
-padding:20px;
+padding:18px;
 border-radius:12px;
 box-shadow:0 3px 10px rgba(0,0,0,.06);
-transition:.25s;
+transition:.2s;
+text-decoration:none;
 color:#222;
-border-top:5px solid #1565c0;
 }
 
-.course-card:hover{
+.card:hover{
 transform:translateY(-4px);
 }
 
-.course-card h3{
+.card h3{
 margin-top:0;
 color:#1565c0;
 }
 
-.course-card span{
+.card span{
 display:inline-block;
 margin-top:10px;
-font-size:.85rem;
-padding:5px 10px;
+font-size:.8rem;
+padding:4px 10px;
 background:#eef4ff;
 border-radius:20px;
 }
+
+.training span{
+background:#fff3e0;
+}
 </style>
 
+<!-- ===================== -->
+<!-- SCRIPT -->
+<!-- ===================== -->
 <script>
-const search = document.getElementById("courseSearch");
-const cards = document.querySelectorAll(".course-card");
+const input = document.getElementById("searchInput");
+const cards = document.querySelectorAll(".card");
 
-search.addEventListener("input", function(){
-let text = this.value.toLowerCase();
+input.addEventListener("input", function(){
+let val = this.value.toLowerCase();
 
 cards.forEach(card=>{
-let content = card.innerText.toLowerCase();
-card.style.display = content.includes(text) ? "block" : "none";
+let text = card.innerText.toLowerCase();
+card.style.display = text.includes(val) ? "block" : "none";
 });
 });
 </script>
