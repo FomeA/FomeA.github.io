@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>MAT 103 – Numerical Analysis I</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+      line-height: 1.6;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+    }
+
+    h2 {
+      margin-top: 30px;
+      color: #34495e;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 5px;
+    }
+
+    ul {
+      margin-left: 20px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    a {
+      color: #0077cc;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    .controls{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin:15px 0;
+}
+
+.controls input,
+.controls select{
+  padding:10px;
+  font-size:16px;
+  border:1px solid #ccc;
+  border-radius:6px;
+}
+
+#planContainer{
+  margin-top:15px;
+}
+
+.plan-card{
+  background:#fff;
+  padding:15px;
+  margin-bottom:12px;
+  border-left:6px solid #3498db;
+  border-radius:8px;
+  box-shadow:0 2px 6px rgba(0,0,0,.06);
+}
+
+.plan-card.seminar{border-color:#27ae60;}
+.plan-card.test{border-color:#e74c3c;}
+.plan-card.holiday{border-color:#f39c12;}
+
+.plan-card h3{
+  margin:0 0 8px;
+}
+
+.week{
+  font-weight:bold;
+  color:#2c3e50;
+  margin-bottom:6px;
+}
+  </style>
+
+</head>
+
+<body>
+
+<h1>MAT 103 – Numerical Analysis I</h1>
+
+<h2>Course Description</h2>
+
+<p>This course introduces students to numerical techniques for solving mathematical problems that cannot be solved analytically. It develops methods for approximation, error analysis, root finding, interpolation, numerical integration, and solving systems of linear equations. Students are also introduced to computational tools such as MATLAB and MAPLE.</p>
+
+<h2>Learning Outcomes</h2>
+
+<p>By the end of the course, students will be able to:</p>
+
+<ol>
+
+<li>Knowledge-Based Outcomes</li>
+
+<ul>
+
+<li>Understand the difference between numerical and analytical methods.</li>
+
+<li>Explain sources and types of errors in numerical computation.</li>
+
+<li>Describe numerical techniques for solving mathematical problems.</li>
+
+</ul>
+
+<li>Skill-Based Outcomes</li>
+
+<ul>
+
+<li>Derive and apply numerical methods for solving equations and approximations.</li>
+
+<li>Implement interpolation, integration, and linear system-solving techniques.</li>
+
+<li>Use MATLAB or MAPLE for computational problem solving.</li>
+
+</ul>
+
+</ol>
+
+<h2>Course Content</h2>
+
+<ul>
+
+<li><a href ="MAT103_Topic1_Basic_Concepts-2.pdf">Topic I: Basic Concepts of Numerical Methods </a></li>
+
+<li>Topic II: Errors in Numerical Computation</li>
+
+<li>Topic III: Solutions of Nonlinear Equations</li>
+
+<li>Topic IV: Polynomial Interpolation and Approximation</li>
+
+<li>Topic V: Numerical Integration</li>
+
+<li>Topic VI: Systems of Linear Equations</li>
+
+</ul>
+
+<h2>Assessment</h2>
+
+<ul>
+
+<li>Formative Assessments (Ongoing monitoring).</li>
+
+<li>Summative Assessments (End-of-course evaluations).</li>
+
+</ul>
+
+<h2>Mode of Delivery</h2>
+
+<p>Lectures, seminars, and computer-based practical sessions.</p>
+
+<h2>Reading List</h2>
+
+<ol>
+
+<li>Burden, R. L. & Faires, J. D. <i>Numerical Analysis</i>, PWS-Kent Publishing, 1993. <a href= "https://faculty.ksu.edu.sa/sites/default/files/numerical_analysis_9th.pdf"Download</a></li>
+
+<li>Bajpai, A. C., Calus, M. & Fairley, W. <i>Numerical Methods for Engineers and Scientists</i>, Wiley, 1976.</li>
+
+</ol>
+
+<h2>Interactive Teaching Plan</h2>
+
+<input type="text" id="searchBox" placeholder="Search topic or week..."> <select id="filterBox"> <option value="all">All Sessions</option> <option value="lecture">Lectures</option> <option value="seminar">Seminars</option> <option value="test">Tests</option> <option value="holiday">Holiday</option> </select>
+
+<script>
+const sessions = [
+{
+week:1,
+type:"seminar",
+date:"08/04/2026",
+topic:"Basic Concepts",
+details:"Course introduction. Overview of Numerical Analysis."
+},
+{
+week:2,
+type:"lecture",
+date:"14/04/2026",
+topic:"Basic Concepts",
+details:"Analytical vs numerical methods."
+},
+{
+week:2,
+type:"seminar",
+date:"15/04/2026",
+topic:"Basic Concepts",
+details:"Accuracy, stability and convergence."
+},
+{
+week:3,
+type:"lecture",
+date:"21/04/2026",
+topic:"Errors",
+details:"Absolute and relative errors."
+},
+{
+week:10,
+type:"test",
+date:"09/06/2026",
+topic:"TEST 1",
+details:"Written test covering Topics 1–4."
+},
+{
+week:14,
+type:"holiday",
+date:"07/07/2026",
+topic:"Public Holiday",
+details:"No lecture."
+}
+];
+
+const plan = document.getElementById("planContainer");
+const searchBox = document.getElementById("searchBox");
+const filterBox = document.getElementById("filterBox");
+
+function renderPlan(){
+  const text = searchBox.value.toLowerCase();
+  const type = filterBox.value;
+
+  plan.innerHTML = "";
+
+  const filtered = sessions.filter(item => {
+    const matchText =
+      item.topic.toLowerCase().includes(text) ||
+      item.details.toLowerCase().includes(text) ||
+      String(item.week).includes(text);
+
+    const matchType = type === "all" || item.type === type;
+
+    return matchText && matchType;
+  });
+
+  if(filtered.length === 0){
+    plan.innerHTML = "<p>No matching sessions found.</p>";
+    return;
+  }
+
+  filtered.forEach(item => {
+    plan.innerHTML += `
+      <div class="plan-card ${item.type}">
+        <div class="week">Week ${item.week}</div>
+        <h3>${item.topic}</h3>
+        <p><strong>Date:</strong> ${item.date}</p>
+        <p>${item.details}</p>
+      </div>
+    `;
+  });
+}
+
+searchBox.addEventListener("input", renderPlan);
+filterBox.addEventListener("change", renderPlan);
+
+renderPlan();
+</script>
+
+</body>
+
+</html>
