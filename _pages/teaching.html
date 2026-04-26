@@ -4,32 +4,155 @@ title: "Teaching and Training"
 permalink: /teaching/
 author_profile: true
 ---
+
 <div class="page__content">
 
-  <!-- Introduction -->
-  <h2>Introduction</h2>
+<section class="hero-box">
+  <h2>Teaching and Training</h2>
   <p>
-    I am involved in teaching Applied Mathematics, Mathematics Education and Statistics courses at 
-    <strong>Jordan University College</strong>. My teaching focuses on developing students’ conceptual understanding, analytical thinking, and practical problem-solving skills.
+    I teach Applied Mathematics, Mathematics Education, and Statistics at
+    <strong>Jordan University College</strong>.
   </p>
-
   <p>
-    I integrate theory with real-world applications to help students better understand how mathematics and statistics are used in data analysis, modeling, and decision-making.
+    My teaching emphasizes conceptual understanding, analytical reasoning,
+    and practical problem-solving skills.
   </p>
+</section>
 
-  <hr>
+<section class="stats-grid">
+  <div class="stat-card">
+    <h3>3+</h3>
+    <p>Courses Offered</p>
+  </div>
 
-  <!-- Teaching Section -->
-  <h2>Teaching</h2>
+  <div class="stat-card">
+    <h3>100+</h3>
+    <p>Students Taught</p>
+  </div>
 
-  <p>
-    Below are the courses I currently teach. Each course includes structured materials, topics, and learning resources.
-  </p>
+  <div class="stat-card">
+    <h3>STEM</h3>
+    <p>Focus Area</p>
+  </div>
+</section>
 
-  <ul>
-    <li> <a href="/teaching/qms101/"> <strong>QMS 101</strong> – Introductory Statistics </a> </li>
-    <li> <a href="/teaching/mat103/"> <strong>MAT 103</strong> – Numerical Analysis I </a></li>
-    <li> <a href="/teaching/mat102/"> <strong>MAT 102</strong> – Ordinary Differential Equations </a> </li>
-  </ul>
+<section class="search-box">
+  <input type="text" id="courseSearch" placeholder="Search courses...">
+</section>
+
+<section class="courses-grid" id="courseList">
+
+<a class="course-card" href="/teaching/qms101/">
+  <h3>QMS 101</h3>
+  <p>Introductory Statistics</p>
+  <span>Statistics</span>
+</a>
+
+<a class="course-card" href="/teaching/mat103/">
+  <h3>MAT 103</h3>
+  <p>Numerical Analysis I</p>
+  <span>Applied Mathematics</span>
+</a>
+
+<a class="course-card" href="/teaching/mat102/">
+  <h3>MAT 102</h3>
+  <p>Ordinary Differential Equations</p>
+  <span>Mathematics</span>
+</a>
+
+</section>
 
 </div>
+
+<style>
+.hero-box{
+background:#f4f8ff;
+padding:25px;
+border-radius:12px;
+margin-bottom:25px;
+border-left:6px solid #1565c0;
+}
+
+.stats-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:15px;
+margin-bottom:25px;
+}
+
+.stat-card{
+background:white;
+padding:20px;
+border-radius:12px;
+box-shadow:0 3px 10px rgba(0,0,0,.06);
+text-align:center;
+}
+
+.stat-card h3{
+font-size:2rem;
+margin:0;
+color:#1565c0;
+}
+
+.search-box{
+margin-bottom:20px;
+}
+
+.search-box input{
+width:100%;
+padding:12px;
+font-size:16px;
+border:1px solid #ccc;
+border-radius:8px;
+}
+
+.courses-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:18px;
+}
+
+.course-card{
+display:block;
+text-decoration:none;
+background:white;
+padding:20px;
+border-radius:12px;
+box-shadow:0 3px 10px rgba(0,0,0,.06);
+transition:.25s;
+color:#222;
+border-top:5px solid #1565c0;
+}
+
+.course-card:hover{
+transform:translateY(-4px);
+}
+
+.course-card h3{
+margin-top:0;
+color:#1565c0;
+}
+
+.course-card span{
+display:inline-block;
+margin-top:10px;
+font-size:.85rem;
+padding:5px 10px;
+background:#eef4ff;
+border-radius:20px;
+}
+</style>
+
+<script>
+const search = document.getElementById("courseSearch");
+const cards = document.querySelectorAll(".course-card");
+
+search.addEventListener("input", function(){
+let text = this.value.toLowerCase();
+
+cards.forEach(card=>{
+let content = card.innerText.toLowerCase();
+card.style.display = content.includes(text) ? "block" : "none";
+});
+});
+</script>
