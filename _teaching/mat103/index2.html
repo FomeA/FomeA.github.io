@@ -1,283 +1,387 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MAT 103 – Numerical Analysis I</title>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
-      line-height: 1.6;
-      background: #f9f9f9;
-      color: #333;
-    }
+:root{
+--primary:#0d47a1;
+--secondary:#1565c0;
+--bg:#f4f7fb;
+--card:#ffffff;
+--text:#222;
+--muted:#666;
+--lecture:#1976d2;
+--seminar:#2e7d32;
+--lab:#6a1b9a;
+--test:#c62828;
+--holiday:#ef6c00;
+--review:#455a64;
+}
 
-    h1 {
-      text-align: center;
-      color: #2c3e50;
-    }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
-    h2 {
-      margin-top: 30px;
-      color: #34495e;
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 5px;
-    }
+body{
+font-family:Arial, Helvetica, sans-serif;
+background:var(--bg);
+color:var(--text);
+line-height:1.6;
+}
 
-    ul {
-      margin-left: 20px;
-    }
+header{
+background:linear-gradient(135deg,var(--primary),var(--secondary));
+color:white;
+padding:40px 20px;
+text-align:center;
+}
 
-    li {
-      margin-bottom: 8px;
-    }
+header h1{
+font-size:2.2rem;
+margin-bottom:10px;
+}
 
-    a {
-      color: #0077cc;
-      text-decoration: none;
-    }
+header p{
+opacity:.95;
+margin:4px 0;
+}
 
-    a:hover {
-      text-decoration: underline;
-    }
+.container{
+max-width:1100px;
+margin:auto;
+padding:25px;
+}
 
-    .container {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    }
+.section{
+margin-bottom:35px;
+}
 
-    .controls{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-  margin:15px 0;
+.section h2{
+margin-bottom:15px;
+padding-bottom:8px;
+border-bottom:3px solid #dde6f2;
+color:var(--primary);
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:15px;
+}
+
+.stat{
+background:var(--card);
+padding:18px;
+border-radius:12px;
+box-shadow:0 4px 10px rgba(0,0,0,.06);
+text-align:center;
+}
+
+.stat h3{
+font-size:1.8rem;
+color:var(--primary);
+}
+
+.nav-buttons{
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+}
+
+.nav-buttons a{
+text-decoration:none;
+background:var(--primary);
+color:white;
+padding:10px 14px;
+border-radius:8px;
+font-size:.95rem;
+}
+
+.nav-buttons a:hover{
+background:var(--secondary);
+}
+
+.controls{
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+margin-top:15px;
 }
 
 .controls input,
 .controls select{
-  padding:10px;
-  font-size:16px;
-  border:1px solid #ccc;
-  border-radius:6px;
+padding:10px;
+border:1px solid #ccc;
+border-radius:8px;
+font-size:15px;
 }
 
-#planContainer{
-  margin-top:15px;
+.topic{
+margin-top:25px;
 }
 
-.plan-card{
-  background:#fff;
-  padding:15px;
-  margin-bottom:12px;
-  border-left:6px solid #3498db;
-  border-radius:8px;
-  box-shadow:0 2px 6px rgba(0,0,0,.06);
+.topic-title{
+background:#eaf2ff;
+padding:12px 15px;
+border-left:6px solid var(--primary);
+border-radius:8px;
+font-size:1.15rem;
+font-weight:bold;
+margin-bottom:12px;
 }
 
-.plan-card.seminar{border-color:#27ae60;}
-.plan-card.test{border-color:#e74c3c;}
-.plan-card.holiday{border-color:#f39c12;}
-
-.plan-card h3{
-  margin:0 0 8px;
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:15px;
 }
 
-.week{
-  font-weight:bold;
-  color:#2c3e50;
-  margin-bottom:6px;
+.card{
+background:var(--card);
+padding:15px;
+border-radius:12px;
+box-shadow:0 4px 10px rgba(0,0,0,.06);
+border-left:6px solid var(--lecture);
+transition:.25s;
 }
-  </style>
 
+.card:hover{
+transform:translateY(-4px);
+}
+
+.card.seminar{border-color:var(--seminar);}
+.card.lab{border-color:var(--lab);}
+.card.test{border-color:var(--test);}
+.card.holiday{border-color:var(--holiday);}
+.card.review{border-color:var(--review);}
+
+.badge{
+display:inline-block;
+font-size:.8rem;
+padding:4px 8px;
+border-radius:20px;
+background:#eef3ff;
+margin-bottom:8px;
+}
+
+.meta{
+font-size:.92rem;
+color:var(--muted);
+margin-bottom:8px;
+}
+
+.notice{
+background:#fff3cd;
+padding:15px;
+border-left:6px solid #f0ad4e;
+border-radius:10px;
+margin-top:10px;
+}
+
+footer{
+text-align:center;
+padding:30px 20px;
+color:#666;
+font-size:.95rem;
+}
+
+@media(max-width:700px){
+header h1{
+font-size:1.7rem;
+}
+.controls{
+flex-direction:column;
+}
+.controls input,
+.controls select{
+width:100%;
+}
+}
+</style>
 </head>
 
 <body>
 
+<header>
 <h1>MAT 103 – Numerical Analysis I</h1>
+<p>BAED I (Mathematics Option) | Academic Year 2025/2026</p>
+<p>Duration: 15 Weeks | 08 April 2026 – 17 July 2026</p>
+<p>Lecturer: Dr. Anna Fome</p>
+</header>
 
-<h2>Course Description</h2>
+<div class="container">
 
-<p>This course introduces students to numerical techniques for solving mathematical problems that cannot be solved analytically. It develops methods for approximation, error analysis, root finding, interpolation, numerical integration, and solving systems of linear equations. Students are also introduced to computational tools such as MATLAB and MAPLE.</p>
+<section class="section">
+<h2>Course Overview</h2>
+<p>
+This course introduces numerical techniques for solving mathematical problems that cannot be solved analytically.
+Students study approximation methods, error analysis, root finding, interpolation, numerical integration,
+and systems of linear equations, with computational exposure using MATLAB / MAPLE.
+</p>
+</section>
 
-<h2>Learning Outcomes</h2>
+<section class="section">
+<h2>Quick Facts</h2>
+<div class="grid">
+<div class="stat"><h3>15</h3><p>Teaching Weeks</p></div>
+<div class="stat"><h3>3 hrs</h3><p>Per Week</p></div>
+<div class="stat"><h3>20%</h3><p>Test + Assignment</p></div>
+<div class="stat"><h3>60%</h3><p>Final Exam</p></div>
+</div>
+</section>
 
-<p>By the end of the course, students will be able to:</p>
+<section class="section">
+<h2>Jump to Topic</h2>
+<div class="nav-buttons">
+<a href="#topic1">Basic Concepts</a>
+<a href="#topic2">Errors</a>
+<a href="#topic3">Nonlinear Equations</a>
+<a href="#topic4">Interpolation</a>
+<a href="#topic5">Integration</a>
+<a href="#topic6">Linear Systems</a>
+</div>
+</section>
 
-<ol>
+<section class="section">
+<h2>Search Teaching Plan</h2>
 
-<li>Knowledge-Based Outcomes</li>
+<div class="controls">
+<input type="text" id="searchBox" placeholder="Search week, topic, method...">
+<select id="filterBox">
+<option value="all">All Sessions</option>
+<option value="lecture">Lectures</option>
+<option value="seminar">Seminars</option>
+<option value="lab">Computer Labs</option>
+<option value="test">Tests</option>
+<option value="holiday">Holiday</option>
+</select>
+</div>
 
+<p id="counter" style="margin-top:10px;color:#666;"></p>
+
+<div id="schedule"></div>
+</section>
+
+<section class="section">
+<h2>Important Dates</h2>
+<div class="notice">
+<p><strong>03 June 2026:</strong> Assignment issued.</p>
+<p><strong>09 June 2026:</strong> TEST 1 (20%).</p>
+<p><strong>07 July 2026:</strong> Public Holiday.</p>
+<p><strong>15 July 2026:</strong> Assignment due.</p>
+<p><strong>Final Examination:</strong> Scheduled separately.</p>
+</div>
+</section>
+
+<section class="section">
+<h2>Learning Materials</h2>
 <ul>
-
-<li>Understand the difference between numerical and analytical methods.</li>
-
-<li>Explain sources and types of errors in numerical computation.</li>
-
-<li>Describe numerical techniques for solving mathematical problems.</li>
-
+<li><a href="MAT103_Topic1_Basic_Concepts-2.pdf">Topic 1: Basic Concepts PDF</a></li>
+<li><a href="#">Additional Topic Notes (Upload PDF)</a></li>
 </ul>
+</section>
 
-<li>Skill-Based Outcomes</li>
+</div>
 
-<ul>
-
-<li>Derive and apply numerical methods for solving equations and approximations.</li>
-
-<li>Implement interpolation, integration, and linear system-solving techniques.</li>
-
-<li>Use MATLAB or MAPLE for computational problem solving.</li>
-
-</ul>
-
-</ol>
-
-<h2>Course Content</h2>
-
-<ul>
-
-<li><a href ="MAT103_Topic1_Basic_Concepts-2.pdf">Topic I: Basic Concepts of Numerical Methods </a></li>
-
-<li>Topic II: Errors in Numerical Computation</li>
-
-<li>Topic III: Solutions of Nonlinear Equations</li>
-
-<li>Topic IV: Polynomial Interpolation and Approximation</li>
-
-<li>Topic V: Numerical Integration</li>
-
-<li>Topic VI: Systems of Linear Equations</li>
-
-</ul>
-
-<h2>Assessment</h2>
-
-<ul>
-
-<li>Formative Assessments (Ongoing monitoring).</li>
-
-<li>Summative Assessments (End-of-course evaluations).</li>
-
-</ul>
-
-<h2>Mode of Delivery</h2>
-
-<p>Lectures, seminars, and computer-based practical sessions.</p>
-
-<h2>Reading List</h2>
-
-<ol>
-
-<li>Burden, R. L. & Faires, J. D. <i>Numerical Analysis</i>, PWS-Kent Publishing, 1993. <a href= "https://faculty.ksu.edu.sa/sites/default/files/numerical_analysis_9th.pdf"Download</a></li>
-
-<li>Bajpai, A. C., Calus, M. & Fairley, W. <i>Numerical Methods for Engineers and Scientists</i>, Wiley, 1976.</li>
-
-</ol>
-
-<h2>Interactive Teaching Plan</h2>
-
-<input type="text" id="searchBox" placeholder="Search topic or week..."> <select id="filterBox"> <option value="all">All Sessions</option> <option value="lecture">Lectures</option> <option value="seminar">Seminars</option> <option value="test">Tests</option> <option value="holiday">Holiday</option> </select>
+<footer>
+MAT 103 Course Page • Designed for Interactive Learning
+</footer>
 
 <script>
 const sessions = [
-{
-week:1,
-type:"seminar",
-date:"08/04/2026",
-topic:"Basic Concepts",
-details:"Course introduction. Overview of Numerical Analysis."
-},
-{
-week:2,
-type:"lecture",
-date:"14/04/2026",
-topic:"Basic Concepts",
-details:"Analytical vs numerical methods."
-},
-{
-week:2,
-type:"seminar",
-date:"15/04/2026",
-topic:"Basic Concepts",
-details:"Accuracy, stability and convergence."
-},
-{
-week:3,
-type:"lecture",
-date:"21/04/2026",
-topic:"Errors",
-details:"Absolute and relative errors."
-},
-{
-week:10,
-type:"test",
-date:"09/06/2026",
-topic:"TEST 1",
-details:"Written test covering Topics 1–4."
-},
-{
-week:14,
-type:"holiday",
-date:"07/07/2026",
-topic:"Public Holiday",
-details:"No lecture."
-}
+
+{week:1,type:"seminar",topic:"Topic 1: Basic Concepts",date:"08/04/2026",day:"Wednesday",time:"12:00–13:00",details:"Course introduction. Definition, aims and scope of Numerical Analysis."},
+
+{week:2,type:"lecture",topic:"Topic 1: Basic Concepts",date:"14/04/2026",day:"Tuesday",time:"08:00–10:00",details:"Analytical vs numerical methods. Direct vs iterative methods."},
+{week:2,type:"seminar",topic:"Topic 1: Basic Concepts",date:"15/04/2026",day:"Wednesday",time:"12:00–13:00",details:"Accuracy, stability, convergence. Worked examples."},
+
+{week:3,type:"lecture",topic:"Topic 2: Errors",date:"21/04/2026",day:"Tuesday",time:"08:00–10:00",details:"Absolute and relative errors. Precision vs accuracy."},
+{week:3,type:"seminar",topic:"Topic 2: Errors",date:"22/04/2026",day:"Wednesday",time:"12:00–13:00",details:"Significant figures and rounding."},
+
+{week:4,type:"lecture",topic:"Topic 2: Errors",date:"28/04/2026",day:"Tuesday",time:"08:00–10:00",details:"Floating point arithmetic. Machine epsilon."},
+{week:4,type:"seminar",topic:"Topic 2: Errors",date:"29/04/2026",day:"Wednesday",time:"12:00–13:00",details:"Subtractive cancellation and remedies."},
+
+{week:5,type:"lecture",topic:"Topic 3: Nonlinear Equations",date:"05/05/2026",day:"Tuesday",time:"08:00–10:00",details:"Root finding. Fixed-point iteration."},
+{week:5,type:"seminar",topic:"Topic 3: Nonlinear Equations",date:"06/05/2026",day:"Wednesday",time:"12:00–13:00",details:"Bisection method."},
+
+{week:6,type:"lecture",topic:"Topic 3: Nonlinear Equations",date:"12/05/2026",day:"Tuesday",time:"08:00–10:00",details:"Secant method and Regula Falsi."},
+{week:6,type:"seminar",topic:"Topic 3: Nonlinear Equations",date:"13/05/2026",day:"Wednesday",time:"12:00–13:00",details:"Newton-Raphson method."},
+
+{week:7,type:"lecture",topic:"Topic 3: Nonlinear Equations",date:"19/05/2026",day:"Tuesday",time:"08:00–10:00",details:"Horner scheme and Bairstow method."},
+{week:7,type:"lab",topic:"Topic 3: Nonlinear Equations",date:"20/05/2026",day:"Wednesday",time:"12:00–13:00",details:"MATLAB / MAPLE root finding lab."},
+
+{week:8,type:"lecture",topic:"Topic 4: Polynomial Approximation",date:"26/05/2026",day:"Tuesday",time:"08:00–10:00",details:"Lagrange interpolation."},
+{week:8,type:"seminar",topic:"Topic 4: Polynomial Approximation",date:"27/05/2026",day:"Wednesday",time:"12:00–13:00",details:"Newton Forward / Backward formulas."},
+
+{week:9,type:"lecture",topic:"Topic 4: Polynomial Approximation",date:"02/06/2026",day:"Tuesday",time:"08:00–10:00",details:"Bessel and Stirling formulas."},
+{week:9,type:"lab",topic:"Topic 4: Polynomial Approximation",date:"03/06/2026",day:"Wednesday",time:"12:00–13:00",details:"Interpolation lab. Assignment issued."},
+
+{week:10,type:"test",topic:"TEST 1",date:"09/06/2026",day:"Tuesday",time:"08:00–10:00",details:"Topics 1–4. Counts 20%."},
+{week:10,type:"lecture",topic:"Topic 5: Numerical Integration",date:"10/06/2026",day:"Wednesday",time:"12:00–13:00",details:"Trapezoidal rule and Newton-Cotes."},
+
+{week:11,type:"lecture",topic:"Topic 5: Numerical Integration",date:"16/06/2026",day:"Tuesday",time:"08:00–10:00",details:"Simpson's 1/3 and 3/8 rules."},
+{week:11,type:"seminar",topic:"Topic 5: Numerical Integration",date:"17/06/2026",day:"Wednesday",time:"12:00–13:00",details:"Compare quadrature rules."},
+
+{week:12,type:"lecture",topic:"Topic 5: Numerical Integration",date:"23/06/2026",day:"Tuesday",time:"08:00–10:00",details:"Higher-order Newton-Cotes formulas."},
+{week:12,type:"lab",topic:"Topic 5: Numerical Integration",date:"24/06/2026",day:"Wednesday",time:"12:00–13:00",details:"Integration lab exercises."},
+
+{week:13,type:"lecture",topic:"Topic 6: Linear Systems",date:"30/06/2026",day:"Tuesday",time:"08:00–10:00",details:"Matrix notation. Cramer's Rule."},
+{week:13,type:"seminar",topic:"Topic 6: Linear Systems",date:"01/07/2026",day:"Wednesday",time:"12:00–13:00",details:"Gaussian elimination."},
+
+{week:14,type:"holiday",topic:"PUBLIC HOLIDAY",date:"07/07/2026",day:"Tuesday",time:"08:00–10:00",details:"No lecture."},
+{week:14,type:"seminar",topic:"Topic 6: Linear Systems",date:"08/07/2026",day:"Wednesday",time:"12:00–13:00",details:"LU decomposition."},
+
+{week:15,type:"lecture",topic:"Topic 6: Linear Systems",date:"14/07/2026",day:"Tuesday",time:"08:00–10:00",details:"Course review and MATLAB solving systems."},
+{week:15,type:"review",topic:"Course Review & Wrap-Up",date:"15/07/2026",day:"Wednesday",time:"12:00–13:00",details:"Exam preparation. Assignment due."}
+
 ];
 
-const plan = document.getElementById("planContainer");
+const schedule = document.getElementById("schedule");
 const searchBox = document.getElementById("searchBox");
 const filterBox = document.getElementById("filterBox");
+const counter = document.getElementById("counter");
 
-function renderPlan(){
-  const text = searchBox.value.toLowerCase();
-  const type = filterBox.value;
+function render(){
+const text = searchBox.value.toLowerCase();
+const type = filterBox.value;
 
-  plan.innerHTML = "";
+const filtered = sessions.filter(s=>{
+const matchText =
+s.topic.toLowerCase().includes(text) ||
+s.details.toLowerCase().includes(text) ||
+String(s.week).includes(text);
 
-  const filtered = sessions.filter(item => {
-    const matchText =
-      item.topic.toLowerCase().includes(text) ||
-      item.details.toLowerCase().includes(text) ||
-      String(item.week).includes(text);
+const matchType = type==="all" || s.type===type;
+return matchText && matchType;
+});
 
-    const matchType = type === "all" || item.type === type;
+counter.innerHTML = filtered.length + " session(s) found";
 
-    return matchText && matchType;
-  });
+schedule.innerHTML = '<div class="cards"></div>';
+const cards = schedule.querySelector(".cards");
 
-  if(filtered.length === 0){
-    plan.innerHTML = "<p>No matching sessions found.</p>";
-    return;
-  }
-
-  filtered.forEach(item => {
-    plan.innerHTML += `
-      <div class="plan-card ${item.type}">
-        <div class="week">Week ${item.week}</div>
-        <h3>${item.topic}</h3>
-        <p><strong>Date:</strong> ${item.date}</p>
-        <p>${item.details}</p>
-      </div>
-    `;
-  });
+filtered.forEach(s=>{
+cards.innerHTML += `
+<div class="card ${s.type}">
+<div class="badge">Week ${s.week}</div>
+<h3>${s.topic}</h3>
+<div class="meta">${s.date} | ${s.day} | ${s.time}</div>
+<p>${s.details}</p>
+</div>
+`;
+});
 }
 
-searchBox.addEventListener("input", renderPlan);
-filterBox.addEventListener("change", renderPlan);
+searchBox.addEventListener("input",render);
+filterBox.addEventListener("change",render);
 
-renderPlan();
+render();
 </script>
 
 </body>
-
 </html>
