@@ -179,7 +179,7 @@ box-shadow:0 8px 22px rgba(0,0,0,.06);
   </p>
 </section>
 
-<h2>Research Focus Areas</h2>
+<!--<h2>Research Focus Areas</h2>
 
 <div class="grid">
 
@@ -203,7 +203,7 @@ box-shadow:0 8px 22px rgba(0,0,0,.06);
   <p>Applied data analysis for decision making.</p>
 </div>
 
-</div>
+</div> -->
 
 <h2>Explore</h2>
 
