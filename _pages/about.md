@@ -210,8 +210,8 @@ box-shadow:0 8px 22px rgba(0,0,0,.06);
 <div class="nav-grid">
 
 <a class="nav-card" href="/teaching/">🎓 Teaching</a>
-<a class="nav-card" href="/research/">📚 Research</a>
 <a class="nav-card" href="/mentorship/">🤝 Mentorship</a>
+<a class="nav-card" href="/research/">📚 Research</a>
 <a class="nav-card" href="/publications/">📄 Publications</a>
 
 </div>
