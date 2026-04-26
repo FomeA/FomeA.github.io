@@ -1,18 +1,246 @@
-------------------------------------------------
-| QMS101 Introductory Statistics              |
-| Semester | Lecturer | Credits | Downloads   |
-------------------------------------------------
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QMS 101 – Introductory Statistics</title>
 
-[ Modules ] [ Assignments ] [ Schedule ] [ Resources ]
+<style>
+body{
+font-family:Arial,sans-serif;
+max-width:1100px;
+margin:auto;
+padding:20px;
+background:#f4f7fb;
+color:#333;
+line-height:1.6;
+}
 
-------------------------------------------------
-Topic 1  | Topic 2 | Topic 3 | Topic 4
-------------------------------------------------
+.hero{
+background:linear-gradient(135deg,#1565c0,#1976d2);
+color:white;
+padding:35px 20px;
+border-radius:12px;
+text-align:center;
+margin-bottom:25px;
+}
 
-Assignment Center
-Portfolio
-Submission Guide
+.hero h1{
+margin:0 0 10px;
+}
 
-Weekly Timeline
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:15px;
+margin:20px 0;
+}
 
-References
+.card{
+background:white;
+padding:18px;
+border-radius:12px;
+box-shadow:0 3px 10px rgba(0,0,0,.06);
+transition:.2s;
+}
+
+.card:hover{
+transform:translateY(-4px);
+}
+
+.card h3{
+margin-top:0;
+color:#1565c0;
+}
+
+h2{
+margin-top:30px;
+color:#0d47a1;
+border-bottom:2px solid #ddd;
+padding-bottom:6px;
+}
+
+.search input{
+width:100%;
+padding:12px;
+border-radius:8px;
+border:1px solid #ccc;
+font-size:16px;
+}
+
+.topic{
+display:block;
+text-decoration:none;
+color:#222;
+}
+
+.topic span{
+display:inline-block;
+margin-top:10px;
+padding:4px 10px;
+background:#eef4ff;
+border-radius:20px;
+font-size:.8rem;
+}
+
+.btn{
+display:inline-block;
+padding:10px 16px;
+background:#34a853;
+color:white;
+text-decoration:none;
+border-radius:8px;
+margin-top:10px;
+}
+
+.notice{
+background:#fff8e1;
+padding:15px;
+border-left:5px solid #f9a825;
+border-radius:8px;
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+<h1>QMS 101 – Introductory Statistics</h1>
+<!-- <p>Statistics for Business, Industry and National Development</p>-->
+</section>
+
+<h2>Course Overview</h2>
+<p>
+This course introduces students to fundamental statistical concepts and methods for analysing data.
+Topics include data collection, presentation, measures of central tendency and variation,
+probability, and probability distributions.
+</p>
+
+<div class="grid">
+<div class="card">
+<h3>7 Topics</h3>
+<p>Core statistical modules</p>
+</div>
+
+<div class="card">
+<h3>Assignments</h3>
+<p>Coursework + Portfolio</p>
+</div>
+
+<div class="card">
+<h3>Practical Skills</h3>
+<p>Data interpretation & decision making</p>
+</div>
+
+<div class="card">
+<h3>Resources</h3>
+<p>Slides, questions, schedule</p>
+</div>
+</div>
+
+<h2>Search Topics</h2>
+
+<div class="search">
+<input type="text" id="searchBox" placeholder="Search topic...">
+</div>
+
+<h2>Course Topics</h2>
+
+<div class="grid" id="topics">
+
+<a class="card topic" href="/teaching/qms101/slides_t1-pdf.pdf">
+<h3>Topic I</h3>
+<p>Introductory Statistics</p>
+<span>Slides</span>
+</a>
+
+<a class="card topic" href="/teaching/qms101/Topic2_Data_collection+Presesentation.pdf">
+<h3>Topic II</h3>
+<p>Data Collection and Presentation</p>
+<span>Slides</span>
+</a>
+
+<a class="card topic" href="/teaching/qms101/pdfs/topic3/">
+<h3>Topic III</h3>
+<p>Measures of Central Tendency</p>
+<span>Module</span>
+</a>
+
+<a class="card topic" href="/teaching/qms101/pdfs/topic4/">
+<h3>Topic IV</h3>
+<p>Measures of Variation</p>
+<span>Module</span>
+</a>
+
+<a class="card topic" href="/teaching/qms101/pdfs/topic5/">
+<h3>Topic V</h3>
+<p>Permutation and Combination</p>
+<span>Module</span>
+</a>
+
+<a class="card topic" href="/teaching/qms101/pdfs/topic6/">
+<h3>Topic VI</h3>
+<p>Probability Theory</p>
+<span>Module</span>
+</a>
+
+<a class="card topic" href="/teaching/qms101/pdfs/topic7/">
+<h3>Topic VII</h3>
+<p>Probability Distribution</p>
+<span>Module</span>
+</a>
+
+</div>
+
+<h2>Assignments</h2>
+
+<div class="notice">
+<p><strong>Task 2:</strong> Portfolio Assignment now available.</p>
+
+<a class="btn" href="/teaching/qms101/portfolio-updated.pdf">
+Portfolio Instructions
+</a>
+
+<a class="btn" href="/teaching/qms101/QMS101_Portfolio.pdf">
+Portfolio Questions
+</a>
+</div>
+
+<h2>Teaching Schedule</h2>
+
+<a class="btn" href="/teaching/qms101/QMS101_Teaching_Schedule_new.pdf">
+Download Schedule
+</a>
+
+<h2>References</h2>
+
+<ul>
+<li>
+<a href="https://openstax.org/books/introductory-statistics/pages/index" target="_blank">
+OpenStax Introductory Statistics
+</a>
+</li>
+
+<li>
+<a href="https://www.openintro.org/book/os/" target="_blank">
+OpenIntro Statistics
+</a>
+</li>
+</ul>
+
+<script>
+const searchBox = document.getElementById("searchBox");
+const topics = document.querySelectorAll(".topic");
+
+searchBox.addEventListener("input", function(){
+let text = this.value.toLowerCase();
+
+topics.forEach(card=>{
+let content = card.innerText.toLowerCase();
+card.style.display = content.includes(text) ? "block" : "none";
+});
+});
+</script>
+
+</body>
+</html>
