@@ -51,6 +51,48 @@
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.05);
     }
+
+    .controls{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin:15px 0;
+}
+
+.controls input,
+.controls select{
+  padding:10px;
+  font-size:16px;
+  border:1px solid #ccc;
+  border-radius:6px;
+}
+
+#planContainer{
+  margin-top:15px;
+}
+
+.plan-card{
+  background:#fff;
+  padding:15px;
+  margin-bottom:12px;
+  border-left:6px solid #3498db;
+  border-radius:8px;
+  box-shadow:0 2px 6px rgba(0,0,0,.06);
+}
+
+.plan-card.seminar{border-color:#27ae60;}
+.plan-card.test{border-color:#e74c3c;}
+.plan-card.holiday{border-color:#f39c12;}
+
+.plan-card h3{
+  margin:0 0 8px;
+}
+
+.week{
+  font-weight:bold;
+  color:#2c3e50;
+  margin-bottom:6px;
+}
   </style>
 </head>
 
@@ -89,22 +131,13 @@
 
   <h2>Course Content</h2>
   <ul>
-    <li><a href ="/teaching/mat103/MAT103_Topic1_Basic_Concepts-2.pdf">Topic I: Basic Concepts of Numerical Methods </a></li>
+    <li><a href ="MAT103_Topic1_Basic_Concepts-2.pdf">Topic I: Basic Concepts of Numerical Methods </a></li>
     <li>Topic II: Errors in Numerical Computation</li>
     <li>Topic III: Solutions of Nonlinear Equations</li>
     <li>Topic IV: Polynomial Interpolation and Approximation</li>
     <li>Topic V: Numerical Integration</li>
     <li>Topic VI: Systems of Linear Equations</li>
   </ul>
-
-  <!-- OPTIONAL MATERIAL LINKS -->
-  <!--
-  <h2>Lecture Materials</h2>
-  <ul>
-    <li>Topic I: <a href="/teaching/mat103/topic1/">Slides & Notes</a></li>
-    <li>Topic II: <a href="/teaching/mat103/topic2/">Slides & Notes</a></li>
-  </ul>
-  -->
 
   <h2>Assessment</h2>
   <ul>
@@ -137,6 +170,95 @@
 <div id="planContainer"></div>
   
 </div>
+  <script>
+const sessions = [
+{
+week:1,
+type:"seminar",
+date:"08/04/2026",
+topic:"Basic Concepts",
+details:"Course introduction. Overview of Numerical Analysis."
+},
+{
+week:2,
+type:"lecture",
+date:"14/04/2026",
+topic:"Basic Concepts",
+details:"Analytical vs numerical methods."
+},
+{
+week:2,
+type:"seminar",
+date:"15/04/2026",
+topic:"Basic Concepts",
+details:"Accuracy, stability and convergence."
+},
+{
+week:3,
+type:"lecture",
+date:"21/04/2026",
+topic:"Errors",
+details:"Absolute and relative errors."
+},
+{
+week:10,
+type:"test",
+date:"09/06/2026",
+topic:"TEST 1",
+details:"Written test covering Topics 1–4."
+},
+{
+week:14,
+type:"holiday",
+date:"07/07/2026",
+topic:"Public Holiday",
+details:"No lecture."
+}
+];
+
+const plan = document.getElementById("planContainer");
+const searchBox = document.getElementById("searchBox");
+const filterBox = document.getElementById("filterBox");
+
+function renderPlan(){
+  const text = searchBox.value.toLowerCase();
+  const type = filterBox.value;
+
+  plan.innerHTML = "";
+
+  const filtered = sessions.filter(item => {
+    const matchText =
+      item.topic.toLowerCase().includes(text) ||
+      item.details.toLowerCase().includes(text) ||
+      String(item.week).includes(text);
+
+    const matchType = type === "all" || item.type === type;
+
+    return matchText && matchType;
+  });
+
+  if(filtered.length === 0){
+    plan.innerHTML = "<p>No matching sessions found.</p>";
+    return;
+  }
+
+  filtered.forEach(item => {
+    plan.innerHTML += `
+      <div class="plan-card ${item.type}">
+        <div class="week">Week ${item.week}</div>
+        <h3>${item.topic}</h3>
+        <p><strong>Date:</strong> ${item.date}</p>
+        <p>${item.details}</p>
+      </div>
+    `;
+  });
+}
+
+searchBox.addEventListener("input", renderPlan);
+filterBox.addEventListener("change", renderPlan);
+
+renderPlan();
+</script>
 
 </body>
 </html>
