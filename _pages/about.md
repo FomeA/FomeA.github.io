@@ -7,31 +7,24 @@ redirect_from:
   - /about.html
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Anna Daniel Fome</title>
-
 <style>
 
 /* GLOBAL */
 body{
-font-family: "Segoe UI", system-ui, Arial, sans-serif;
+font-family:"Segoe UI",system-ui,Arial,sans-serif;
 max-width:1100px;
 margin:auto;
 padding:22px;
-background: linear-gradient(180deg,#f7faff,#eef3fb);
+background:linear-gradient(180deg,#f7faff,#eef3fb);
 color:#2b2b2b;
 line-height:1.75;
 }
 
-/* HERO - FIXED PREMIUM LOOK */
+/* HERO */
 .hero{
 text-align:center;
 padding:70px 25px;
-background: linear-gradient(135deg,#0a2e73,#1565c0,#1e88e5);
+background:linear-gradient(135deg,#0a2e73,#1565c0,#1e88e5);
 color:white;
 border-radius:18px;
 margin-bottom:40px;
@@ -44,15 +37,22 @@ overflow:hidden;
 content:"";
 position:absolute;
 inset:-50%;
-background: radial-gradient(circle at center, rgba(255,255,255,0.15), transparent 60%);
-transform: rotate(20deg);
+background:radial-gradient(circle at center,rgba(255,255,255,.15),transparent 60%);
+transform:rotate(20deg);
 }
 
 .hero h1{
 margin:0;
 font-size:2.8rem;
-letter-spacing:0.5px;
+letter-spacing:.5px;
 font-weight:700;
+position:relative;
+z-index:1;
+}
+
+.hero p{
+position:relative;
+z-index:1;
 }
 
 .subtitle{
@@ -98,7 +98,7 @@ gap:20px;
 margin-top:20px;
 }
 
-/* CARDS - BIG IMPROVEMENT */
+/* CARDS */
 .card{
 background:white;
 padding:22px;
@@ -119,7 +119,7 @@ color:#1565c0;
 font-size:1.15rem;
 }
 
-/* NAVIGATION CARDS */
+/* NAVIGATION */
 .nav-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
@@ -146,7 +146,7 @@ background:#dbe9ff;
 box-shadow:0 10px 22px rgba(0,0,0,.1);
 }
 
-/* IMPACT SECTION */
+/* IMPACT */
 .impact{
 margin-top:45px;
 padding:25px;
@@ -157,18 +157,15 @@ box-shadow:0 8px 22px rgba(0,0,0,.06);
 }
 
 </style>
-</head>
 
-<body>
+<div class="page__content">
 
-<!-- HERO -->
 <section class="hero">
   <h1>Dr. Anna Daniel Fome</h1>
   <p class="subtitle">Applied Mathematician | Statistician | Researcher</p>
   <p>Jordan University College, Tanzania</p>
 </section>
 
-<!-- INTRO -->
 <section class="intro">
   <p>
     I am an academic and researcher in Applied Mathematics and Statistics at Jordan University College, Tanzania.
@@ -182,7 +179,6 @@ box-shadow:0 8px 22px rgba(0,0,0,.06);
   </p>
 </section>
 
-<!-- RESEARCH FOCUS -->
 <h2>Research Focus Areas</h2>
 
 <div class="grid">
@@ -209,7 +205,6 @@ box-shadow:0 8px 22px rgba(0,0,0,.06);
 
 </div>
 
-<!-- NAVIGATION -->
 <h2>Explore</h2>
 
 <div class="nav-grid">
@@ -221,7 +216,6 @@ box-shadow:0 8px 22px rgba(0,0,0,.06);
 
 </div>
 
-<!-- IMPACT -->
 <section class="impact">
   <h2>Impact Statement</h2>
   <p>
@@ -230,5 +224,4 @@ box-shadow:0 8px 22px rgba(0,0,0,.06);
   </p>
 </section>
 
-</body>
-</html>
+</div>
