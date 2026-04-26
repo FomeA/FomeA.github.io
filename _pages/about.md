@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "Anna "
+title: " "
 author_profile: true
 redirect_from:
   - /about/
@@ -18,143 +18,142 @@ redirect_from:
 
 /* GLOBAL */
 body{
-font-family: "Segoe UI", Arial, sans-serif;
+font-family: "Segoe UI", system-ui, Arial, sans-serif;
 max-width:1100px;
 margin:auto;
-padding:20px;
-background: radial-gradient(circle at top,#f5f9ff,#eef3fb);
+padding:22px;
+background: linear-gradient(180deg,#f7faff,#eef3fb);
 color:#2b2b2b;
-line-height:1.7;
+line-height:1.75;
 }
 
-/* HERO */
+/* HERO - FIXED PREMIUM LOOK */
 .hero{
 text-align:center;
-padding:60px 25px;
-background: linear-gradient(135deg,#0b3d91,#1565c0,#1e88e5);
+padding:70px 25px;
+background: linear-gradient(135deg,#0a2e73,#1565c0,#1e88e5);
 color:white;
-border-radius:16px;
-margin-bottom:35px;
-box-shadow:0 12px 30px rgba(0,0,0,.15);
+border-radius:18px;
+margin-bottom:40px;
+box-shadow:0 18px 40px rgba(0,0,0,.18);
 position:relative;
 overflow:hidden;
 }
 
-.hero::after{
+.hero::before{
 content:"";
 position:absolute;
-top:-50%;
-left:-50%;
-width:200%;
-height:200%;
-background: radial-gradient(circle, rgba(255,255,255,0.12), transparent 60%);
-transform: rotate(25deg);
+inset:-50%;
+background: radial-gradient(circle at center, rgba(255,255,255,0.15), transparent 60%);
+transform: rotate(20deg);
 }
 
 .hero h1{
 margin:0;
-font-size:2.6rem;
-letter-spacing:.5px;
+font-size:2.8rem;
+letter-spacing:0.5px;
+font-weight:700;
 }
 
 .subtitle{
-font-size:1.2rem;
+font-size:1.25rem;
 opacity:.95;
-margin-top:8px;
+margin-top:10px;
 font-weight:300;
 }
 
-/* TEXT */
-.intro{
-margin-bottom:25px;
-color:#444;
-font-size:1.05rem;
-}
-
-/* HEADINGS */
+/* SECTION TITLES */
 h2{
 color:#0d47a1;
-margin-top:40px;
-font-size:1.5rem;
+margin-top:45px;
+font-size:1.55rem;
 position:relative;
-padding-left:12px;
+padding-left:14px;
+font-weight:600;
 }
 
 h2::before{
 content:"";
 position:absolute;
 left:0;
-top:5px;
-width:4px;
+top:6px;
+width:5px;
 height:22px;
 background:#1e88e5;
-border-radius:2px;
+border-radius:3px;
+}
+
+/* INTRO */
+.intro{
+font-size:1.08rem;
+color:#444;
+margin-bottom:30px;
 }
 
 /* GRID */
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-gap:18px;
-margin-top:18px;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+margin-top:20px;
 }
 
-/* CARDS */
+/* CARDS - BIG IMPROVEMENT */
 .card{
 background:white;
-padding:20px;
-border-radius:14px;
-box-shadow:0 4px 14px rgba(0,0,0,.08);
+padding:22px;
+border-radius:16px;
+box-shadow:0 6px 18px rgba(0,0,0,.08);
 transition:all .25s ease;
-border:1px solid rgba(0,0,0,.04);
+border:1px solid rgba(0,0,0,.05);
 }
 
 .card:hover{
-transform:translateY(-6px);
-box-shadow:0 12px 25px rgba(0,0,0,.12);
+transform:translateY(-8px);
+box-shadow:0 16px 30px rgba(0,0,0,.14);
 }
 
 .card h3{
 margin-top:0;
 color:#1565c0;
-font-size:1.1rem;
+font-size:1.15rem;
 }
 
-/* NAVIGATION */
+/* NAVIGATION CARDS */
 .nav-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
 gap:15px;
-margin-top:18px;
+margin-top:20px;
 }
 
 .nav-card{
 display:block;
 text-align:center;
 padding:18px;
-background:linear-gradient(135deg,#eaf2ff,#f6f9ff);
-border-radius:12px;
+background:linear-gradient(135deg,#f2f7ff,#eaf2ff);
+border-radius:14px;
 text-decoration:none;
 color:#0d47a1;
 font-weight:600;
-transition:.25s;
 border:1px solid #e3ecff;
+transition:all .25s ease;
 }
 
 .nav-card:hover{
-transform:translateY(-4px);
+transform:translateY(-5px);
 background:#dbe9ff;
-box-shadow:0 8px 18px rgba(0,0,0,.08);
+box-shadow:0 10px 22px rgba(0,0,0,.1);
 }
 
-/* IMPACT */
+/* IMPACT SECTION */
 .impact{
-margin-top:40px;
-padding:22px;
+margin-top:45px;
+padding:25px;
 background:linear-gradient(135deg,#f7f9fc,#eef4ff);
 border-left:6px solid #1565c0;
-border-radius:12px;
-box-shadow:0 6px 18px rgba(0,0,0,.05);
+border-radius:14px;
+box-shadow:0 8px 22px rgba(0,0,0,.06);
 }
 
 </style>
