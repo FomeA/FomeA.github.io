@@ -179,7 +179,7 @@ box-shadow:0 8px 22px rgba(0,0,0,.06);
   </p>
 </section>
 
-
+<h2>Research</h2>
 <h2>Explore</h2>
 
 <div class="nav-grid">
