@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: " "
+title: "Dr. Anna Fome"
 author_profile: true
 redirect_from:
   - /about/
@@ -161,7 +161,6 @@ box-shadow:0 8px 22px rgba(0,0,0,.06);
 <div class="page__content">
 
 <section class="hero">
-  <h1>Dr. Anna Daniel Fome</h1>
   <p class="subtitle">Applied Mathematician | Statistician | Researcher</p>
   <!--<p>Jordan University College, Tanzania</p>-->
 </section>
