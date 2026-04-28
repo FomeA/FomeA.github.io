@@ -1,0 +1,250 @@
+---
+layout: archive
+title: "Research"
+permalink: /research/
+author_profile: true
+---
+
+<div class="page__content">
+
+<!-- HERO -->
+<section class="hero-box">
+  <p>
+    Applied Mathematics, Statistics, and interdisciplinary research focused on solving
+    real-world challenges in health, education, and development.
+  </p>
+</section>
+
+<!-- SEARCH -->
+<div class="search-box">
+  <input type="text" id="searchInput" placeholder="Search research area, project, or keyword...">
+</div>
+
+<!-- ===================== -->
+<!-- RESEARCH AREAS -->
+<!-- ===================== -->
+<h2 class="section-title">Research Areas</h2>
+
+<div class="grid" id="researchAreas">
+
+<div class="card research">
+  <h3>🦠 Epidemiological Modelling</h3>
+  <p>
+    Mathematical models for infectious disease transmission, intervention analysis,
+    and public health planning.
+  </p>
+  <span>Applied Mathematics</span>
+</div>
+
+<div class="card research">
+  <h3>📊 Biostatistics</h3>
+  <p>
+    Statistical methods for medical, biological, and population data analysis.
+  </p>
+  <span>Statistics</span>
+</div>
+
+<div class="card research">
+  <h3>🎓 Education Analytics</h3>
+  <p>
+    Student performance analysis, learning outcomes, and evidence-based education planning.
+  </p>
+  <span>Education Research</span>
+</div>
+
+<div class="card research">
+  <h3>📈 Data Science for Development</h3>
+  <p>
+    Data-driven approaches for regional planning, policy evaluation, and decision-making.
+  </p>
+  <span>Data Science</span>
+</div>
+
+</div>
+
+<!-- ===================== -->
+<!-- CURRENT PROJECTS -->
+<!-- ===================== -->
+<h2 class="section-title">Current / Emerging Projects</h2>
+
+<div class="grid" id="projects">
+
+<div class="card project">
+  <h3>Malaria Transmission Dynamics</h3>
+  <p>
+    Modeling transmission trends and intervention strategies in endemic communities.
+  </p>
+  <span>Health Systems</span>
+</div>
+
+<div class="card project">
+  <h3>Student Retention Analysis</h3>
+  <p>
+    Statistical predictors of academic persistence and student success.
+  </p>
+  <span>Higher Education</span>
+</div>
+
+<div class="card project">
+  <h3>Community Health Data Systems</h3>
+  <p>
+    Using data tools to strengthen planning and service delivery.
+  </p>
+  <span>Public Policy</span>
+</div>
+
+</div>
+
+<!-- ===================== -->
+<!-- METHODS -->
+<!-- ===================== -->
+<h2 class="section-title">Methods & Tools</h2>
+
+<div class="grid" id="methods">
+
+<div class="card method">
+  <h3>Quantitative Modelling</h3>
+  <p>Differential equations, simulations, forecasting, optimization.</p>
+  <span>Modelling</span>
+</div>
+
+<div class="card method">
+  <h3>Statistical Analysis</h3>
+  <p>Regression, hypothesis testing, multivariate methods.</p>
+  <span>Statistics</span>
+</div>
+
+<div class="card method">
+  <h3>Software Tools</h3>
+  <p>R, SPSS, Excel, Python, LaTeX.</p>
+  <span>Computing</span>
+</div>
+
+</div>
+
+<!-- ===================== -->
+<!-- IMPACT -->
+<!-- ===================== -->
+<section class="impact">
+  <h2>Research Vision</h2>
+  <p>
+    My research aims to connect mathematics and evidence-based decision making
+    to improve health systems, education quality, and sustainable development in Tanzania and beyond.
+  </p>
+</section>
+
+</div>
+
+<!-- ===================== -->
+<!-- STYLE -->
+<!-- ===================== -->
+<style>
+  
+.hero-box{
+background:linear-gradient(135deg,#dff7e8,#eefcf3);
+padding:24px;
+border-radius:14px;
+border-left:6px solid #2c7be5;
+margin-bottom:22px;
+box-shadow:0 8px 18px rgba(0,0,0,.06);
+color:#1e4620;
+}
+
+.hero-box h1{
+margin:0 0 10px;
+color:#14532d;
+}
+
+.search-box{
+position:sticky;
+top:10px;
+z-index:10;
+background:#fff;
+padding:8px 0;
+margin-bottom:10px;
+}
+
+.search-box input{
+width:100%;
+padding:12px;
+font-size:16px;
+border-radius:8px;
+border:1px solid #ccc;
+}
+
+.section-title{
+margin-top:35px;
+margin-bottom:15px;
+color:#0d47a1;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:18px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:14px;
+box-shadow:0 4px 14px rgba(0,0,0,.07);
+transition:.25s ease;
+color:#222;
+}
+
+.card:hover{
+transform:translateY(-6px);
+box-shadow:0 14px 26px rgba(0,0,0,.12);
+}
+
+.card h3{
+margin-top:0;
+color:#1565c0;
+}
+
+.card span{
+display:inline-block;
+margin-top:10px;
+font-size:.8rem;
+padding:4px 10px;
+background:#eef4ff;
+border-radius:20px;
+}
+
+.project span{
+background:#fff3e0;
+}
+
+.method span{
+background:#e8f5e9;
+}
+
+.impact{
+margin-top:40px;
+padding:24px;
+background:linear-gradient(135deg,#eefcf3,#dff7e8);
+border-left:6px solid #34a853;
+border-radius:14px;
+box-shadow:0 8px 18px rgba(0,0,0,.06);
+color:#1e4620;
+}
+  
+</style>
+
+<!-- ===================== -->
+<!-- SCRIPT -->
+<!-- ===================== -->
+<script>
+const input = document.getElementById("searchInput");
+const cards = document.querySelectorAll(".card");
+
+input.addEventListener("input", function(){
+let val = this.value.toLowerCase();
+
+cards.forEach(card=>{
+let text = card.innerText.toLowerCase();
+card.style.display = text.includes(val) ? "block" : "none";
+});
+});
+</script>
