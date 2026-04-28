@@ -6,10 +6,11 @@
 #
 # NOTE that only one of the CV options should be selected, the first is for the
 #      Markdown formatted page while the second is generated using JSON.
+#
+#<!--- title: "Home"
+#    url: /-->
 
 main:
-  - title: "Home"
-    url: /
  
   - title: "Teaching"
     url: /teaching/ 
