@@ -1,165 +1,206 @@
----
-layout: archive
-title: "Girls in STEM: Build, Create, Lead "
-permalink: /inspiration/
-author_profile: true
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Girls in STEM: Build, Create, Lead</title>
 
 <style>
-  .story {
-    max-width: 800px;
-    margin: auto;
-    padding: 30px;
-    font-family: Arial, sans-serif;
-    line-height: 1.8;
+  /* Global Styles */
+  body {
+    margin: 0;
+    background: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.7;
     color: #222;
   }
 
-  .hero {
+  .page__content {
+    max-width: 900px;
+    margin: auto;
+    padding: 40px 20px;
+  }
+
+  /* Header Section */
+  .page-header {
     text-align: center;
-    padding: 70px 20px;
-    background: linear-gradient(135deg, #0a2e73, #1e88e5);
-    color: white;
-    border-radius: 16px;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
   }
 
-  .hero h1 {
-    font-size: 2.4rem;
+  .page-header h1 {
+    font-size: 2.8rem;
     margin-bottom: 10px;
+    color: #2e7d32;
   }
 
-  .hero p {
+  .subtitle {
     font-size: 1.2rem;
-    opacity: 0.95;
+    color: #666;
   }
 
-  section {
+  /* Content Cards */
+  .content-card {
+    display: flex;
+    align-items: center;
+    gap: 30px;
     margin: 60px 0;
+    background: #f9f9f9;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
   }
 
-  .fade-box {
-    padding: 20px;
-    border-left: 4px solid #4CAF50;
-    background: #f7f9fc;
-    border-radius: 10px;
+  .content-card.reverse {
+    flex-direction: row-reverse;
   }
 
+  .card-text {
+    flex: 1.2;
+    padding: 30px;
+  }
+
+  .card-image {
+    flex: 1;
+    height: 350px;
+  }
+
+  .card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Typography within Cards */
   blockquote {
-    margin: 30px 0;
-    padding: 15px;
+    border-left: 5px solid #4CAF50;
+    padding: 15px 20px;
+    margin: 0 0 20px 0;
     font-style: italic;
-    background: #f1f1f1;
-    border-left: 4px solid #4CAF50;
+    font-size: 1.25rem;
+    background: #fff;
+    border-radius: 0 8px 8px 0;
   }
 
+  .card-text p {
+    margin-bottom: 0;
+    font-size: 1.05rem;
+    color: #444;
+  }
+
+  /* Call to Action */
   .cta {
     text-align: center;
-    margin-top: 50px;
+    margin-top: 60px;
+    padding: 40px;
+    background: #e8f5e9;
+    border-radius: 15px;
   }
 
   .cta a {
     display: inline-block;
-    padding: 14px 20px;
+    padding: 15px 30px;
     background: #4CAF50;
     color: white;
     text-decoration: none;
+    font-weight: bold;
     border-radius: 8px;
-    font-weight: 600;
+    transition: transform 0.2s, background 0.3s;
   }
 
   .cta a:hover {
-    background: #3e8e41;
+    background: #388e3c;
+    transform: translateY(-2px);
+  }
+
+  /* Mobile Optimization */
+  @media (max-width: 768px) {
+    .content-card, .content-card.reverse {
+      flex-direction: column;
+    }
+    .card-image {
+      width: 100%;
+      height: 250px;
+    }
+    .page-header h1 {
+      font-size: 2rem;
+    }
   }
 </style>
+</head>
 
-<div class="story">
+<body>
 
-<!-- HERO -->
-<section class="hero">
-  <!--<h2> Girls in STEM: Build, Create, Lead</h2> -->
-  <p>Empowering young girls to shape the future through science and innovation</p>
-</section>
+<div class="page__content">
 
-<!-- CHAPTER 1 -->
-<section>
-  <div class="fade-box">
-    <p>
-      This page is for young girls exploring STEM—Mathematics, Science, Engineering, and Technology.
-    </p>
+  <!-- Header -->
+  <header class="page-header">
+    <h1>Girls in STEM: Build, Create, Lead</h1>
+    <p class="subtitle">Empowering young girls to explore, innovate, and shape the future.</p>
+  </header>
+
+  <!-- Intro Paragraph -->
+  <p style="text-align: center; max-width: 700px; margin: 0 auto 40px;">
+    STEM is not just about formulas; it is about the courage to ask "Why?" and the persistence to find the answer. 
+    Below are the pillars of the STEM journey for every young girl.
+  </p>
+
+  <!-- Card 1: Curiosity -->
+  <section class="content-card">
+    <div class="card-text">
+      <blockquote>"STEM is not for a few—it is for anyone willing to learn, question, and explore."</blockquote>
+      <p>Scientific discovery begins in the classroom. When you pick up a microscope or a test tube, you aren't just doing homework—you are exploring the hidden mechanics of our world.</p>
+    </div>
+    <div class="card-image">
+      <img src="https://pexels.com" alt="Young girl looking through a microscope in a bright classroom">
+    </div>
+  </section>
+
+  <!-- Card 2: Persistence -->
+  <section class="content-card reverse">
+    <div class="card-text">
+      <blockquote>"STEM is not about being perfect. It is about being curious, persistent, and willing to try again."</blockquote>
+      <p>In robotics and engineering, things rarely work on the first try. Failure is simply data that tells you how to do it better the next time. Build, break, and rebuild.</p>
+    </div>
+    <div class="card-image">
+      <img src="https://pexels.com" alt="Hands working on a complex circuit board and electronic components">
+    </div>
+  </section>
+
+  <!-- Card 3: Grit -->
+  <section class="content-card">
+    <div class="card-text">
+      <blockquote>"Your journey in STEM begins the moment you decide not to give up."</blockquote>
+      <p>Every expert was once a beginner. Whether you are solving a complex equation or coding your first app, your growth comes from the moments when you choose to keep going.</p>
+    </div>
+    <div class="card-image">
+      <img src="https://pexels.com" alt="Young woman focusing while working on a laptop with code on the screen">
+    </div>
+  </section>
+
+  <!-- Card 4: Belonging -->
+  <section class="content-card reverse">
+    <div class="card-text">
+      <blockquote>"You belong in laboratories, classrooms, engineering spaces, and research fields."</blockquote>
+      <p>The future of medicine, climate science, and technology needs your perspective. Your voice is essential in ensuring that innovation serves everyone, everywhere.</p>
+    </div>
+    <div class="card-image">
+      <img src="https://pexels.com" alt="Female scientist working in a professional laboratory environment">
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <div class="cta">
+    <h3>Ready to take the next step?</h3>
+    <p>Read about the current landscape of education and why we need more women in Tanzanian universities.</p>
+    <a href="https://thecitizen.co.tz"
+       target="_blank" rel="noopener noreferrer">
+      Read My Featured Work
+    </a>
   </div>
-</section>
-
-<!-- CHAPTER 2 -->
-<section>
-  <p>
-    Many students doubt themselves in STEM not because they lack ability, but because they lack encouragement.
-  </p>
-
-  <p>
-    But ability grows with learning. Confidence grows with practice.
-  </p>
-</section>
-
-<!-- QUOTE -->
-<section>
-  <blockquote>
-    STEM is for anyone willing to learn, question, and explore.
-  </blockquote>
-</section>
-
-<!-- CHAPTER 3 -->
-<section>
-  <p>
-    Science and mathematics shape the world—from healthcare to technology to innovation.
-  </p>
-
-  <p>
-    Every solution to real-world problems begins with curiosity.
-  </p>
-</section>
-
-<!-- CHAPTER 4 -->
-<section>
-  <p>
-    Struggle does not mean failure. It means you are learning something new.
-  </p>
-
-  <p>
-    Every expert was once a beginner who refused to give up.
-  </p>
-</section>
-
-<!-- QUOTE -->
-<section>
-  <blockquote>
-    Your ideas matter. Your voice belongs in science and innovation.
-  </blockquote>
-</section>
-
-<!-- CHAPTER 5 -->
-<section>
-  <div class="fade-box">
-    <p>
-      To young girls in STEM: you belong in laboratories, classrooms, engineering spaces, and research fields.
-    </p>
-
-    <p>
-      The future of science is also your story.
-    </p>
-  </div>
-</section>
-
-<!-- FINAL CTA -->
-<section class="cta">
-  <p>
-    Your journey begins the moment you refuse to give up.
-  </p>
-
-  <a href="https://www.thecitizen.co.tz/tanzania/oped/tz-s-universities-have-twice-as-many-male-as-female-students--2627586"
-     target="_blank" rel="noopener noreferrer">
-    Read My Featured Work
-  </a>
-</section>
 
 </div>
+
+</body>
+</html>
