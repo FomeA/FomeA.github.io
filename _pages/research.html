@@ -52,7 +52,27 @@ author_profile: true
 <!-- ===================== -->
 <!-- PUBLICATIONS SECTION -->
 <!-- ===================== -->
+
+  <!-- PUBLICATIONS SECTION -->
+<!-- ===================== -->
 <h2 class="section-title">Selected Publications</h2>
+
+<div id="publicationsList" class="pub-container">
+  {% for post in site.publications reversed %}
+    <div class="pub-row card">
+      <div class="pub-content">
+        <!-- This includes your Jekyll title/date/citation -->
+        {% include archive-single.html %}
+      </div>
+      <div class="pub-meta">
+        <span class="pub-tag">{{ post.category }}</span>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+  
+<!-- <h2 class="section-title">Selected Publications</h2>
 <div class="pub-info">
   {% if site.author.googlescholar %}
     <p>Find full citations and metrics on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</p>
@@ -70,7 +90,8 @@ author_profile: true
       </div>
     </div>
   {% endfor %}
-</div>
+</div>-->
+
 
 <!-- ===================== -->
 <!-- VISION & LEADERSHIP -->
@@ -112,26 +133,80 @@ author_profile: true
 .research span { display: inline-block; margin-top: 10px; font-size: .7rem; padding: 3px 10px; background: #eef4ff; border-radius: 20px; color: #1565c0; font-weight: 600; }
 
 /* PROFESSIONAL PUBLICATION ROWS */
-#publicationsList { display: flex; flex-direction: column; gap: 0; border-top: 1px solid #eee; }
-.pub-row { 
-  display: flex !important; 
-  flex-direction: row;
-  justify-content: space-between; 
-  align-items: center; 
-  padding: 15px 10px !important; 
-  margin: 0 !important; 
-  background: #fff !important; 
-  border: none !important; 
-  border-bottom: 1px solid #eee !important; 
-  border-radius: 0 !important; 
-  box-shadow: none !important; 
+/* Force the container to be a vertical list */
+.pub-container {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0 !important;
+  width: 100% !important;
+  border-top: 1px solid #eee;
 }
-.pub-row:hover { background: #f8fbff !important; transform: none !important; }
-.pub-content { flex: 4; }
-.pub-content h2, .pub-content h3 { font-size: 1rem !important; margin: 0 0 5px 0 !important; color: #222 !important; font-weight: 600 !important; border:none !important; }
-.pub-meta { flex: 1; text-align: right; }
-.pub-category-tag { font-size: 0.65rem !important; text-transform: uppercase; letter-spacing: 0.8px; background: #f0f4f8 !important; color: #546e7a !important; padding: 3px 10px !important; border-radius: 4px !important; }
 
+/* Force each row to be horizontal and full width */
+.pub-row {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  width: 100% !important;
+  padding: 15px 0 !important; /* Vertical spacing between list items */
+  margin: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  border-bottom: 1px solid #eee !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+
+.pub-row:hover {
+  background: #f9f9f9 !important;
+  transform: none !important; /* Removes the "big card" jumping effect */
+}
+
+.pub-content {
+  flex: 4 !important;
+  text-align: left !important;
+}
+
+/* Make font professional and compact */
+.pub-content h2, .pub-content h3 {
+  font-size: 1rem !important;
+  margin: 0 !important;
+  font-weight: 500 !important;
+  color: #1565c0 !important;
+}
+
+.pub-meta {
+  flex: 1 !important;
+  text-align: right !important;
+}
+
+.pub-tag {
+  font-size: 0.65rem !important;
+  text-transform: uppercase;
+  background: #f0f4f8 !important;
+  color: #546e7a !important;
+  padding: 3px 8px !important;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+/* Fix Search Script for Flexbox */
+.hidden-pub {
+  display: none !important;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+  .pub-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+  .pub-meta {
+    margin-top: 8px !important;
+    text-align: left !important;
+  }
+}
 /* Vision/Mission Card */
 .mission-card { border-left: 6px solid #e65100; background: #fffbf5; margin-top: 40px; padding: 25px; }
 .mission-card h3 { color: #e65100 !important; margin-top: 0; }
@@ -146,17 +221,22 @@ author_profile: true
 
 <script>
 const input = document.getElementById("searchInput");
-const cards = document.querySelectorAll(".card");
+const allCards = document.querySelectorAll(".card");
 
 input.addEventListener("input", function(){
   let val = this.value.toLowerCase();
-  cards.forEach(card => {
+  
+  allCards.forEach(card => {
     let text = card.innerText.toLowerCase();
-    // Use flex for pub-rows to keep layout, block for others
     if (text.includes(val)) {
-      card.style.display = card.classList.contains('pub-row') ? "flex" : "block";
+      // Restore display: flex for rows, block for others
+      if (card.classList.contains('pub-row')) {
+        card.style.setProperty('display', 'flex', 'important');
+      } else {
+        card.style.setProperty('display', 'block', 'important');
+      }
     } else {
-      card.style.display = "none";
+      card.style.setProperty('display', 'none', 'important');
     }
   });
 });
