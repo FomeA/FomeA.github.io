@@ -47,22 +47,30 @@ author_profile: true
 <!-- TRAINING SECTION -->
 <!-- ===================== -->
 <section aria-labelledby="training-title">
-  <h2 id="training-title" class="section-title">Training (Capacity Building)</h2>
-  <div class="grid" id="training-grid">
-    
-    <!-- NEW RESEARCH GROUP CARD -->
-    <a class="card training research-highlight" href="/juco-dsg/">
+  <h2 id="training-title" class="section-title">Training & Research Initiatives</h2>
+  
+  <!-- RESEARCH GROUP FEATURE BANNER (Placed cleanly outside the grid) -->
+  <section class="research-hero-banner">
+    <div class="hero-inner">
+      <p class="kicker">Call for Participants</p>
       <h3>JUCo Data Science & Modelling Research Group</h3>
-      <p>An interdisciplinary initiative focused on data analysis, R programming, and mathematical modelling for real-world public health problems in Tanzania.</p>
-      <span class="tag">Research Initiative</span>
-    </a>
-
-    <div class="card training">
-      <h3>Data Analysis with Excel</h3>
-      <p>Basic to advanced Excel for research and reporting.</p>
-      <span class="tag">Short Course</span>
+      <p class="subtitle">
+        Interdisciplinary Research Initiative &middot; Jordan University College, Morogoro
+      </p>
+      <p class="lead">
+        Learn data science and mathematical modelling by working on real problems in education,
+        health, and development.
+      </p>
+      <div class="cta-row">
+        <a href="/juco-dsg/" class="btn primary">Apply Now</a>
+        <a href="/juco-dsg/" class="btn ghost">Learn More</a>
+      </div>
     </div>
+  </section>
 
+  <!-- SHORT COURSES GRID -->
+  <h3 class="sub-section-title">Short Courses & Workshops</h3>
+  <div class="grid" id="training-grid">
     <div class="card training">
       <h3>Research Data Analysis</h3>
       <p>Statistical analysis using SPSS and R.</p>
@@ -114,6 +122,13 @@ author_profile: true
   color: #0d47a1;
 }
 
+.sub-section-title {
+  margin-top: 25px;
+  margin-bottom: 15px;
+  color: #444;
+  font-size: 1.2rem;
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -137,11 +152,6 @@ author_profile: true
 .card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 20px rgba(0,0,0,.1);
-}
-
-.card:focus-visible {
-  outline: 3px solid #2c7be5;
-  outline-offset: 2px;
 }
 
 .card h3 {
@@ -172,12 +182,81 @@ author_profile: true
   color: #e65100;
 }
 
-/* Distinct border accent for the main research group card */
-.research-highlight {
-  border: 2px solid #2c7be5;
+/* NEW RESEARCH HERO BANNER STYLES */
+.research-hero-banner {
+  background: linear-gradient(135deg, #0d47a1, #1565c0);
+  color: white;
+  padding: 30px;
+  border-radius: 14px;
+  margin-bottom: 25px;
+  box-shadow: 0 6px 15px rgba(13, 71, 161, 0.15);
 }
 
-.card.is-hidden {
+.research-hero-banner h3 {
+  color: white;
+  margin: 5px 0 10px 0;
+  font-size: 1.6rem;
+}
+
+.research-hero-banner .kicker {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 1.5px;
+  background: #ff9800;
+  color: white;
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-weight: bold;
+  margin: 0 0 10px 0;
+}
+
+.research-hero-banner .subtitle {
+  font-size: 0.95rem;
+  opacity: 0.85;
+  margin: 0 0 15px 0;
+  font-style: italic;
+}
+
+.research-hero-banner .lead {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  margin: 0 0 20px 0;
+}
+
+.cta-row {
+  display: flex;
+  gap: 12px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.95rem;
+  transition: background 0.2s;
+}
+
+.btn.primary {
+  background: #ff9800;
+  color: white;
+}
+
+.btn.primary:hover {
+  background: #e65100;
+}
+
+.btn.ghost {
+  border: 2px solid white;
+  color: white;
+}
+
+.btn.ghost:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.card.is-hidden, .research-hero-banner.is-hidden {
   display: none !important;
 }
 </style>
@@ -189,10 +268,12 @@ author_profile: true
 document.addEventListener("DOMContentLoaded", () => {
   const input = document.getElementById("searchInput");
   const cards = document.querySelectorAll(".card");
+  const banner = document.querySelector(".research-hero-banner");
 
   input.addEventListener("input", function() {
     const val = this.value.trim().toLowerCase();
 
+    // Filter cards
     cards.forEach(card => {
       const text = card.textContent.toLowerCase();
       if (text.includes(val)) {
@@ -201,6 +282,16 @@ document.addEventListener("DOMContentLoaded", () => {
         card.classList.add("is-hidden");
       }
     });
+
+    // Also filter the banner so it goes away if search doesn't match
+    if (banner) {
+      const bannerText = banner.textContent.toLowerCase();
+      if (bannerText.includes(val)) {
+        banner.classList.remove("is-hidden");
+      } else {
+        banner.classList.add("is-hidden");
+      }
+    }
   });
 });
 </script>
