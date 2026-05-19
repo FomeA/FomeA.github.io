@@ -8,6 +8,7 @@ author_profile: true
 <div class="landing">
 
 <style>
+
 /* ================= BASE ================= */
 .landing{
   font-family: Inter, system-ui, sans-serif;
@@ -23,9 +24,13 @@ author_profile: true
   text-align:center;
 }
 
-.hero-content{ max-width:900px; margin:auto; }
+.hero-content{
+  max-width:900px;
+  margin:auto;
+}
 
 .badge{
+  display:inline-block;
   background:rgba(255,255,255,.12);
   padding:6px 14px;
   border-radius:999px;
@@ -34,44 +39,69 @@ author_profile: true
   text-transform:uppercase;
 }
 
-.hero h1{ font-size:3rem; margin:20px 0 10px; }
+.hero h1{
+  font-size:3rem;
+  margin:20px 0 10px;
+}
 
-.subtitle{ opacity:.8; }
+.subtitle{
+  opacity:.8;
+}
 
-.lead{ font-size:1.2rem; line-height:1.8; }
+.lead{
+  font-size:1.2rem;
+  line-height:1.8;
+}
 
 .cta{
   margin-top:25px;
   display:flex;
   justify-content:center;
   gap:15px;
+  flex-wrap:wrap;
 }
 
-/* ================= BUTTONS ================= */
+/* ================= BUTTONS (FIXED VISIBILITY) ================= */
 .btn{
-  padding:14px 22px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:14px 24px;
   border-radius:14px;
   text-decoration:none;
-  font-weight:600;
-  transition:.2s ease;
+  font-weight:700;
+  transition:all .25s ease;
+  letter-spacing:.02em;
 }
 
+/* PRIMARY BUTTON (Apply Now) */
 .btn.primary{
-  background:white;
-  color:#0f172a;
+  background:#ffffff;
+  color:#0f172a !important;
+  border:2px solid #ffffff;
+  box-shadow:0 10px 25px rgba(0,0,0,.25);
 }
 
 .btn.primary:hover{
-  transform:translateY(-2px);
+  transform:translateY(-3px);
+  box-shadow:0 15px 35px rgba(0,0,0,.35);
 }
 
+/* GHOST BUTTON */
 .btn.ghost{
-  border:1px solid rgba(255,255,255,.3);
-  color:white;
+  border:1px solid rgba(255,255,255,.5);
+  color:white !important;
+  background:rgba(255,255,255,.08);
+  backdrop-filter:blur(10px);
 }
 
+.btn.ghost:hover{
+  background:rgba(255,255,255,.18);
+}
+
+/* BIG CTA */
 .btn.big{
-  padding:16px 28px;
+  padding:16px 30px;
   font-size:1.1rem;
 }
 
@@ -133,7 +163,7 @@ author_profile: true
   padding:18px;
   border-radius:16px;
   box-shadow:0 8px 20px rgba(0,0,0,.05);
-  transition:.2s;
+  transition:.2s ease;
 }
 
 .tile:hover{
@@ -181,6 +211,18 @@ author_profile: true
   color:white;
   text-align:center;
 }
+
+/* ================= MOBILE ================= */
+@media(max-width:768px){
+  .hero h1{
+    font-size:2.2rem;
+  }
+
+  .split{
+    grid-template-columns:1fr;
+  }
+}
+
 </style>
 
 <!-- ================= HERO ================= -->
