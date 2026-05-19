@@ -7,64 +7,241 @@ author_profile: true
 
 <div class="landing">
 
+<style>
+/* ================= BASE ================= */
+.landing{
+  font-family: Inter, system-ui, sans-serif;
+  color:#0f172a;
+}
+
+/* ================= HERO ================= */
+.hero{
+  background: linear-gradient(135deg,#0f172a,#1e293b);
+  color:white;
+  padding:100px 40px;
+  border-radius:30px;
+  text-align:center;
+}
+
+.hero-content{ max-width:900px; margin:auto; }
+
+.badge{
+  background:rgba(255,255,255,.12);
+  padding:6px 14px;
+  border-radius:999px;
+  font-size:.75rem;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+}
+
+.hero h1{ font-size:3rem; margin:20px 0 10px; }
+
+.subtitle{ opacity:.8; }
+
+.lead{ font-size:1.2rem; line-height:1.8; }
+
+.cta{
+  margin-top:25px;
+  display:flex;
+  justify-content:center;
+  gap:15px;
+}
+
+/* ================= BUTTONS ================= */
+.btn{
+  padding:14px 22px;
+  border-radius:14px;
+  text-decoration:none;
+  font-weight:600;
+  transition:.2s ease;
+}
+
+.btn.primary{
+  background:white;
+  color:#0f172a;
+}
+
+.btn.primary:hover{
+  transform:translateY(-2px);
+}
+
+.btn.ghost{
+  border:1px solid rgba(255,255,255,.3);
+  color:white;
+}
+
+.btn.big{
+  padding:16px 28px;
+  font-size:1.1rem;
+}
+
+/* ================= STATS ================= */
+.stats{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:15px;
+  margin-top:-40px;
+  padding:0 20px;
+}
+
+.stat{
+  background:white;
+  padding:20px;
+  border-radius:18px;
+  text-align:center;
+  box-shadow:0 10px 30px rgba(0,0,0,.06);
+}
+
+.stat h3{
+  font-size:2rem;
+  margin:0;
+  color:#2563eb;
+}
+
+/* ================= SECTIONS ================= */
+.section{
+  margin-top:70px;
+  text-align:center;
+}
+
+.section h2{
+  font-size:2rem;
+  margin-bottom:20px;
+}
+
+/* ================= CARD ================= */
+.card{
+  background:white;
+  padding:25px;
+  border-radius:20px;
+  max-width:900px;
+  margin:auto;
+  box-shadow:0 10px 30px rgba(0,0,0,.05);
+  line-height:1.8;
+}
+
+/* ================= GRID ================= */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:15px;
+  margin-top:30px;
+}
+
+.tile{
+  background:white;
+  padding:18px;
+  border-radius:16px;
+  box-shadow:0 8px 20px rgba(0,0,0,.05);
+  transition:.2s;
+}
+
+.tile:hover{
+  transform:translateY(-5px);
+}
+
+/* ================= SPLIT ================= */
+.split{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+  padding:0 20px;
+}
+
+.panel.dark{
+  background:#0f172a;
+  color:white;
+  padding:25px;
+  border-radius:20px;
+  text-align:left;
+}
+
+/* ================= STEPS ================= */
+.steps{
+  max-width:700px;
+  margin:auto;
+  text-align:left;
+  display:grid;
+  gap:12px;
+}
+
+.steps div{
+  background:white;
+  padding:15px;
+  border-radius:14px;
+  box-shadow:0 8px 20px rgba(0,0,0,.05);
+}
+
+/* ================= FINAL CTA ================= */
+.final-cta{
+  margin-top:80px;
+  padding:70px 30px;
+  border-radius:30px;
+  background:linear-gradient(135deg,#2563eb,#1e40af);
+  color:white;
+  text-align:center;
+}
+</style>
+
 <!-- ================= HERO ================= -->
 <section class="hero">
   <div class="hero-content">
 
-    <span class="badge">CALL FOR PARTICIPANTS</span>
+    <span class="badge">RESEARCH INITIATIVE</span>
 
-    <h1>JUCo Data Science & Modelling Research Group</h1>
+    <h1>JUCo DSG Programme</h1>
 
     <p class="subtitle">
-      An Interdisciplinary Research Initiative · Jordan University College, Morogoro
+      Data Science & Modelling Research Group · Jordan University College, Morogoro
     </p>
 
     <p class="lead">
-      A structured research training group where students learn data science, statistics,
-      and mathematical modelling by solving real problems in education, health, and development in Tanzania.
+      A structured research training programme where students develop skills in data science,
+      statistics, and mathematical modelling through guided real-world projects.
     </p>
 
     <div class="cta">
       <a href="/juco-dsg-apply/" class="btn primary">Apply Now</a>
-      <a href="#about" class="btn ghost">Learn More</a>
+      <a href="#overview" class="btn ghost">Explore Programme</a>
     </div>
 
   </div>
 </section>
 
-<!-- ================= QUICK STATS ================= -->
+<!-- ================= STATS ================= -->
 <section class="stats">
   <div class="stat"><h3>10–15</h3><p>Cohort Size</p></div>
-  <div class="stat"><h3>12</h3><p>Months Training</p></div>
-  <div class="stat"><h3>Weekly</h3><p>Research Sessions</p></div>
-  <div class="stat"><h3>R</h3><p>Open-Source Tools</p></div>
+  <div class="stat"><h3>12</h3><p>Months</p></div>
+  <div class="stat"><h3>Weekly</h3><p>Sessions</p></div>
+  <div class="stat"><h3>R</h3><p>Open Source Tools</p></div>
 </section>
 
-<!-- ================= ABOUT ================= -->
-<section id="about" class="section">
-  <h2>What is JUCo DSG?</h2>
+<!-- ================= OVERVIEW ================= -->
+<section id="overview" class="section">
+  <h2>Programme Overview</h2>
 
   <div class="card">
     <p>
-      JUCo Data Science & Modelling Research Group is a hands-on research training environment
-      where students work on real-world datasets and develop analytical thinking through guided research projects.
+      The JUCo DSG programme trains students in applied data science, statistical reasoning,
+      and mathematical modelling by engaging them in real research problems from education,
+      health, and development contexts in Tanzania.
     </p>
   </div>
 </section>
 
-<!-- ================= VALUE ================= -->
+<!-- ================= OUTCOMES ================= -->
 <section class="section">
   <h2>What You Will Gain</h2>
 
   <div class="grid">
-    <div class="tile">💻 Coding in R (from basics to applied analysis)</div>
-    <div class="tile">📊 Real-world data analysis experience</div>
-    <div class="tile">🧠 Mathematical modelling skills</div>
-    <div class="tile">📈 Research project for your CV</div>
-    <div class="tile">🎤 Presentation & communication skills</div>
-    <div class="tile">🎓 Preparation for postgraduate studies</div>
-    <div class="tile">🌍 Problem-solving for real African challenges</div>
-    <div class="tile">🏅 Certificate of participation</div>
+    <div class="tile">💻 R Programming Skills</div>
+    <div class="tile">📊 Data Analysis Experience</div>
+    <div class="tile">🧠 Mathematical Modelling</div>
+    <div class="tile">📈 Research Project Experience</div>
+    <div class="tile">🎤 Presentation Skills</div>
+    <div class="tile">🎓 Graduate Preparation</div>
+    <div class="tile">🌍 Real-World Problem Solving</div>
+    <div class="tile">🏅 Certificate of Participation</div>
   </div>
 </section>
 
@@ -77,38 +254,38 @@ author_profile: true
       <li>Mathematics or Computer Science students</li>
       <li>Postgraduate research students</li>
       <li>At least 2 years remaining (undergraduates)</li>
-      <li>No prior programming experience required</li>
+      <li>No prior coding experience required</li>
     </ul>
   </div>
 
   <div class="panel dark">
     <h3>Programme Structure</h3>
     <ul>
-      <li>Weekly guided sessions (2 hours)</li>
+      <li>Weekly 2-hour guided sessions</li>
       <li>Project-based learning approach</li>
-      <li>Group discussions & mentorship</li>
-      <li>Individual research development</li>
+      <li>Group collaboration & mentorship</li>
+      <li>Independent research development</li>
     </ul>
   </div>
 
 </section>
 
-<!-- ================= PROCESS ================= -->
+<!-- ================= STEPS ================= -->
 <section class="section">
-  <h2>How To Join</h2>
+  <h2>How To Apply</h2>
 
   <div class="steps">
     <div>1. Collect application form from Department Office</div>
-    <div>2. Fill in your details and interests</div>
-    <div>3. Submit before deadline</div>
-    <div>4. Wait for selection confirmation</div>
+    <div>2. Complete and submit your application</div>
+    <div>3. Await selection results</div>
+    <div>4. Begin your research journey</div>
   </div>
 </section>
 
 <!-- ================= FINAL CTA ================= -->
 <section class="final-cta">
-  <h2>Ready to Start Your Research Journey?</h2>
-  <p>Join a growing community of young data scientists and researchers at JUCo DSG.</p>
+  <h2>Start Your Research Journey Today</h2>
+  <p>Join JUCo DSG and build strong foundations in data science and mathematical modelling.</p>
   <a href="/juco-dsg-apply/" class="btn primary big">Apply Now</a>
 </section>
 
