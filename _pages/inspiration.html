@@ -79,6 +79,26 @@ blockquote {
 .apply-btn:hover {
   background: #1b5e20;
 }
+
+  /* Container sizing rule */
+.card-image {
+  flex: 1;
+  width: 100%;
+  max-width: 450px;    /* Keeps the container small and balanced */
+  overflow: hidden;    /* Clips any stray edge overflows safely */
+}
+
+/* Forces ANY size image to cleanly shrink and adapt */
+.card-image img {
+  display: block;
+  width: 100%;          /* Forces large image down to match the container width */
+  height: auto;         /* Prevents stretching by holding exact proportions */
+  max-height: 350px;    /* Keeps landscape block dimensions clean */
+  object-fit: cover;    /* Centers and scales nicely if proportions differ */
+  border-radius: 8px;   /* Smoothly rounds out the corners */
+}
+
+  
 </style>
 </head>
 <body>
@@ -132,10 +152,11 @@ blockquote {
       <p>Scientific discovery begins when you pick up a microscope and explore the hidden mechanics of our world.</p>
     </div>
     <div class="card-image">
-      <!-- <img src="https://pexels.com" alt="Microscope exploration"> -->
+    <img src="https://pexels.com" alt="Microscope exploration"> 
       <img src="https://images.pexels.com/photos/2280549/pexels-photo-2280549.jpeg" alt="Young girl using microscope">
     </div>
-  </section>-->
+  </section>
+  -->
 
   <section class="content-card">
     <div class="card-text">
