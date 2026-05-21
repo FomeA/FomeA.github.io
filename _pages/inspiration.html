@@ -9,78 +9,100 @@ author_profile: false
   .page__content { max-width: 900px; margin: auto; padding: 40px 20px; }
 
   .page-header {
-  text-align: center;
-  margin-bottom: 70px;
-  padding: 60px 20px;
-  background: linear-gradient(to right, #e8f5e9, #ffffff);
-  border-radius: 20px;
-}
+    text-align: center;
+    margin-bottom: 70px;
+    padding: 60px 20px;
+    background: linear-gradient(to right, #e8f5e9, #ffffff);
+    border-radius: 20px;
+  }
   .page-header h1 { font-size: 2.8rem; margin-bottom: 10px; color: #2e7d32; }
-  .content-card { display: flex; align-items: center; gap: 30px; margin: 60px 0; background: #f9f9f9; border-radius: 15px; overflow: hidden; border: 1px solid #eee; }
   
-  .content-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+  .content-card { 
+    display: flex; 
+    align-items: center; 
+    gap: 30px; 
+    margin: 60px 0; 
+    background: #f9f9f9; 
+    border-radius: 15px; 
+    overflow: hidden; 
+    border: 1px solid #eee; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
 
-.content-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-}
+  .content-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  }
 
-  .card-text p {
-  font-size: 1.05rem;
-  color: #444;
-}
-
-blockquote {
-  font-weight: 600;
-}
   .content-card.reverse { flex-direction: row-reverse; }
   .card-text { flex: 1.2; padding: 30px; }
-  .card-image { flex: 1; height: 350px; }
-  .card-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  blockquote { border-left: 5px solid #4CAF50; padding: 15px 20px; margin-bottom: 20px; font-style: italic; font-size: 1.2rem; background: #fff; }
+  .card-text p { font-size: 1.05rem; color: #444; }
+  
+  /* Sizing constraint rules to force heavy images to fit safely */
+  .card-image-wrapper { flex: 1; display: flex; flex-direction: column; height: 350px; }
+  .card-image { height: 100%; width: 100%; overflow: hidden; position: relative; }
+  .card-image img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    display: block; 
+  }
+  
+  /* Styled caption attribution links */
+  .img-source-link {
+    display: block;
+    font-size: 0.75rem;
+    color: #777;
+    text-align: right;
+    padding: 4px 10px;
+    background: #f1f1f1;
+    text-decoration: none;
+    border-top: 1px solid #eee;
+  }
+  .img-source-link:hover { color: #2e7d32; text-decoration: underline; }
+  
+  blockquote { 
+    font-weight: 600;
+    border-left: 5px solid #4CAF50; 
+    padding: 15px 20px; 
+    margin-bottom: 20px; 
+    font-style: italic; 
+    font-size: 1.2rem; 
+    background: #fff; 
+  }
+  
   .cta { text-align: center; margin-top: 60px; padding: 40px; background: #e8f5e9; border-radius: 15px; }
   .cta a { display: inline-block; padding: 15px 30px; background: #4CAF50; color: white; text-decoration: none; font-weight: bold; border-radius: 8px; }
-  @media (max-width: 768px) { .content-card, .content-card.reverse { flex-direction: column; } .card-image { width: 100%; height: 250px; } }
-
-.announcement {
-  background: linear-gradient(to right, #e8f5e9, #fdfdfd);
-  padding: 50px;
-  border-radius: 20px;
-  margin-bottom: 70px;
-  border: 1px solid #dfeede;
-}
-
-.announcement-content h2 {
-  color: #2e7d32;
-  margin-bottom: 20px;
-  font-size: 2rem;
-}
-
-.announcement-content p {
-  margin-bottom: 18px;
-  font-size: 1.05rem;
-  color: #333;
-}
-
-.apply-btn {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 14px 28px;
-  background: #2e7d32;
-  color: white;
-  text-decoration: none;
-  border-radius: 10px;
-  font-weight: bold;
-  transition: background 0.3s ease;
-}
-
-.apply-btn:hover {
-  background: #1b5e20;
-}
-
   
+  @media (max-width: 768px) { 
+    .content-card, .content-card.reverse { flex-direction: column; } 
+    .card-image-wrapper { width: 100%; height: 280px; } 
+  }
+
+  .announcement {
+    background: linear-gradient(to right, #e8f5e9, #fdfdfd);
+    padding: 50px;
+    border-radius: 20px;
+    margin-bottom: 70px;
+    border: 1px solid #dfeede;
+  }
+
+  .announcement-content h2 { color: #2e7d32; margin-bottom: 20px; font-size: 2rem; }
+  .announcement-content p { margin-bottom: 18px; font-size: 1.05rem; color: #333; }
+
+  .apply-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 14px 28px;
+    background: #2e7d32;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+  }
+
+  .apply-btn:hover { background: #1b5e20; }
 </style>
 </head>
 <body>
@@ -91,67 +113,46 @@ blockquote {
   </header>
 
   <section class="announcement">
-  <div class="announcement-content">
-    <h2>JUCo Data Science & Modelling Research Group Applications Open</h2>
-
-    <p>
-      <strong>Calling All Female Minds in Mathematics & Computer Science at JUCo!</strong>
-    </p>
-
-    <p>
-      The JUCo Data Science & Modelling Research Group (JUCo DSG) is officially accepting
-      applications for its first 12-month pilot cohort.
-    </p>
-
-    <p>
-      As a female scientist, I know how intimidating it can feel to step into data science.
-      That is why this program requires <strong>ZERO prior coding experience.</strong>
-      We will learn R Programming and statistical modelling together — step-by-step, from scratch.
-    </p>
-
-    <p>
-      If you want to solve real-world Tanzanian health and institutional problems using data,
-      I strongly encourage you to apply. Let’s build the next generation of female data scientists
-      at JUCo together.
-    </p>
-
-    <p>
-      <strong>
-        JUCo DSG is committed to closing the gender gap in quantitative sciences.
-        Female students and applicants from underrepresented backgrounds are strongly encouraged to apply.
-      </strong>
-    </p>
-
-    <a href="/juco-dsg/" class="apply-btn">Apply to JUCo DSG</a>
-  </div>
-</section>
-
-  <!-- Card 1: Curiosity -->
-
-   <section class="content-card">
-    <div class="card-text">
-      <blockquote>"STEM is for anyone willing to learn, question, and explore."</blockquote>
-      <p>Scientific discovery begins when you pick up a microscope and explore the hidden mechanics of our world.</p>
-    </div>
-    <div class="card-image">
-      <!-- <img src="https://pexels.com" alt="Microscope exploration">  -->
-      <img src="https://images.pexels.com/photos/2280549/pexels-photo-2280549.jpeg" alt="Young girl using microscope">
+    <div class="announcement-content">
+      <h2>JUCo Data Science & Modelling Research Group Applications Open</h2>
+      <p><strong>Calling All Female Minds in Mathematics & Computer Science at JUCo!</strong></p>
+      <p>
+        The JUCo Data Science & Modelling Research Group (JUCo DSG) is officially accepting
+        applications for its first 12-month pilot cohort.
+      </p>
+      <p>
+        As a female scientist, I know how intimidating it can feel to step into data science.
+        That is why this program requires <strong>ZERO prior coding experience.</strong>
+        We will learn R Programming and statistical modelling together — step-by-step, from scratch.
+      </p>
+      <p>
+        If you want to solve real-world Tanzanian health and institutional problems using data,
+        I strongly encourage you to apply. Let’s build the next generation of female data scientists
+        at JUCo together.
+      </p>
+      <p>
+        <strong>
+          JUCo DSG is committed to closing the gender gap in quantitative sciences.
+          Female students and applicants from underrepresented backgrounds are strongly encouraged to apply.
+        </strong>
+      </p>
+      <a href="/juco-dsg/" class="apply-btn">Apply to JUCo DSG</a>
     </div>
   </section>
- 
 
-  <!-- <section class="content-card">
+  <!-- Card 1: Mathematics and Equality -->
+  <section class="content-card">
     <div class="card-text">
-      <blockquote> "Your mathematical mind is your passport to innovate"</blockquote>
-      <p>Math belongs to everyone: equations don’t know your gender, they only know your logic, skill, and determination. </p>
+      <blockquote>"Math belongs to everyone: equations don’t know your gender, they only know your logic, skill, and determination."</blockquote>
+      <p>Your mathematical mind is your passport to innovate.</p>
     </div>
-    <div class="card-image">
-       Updated placeholder with an optimized, descriptive alt tag for girls/women in math 
-      <img src="/images/STEM.png" alt="Young women collaborating and solving math equations together">
+    <div class="card-image-wrapper">
+      <div class="card-image">
+        <img src="/images/STEM.png" alt="Young women collaborating and solving math equations together">
+      </div>
+      <a href="/images/STEM.png" target="_blank" class="img-source-link">Source: Local Asset Archive</a>
     </div>
-</section> -->
-
-  
+  </section>
 
   <!-- Card 2: Persistence -->
   <section class="content-card reverse">
@@ -159,9 +160,11 @@ blockquote {
       <blockquote>"STEM is about being curious, persistent, and willing to try again."</blockquote>
       <p>In robotics, failure is simply data telling you how to do it better the next time. Build, break, and rebuild.</p>
     </div>
-    <div class="card-image">
-      <!-- <img src="https://pexels.com" alt="Electronic circuits">-->
-      <img src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg" alt="Female student working on electronics">
+    <div class="card-image-wrapper">
+      <div class="card-image">
+        <img src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg" alt="Female student working on electronics">
+      </div>
+      <a href="https://www.pexels.com/photo/code-projected-over-woman-3861969/" target="_blank" class="img-source-link">Source: ThisIsEngineering via Pexels</a>
     </div>
   </section>
 
@@ -171,18 +174,19 @@ blockquote {
       <blockquote>"Your journey in STEM begins the moment you decide not to give up."</blockquote>
       <p>Every expert was once a beginner. Growth comes from the moments when you choose to keep going.</p>
     </div>
-    <div class="card-image">
-      <!-- <img src="https://pexels.com" alt="Coding on laptop">-->
-      <img src="https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg" alt="Young woman coding on laptop">
+    <div class="card-image-wrapper">
+      <div class="card-image">
+        <img src="https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg" alt="Young woman coding on laptop">
+      </div>
+      <a href="https://www.pexels.com/photo/close-up-photo-of-person-typing-on-laptop-1181675/" target="_blank" class="img-source-link">Source: Christina Morillo via Pexels</a>
     </div>
   </section>
 
   <div class="cta">
     <h3>Ready to take the next step?</h3>
     <p>Read about the current landscape of education and why we need more women in Tanzanian universities.</p>
-    <a href="https://www.thecitizen.co.tz/tanzania/oped/tz-s-universities-have-twice-as-many-male-as-female-students--2627586" target="_blank">Read My Featured Work</a>
+    <a href="https://thecitizen.co.tz" target="_blank">Read My Featured Work</a>
   </div>
 </div>
 </body>
 </html>
-
