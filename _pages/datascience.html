@@ -25,58 +25,10 @@ author_profile: false
       working on real institutional and health-related problems in Tanzania.
     </p>
 
-    <!--<div class="cta">
+    <div class="cta">
       <a href="https://docs.google.com/forms/d/e/1FAIpQLSeq5QTnAHnGerxX-v-_2LlJVsbblVhzITPEvPfP38QSaql8kQ/viewform?usp=preview" class="btn primary">Apply Now</a>
       <a href="#curriculum" class="btn ghost">Explore Programme</a>
-    </div>-->
-
-        <div class="cta">
-      <!-- This button updates automatically using the script below -->
-      <a id="dynamic-apply-btn" href="#" class="btn primary">Loading Status...</a>
-      <a href="#curriculum" class="btn ghost">Explore Programme</a>
     </div>
-
-        <script>
-      function manageApplicationButton() {
-        const btn = document.getElementById('dynamic-apply-btn');
-        const now = new Date();
-        
-        // Define your launch and close timeline dates forced to East Africa Time (EAT)
-        const openDate = new Date('2026-05-25T00:00:00+03:00');
-        const closeDate = new Date('2026-06-24T23:59:59+03:00');
-        
-        // Your actual live Google Form link
-        const googleFormUrl = "https://google.com";
-
-        if (now < openDate) {
-          // PHASE 1: BEFORE MAY 25 (This will trigger right now!)
-          btn.innerText = "Applications Open Monday, May 25";
-          btn.href = "javascript:void(0);"; // Safely cancels the link click completely
-          btn.style.backgroundColor = "#cccccc"; // Clear grey disabled color
-          btn.style.color = "#666666";
-          btn.style.borderColor = "#cccccc";
-          btn.style.cursor = "not-allowed"; // Shows a red 'no entry' circle on desktop mouse
-        } else if (now >= openDate && now <= closeDate) {
-          // PHASE 2: ACTIVE WINDOW (MAY 25 - JUNE 24)
-          btn.innerText = "Apply Now";
-          btn.href = googleFormUrl;
-          btn.style.backgroundColor = ""; // Reverts to your default CSS theme color
-          btn.style.color = "";
-          btn.style.cursor = "pointer";
-        } else {
-          // PHASE 3: AFTER JUNE 24
-          btn.innerText = "Applications Closed";
-          btn.href = "javascript:void(0);";
-          btn.style.backgroundColor = "#555555"; 
-          btn.style.color = "#ffffff";
-          btn.style.cursor = "not-allowed";
-        }
-      }
-
-      // Execute right away when page loads
-      document.addEventListener("DOMContentLoaded", manageApplicationButton);
-    </script>
-
 
 
   </div>
