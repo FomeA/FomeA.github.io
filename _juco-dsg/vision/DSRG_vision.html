@@ -1,1 +1,372 @@
 
+---
+layout: default
+title: " "
+permalink: /juco-dsg/vision/
+author_profile: false
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JUCo DSRG</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --navy:#102542;
+  --teal:#2E8B6E;
+  --gold:#C9A84C;
+  --light:#f7f9fc;
+  --text:#1c2430;
+  --muted:#667085;
+  --white:#ffffff;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+  scroll-padding-top:80px;
+}
+
+body{
+  font-family:'Inter',sans-serif;
+  color:var(--text);
+  line-height:1.7;
+  background:#fff;
+}
+
+/* CONTAINER */
+.container{
+  width:90%;
+  max-width:1100px;
+  margin:0 auto;
+  padding:0 20px; /* 👈 THIS creates left & right space */
+}
+
+/* NAVBAR */
+nav{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  height:70px;
+  background:rgba(16,37,66,.95);
+  display:flex;
+  align-items:center;
+  z-index:999;
+  backdrop-filter:blur(10px);
+}
+
+.nav-inner{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  width:100%;
+}
+
+.logo{
+  color:white;
+  text-decoration:none;
+  font-family:'DM Serif Display',serif;
+  font-size:1.3rem;
+}
+
+.logo span{
+  color:var(--teal);
+}
+
+.nav-links{
+  display:flex;
+  gap:20px;
+}
+
+.nav-links a{
+  color:white;
+  text-decoration:none;
+  font-size:0.95rem;
+  transition:0.3s;
+}
+
+.nav-links a:hover{
+  color:var(--gold);
+}
+
+/* HERO */
+.hero{
+  padding:140px 0 80px;
+  text-align:center;
+}
+
+.hero h1{
+  font-family:'DM Serif Display',serif;
+  font-size:clamp(2.2rem,4vw,3.5rem);
+  color:var(--navy);
+  margin-bottom:20px;
+}
+
+.hero p{
+  max-width:800px;
+  margin:auto;
+  font-size:1.1rem;
+  color:var(--muted);
+}
+
+/* SECTIONS */
+section{
+  padding:80px 0;
+  text-align:center;
+}
+
+.section-title{
+  font-family:'DM Serif Display',serif;
+  font-size:2.3rem;
+  color:var(--navy);
+  margin-bottom:15px;
+}
+
+p{
+  max-width:850px;
+  margin:auto;
+  color:var(--text);
+  font-size:1.05rem;
+}
+
+/* ALTERNATING BACKGROUND */
+.alt{
+  background:var(--light);
+}
+
+/* CORE VALUES SECTION */
+#values{
+  padding:80px 0;
+  background:var(--white);
+  text-align:center;
+}
+
+.section-sub{
+  max-width:750px;
+  margin:10px auto 40px;
+  color:var(--muted);
+  font-size:1.05rem;
+}
+
+/* GRID */
+.values-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+  margin-top:20px;
+}
+
+/* CARD */
+.value-card{
+  background:#fff;
+  padding:25px;
+  border-radius:14px;
+  box-shadow:0 8px 25px rgba(0,0,0,.06);
+  border-left:4px solid var(--teal);
+  text-align:left;
+  transition:0.3s ease;
+}
+
+/* HOVER EFFECT */
+.value-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 12px 35px rgba(0,0,0,.12);
+}
+
+/* TITLE */
+.value-title{
+  font-family:'DM Serif Display',serif;
+  font-size:1.3rem;
+  color:var(--navy);
+  margin-bottom:8px;
+}
+
+/* DESCRIPTION */
+.value-desc{
+  font-size:0.95rem;
+  color:var(--text);
+  line-height:1.6;
+}
+
+/* CTA */
+.cta{
+  background:var(--navy);
+  color:white;
+}
+
+.cta p{
+  color:white;
+}
+
+/* FOOTER */
+footer{
+  background:#081220;
+  color:white;
+  text-align:center;
+  padding:20px;
+  font-size:0.9rem;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .nav-links{
+    display:none;
+  }
+}
+</style>
+</head>
+
+<body id="top">
+
+<!-- NAVIGATION -->
+<nav>
+  <div class="container nav-inner">
+
+    <a href="index.html" class="logo">JUCo <span>DSRG</span></a>
+
+    <div class="nav-links">
+      <a href="#top">Home</a>
+      <a href="#vision">Vision</a>
+      <a href="#mission">Mission</a>
+      <a href="#values">Core Values</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <h1>Data Science & Mathematical Modelling Research Group</h1>
+    <p>
+      A research initiative dedicated to advancing analytical thinking,
+      statistical modelling, and evidence-based solutions for society.
+    </p>
+  </div>
+</section>
+
+<!-- VISION -->
+<section id="vision">
+  <div class="container">
+    <h2 class="section-title">Our Vision</h2>
+    <p>
+      To become a leading centre of excellence in data science and mathematical
+      modelling, producing impactful research that transforms decision-making in Tanzania and beyond.
+    </p>
+  </div>
+</section>
+
+<!-- MISSION -->
+<section id="mission" class="alt">
+  <div class="container">
+    <h2 class="section-title">Our Mission</h2>
+    <p>
+      To train researchers in data science and applied mathematics,
+      foster innovation in analytical methods, and deliver research-driven solutions
+      to real-world challenges.
+    </p>
+  </div>
+</section>
+
+<!-- CORE VALUES -->
+<!-- <section id="values">
+  <div class="container">
+    <h2 class="section-title">Core Values</h2>
+
+    <div class="values-grid">
+      <div class="value-card">Integrity</div>
+      <div class="value-card">Excellence</div>
+      <div class="value-card">Innovation</div>
+      <div class="value-card">Collaboration</div>
+      <div class="value-card">Evidence-Based Thinking</div>
+    </div>
+  </div>
+</section> -->
+
+<section id="values">
+   <div class="container">
+  <h2 class="section-title">Core Values</h2>
+  <p class="section-sub">
+    These principles guide how we think, work, and collaborate every day.
+  </p>
+
+  <div class="values-grid">
+
+    <div class="value-card">
+      <div class="value-title">Excellence</div>
+      <div class="value-desc">We uphold the highest standards in research, analysis, and academic output through continuous improvement.</div>
+    </div>
+
+    <div class="value-card">
+      <div class="value-title">Integrity</div>
+      <div class="value-desc">We act with honesty, transparency, and strong ethical responsibility in all research activities.</div>
+    </div>
+
+    <div class="value-card">
+      <div class="value-title">Innovation</div>
+      <div class="value-desc">We embrace creative thinking and modern analytical tools to solve real-world problems.</div>
+    </div>
+
+    <div class="value-card">
+      <div class="value-title">Collaboration</div>
+      <div class="value-desc">We work across disciplines and share knowledge to strengthen collective research impact.</div>
+    </div>
+
+    <div class="value-card">
+      <div class="value-title">Empowerment</div>
+      <div class="value-desc">We equip early-career researchers with skills, confidence, and meaningful research experience.</div>
+    </div>
+
+    <div class="value-card">
+      <div class="value-title">Impact</div>
+      <div class="value-desc">We produce research that directly informs decisions and improves society.</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+
+<!--
+<section id="contact" class="cta">
+  <div class="container">
+    <h2 class="section-title" style="color:white;">Join Us</h2>
+    <p>Become part of a growing community of researchers and innovators.</p>
+  </div>
+</section>
+-->
+
+<!-- CONTACT SECTION -->
+<section id="contact" class="contact-details">
+  <div class="container">
+    <h2>Get in Touch</h2>
+    <p style="margin-bottom: 15px;">
+      Have questions about the program, eligibility, or want to express interest in co-facilitation? Contact our Group Coordinator.
+    </p>
+    <p>
+      <strong>Email:</strong> <a href="mailto:anna.fome@juco.ac.tz">anna.fome@juco.ac.tz</a>
+    </p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  © 2026 JUCo DSRG · Jordan University College
+</footer>
+
+</body>
+  
+</html>
