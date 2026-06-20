@@ -1,0 +1,566 @@
+---
+layout: default
+title: " "
+permalink: /juco-dsg/
+author_profile: false
+---
+
+<div class="dsg-page">
+  
+<style>
+:root{
+--navy:#102542;
+--blue:#2E75B6;
+--teal:#2E8B6E;
+--gold:#C9A84C;
+--white:#ffffff;
+--light:#f7f9fc;
+--text:#1c2430;
+--muted:#667085;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+scroll-padding-top:90px;
+}
+
+body{
+font-family:'Inter',sans-serif;
+color:var(--text);
+line-height:1.7;
+}
+
+.container{
+width:min(1200px,92%);
+margin:auto;
+}
+
+/* NAVIGATION */
+
+nav{
+position:fixed;
+top:0;
+left:0;
+right:0;
+height:75px;
+background:rgba(16,37,66,.92);
+display:flex;
+align-items:center;
+z-index:999;
+backdrop-filter:blur(10px);
+}
+
+.nav-inner{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+color:white;
+text-decoration:none;
+font-family:'DM Serif Display',serif;
+font-size:1.4rem;
+}
+
+.logo span{
+color:#3AAFA9;
+}
+
+.nav-links{
+display:flex;
+gap:25px;
+}
+
+.nav-links a{
+color:white;
+text-decoration:none;
+}
+
+/* HERO */
+
+.hero{
+min-height:100vh;
+background:linear-gradient(135deg,#0f1f3d,#173763,#1f4b74);
+display:flex;
+align-items:center;
+text-align:center;
+color:white;
+padding-top:80px;
+}
+
+.hero-content{
+width:100%;
+max-width:1200px;
+margin:auto;
+}
+
+.badge{
+display:inline-block;
+padding:8px 16px;
+background:rgba(255,255,255,.12);
+border-radius:999px;
+margin-bottom:25px;
+font-size:.85rem;
+letter-spacing:.08em;
+}
+
+.hero h1{
+font-family:'DM Serif Display',serif;
+font-size:clamp(3rem,6vw,6rem);
+line-height:1.05;
+margin-bottom:25px;
+}
+
+.hero p{
+max-width:900px;
+margin:0 auto 35px;
+font-size:1.2rem;
+}
+
+.buttons{
+display:flex;
+justify-content:center;
+gap:15px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:15px 28px;
+border-radius:999px;
+text-decoration:none;
+font-weight:600;
+transition:.3s;
+}
+
+.btn:hover{
+transform:translateY(-2px);
+}
+
+.btn-primary{
+background:var(--teal);
+color:white;
+}
+
+.btn-secondary{
+border:1px solid rgba(255,255,255,.4);
+color:white;
+}
+
+/* SECTIONS */
+
+section{
+padding:100px 0;
+}
+
+.section-title{
+font-family:'DM Serif Display',serif;
+font-size:3rem;
+margin-bottom:20px;
+color:var(--navy);
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+margin-top:30px;
+}
+
+.card{
+padding:35px;
+background:white;
+border-radius:18px;
+box-shadow:0 10px 30px rgba(0,0,0,.05);
+border-top:5px solid var(--teal);
+}
+
+.card {
+  transition: all .3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 50px rgba(46, 117, 182, 0.2);
+  border-top-color: var(--gold);
+}
+.card h3{
+margin-bottom:12px;
+color:var(--navy);
+}
+
+.featured{
+background:var(--light);
+}
+
+.cta{
+background:var(--navy);
+color:white;
+text-align:center;
+}
+
+.cta h2{
+font-family:'DM Serif Display',serif;
+font-size:3rem;
+margin-bottom:20px;
+}
+
+.cta p{
+max-width:800px;
+margin:auto;
+margin-bottom:30px;
+}
+
+footer{
+padding:30px;
+background:#081220;
+color:white;
+text-align:center;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.nav-links{
+gap:15px;
+font-size:.9rem;
+}
+
+.hero h1{
+font-size:3rem;
+}
+
+.section-title{
+font-size:2.3rem;
+}
+
+}
+</style>
+</head>
+
+<body id="top">
+
+<nav>
+<div class="container nav-inner">
+
+<a href="#top" class="logo">
+JUCo <span>DSRG</span>
+</a>
+
+<div class="nav-links">
+<a href="#about">About</a>
+<a href="DSRG_vision.html">Vision</a>
+<a href="curriculum.html">Curriculum</a>
+<a href="#research">Research</a>
+<a href="#team">Team</a>
+<a href="#join">Join</a>
+<a href="#contact">Contact</a>
+</div>
+
+</div>
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="container">
+
+<div class="hero-content">
+
+<div class="badge">
+FIRST COHORT · 2026/2027
+</div>
+
+<h2>
+Data Science & Mathematical Modelling Research Group
+</h2>
+
+<p>
+JUCo DSRG is a formally established research initiative at Jordan University College. We bring together motivated students and researchers to develop skills in data science, statistical analysis, and mathematical modelling while addressing real-world institutional, health, and development challenges.
+</p>
+
+<div class="buttons">
+
+<a href="curriculum.html" class="btn btn-primary">
+Explore Programme
+</a>
+
+<a href="#research" class="btn btn-secondary">
+Research Areas
+</a>
+
+ <a href="https://docs.google.com/forms/d/e/1FAIpQLSdE_PLZIWvUD9PIuf6cEvt1kiW3G8rO6i7HODfC_QFsuVM6fw/viewform?usp=header" class="btn btn-primary">
+Apply Now
+</a>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<div class="container">
+
+<h2 class="section-title">
+Who We Are
+</h2>
+
+<p style="margin-bottom: 15px;">
+JUCo DSRG is an interdisciplinary research initiative focused on data science, statistical analysis, and mathematical modelling. We train researchers, develop analytical capacity, and generate research that supports evidence-based decision making for Tanzania and beyond.
+</p>
+
+<p>
+As a supportive research community, we help bridge the gap between classroom learning and real-world analytical practice. Participants work in collaborative teams, receive mentorship, learn modern analytical tools, and contribute to meaningful research projects addressing institutional, health, and development challenges.
+</p>
+
+<br>
+
+<a href="DSRG_vision.html">
+Learn More →
+</a>
+
+</div>
+
+</section>
+
+<!-- PROGRAMME OVERVIEW -->
+
+<!--
+<section id="overview" class="featured">
+
+<div class="container">
+
+<h2 class="section-title">
+Programme Overview
+</h2>
+
+<div class="card">
+
+<p>
+The JUCo DSRG is a supportive research community designed to bridge the gap between classroom learning and real-world analytical practice. Participants work collaboratively, receive mentorship, learn modern analytical tools, and contribute to meaningful research projects that address institutional, health, and development challenges.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+-->
+
+<!-- RESEARCH -->
+
+<section id="research">
+
+<div class="container">
+
+<h2 class="section-title">
+Research Areas
+</h2>
+
+<p>
+The JUCo Data Science & Mathematical Modelling Research Group conducts interdisciplinary research aligned with global development priorities, evidence-based policymaking, and data-driven institutional strengthening.
+</p>
+
+<br>
+
+<p>
+<strong>Institutional Modelling</strong> focuses on planning, resource allocation, educational quality, and sustainable growth within higher education systems.
+</p>
+
+<br>
+
+<p>
+<strong>Health and Wellbeing Modelling</strong> focuses on public health, resilience, wellbeing, and equitable access to services through quantitative research and analytical methods.
+</p>
+
+</div>
+
+</section>
+
+<!-- BENEFITS -->
+
+<section id="benefits" class="featured">
+
+<div class="container">
+
+<h2 class="section-title">
+What You Will Gain
+</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Data Science Skills</h3>
+<p>Hands-on R and Python programming, data analysis, and visualization.</p>
+</div>
+
+<div class="card">
+<h3>Mathematical Modelling</h3>
+<p>Learn statistical and mathematical approaches to solving real problems.</p>
+</div>
+
+<div class="card">
+<h3>Research Experience</h3>
+<p>Participate in genuine research projects with practical impact.</p>
+</div>
+
+<div class="card">
+<h3>Academic Development</h3>
+<p>Improve scientific writing, presentation, and communication skills.</p>
+</div>
+
+<div class="card">
+<h3>Mentorship</h3>
+<p>Receive guidance from mentors and build a strong peer network.</p>
+</div>
+
+<div class="card">
+<h3>Career Preparation</h3>
+<p>Prepare for postgraduate studies and data-driven careers.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ELIGIBILITY -->
+
+<section id="eligibility">
+
+<div class="container">
+
+<h2 class="section-title">
+Who Can Join?
+</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Eligibility</h3>
+
+<ul>
+<li>Mathematics undergraduates</li>
+<li>Computer Science undergraduates</li>
+<li>Postgraduate researchers</li>
+<li>At least two academic years remaining (undergraduates)</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Selection Criteria</h3>
+
+<ul>
+<li>Strong motivation for research</li>
+<li>Commitment to weekly participation</li>
+<li>Interest in quantitative methods</li>
+<li>No prior coding experience required</li>
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- TEAM -->
+
+<section id="team">
+
+<div class="container">
+
+<h2 class="section-title">
+Our Team
+</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Programme Lead</h3>
+</div>
+
+<div class="card">
+<h3>Research Mentors</h3>
+</div>
+
+<div class="card">
+<h3>First Cohort</h3>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- RESOURCES -->
+<!--
+<section id="featured" class="featured">
+
+<div class="container">
+
+<h2 class="section-title">
+Featured Resource
+</h2>
+
+<div class="card">
+<h3>Week 01 Teaching Notes</h3>
+</div>
+
+</div>
+
+</section>
+
+-->
+
+<!-- JOIN CTA -->
+
+<section id="join" class="cta" style="margin-bottom: 40px;">
+  <div class="container">
+    <h2>Join the First Cohort</h2>
+    <p style="margin-bottom: 15px;">
+      Become part of the inaugural JUCo DSRG cohort and help shape the future of data science and mathematical modelling research at Jordan University College.
+    </p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdE_PLZIWvUD9PIuf6cEvt1kiW3G8rO6i7HODfC_QFsuVM6fw/viewform?usp=header" class="btn btn-primary">
+      Apply Now
+    </a>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section id="contact" class="contact-details">
+  <div class="container">
+    <h2>Get in Touch</h2>
+    <p style="margin-bottom: 15px;">
+      Have questions about the program, eligibility, or want to express interest in co-facilitation? Contact our Group Coordinator.
+    </p>
+    <p>
+      <strong>Email:</strong> <a href="mailto:anna.fome@juco.ac.tz">anna.fome@juco.ac.tz</a>
+    </p>
+  </div>
+</section>
+
+
+<footer>
+© 2026 JUCo DSRG · Jordan University College
+</footer>
