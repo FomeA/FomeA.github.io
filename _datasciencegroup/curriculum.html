@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JUCo DSRG — Curriculum</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:wght@400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --navy:#1F3864;
+  --navy-dk:#111E38;
+  --teal:#2E8B6E;
+  --teal2:#3AAFA9;
+  --text:#1A1A2E;
+  --muted:#5A6478;
+  --border:#E2E8F0;
+  --bg:#f6f8fb;
+  --white:#fff;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+
+body{
+  font-family:'DM Sans',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.7;
+}
+
+/* ───────── NAVBAR ───────── */
+.navbar{
+  position:fixed;
+  top:0;left:0;right:0;
+  height:64px;
+  background:rgba(17,30,56,0.96);
+  backdrop-filter:blur(10px);
+  display:flex;
+  align-items:center;
+  padding:0 24px;
+  z-index:999;
+}
+
+.nav-brand{
+  font-family:'DM Serif Display',serif;
+  color:white;
+  text-decoration:none;
+  font-size:16px;
+}
+
+.nav-brand span{color:var(--teal2);}
+
+.nav-links{
+  display:flex;
+  gap:16px;
+  margin-left:40px;
+  flex:1;
+}
+
+.nav-link{
+  color:rgba(255,255,255,0.6);
+  text-decoration:none;
+  font-size:13px;
+  padding:6px 10px;
+  border-radius:8px;
+}
+
+.nav-link:hover,
+.nav-link.active{
+  color:white;
+  background:rgba(255,255,255,0.08);
+}
+
+.nav-cta{
+  background:var(--teal);
+  color:white;
+  padding:8px 16px;
+  border-radius:999px;
+  text-decoration:none;
+  font-size:13px;
+  font-weight:600;
+}
+
+/* ───────── HERO ───────── */
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  background:linear-gradient(160deg,var(--navy-dk),var(--navy));
+  color:white;
+  padding-top:80px;
+}
+
+.hero-inner{
+  width:min(1100px,92%);
+  margin:auto;
+}
+
+.hero h1{
+  font-family:'DM Serif Display',serif;
+  font-size:clamp(36px,5vw,60px);
+  margin-bottom:16px;
+}
+
+.hero h1 em{color:var(--teal2);}
+
+.hero-sub{
+  max-width:650px;
+  color:rgba(255,255,255,0.75);
+  margin-bottom:30px;
+}
+
+.hero-actions{
+  display:flex;
+  gap:12px;
+}
+
+.btn{
+  padding:12px 22px;
+  border-radius:999px;
+  text-decoration:none;
+  font-weight:600;
+  font-size:14px;
+}
+
+.btn-primary{background:var(--teal);color:white;}
+.btn-outline{border:1px solid rgba(255,255,255,0.3);color:white;}
+
+/* ───────── SECTION ───────── */
+.section{
+  padding:80px 0;
+}
+
+.section > *{
+  width:min(1100px,92%);
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.section-eyebrow{
+  font-size:12px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  color:var(--teal);
+  margin-bottom:6px;
+}
+
+.section-intro{
+  color:var(--muted);
+  margin-bottom:20px;
+}
+
+/* ───────── SEARCH ───────── */
+.curriculum-search{
+  margin:20px 0;
+}
+
+.curriculum-search input{
+  width:100%;
+  padding:12px 14px;
+  border-radius:10px;
+  border:1px solid #ddd;
+  font-size:14px;
+  outline:none;
+}
+
+.curriculum-search input:focus{
+  border-color:var(--teal);
+  box-shadow:0 0 0 2px rgba(46,139,110,0.15);
+}
+
+/* ───────── FILTERS ───────── */
+.weeks-filter{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin:20px 0;
+}
+
+.filter-btn{
+  border:none;
+  padding:8px 14px;
+  border-radius:999px;
+  background:#e9eef5;
+  cursor:pointer;
+  font-size:13px;
+}
+
+.filter-btn.active{
+  background:var(--teal);
+  color:white;
+}
+
+/* ───────── GRID ───────── */
+.weeks-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:14px;
+}
+
+.week-card{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:16px;
+  transition:0.15s;
+}
+
+.week-card:hover{
+  transform:translateY(-2px);
+  border-color:var(--teal);
+}
+
+.wc-head{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:8px;
+}
+
+.wc-num{
+  font-size:12px;
+  font-weight:600;
+  color:var(--muted);
+}
+
+.wc-title{
+  font-weight:600;
+  margin-bottom:6px;
+}
+
+.wc-desc{
+  font-size:13px;
+  color:var(--muted);
+}
+
+/* ───────── FOOTER ───────── */
+footer{
+  background:var(--navy-dk);
+  color:white;
+  text-align:center;
+  padding:30px;
+  margin-top:60px;
+}
+
+/* ───────── MOBILE ───────── */
+@media(max-width:768px){
+  .nav-links{display:none;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <a href="index.html" class="nav-brand">JUCo <span>DSRG</span></a>
+  <div class="nav-links">
+    <a class="nav-link active" href="#about">Home</a>
+    <a class="nav-link" href="#curriculum">Curriculum</a>
+  </div>
+  <!--<a href="#curriculum" class="nav-cta">View Curriculum</a>-->
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="about">
+  <div class="hero-inner">
+    <h1>Data Science &<br><em>Modelling Research Group</em></h1>
+    <p class="hero-sub">
+      Structured training in data science, modelling, and applied research using real-world datasets.
+    </p>
+    <div class="hero-actions">
+      <a href="#curriculum" class="btn btn-primary">Explore Curriculum</a>
+      <!--<a href="#curriculum" class="btn btn-outline">Start Learning</a>-->
+    </div>
+  </div>
+</section>
+
+<!-- CURRICULUM -->
+<section class="section" id="curriculum">
+
+  <div class="section-eyebrow">The Programme</div>
+  <h2>Year 1 Curriculum</h2>
+  <p class="section-intro">
+    44 operational weeks across four phases.
+  </p>
+
+  <!-- SEARCH -->
+  <div class="curriculum-search">
+    <input type="text" id="weekSearch" placeholder="Search weeks (e.g. regression, R, SIR model...)" onkeyup="searchWeeks()">
+  </div>
+
+  <!-- FILTERS -->
+  <div class="weeks-filter">
+    <button class="filter-btn active" onclick="filterWeeks('all', this)">All Weeks</button>
+    <button class="filter-btn" onclick="filterWeeks('p1', this)">Phase 1</button>
+    <button class="filter-btn" onclick="filterWeeks('p2', this)">Phase 2</button>
+    <button class="filter-btn" onclick="filterWeeks('p3', this)">Phase 3</button>
+    <button class="filter-btn" onclick="filterWeeks('p4', this)">Phase 4</button>
+    <button class="filter-btn" onclick="filterWeeks('live', this)">Available</button>
+  </div>
+
+  <!-- GRID -->
+  <div class="weeks-grid">
+
+    <div class="week-card" data-phase="p1" data-status="live">
+      <div class="wc-head"><span class="wc-num">WEEK 01</span></div>
+      <div class="wc-title">Orientation</div>
+      <div class="wc-desc">R setup & research culture</div>
+    </div>
+
+    <div class="week-card" data-phase="p1">
+      <div class="wc-head"><span class="wc-num">WEEK 02</span></div>
+      <div class="wc-title">R Foundations</div>
+      <div class="wc-desc">Objects, vectors, syntax</div>
+    </div>
+
+    <div class="week-card" data-phase="p2">
+      <div class="wc-head"><span class="wc-num">WEEK 15</span></div>
+      <div class="wc-title">Differential Equations</div>
+      <div class="wc-desc">Rate of change models</div>
+    </div>
+
+    <div class="week-card" data-phase="p2">
+      <div class="wc-head"><span class="wc-num">WEEK 17</span></div>
+      <div class="wc-title">SIR Model</div>
+      <div class="wc-desc">Disease modelling</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SCRIPT -->
+<script>
+let currentFilter = "all";
+let currentSearch = "";
+
+function filterWeeks(type, btn){
+  currentFilter = type;
+
+  document.querySelectorAll('.filter-btn')
+    .forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+
+  applyFilters();
+}
+
+function searchWeeks(){
+  currentSearch = document.getElementById('weekSearch').value.toLowerCase().trim();
+  applyFilters();
+}
+
+function applyFilters(){
+  const cards = document.querySelectorAll('.week-card');
+
+  cards.forEach(card => {
+    const phase = card.dataset.phase;
+    const status = card.dataset.status || "";
+    const text = card.innerText.toLowerCase();
+
+    const matchSearch = text.includes(currentSearch);
+
+    let matchFilter = false;
+
+    if(currentFilter === "all") matchFilter = true;
+    else if(currentFilter === "live") matchFilter = status === "live";
+    else matchFilter = phase === currentFilter;
+
+    card.style.display = (matchSearch && matchFilter) ? "block" : "none";
+  });
+}
+</script>
+
+<!-- FOOTER -->
+<footer>
+  JUCo DSRG · Curriculum Programme · 2026
+</footer>
+
+</body>
+</html>
