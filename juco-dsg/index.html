@@ -111,14 +111,16 @@ font-size:.85rem;
 letter-spacing:.08em;
 }
 
+
 .hero h2 {
   font-family: 'DM Serif Display', serif;
-  /* Perfectly balanced intermediate size */
-  font-size: clamp(1.8rem, 3.5vw, 2.8rem); 
-  line-height: 1.15;
+  font-size: 32px;          /* Clean, medium desktop size instead of clamp() */
+  line-height: 1.3;
   margin-bottom: 20px;
+  font-weight: normal;       /* Keeps the decorative serif font clean and readable */
 }
 
+  
 .hero p{
 max-width:900px;
 margin:0 auto 35px;
