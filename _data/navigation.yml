@@ -25,7 +25,10 @@ main:
   #  url: /publications/
 
   - title: "Inspiration"
-    url: /inspiration/    
+    url: /inspiration/  
+
+  - title: "DSRG"
+    url: /juco-dsg/
 
 qms101:
   - title: "Course Overview"
