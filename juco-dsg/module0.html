@@ -1,1 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 0 · Before We Touch Code</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+body{
+    font-family: Inter, sans-serif;
+    margin:0;
+    background:#f4f7fb;
+    color:#1f2937;
+    line-height:1.6;
+}
+
+header{
+    background:#0b1f3a;
+    color:white;
+    padding:60px 30px;
+    text-align:center;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:30px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:12px;
+    margin-bottom:20px;
+    border:1px solid #e5e7eb;
+}
+
+h1,h2{
+    margin-bottom:10px;
+}
+
+.back{
+    display:inline-block;
+    margin-top:15px;
+    background:#d4af37;
+    color:#0b1f3a;
+    padding:10px 14px;
+    border-radius:8px;
+    font-weight:600;
+    text-decoration:none;
+}
+
+/* NAV BUTTONS */
+.nav-buttons{
+    display:flex;
+    justify-content:space-between;
+    margin-top:30px;
+    gap:15px;
+}
+
+.nav-btn{
+    display:inline-block;
+    padding:10px 16px;
+    border-radius:8px;
+    font-weight:600;
+    text-decoration:none;
+    background:#0b1f3a;
+    color:white;
+    transition:0.3s;
+}
+
+.nav-btn:hover{
+    background:#0f766e;
+    transform:translateY(-2px);
+}
+
+.nav-btn.disabled{
+    background:#e5e7eb;
+    color:#6b7280;
+    cursor:not-allowed;
+    pointer-events:none;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Module 0 · Before We Touch Code</h1>
+    <p>Understanding data, structure, and tools before programming begins.</p>
+</header>
+
+<div class="container">
+
+    <div class="card">
+        <h2>🎯 What you will learn</h2>
+        <ul>
+            <li>What data is (beyond just numbers)</li>
+            <li>How datasets are structured (rows & columns)</li>
+            <li>What software like R actually does</li>
+            <li>How to think like a data user</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>📊 What is data?</h2>
+        <p>
+            Data is recorded information such as numbers, text, dates, or observations collected from the real world.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>📁 How data is organized</h2>
+        <ul>
+            <li><b>Rows</b> = observations (people, events, samples)</li>
+            <li><b>Columns</b> = variables (age, height, score, etc.)</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>💡 Why this matters</h2>
+        <p>
+            If you understand structure first, coding becomes easier because you are working with ideas — not memorizing commands.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>🧭 Before you continue</h2>
+        <ul>
+            <li>No programming experience needed</li>
+            <li>Basic computer use is enough</li>
+            <li>Curiosity matters most</li>
+        </ul>
+
+        <a class="back" href="/juco-dsg/">← Back to Curriculum</a>
+
+        <!-- NAVIGATION -->
+        <div class="nav-buttons">
+            <a class="nav-btn disabled">← Previous</a>
+            <a class="nav-btn" href="/juco-dsg/module1.html">Next → Module 1</a>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
