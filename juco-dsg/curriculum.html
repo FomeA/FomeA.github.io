@@ -3,379 +3,408 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JUCo DSRG — Curriculum</title>
+<title>JUCo DSRG Training Curriculum</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:wght@400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --navy:#1F3864;
-  --navy-dk:#111E38;
-  --teal:#2E8B6E;
-  --teal2:#3AAFA9;
-  --text:#1A1A2E;
-  --muted:#5A6478;
-  --border:#E2E8F0;
-  --bg:#f6f8fb;
-  --white:#fff;
+    /* NAVY / TEAL / GOLD PALETTE */
+    --primary:#0b1f3a;     /* navy */
+    --secondary:#0f766e;   /* teal */
+    --accent:#d4af37;      /* gold */
+
+    --bg:#f4f7fb;
+    --card:#ffffff;
+    --border:#e5e7eb;
+    --text:#1f2937;
+    --muted:#6b7280;
 }
 
-*{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
 body{
-  font-family:'DM Sans',sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  line-height:1.7;
+    font-family:'Inter',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.6;
 }
 
-/* ───────── NAVBAR ───────── */
-.navbar{
-  position:fixed;
-  top:0;left:0;right:0;
-  height:64px;
-  background:rgba(17,30,56,0.96);
-  backdrop-filter:blur(10px);
-  display:flex;
-  align-items:center;
-  padding:0 24px;
-  z-index:999;
+/* HEADER */
+header{
+    background:linear-gradient(135deg, var(--primary), var(--secondary));
+    color:white;
+    padding:80px 40px;
+    text-align:center;
 }
 
-.nav-brand{
-  font-family:'DM Serif Display',serif;
-  color:white;
-  text-decoration:none;
-  font-size:16px;
+header h1{
+    font-size:2.6rem;
+    margin-bottom:12px;
 }
 
-.nav-brand span{color:var(--teal2);}
-
-.nav-links{
-  display:flex;
-  gap:16px;
-  margin-left:40px;
-  flex:1;
+header p{
+    max-width:700px;
+    margin:auto;
+    opacity:.9;
 }
 
-.nav-link{
-  color:rgba(255,255,255,0.6);
-  text-decoration:none;
-  font-size:13px;
-  padding:6px 10px;
-  border-radius:8px;
+.home-btn{
+    position:fixed;
+    left:20px;
+    background:var(--primary);
+    color:white;
+    padding:10px 16px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:600;
+    font-size:0.9rem;
+    z-index:999;
+    transition:0.3s;
+    box-shadow:0 4px 12px rgba(0,0,0,0.15);
 }
 
-.nav-link:hover,
-.nav-link.active{
-  color:white;
-  background:rgba(255,255,255,0.08);
+.home-btn:hover{
+    background:var(--secondary);
+    transform:translateY(-2px);
 }
 
-.nav-cta{
-  background:var(--teal);
-  color:white;
-  padding:8px 16px;
-  border-radius:999px;
-  text-decoration:none;
-  font-size:13px;
-  font-weight:600;
+/* top-left button */
+.top-left{
+    top:20px;
 }
 
-/* ───────── HERO ───────── */
-.hero{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  background:linear-gradient(160deg,var(--navy-dk),var(--navy));
-  color:white;
-  padding-top:80px;
+/* bottom-left button */
+.bottom-left{
+    bottom:20px;
 }
 
-.hero-inner{
-  width:min(1100px,92%);
-  margin:auto;
+/* ACTION BUTTONS */
+.action-bar{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-top:25px;
 }
 
-.hero h1{
-  font-family:'DM Serif Display',serif;
-  font-size:clamp(36px,5vw,60px);
-  margin-bottom:16px;
+.action-bar a{
+    background:white;
+    color:var(--primary);
+    text-decoration:none;
+    padding:10px 22px;
+    border-radius:8px;
+    font-weight:600;
+    transition:.3s;
 }
 
-.hero h1 em{color:var(--teal2);}
-
-.hero-sub{
-  max-width:650px;
-  color:rgba(255,255,255,0.75);
-  margin-bottom:30px;
+.action-bar a:hover{
+    transform:translateY(-2px);
+    color:var(--secondary);
 }
 
-.hero-actions{
-  display:flex;
-  gap:12px;
+/* LAYOUT */
+.layout{
+    max-width:1400px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:280px 1fr;
+    gap:25px;
+    padding:30px;
 }
 
-.btn{
-  padding:12px 22px;
-  border-radius:999px;
-  text-decoration:none;
-  font-weight:600;
-  font-size:14px;
+/* SIDEBAR */
+.sidebar{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:20px;
+    position:sticky;
+    top:20px;
+    height:fit-content;
 }
 
-.btn-primary{background:var(--teal);color:white;}
-.btn-outline{border:1px solid rgba(255,255,255,0.3);color:white;}
-
-/* ───────── SECTION ───────── */
-.section{
-  padding:80px 0;
+.sidebar h3{
+    margin-bottom:20px;
+    color:var(--primary);
 }
 
-.section > *{
-  width:min(1100px,92%);
-  margin-left:auto;
-  margin-right:auto;
+.phase{
+    margin-bottom:20px;
 }
 
-.section-eyebrow{
-  font-size:12px;
-  letter-spacing:1px;
-  text-transform:uppercase;
-  color:var(--teal);
-  margin-bottom:6px;
+.phase-title{
+    font-size:.85rem;
+    font-weight:700;
+    color:var(--secondary);
+    text-transform:uppercase;
+    margin-bottom:10px;
 }
 
-.section-intro{
-  color:var(--muted);
-  margin-bottom:20px;
+.phase a{
+    text-decoration:none;
+    color:var(--muted);
+    font-size:.95rem;
+    display:block;
+    padding:8px 10px;
+    border-radius:6px;
+    transition:.3s;
 }
 
-/* ───────── SEARCH ───────── */
-.curriculum-search{
-  margin:20px 0;
+.phase a:hover{
+    background:rgba(15,118,110,0.08);
+    color:var(--secondary);
 }
 
-.curriculum-search input{
-  width:100%;
-  padding:12px 14px;
-  border-radius:10px;
-  border:1px solid #ddd;
-  font-size:14px;
-  outline:none;
+/* CONTENT */
+.content{
+    display:flex;
+    flex-direction:column;
+    gap:25px;
 }
 
-.curriculum-search input:focus{
-  border-color:var(--teal);
-  box-shadow:0 0 0 2px rgba(46,139,110,0.15);
+.card{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:30px;
 }
 
-/* ───────── FILTERS ───────── */
-.weeks-filter{
-  display:flex;
-  flex-wrap:wrap;
-  gap:8px;
-  margin:20px 0;
+.card h2{
+    color:var(--primary);
+    margin-bottom:15px;
 }
 
-.filter-btn{
-  border:none;
-  padding:8px 14px;
-  border-radius:999px;
-  background:#e9eef5;
-  cursor:pointer;
-  font-size:13px;
+/* MODULE CARDS */
+.module-grid{
+    display:grid;
+    gap:15px;
 }
 
-.filter-btn.active{
-  background:var(--teal);
-  color:white;
+.module-card{
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    transition:.3s;
 }
 
-/* ───────── GRID ───────── */
-.weeks-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:14px;
+.module-card:hover{
+    border-color:var(--accent);
+    transform:translateY(-2px);
 }
 
-.week-card{
-  background:white;
-  border:1px solid var(--border);
-  border-radius:12px;
-  padding:16px;
-  transition:0.15s;
+.module-info h3{
+    margin-bottom:5px;
+    color:var(--primary);
 }
 
-.week-card:hover{
-  transform:translateY(-2px);
-  border-color:var(--teal);
+.module-info p{
+    color:var(--muted);
+    font-size:.95rem;
 }
 
-.wc-head{
-  display:flex;
-  justify-content:space-between;
-  margin-bottom:8px;
+/* GOLD BUTTON */
+.module-btn{
+    text-decoration:none;
+    background:var(--accent);
+    color:var(--primary);
+    padding:10px 18px;
+    border-radius:8px;
+    font-weight:700;
+    white-space:nowrap;
+    transition:.3s;
 }
 
-.wc-num{
-  font-size:12px;
-  font-weight:600;
-  color:var(--muted);
+.module-btn:hover{
+    background:#c49a2e;
+    transform:translateY(-1px);
 }
 
-.wc-title{
-  font-weight:600;
-  margin-bottom:6px;
-}
-
-.wc-desc{
-  font-size:13px;
-  color:var(--muted);
-}
-
-/* ───────── FOOTER ───────── */
+/* FOOTER */
 footer{
-  background:var(--navy-dk);
-  color:white;
-  text-align:center;
-  padding:30px;
-  margin-top:60px;
+    text-align:center;
+    padding:30px;
+    color:var(--muted);
 }
 
-/* ───────── MOBILE ───────── */
-@media(max-width:768px){
-  .nav-links{display:none;}
+/* MOBILE */
+@media(max-width:900px){
+.layout{
+    grid-template-columns:1fr;
+}
+
+.sidebar{
+    position:relative;
+}
+
+.module-card{
+    flex-direction:column;
+    align-items:flex-start;
+}
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-<nav class="navbar">
-  <a href="index.html" class="nav-brand">JUCo <span>DSRG</span></a>
-  <div class="nav-links">
-    <a class="nav-link active" href="#about">Home</a>
-    <a class="nav-link" href="#curriculum">Curriculum</a>
-  </div>
-  <!--<a href="#curriculum" class="nav-cta">View Curriculum</a>-->
-</nav>
-
-<!-- HERO -->
-<section class="hero" id="about">
-  <div class="hero-inner">
-    <h1>Data Science &<br><em>Modelling Research Group</em></h1>
-    <p class="hero-sub">
-      Structured training in data science, modelling, and applied research using real-world datasets.
+<header>
+    <h1>Our Curriculum</h1>
+    <p>
+        A beginner-friendly learning pathway designed to build confidence in
+        data analysis, programming, modelling, and research through practical
+        activities and real-world examples.
     </p>
-    <div class="hero-actions">
-      <a href="#curriculum" class="btn btn-primary">Explore Curriculum</a>
-      <!--<a href="#curriculum" class="btn btn-outline">Start Learning</a>-->
+
+    <div class="action-bar">
+        <a href="#overview">Overview</a>
+        <a href="#prerequisites">Prerequisites</a>
+        <a href="#modules">Modules</a>
     </div>
-  </div>
+</header>
+
+<a href="index.html" class="home-btn top-left"> <-- Back to DSRG Overview</a>
+<a href="index.html" class="home-btn bottom-left"><--Back to DSRG Overview</a>
+
+<div class="layout">
+
+<aside class="sidebar">
+    <h3>Course Navigation</h3>
+
+    <div class="phase">
+        <div class="phase-title">Phase 1 · Foundations</div>
+        <ul>
+            <li><a href="module0.html">Module 0</a></li>
+            <li><a href="module1.html">Module 1</a></li>
+        </ul>
+    </div>
+
+    <div class="phase">
+        <div class="phase-title">Phase 2 · Data Skills</div>
+        <ul>
+            <li><a href="module2.html">Module 2</a></li>
+            <li><a href="module3.html">Module 3</a></li>
+        </ul>
+    </div>
+
+    <div class="phase">
+        <div class="phase-title">Phase 3 · Modelling Skills</div>
+        <ul>
+            <li><a href="module4.html">Module 4</a></li>
+            <li><a href="module5.html">Module 5</a></li>
+            <li><a href="module6.html">Module 6</a></li>
+        </ul>
+    </div>
+
+    <div class="phase">
+        <div class="phase-title">Phase 4 · Research Skills</div>
+        <ul>
+            <li><a href="module7.html">Module 7</a></li>
+        </ul>
+    </div>
+</aside>
+
+<main class="content">
+
+<section class="card" id="overview">
+    <h2>Overview</h2>
+    <p>
+        This curriculum helps beginners learn how to work with data,
+        use R for analysis, create visualizations, build simple models,
+        and develop research skills.
+    </p>
 </section>
 
-<!-- CURRICULUM -->
-<section class="section" id="curriculum">
-
-  <div class="section-eyebrow">The Programme</div>
-  <h2>Year 1 Curriculum</h2>
-  <p class="section-intro">
-    44 operational weeks across four phases.
-  </p>
-
-  <!-- SEARCH -->
-  <div class="curriculum-search">
-    <input type="text" id="weekSearch" placeholder="Search weeks (e.g. regression, R, SIR model...)" onkeyup="searchWeeks()">
-  </div>
-
-  <!-- FILTERS -->
-  <div class="weeks-filter">
-    <button class="filter-btn active" onclick="filterWeeks('all', this)">All Weeks</button>
-    <button class="filter-btn" onclick="filterWeeks('p1', this)">Phase 1</button>
-    <button class="filter-btn" onclick="filterWeeks('p2', this)">Phase 2</button>
-    <button class="filter-btn" onclick="filterWeeks('p3', this)">Phase 3</button>
-    <button class="filter-btn" onclick="filterWeeks('p4', this)">Phase 4</button>
-    <button class="filter-btn" onclick="filterWeeks('live', this)">Available</button>
-  </div>
-
-  <!-- GRID -->
-  <div class="weeks-grid">
-
-    <div class="week-card" data-phase="p1" data-status="live">
-      <div class="wc-head"><span class="wc-num">WEEK 01</span></div>
-      <div class="wc-title">Orientation</div>
-      <div class="wc-desc">R setup & research culture</div>
-    </div>
-
-    <div class="week-card" data-phase="p1">
-      <div class="wc-head"><span class="wc-num">WEEK 02</span></div>
-      <div class="wc-title">R Foundations</div>
-      <div class="wc-desc">Objects, vectors, syntax</div>
-    </div>
-
-    <div class="week-card" data-phase="p2">
-      <div class="wc-head"><span class="wc-num">WEEK 15</span></div>
-      <div class="wc-title">Differential Equations</div>
-      <div class="wc-desc">Rate of change models</div>
-    </div>
-
-    <div class="week-card" data-phase="p2">
-      <div class="wc-head"><span class="wc-num">WEEK 17</span></div>
-      <div class="wc-title">SIR Model</div>
-      <div class="wc-desc">Disease modelling</div>
-    </div>
-
-  </div>
+<section class="card" id="prerequisites">
+    <h2>Prerequisites</h2>
+    <p>No previous programming experience is required.</p>
 </section>
 
-<!-- SCRIPT -->
-<script>
-let currentFilter = "all";
-let currentSearch = "";
+<section class="card" id="modules">
+    <h2>Modules</h2>
 
-function filterWeeks(type, btn){
-  currentFilter = type;
+    <div class="module-grid">
 
-  document.querySelectorAll('.filter-btn')
-    .forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
+        <div class="module-card">
+            <div class="module-info">
+                <h3>Module 0 · Before We Touch Code</h3>
+                <p>Understand what data is and how information is organized before using software.</p>
+            </div>
+            <a href="module0.html" class="module-btn">Open</a>
+        </div>
 
-  applyFilters();
-}
+        <div class="module-card">
+            <div class="module-info">
+                <h3>Module 1 · Speaking to the Computer</h3>
+                <p>Learn basic R commands and how to interact with the computer through code.</p>
+            </div>
+            <a href="module1.html" class="module-btn">Open</a>
+        </div>
 
-function searchWeeks(){
-  currentSearch = document.getElementById('weekSearch').value.toLowerCase().trim();
-  applyFilters();
-}
+        <div class="module-card">
+            <div class="module-info">
+                <h3>Module 2 · Learning to See Data</h3>
+                <p>Explore data using tables, summaries, and simple visualizations.</p>
+            </div>
+            <a href="module2.html" class="module-btn">Open</a>
+        </div>
 
-function applyFilters(){
-  const cards = document.querySelectorAll('.week-card');
+        <div class="module-card">
+            <div class="module-info">
+                <h3>Module 3 · From Pictures to Patterns</h3>
+                <p>Create charts and discover patterns and relationships in data.</p>
+            </div>
+            <a href="module3.html" class="module-btn">Open</a>
+        </div>
 
-  cards.forEach(card => {
-    const phase = card.dataset.phase;
-    const status = card.dataset.status || "";
-    const text = card.innerText.toLowerCase();
+        <div class="module-card">
+            <div class="module-info">
+                <h3>Module 4 · Simple Models of Relationships</h3>
+                <p>Learn how variables are related and build basic predictive models.</p>
+            </div>
+            <a href="module4.html" class="module-btn">Open</a>
+        </div>
 
-    const matchSearch = text.includes(currentSearch);
+        <div class="module-card">
+            <div class="module-info">
+                <h3>Module 5 · Thinking About Change Over Time</h3>
+                <p>Study how systems change and grow using real-world examples.</p>
+            </div>
+            <a href="module5.html" class="module-btn">Open</a>
+        </div>
 
-    let matchFilter = false;
+        <div class="module-card">
+            <div class="module-info">
+                <h3>Module 6 · Modelling Spread</h3>
+                <p>Use simple disease-spread models to understand dynamic systems.</p>
+            </div>
+            <a href="module6.html" class="module-btn">Open</a>
+        </div>
 
-    if(currentFilter === "all") matchFilter = true;
-    else if(currentFilter === "live") matchFilter = status === "live";
-    else matchFilter = phase === currentFilter;
+        <div class="module-card">
+            <div class="module-info">
+                <h3>Module 7 · Becoming a Researcher</h3>
+                <p>Develop a research question and design an independent project.</p>
+            </div>
+            <a href="module7.html" class="module-btn">Open</a>
+        </div>
 
-    card.style.display = (matchSearch && matchFilter) ? "block" : "none";
-  });
-}
-</script>
+    </div>
+</section>
 
-<!-- FOOTER -->
+</main>
+</div>
+
 <footer>
-  JUCo DSRG · Curriculum Programme · 2026
+    JUCo DSRG Training Program
 </footer>
 
 </body>
