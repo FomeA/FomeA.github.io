@@ -1,0 +1,2193 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Dr.&nbsp;Anna Fome">
+<meta name="dcterms.date" content="2026-06-30">
+
+<title>MAT 103: Numerical Analysis I – Dr.&nbsp;Anna Fome</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-5b4ad623e5705c0698d39aec6f10cf02.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    </a>
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Dr.&nbsp;Anna Fome</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../publications.html"> 
+<span class="menu-text">Publications</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../teaching.html"> 
+<span class="menu-text">Teaching</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../projects.html"> 
+<span class="menu-text">Projects</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../contact.html"> 
+<span class="menu-text">Contact</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/yourusername"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://scholar.google.com"> 
+<span class="menu-text">Google Scholar</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://orcid.org"> 
+<span class="menu-text">ORCID</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a></li>
+  <li><a href="#lagrange-interpolation" id="toc-lagrange-interpolation" class="nav-link" data-scroll-target="#lagrange-interpolation"><span class="header-section-number">2</span> Lagrange Interpolation</a>
+  <ul class="collapse">
+  <li><a href="#the-main-idea" id="toc-the-main-idea" class="nav-link" data-scroll-target="#the-main-idea"><span class="header-section-number">2.1</span> The Main Idea</a></li>
+  <li><a href="#the-lagrange-basis-polynomials" id="toc-the-lagrange-basis-polynomials" class="nav-link" data-scroll-target="#the-lagrange-basis-polynomials"><span class="header-section-number">2.2</span> The Lagrange Basis Polynomials</a></li>
+  <li><a href="#the-lagrange-interpolating-polynomial" id="toc-the-lagrange-interpolating-polynomial" class="nav-link" data-scroll-target="#the-lagrange-interpolating-polynomial"><span class="header-section-number">2.3</span> The Lagrange Interpolating Polynomial</a></li>
+  <li><a href="#example-4.1-linear-lagrange-interpolation-n-1" id="toc-example-4.1-linear-lagrange-interpolation-n-1" class="nav-link" data-scroll-target="#example-4.1-linear-lagrange-interpolation-n-1"><span class="header-section-number">2.4</span> Example 4.1 — Linear Lagrange Interpolation (<span class="math inline">\(n = 1\)</span>)</a></li>
+  <li><a href="#example-4.2-quadratic-lagrange-interpolation-n-2" id="toc-example-4.2-quadratic-lagrange-interpolation-n-2" class="nav-link" data-scroll-target="#example-4.2-quadratic-lagrange-interpolation-n-2"><span class="header-section-number">2.5</span> Example 4.2 — Quadratic Lagrange Interpolation (<span class="math inline">\(n = 2\)</span>)</a></li>
+  <li><a href="#example-4.3-lagrange-with-real-data" id="toc-example-4.3-lagrange-with-real-data" class="nav-link" data-scroll-target="#example-4.3-lagrange-with-real-data"><span class="header-section-number">2.6</span> Example 4.3 — Lagrange with Real Data</a></li>
+  <li><a href="#the-error-term-in-lagrange-interpolation" id="toc-the-error-term-in-lagrange-interpolation" class="nav-link" data-scroll-target="#the-error-term-in-lagrange-interpolation"><span class="header-section-number">2.7</span> The Error Term in Lagrange Interpolation</a>
+  <ul class="collapse">
+  <li><a href="#example-4.4-error-bound" id="toc-example-4.4-error-bound" class="nav-link" data-scroll-target="#example-4.4-error-bound"><span class="header-section-number">2.7.1</span> Example 4.4 — Error Bound</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#finite-difference-interpolation-polynomials" id="toc-finite-difference-interpolation-polynomials" class="nav-link" data-scroll-target="#finite-difference-interpolation-polynomials"><span class="header-section-number">3</span> Finite Difference Interpolation Polynomials</a>
+  <ul class="collapse">
+  <li><a href="#why-another-method" id="toc-why-another-method" class="nav-link" data-scroll-target="#why-another-method"><span class="header-section-number">3.1</span> Why Another Method?</a></li>
+  <li><a href="#the-difference-operator-delta" id="toc-the-difference-operator-delta" class="nav-link" data-scroll-target="#the-difference-operator-delta"><span class="header-section-number">3.2</span> The Difference Operator <span class="math inline">\(\Delta\)</span></a></li>
+  <li><a href="#building-the-difference-table" id="toc-building-the-difference-table" class="nav-link" data-scroll-target="#building-the-difference-table"><span class="header-section-number">3.3</span> Building the Difference Table</a>
+  <ul class="collapse">
+  <li><a href="#example-4.5-building-a-difference-table" id="toc-example-4.5-building-a-difference-table" class="nav-link" data-scroll-target="#example-4.5-building-a-difference-table"><span class="header-section-number">3.3.1</span> Example 4.5 — Building a Difference Table</a></li>
+  </ul></li>
+  <li><a href="#newtons-forward-difference-formula" id="toc-newtons-forward-difference-formula" class="nav-link" data-scroll-target="#newtons-forward-difference-formula"><span class="header-section-number">3.4</span> Newton’s Forward Difference Formula</a>
+  <ul class="collapse">
+  <li><a href="#example-4.6-newton-forward-interpolation" id="toc-example-4.6-newton-forward-interpolation" class="nav-link" data-scroll-target="#example-4.6-newton-forward-interpolation"><span class="header-section-number">3.4.1</span> Example 4.6 — Newton Forward Interpolation</a></li>
+  <li><a href="#example-4.7-newton-forward-on-a-real-table" id="toc-example-4.7-newton-forward-on-a-real-table" class="nav-link" data-scroll-target="#example-4.7-newton-forward-on-a-real-table"><span class="header-section-number">3.4.2</span> Example 4.7 — Newton Forward on a Real Table</a></li>
+  </ul></li>
+  <li><a href="#newtons-backward-difference-formula" id="toc-newtons-backward-difference-formula" class="nav-link" data-scroll-target="#newtons-backward-difference-formula"><span class="header-section-number">3.5</span> Newton’s Backward Difference Formula</a>
+  <ul class="collapse">
+  <li><a href="#example-4.8-newton-backward-interpolation" id="toc-example-4.8-newton-backward-interpolation" class="nav-link" data-scroll-target="#example-4.8-newton-backward-interpolation"><span class="header-section-number">3.5.1</span> Example 4.8 — Newton Backward Interpolation</a></li>
+  </ul></li>
+  <li><a href="#stirlings-and-bessels-formulas" id="toc-stirlings-and-bessels-formulas" class="nav-link" data-scroll-target="#stirlings-and-bessels-formulas"><span class="header-section-number">3.6</span> Stirling’s and Bessel’s Formulas</a>
+  <ul class="collapse">
+  <li><a href="#when-to-use-which-formula" id="toc-when-to-use-which-formula" class="nav-link" data-scroll-target="#when-to-use-which-formula"><span class="header-section-number">3.6.1</span> When to Use Which Formula</a></li>
+  <li><a href="#stirlings-formula" id="toc-stirlings-formula" class="nav-link" data-scroll-target="#stirlings-formula"><span class="header-section-number">3.6.2</span> Stirling’s Formula</a></li>
+  <li><a href="#bessels-formula" id="toc-bessels-formula" class="nav-link" data-scroll-target="#bessels-formula"><span class="header-section-number">3.6.3</span> Bessel’s Formula</a></li>
+  <li><a href="#example-4.8b-stirlings-and-bessels-formulas" id="toc-example-4.8b-stirlings-and-bessels-formulas" class="nav-link" data-scroll-target="#example-4.8b-stirlings-and-bessels-formulas"><span class="header-section-number">3.6.4</span> Example 4.8b — Stirling’s and Bessel’s Formulas</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#using-interpolating-polynomials-for-derivatives-and-integrals" id="toc-using-interpolating-polynomials-for-derivatives-and-integrals" class="nav-link" data-scroll-target="#using-interpolating-polynomials-for-derivatives-and-integrals"><span class="header-section-number">4</span> Using Interpolating Polynomials for Derivatives and Integrals</a>
+  <ul class="collapse">
+  <li><a href="#numerical-differentiation" id="toc-numerical-differentiation" class="nav-link" data-scroll-target="#numerical-differentiation"><span class="header-section-number">4.1</span> Numerical Differentiation</a>
+  <ul class="collapse">
+  <li><a href="#deriving-the-first-derivative-formula" id="toc-deriving-the-first-derivative-formula" class="nav-link" data-scroll-target="#deriving-the-first-derivative-formula"><span class="header-section-number">4.1.1</span> Deriving the First Derivative Formula</a></li>
+  <li><a href="#deriving-the-second-derivative-formula" id="toc-deriving-the-second-derivative-formula" class="nav-link" data-scroll-target="#deriving-the-second-derivative-formula"><span class="header-section-number">4.1.2</span> Deriving the Second Derivative Formula</a></li>
+  <li><a href="#example-4.9-numerical-differentiation-first-derivative" id="toc-example-4.9-numerical-differentiation-first-derivative" class="nav-link" data-scroll-target="#example-4.9-numerical-differentiation-first-derivative"><span class="header-section-number">4.1.3</span> Example 4.9 — Numerical Differentiation (First Derivative)</a></li>
+  <li><a href="#example-4.10-numerical-differentiation-at-an-interior-node" id="toc-example-4.10-numerical-differentiation-at-an-interior-node" class="nav-link" data-scroll-target="#example-4.10-numerical-differentiation-at-an-interior-node"><span class="header-section-number">4.1.4</span> Example 4.10 — Numerical Differentiation at an Interior Node</a></li>
+  <li><a href="#example-4.11-numerical-second-derivative" id="toc-example-4.11-numerical-second-derivative" class="nav-link" data-scroll-target="#example-4.11-numerical-second-derivative"><span class="header-section-number">4.1.5</span> Example 4.11 — Numerical Second Derivative</a></li>
+  <li><a href="#connecting-polynomials-to-integration-the-next-frontier" id="toc-connecting-polynomials-to-integration-the-next-frontier" class="nav-link" data-scroll-target="#connecting-polynomials-to-integration-the-next-frontier"><span class="header-section-number">4.1.6</span> Connecting Polynomials to Integration: The Next Frontier</a></li>
+  <li><a href="#coming-up-in-topic-5a-the-newton-cotes-framework" id="toc-coming-up-in-topic-5a-the-newton-cotes-framework" class="nav-link" data-scroll-target="#coming-up-in-topic-5a-the-newton-cotes-framework"><span class="header-section-number">4.1.7</span> Coming Up in Topic 5(a): The Newton-Cotes Framework</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#tutorial-questions" id="toc-tutorial-questions" class="nav-link" data-scroll-target="#tutorial-questions"><span class="header-section-number">5</span> Tutorial Questions</a>
+  <ul class="collapse">
+  <li><a href="#section-a-concepts" id="toc-section-a-concepts" class="nav-link" data-scroll-target="#section-a-concepts"><span class="header-section-number">5.1</span> Section A: Concepts</a></li>
+  <li><a href="#section-b-lagrange-interpolation" id="toc-section-b-lagrange-interpolation" class="nav-link" data-scroll-target="#section-b-lagrange-interpolation"><span class="header-section-number">5.2</span> Section B: Lagrange Interpolation</a></li>
+  <li><a href="#section-c-finite-difference-tables" id="toc-section-c-finite-difference-tables" class="nav-link" data-scroll-target="#section-c-finite-difference-tables"><span class="header-section-number">5.3</span> Section C: Finite Difference Tables</a></li>
+  <li><a href="#section-d-newton-forward-and-backward-difference-formulas" id="toc-section-d-newton-forward-and-backward-difference-formulas" class="nav-link" data-scroll-target="#section-d-newton-forward-and-backward-difference-formulas"><span class="header-section-number">5.4</span> Section D: Newton Forward, and Backward Difference Formulas</a></li>
+  <li><a href="#section-e-numerical-differentiation" id="toc-section-e-numerical-differentiation" class="nav-link" data-scroll-target="#section-e-numerical-differentiation"><span class="header-section-number">5.5</span> Section E: Numerical Differentiation</a></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="MAT103_Topic4_Complete.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">MAT 103: Numerical Analysis I</h1>
+<p class="subtitle lead">Topic 4: Approximation of Functions by Polynomials</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Dr.&nbsp;Anna Fome </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">June 30, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<blockquote class="blockquote">
+<p><em>“Polynomial approximation is the art of replacing something complicated with something simple — and knowing how much you have lost in doing so.”</em></p>
+</blockquote>
+<section id="introduction" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
+<p>Suppose you are given a function <span class="math inline">\(f(x)\)</span> that is:</p>
+<ul>
+<li>defined only at a <strong>few data points</strong> (e.g.&nbsp;measurements from an experiment), or</li>
+<li>too <strong>complicated</strong> to differentiate or integrate analytically, or</li>
+<li>a <strong>black box</strong> — you can evaluate it but have no formula.</li>
+</ul>
+<p>In all these cases, we need a way to:</p>
+<ol type="1">
+<li><strong>Estimate</strong> <span class="math inline">\(f\)</span> at points where we have no data.</li>
+<li><strong>Approximate</strong> derivatives <span class="math inline">\(f'(x)\)</span>, <span class="math inline">\(f''(x)\)</span>.</li>
+<li><strong>Approximate</strong> definite integrals <span class="math inline">\(\int_a^b f(x)\,dx\)</span>.</li>
+</ol>
+<p>The key idea of this topic is: <strong>replace</strong> <span class="math inline">\(f(x)\)</span> by a polynomial <span class="math inline">\(P(x)\)</span> that passes through the known data points. Polynomials are easy to evaluate, differentiate, and integrate — so once we have <span class="math inline">\(P(x)\)</span>, we can do all three tasks above.</p>
+<p>This process is called <strong>polynomial interpolation</strong>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Polynomial interpolation</strong> is the construction of a polynomial <span class="math inline">\(P(x)\)</span> that passes exactly through a given set of data points: <span id="eq-data-points"><span class="math display">\[(x_0, f_0),\;(x_1, f_1),\;\ldots,\;(x_n, f_n) \tag{1}\]</span></span> where <span class="math inline">\(f_i = f(x_i)\)</span>. The <span class="math inline">\(x_i\)</span> are called <strong>nodes</strong> (or interpolation points).</p>
+</div>
+</div>
+<p>By the end of this topic you should be able to:</p>
+<ul>
+<li>Build and apply the Lagrange interpolating polynomial.</li>
+<li>State and use the Lagrange error term.</li>
+<li>Build a forward and backward difference table.</li>
+<li>Apply Newton’s Forward and Backward Difference formulas.</li>
+<li>Apply Stirling’s and Bessel’s central difference formulas.</li>
+<li>Use an interpolating polynomial to approximate derivatives and integrals.</li>
+<li>Use MATLAB/MAPLE for interpolation.</li>
+</ul>
+</section>
+<section id="lagrange-interpolation" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Lagrange Interpolation</h1>
+<section id="the-main-idea" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="the-main-idea"><span class="header-section-number">2.1</span> The Main Idea</h2>
+<p>Given <span class="math inline">\(n+1\)</span> data points <span class="math inline">\((x_0,f_0),(x_1,f_1),\ldots,(x_n,f_n)\)</span>, we want a polynomial <span class="math inline">\(P_n(x)\)</span> of degree <strong>at most</strong> <span class="math inline">\(n\)</span> that satisfies:</p>
+<p><span id="eq-interp-condition"><span class="math display">\[P_n(x_i) = f_i \quad \text{for every } i = 0, 1, \ldots, n \tag{2}\]</span></span></p>
+<p>The clever trick in Lagrange interpolation is to build <span class="math inline">\(P_n(x)\)</span> from <span class="math inline">\(n+1\)</span> simpler pieces called <strong>Lagrange basis polynomials</strong>, one for each node.</p>
+</section>
+<section id="the-lagrange-basis-polynomials" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="the-lagrange-basis-polynomials"><span class="header-section-number">2.2</span> The Lagrange Basis Polynomials</h2>
+<p>For each node <span class="math inline">\(x_i\)</span>, define:</p>
+<p><span id="eq-lagrange-basis"><span class="math display">\[L_i(x) = \prod_{\substack{j=0\\j\neq i}}^{n} \frac{x - x_j}{x_i - x_j}
+= \frac{(x-x_0)\cdots(x-x_{i-1})(x-x_{i+1})\cdots(x-x_n)}
+       {(x_i-x_0)\cdots(x_i-x_{i-1})(x_i-x_{i+1})\cdots(x_i-x_n)} \tag{3}\]</span></span></p>
+<p>The key property is:</p>
+<p><span id="eq-lagrange-property"><span class="math display">\[L_i(x_j) = \begin{cases} 1 &amp; \text{if } j = i \\ 0 &amp; \text{if } j \neq i \end{cases} \tag{4}\]</span></span></p>
+<p>In words: <span class="math inline">\(L_i(x)\)</span> equals <strong>1 at its own node</strong> and <strong>0 at every other node</strong>.</p>
+<p>This is exactly what we need: it means when we add the pieces together, each <span class="math inline">\(f_i\)</span> contributes only at <span class="math inline">\(x_i\)</span> and nowhere else.</p>
+</section>
+<section id="the-lagrange-interpolating-polynomial" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="the-lagrange-interpolating-polynomial"><span class="header-section-number">2.3</span> The Lagrange Interpolating Polynomial</h2>
+<p><span id="eq-lagrange-poly"><span class="math display">\[\boxed{P_n(x) = \sum_{i=0}^{n} f_i \cdot L_i(x)
+= f_0 L_0(x) + f_1 L_1(x) + \cdots + f_n L_n(x)} \tag{5}\]</span></span></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Why Does This Work?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Check: at <span class="math inline">\(x = x_k\)</span>, all <span class="math inline">\(L_i(x_k) = 0\)</span> except <span class="math inline">\(L_k(x_k) = 1\)</span> by <a href="#eq-lagrange-property" class="quarto-xref">Eq.&nbsp;4</a>. So <span class="math inline">\(P_n(x_k) = f_k \cdot 1 = f_k\)</span> from <a href="#eq-lagrange-poly" class="quarto-xref">Eq.&nbsp;5</a> ✓ The polynomial passes through every data point — exactly as required by <a href="#eq-interp-condition" class="quarto-xref">Eq.&nbsp;2</a>.</p>
+</div>
+</div>
+</section>
+<section id="example-4.1-linear-lagrange-interpolation-n-1" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="example-4.1-linear-lagrange-interpolation-n-1"><span class="header-section-number">2.4</span> Example 4.1 — Linear Lagrange Interpolation (<span class="math inline">\(n = 1\)</span>)</h2>
+<p><strong>Two data points:</strong> <span class="math inline">\(x_0 = 1\)</span>, <span class="math inline">\(f_0 = 2\)</span> and <span class="math inline">\(x_1 = 4\)</span>, <span class="math inline">\(f_1 = 8\)</span>.</p>
+<p><strong>Estimate</strong> <span class="math inline">\(f(2.5)\)</span>.</p>
+<p><strong>Step 1 — Build the basis polynomials using <a href="#eq-lagrange-basis" class="quarto-xref">Eq.&nbsp;3</a>:</strong></p>
+<p><span class="math display">\[L_0(x) = \frac{x - x_1}{x_0 - x_1} = \frac{x - 4}{1 - 4} = \frac{x-4}{-3}\]</span></p>
+<p><span class="math display">\[L_1(x) = \frac{x - x_0}{x_1 - x_0} = \frac{x - 1}{4 - 1} = \frac{x-1}{3}\]</span></p>
+<p><strong>Step 2 — Evaluate at</strong> <span class="math inline">\(x = 2.5\)</span>:</p>
+<p><span class="math display">\[L_0(2.5) = \frac{2.5 - 4}{-3} = \frac{-1.5}{-3} = 0.5\]</span></p>
+<p><span class="math display">\[L_1(2.5) = \frac{2.5 - 1}{3} = \frac{1.5}{3} = 0.5\]</span></p>
+<p><strong>Step 3 — Compute</strong> <span class="math inline">\(P_1(2.5)\)</span> using <a href="#eq-lagrange-poly" class="quarto-xref">Eq.&nbsp;5</a>:</p>
+<p><span class="math display">\[P_1(2.5) = f_0 \cdot L_0(2.5) + f_1 \cdot L_1(2.5) = 2(0.5) + 8(0.5) = 1 + 4 = 5\]</span></p>
+<p><strong>Result:</strong> <span class="math inline">\(f(2.5) \approx 5\)</span>.</p>
+<p><em>(Note:</em> <span class="math inline">\(L_0 + L_1 = 0.5 + 0.5 = 1\)</span> — the basis polynomials always sum to 1.)</p>
+</section>
+<section id="example-4.2-quadratic-lagrange-interpolation-n-2" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="example-4.2-quadratic-lagrange-interpolation-n-2"><span class="header-section-number">2.5</span> Example 4.2 — Quadratic Lagrange Interpolation (<span class="math inline">\(n = 2\)</span>)</h2>
+<p><strong>Three data points:</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(x\)</span></th>
+<th style="text-align: center;">1</th>
+<th style="text-align: center;">3</th>
+<th style="text-align: center;">5</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(f(x)\)</span></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">25</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Estimate</strong> <span class="math inline">\(f(2)\)</span>.</p>
+<p><em>(Note: these values come from</em> <span class="math inline">\(f(x) = x^2\)</span>.)</p>
+<p><strong>Step 1 — Build the three basis polynomials using <a href="#eq-lagrange-basis" class="quarto-xref">Eq.&nbsp;3</a>:</strong></p>
+<p><span class="math display">\[L_0(x) = \frac{(x-3)(x-5)}{(1-3)(1-5)} = \frac{(x-3)(x-5)}{(-2)(-4)} = \frac{(x-3)(x-5)}{8}\]</span></p>
+<p><span class="math display">\[L_1(x) = \frac{(x-1)(x-5)}{(3-1)(3-5)} = \frac{(x-1)(x-5)}{(2)(-2)} = \frac{(x-1)(x-5)}{-4}\]</span></p>
+<p><span class="math display">\[L_2(x) = \frac{(x-1)(x-3)}{(5-1)(5-3)} = \frac{(x-1)(x-3)}{(4)(2)} = \frac{(x-1)(x-3)}{8}\]</span></p>
+<p><strong>Step 2 — Evaluate each</strong> <span class="math inline">\(L_i\)</span> at <span class="math inline">\(x = 2\)</span>:</p>
+<p><span class="math display">\[L_0(2) = \frac{(2-3)(2-5)}{8} = \frac{(-1)(-3)}{8} = \frac{3}{8}\]</span></p>
+<p><span class="math display">\[L_1(2) = \frac{(2-1)(2-5)}{-4} = \frac{(1)(-3)}{-4} = \frac{-3}{-4} = \frac{3}{4}\]</span></p>
+<p><span class="math display">\[L_2(2) = \frac{(2-1)(2-3)}{8} = \frac{(1)(-1)}{8} = \frac{-1}{8}\]</span></p>
+<p><strong>Check:</strong> <span class="math inline">\(L_0 + L_1 + L_2 = \frac{3}{8} + \frac{3}{4} - \frac{1}{8} = \frac{3+6-1}{8} = \frac{8}{8} = 1\)</span> ✓</p>
+<p><strong>Step 3 — Compute</strong> <span class="math inline">\(P_2(2)\)</span> using <a href="#eq-lagrange-poly" class="quarto-xref">Eq.&nbsp;5</a>:</p>
+<p><span class="math display">\[P_2(2) = 1 \cdot \frac{3}{8} + 9 \cdot \frac{3}{4} + 25 \cdot \left(-\frac{1}{8}\right)
+= \frac{3}{8} + \frac{27}{4} - \frac{25}{8}
+= \frac{3 + 54 - 25}{8} = \frac{32}{8} = 4\]</span></p>
+<p><strong>Result:</strong> <span class="math inline">\(P_2(2) = 4\)</span>.</p>
+<p><em>True value:</em> <span class="math inline">\(f(2) = 2^2 = 4\)</span> ✓ (exact, because <span class="math inline">\(f(x) = x^2\)</span> is a degree-2 polynomial and we used 3 nodes — so the interpolant reproduces <span class="math inline">\(f\)</span> exactly).</p>
+</section>
+<section id="example-4.3-lagrange-with-real-data" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="example-4.3-lagrange-with-real-data"><span class="header-section-number">2.6</span> Example 4.3 — Lagrange with Real Data</h2>
+<p><strong>The following table gives values of</strong> <span class="math inline">\(f(x) = \ln(x)\)</span>:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(x\)</span></th>
+<th style="text-align: center;">2</th>
+<th style="text-align: center;">4</th>
+<th style="text-align: center;">6</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(f(x) = \ln(x)\)</span></td>
+<td style="text-align: center;">0.6931</td>
+<td style="text-align: center;">1.3863</td>
+<td style="text-align: center;">1.7918</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Estimate</strong> <span class="math inline">\(\ln(5)\)</span> using Lagrange interpolation.</p>
+<p><em>(True value:</em> <span class="math inline">\(\ln(5) = 1.6094\)</span>)</p>
+<p><strong>Step 1 — Basis polynomials at</strong> <span class="math inline">\(x = 5\)</span>, using <a href="#eq-lagrange-basis" class="quarto-xref">Eq.&nbsp;3</a>:</p>
+<p><span class="math display">\[L_0(5) = \frac{(5-4)(5-6)}{(2-4)(2-6)} = \frac{(1)(-1)}{(-2)(-4)} = \frac{-1}{8}\]</span></p>
+<p><span class="math display">\[L_1(5) = \frac{(5-2)(5-6)}{(4-2)(4-6)} = \frac{(3)(-1)}{(2)(-2)} = \frac{-3}{-4} = \frac{3}{4}\]</span></p>
+<p><span class="math display">\[L_2(5) = \frac{(5-2)(5-4)}{(6-2)(6-4)} = \frac{(3)(1)}{(4)(2)} = \frac{3}{8}\]</span></p>
+<p><strong>Check:</strong> <span class="math inline">\(-\frac{1}{8} + \frac{3}{4} + \frac{3}{8} = \frac{-1+6+3}{8} = \frac{8}{8} = 1\)</span> ✓</p>
+<p><strong>Step 2 — Interpolated value using <a href="#eq-lagrange-poly" class="quarto-xref">Eq.&nbsp;5</a>:</strong></p>
+<p><span class="math display">\[P_2(5) = 0.6931\left(-\frac{1}{8}\right) + 1.3863\left(\frac{3}{4}\right) + 1.7918\left(\frac{3}{8}\right)\]</span></p>
+<p><span class="math display">\[= -0.0866 + 1.0397 + 0.6719 = 1.6250\]</span></p>
+<p><strong>Result:</strong> <span class="math inline">\(\ln(5) \approx 1.6250\)</span></p>
+<p><em>Error:</em> <span class="math inline">\(|1.6250 - 1.6094| = 0.0156\)</span> — reasonable for such widely spaced nodes.</p>
+</section>
+<section id="the-error-term-in-lagrange-interpolation" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="the-error-term-in-lagrange-interpolation"><span class="header-section-number">2.7</span> The Error Term in Lagrange Interpolation</h2>
+<p>Whenever we use <span class="math inline">\(P_n(x)\)</span> to approximate <span class="math inline">\(f(x)\)</span>, there is an error. The <strong>Lagrange error formula</strong> tells us exactly how large that error can be.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Lagrange Error Formula
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">\(f\)</span> has <span class="math inline">\(n+1\)</span> continuous derivatives, the error at any point <span class="math inline">\(x\)</span> is:</p>
+<p><span id="eq-lagrange-error"><span class="math display">\[f(x) - P_n(x) = \frac{f^{(n+1)}(\xi)}{(n+1)!}
+\prod_{i=0}^{n}(x - x_i) \tag{6}\]</span></span></p>
+<p>for some unknown <span class="math inline">\(\xi\)</span> between the smallest and largest of <span class="math inline">\(x, x_0, x_1, \ldots, x_n\)</span>.</p>
+</div>
+</div>
+<p><strong>What does <a href="#eq-lagrange-error" class="quarto-xref">Eq.&nbsp;6</a> tell us?</strong></p>
+<ul>
+<li>The error depends on how large <span class="math inline">\(f^{(n+1)}\)</span> is — if <span class="math inline">\(f\)</span> changes rapidly, the error is larger, else the error is small. The term <span class="math inline">\((n+1)!\)</span> in the denominator helps to reduce the error.</li>
+<li>The error also depends on <span class="math inline">\(\prod(x - x_i)\)</span> — the further <span class="math inline">\(x\)</span> is from the nodes, the larger this product, and the larger the error.</li>
+<li>Using <strong>more nodes</strong> (larger <span class="math inline">\(n\)</span>) increases the degree and reduces the error, provided <span class="math inline">\(f^{(n+1)}\)</span> stays manageable.</li>
+</ul>
+<p><strong>Practical bound:</strong> Since <span class="math inline">\(\xi\)</span> is unknown, we replace <span class="math inline">\(f^{(n+1)}(\xi)\)</span> with its maximum value <span class="math inline">\(M_{n+1}\)</span> on the interval:</p>
+<p><span id="eq-lagrange-error-bound"><span class="math display">\[|f(x) - P_n(x)| \leq \frac{M_{n+1}}{(n+1)!} \left|\prod_{i=0}^{n}(x - x_i)\right| \tag{7}\]</span></span></p>
+<section id="example-4.4-error-bound" class="level3" data-number="2.7.1">
+<h3 data-number="2.7.1" class="anchored" data-anchor-id="example-4.4-error-bound"><span class="header-section-number">2.7.1</span> Example 4.4 — Error Bound</h3>
+<p>For Example 4.2 (<span class="math inline">\(f(x) = x^2\)</span>, nodes at <span class="math inline">\(1, 3, 5\)</span>, query at <span class="math inline">\(x = 2\)</span>):</p>
+<p><span class="math inline">\(n = 2\)</span>, so we need <span class="math inline">\(f^{(3)}(x)\)</span>. Since <span class="math inline">\(f(x) = x^2\)</span>, <span class="math inline">\(f^{(3)}(x) = 0\)</span> everywhere.</p>
+<p>By <a href="#eq-lagrange-error" class="quarto-xref">Eq.&nbsp;6</a>: <span class="math display">\[\text{Error} = \frac{0}{3!} \times \ldots = 0\]</span></p>
+<p>The interpolation is <strong>exact</strong> — as expected, since <span class="math inline">\(P_2(x)\)</span> reproduces any polynomial of degree <span class="math inline">\(\leq 2\)</span> without error.</p>
+<p>For <span class="math inline">\(f(x) = \ln(x)\)</span> (Example 4.3), <span class="math inline">\(f^{(3)}(x) = \frac{2}{x^3}\)</span>. On <span class="math inline">\([2, 6]\)</span>, the maximum is <span class="math inline">\(\frac{2}{2^3} = 0.25\)</span>.</p>
+<p>Applying <a href="#eq-lagrange-error-bound" class="quarto-xref">Eq.&nbsp;7</a>: <span class="math display">\[|E| \leq \frac{0.25}{6}|(5-2)(5-4)(5-6)| = \frac{0.25}{6} \times 3 = 0.125\]</span></p>
+<p>Our actual error was <span class="math inline">\(0.0156\)</span> — well within this bound ✓</p>
+</section>
+</section>
+</section>
+<section id="finite-difference-interpolation-polynomials" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Finite Difference Interpolation Polynomials</h1>
+<section id="why-another-method" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="why-another-method"><span class="header-section-number">3.1</span> Why Another Method?</h2>
+<p>Lagrange interpolation works well for any set of nodes <span class="math inline">\(x_0, x_1, \ldots, x_n\)</span>. But when the nodes are <strong>equally spaced</strong> — that is, <span class="math inline">\(x_i = x_0 + i \cdot h\)</span> for a fixed step size <span class="math inline">\(h\)</span> — we can use a much more systematic approach called <strong>finite difference interpolation</strong>.</p>
+<p>This approach:</p>
+<ul>
+<li>organises all the data in a neat <strong>difference table</strong> (built once, used many times),</li>
+<li>gives simple formulas for interpolation, differentiation, and integration,</li>
+<li>is historically very important and still widely used in numerical analysis.</li>
+</ul>
+</section>
+<section id="the-difference-operator-delta" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="the-difference-operator-delta"><span class="header-section-number">3.2</span> The Difference Operator <span class="math inline">\(\Delta\)</span></h2>
+<p>For equally spaced nodes with step size <span class="math inline">\(h\)</span>, the <strong>forward difference operator</strong> <span class="math inline">\(\Delta\)</span> is:</p>
+<p><span id="eq-forward-diff-1"><span class="math display">\[\Delta f_i = f_{i+1} - f_i \tag{8}\]</span></span></p>
+<p>This is simply the change in <span class="math inline">\(f\)</span> from one node to the next. We can apply <span class="math inline">\(\Delta\)</span> repeatedly to get <strong>higher-order differences</strong>:</p>
+<p><span id="eq-forward-diff-2"><span class="math display">\[\Delta^2 f_i = \Delta(\Delta f_i) = \Delta f_{i+1} - \Delta f_i = f_{i+2} - 2f_{i+1} + f_i \tag{9}\]</span></span></p>
+<p><span id="eq-forward-diff-3"><span class="math display">\[\Delta^3 f_i = \Delta(\Delta^2 f_i) = \Delta^2 f_{i+1} - \Delta^2 f_i \tag{10}\]</span></span></p>
+<p>In general: <span id="eq-forward-diff-general"><span class="math display">\[\Delta^k f_i = \Delta^{k-1} f_{i+1} - \Delta^{k-1} f_i \tag{11}\]</span></span></p>
+</section>
+<section id="building-the-difference-table" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="building-the-difference-table"><span class="header-section-number">3.3</span> Building the Difference Table</h2>
+<p>The <strong>forward difference table</strong> organises all the differences in a triangular array:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 18%">
+<col style="width: 21%">
+<col style="width: 21%">
+<col style="width: 21%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(x_i\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(f_i\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\Delta f_i\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\Delta^2 f_i\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\Delta^3 f_i\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\Delta^4 f_i\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(x_0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(f_0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\Delta f_0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\Delta^2 f_0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\Delta^3 f_0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\Delta^4 f_0\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(x_1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(f_1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\Delta f_1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\Delta^2 f_1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\Delta^3 f_1\)</span></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(x_2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(f_2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\Delta f_2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\Delta^2 f_2\)</span></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(x_3\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(f_3\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\Delta f_3\)</span></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(x_4\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(f_4\)</span></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Rule:</strong> every entry = (entry below it) <span class="math inline">\(-\)</span> (entry beside it on the left). Equivalently: every entry = (entry below-left) <span class="math inline">\(-\)</span> (entry beside-left).</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>How to Build the Table — One Step at a Time
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Work <strong>column by column</strong>, left to right. Each new column is obtained by subtracting consecutive entries of the previous column, using <a href="#eq-forward-diff-general" class="quarto-xref">Eq.&nbsp;11</a>. The top entry of each column is what we call <span class="math inline">\(\Delta^k f_0\)</span>.</p>
+</div>
+</div>
+<section id="example-4.5-building-a-difference-table" class="level3" data-number="3.3.1">
+<h3 data-number="3.3.1" class="anchored" data-anchor-id="example-4.5-building-a-difference-table"><span class="header-section-number">3.3.1</span> Example 4.5 — Building a Difference Table</h3>
+<p><strong>Build the forward difference table for:</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(x\)</span></th>
+<th style="text-align: center;">1</th>
+<th style="text-align: center;">2</th>
+<th style="text-align: center;">3</th>
+<th style="text-align: center;">4</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(f(x) = x^3\)</span></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">27</td>
+<td style="text-align: center;">64</td>
+</tr>
+</tbody>
+</table>
+<p>Here <span class="math inline">\(h = 1\)</span>, <span class="math inline">\(x_0 = 1\)</span>.</p>
+<p><strong>Column 1 — First differences</strong> <span class="math inline">\(\Delta f_i\)</span>, using <a href="#eq-forward-diff-1" class="quarto-xref">Eq.&nbsp;8</a>:</p>
+<p><span class="math display">\[\Delta f_0 = f_1 - f_0 = 8 - 1 = 7\]</span> <span class="math display">\[\Delta f_1 = f_2 - f_1 = 27 - 8 = 19\]</span> <span class="math display">\[\Delta f_2 = f_3 - f_2 = 64 - 27 = 37\]</span></p>
+<p><strong>Column 2 — Second differences</strong> <span class="math inline">\(\Delta^2 f_i\)</span>, using <a href="#eq-forward-diff-general" class="quarto-xref">Eq.&nbsp;11</a>:</p>
+<p><span class="math display">\[\Delta^2 f_0 = \Delta f_1 - \Delta f_0 = 19 - 7 = 12\]</span> <span class="math display">\[\Delta^2 f_1 = \Delta f_2 - \Delta f_1 = 37 - 19 = 18\]</span></p>
+<p><strong>Column 3 — Third differences</strong> <span class="math inline">\(\Delta^3 f_i\)</span>:</p>
+<p><span class="math display">\[\Delta^3 f_0 = \Delta^2 f_1 - \Delta^2 f_0 = 18 - 12 = 6\]</span></p>
+<p><strong>Complete table:</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(x_i\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(f_i\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\Delta f_i\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\Delta^2 f_i\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\Delta^3 f_i\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;"><strong>1</strong></td>
+<td style="text-align: center;"><strong>7</strong></td>
+<td style="text-align: center;"><strong>12</strong></td>
+<td style="text-align: center;"><strong>6</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">19</td>
+<td style="text-align: center;">18</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">27</td>
+<td style="text-align: center;">37</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">64</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<p>The <strong>bolded top diagonal</strong> — <span class="math inline">\(f_0 = 1\)</span>, <span class="math inline">\(\Delta f_0 = 7\)</span>, <span class="math inline">\(\Delta^2 f_0 = 12\)</span>, <span class="math inline">\(\Delta^3 f_0 = 6\)</span> — is what we will use in the Newton Forward formula.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Useful Pattern
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For a polynomial of degree <span class="math inline">\(k\)</span>, the <span class="math inline">\(k\)</span>-th differences are <strong>constant</strong> and all higher differences are <strong>zero</strong>. Since <span class="math inline">\(f(x) = x^3\)</span> is degree 3, <span class="math inline">\(\Delta^3 f = 6\)</span> (constant) and <span class="math inline">\(\Delta^4 f = 0\)</span> everywhere.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="newtons-forward-difference-formula" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="newtons-forward-difference-formula"><span class="header-section-number">3.4</span> Newton’s Forward Difference Formula</h2>
+<p>When we want to interpolate <strong>near the beginning of the table</strong> (i.e., <span class="math inline">\(x\)</span> is close to <span class="math inline">\(x_0\)</span>), we use Newton’s Forward Difference formula.</p>
+<p>Define the dimensionless variable:</p>
+<p><span id="eq-s-forward"><span class="math display">\[s = \frac{x - x_0}{h} \tag{12}\]</span></span></p>
+<p>So <span class="math inline">\(s = 0\)</span> at <span class="math inline">\(x_0\)</span>, <span class="math inline">\(s = 1\)</span> at <span class="math inline">\(x_1\)</span>, <span class="math inline">\(s = 2\)</span> at <span class="math inline">\(x_2\)</span>, and so on. For a point <strong>between</strong> <span class="math inline">\(x_0\)</span> and <span class="math inline">\(x_1\)</span>, we have <span class="math inline">\(0 &lt; s &lt; 1\)</span>.</p>
+<p>The formula is:</p>
+<p><span id="eq-newton-forward"><span class="math display">\[\boxed{P_n(x) = f_0 + s\,\Delta f_0 + \frac{s(s-1)}{2!}\,\Delta^2 f_0
++ \frac{s(s-1)(s-2)}{3!}\,\Delta^3 f_0 + \cdots} \tag{13}\]</span></span></p>
+<p>Or more compactly, using binomial-style notation:</p>
+<p><span id="eq-newton-forward-compact"><span class="math display">\[P_n(x) = \sum_{k=0}^{n} \binom{s}{k} \Delta^k f_0,
+\quad \text{where } \binom{s}{k} = \frac{s(s-1)(s-2)\cdots(s-k+1)}{k!} \tag{14}\]</span></span></p>
+<p><strong>Only the top row of the difference table is used:</strong> <span class="math inline">\(f_0,\; \Delta f_0,\; \Delta^2 f_0,\; \Delta^3 f_0,\; \ldots\)</span></p>
+<section id="example-4.6-newton-forward-interpolation" class="level3" data-number="3.4.1">
+<h3 data-number="3.4.1" class="anchored" data-anchor-id="example-4.6-newton-forward-interpolation"><span class="header-section-number">3.4.1</span> Example 4.6 — Newton Forward Interpolation</h3>
+<p><strong>Using the table from Example 4.5, estimate</strong> <span class="math inline">\(f(1.5)\)</span>.</p>
+<p>Here <span class="math inline">\(x_0 = 1\)</span>, <span class="math inline">\(h = 1\)</span>, <span class="math inline">\(x = 1.5\)</span>.</p>
+<p>By <a href="#eq-s-forward" class="quarto-xref">Eq.&nbsp;12</a>: <span class="math display">\[s = \frac{1.5 - 1}{1} = 0.5\]</span></p>
+<p>From the top row: <span class="math inline">\(f_0 = 1\)</span>, <span class="math inline">\(\Delta f_0 = 7\)</span>, <span class="math inline">\(\Delta^2 f_0 = 12\)</span>, <span class="math inline">\(\Delta^3 f_0 = 6\)</span>.</p>
+<p>Applying <a href="#eq-newton-forward" class="quarto-xref">Eq.&nbsp;13</a>:</p>
+<p><span class="math display">\[P_3(1.5) = f_0 + s\,\Delta f_0 + \frac{s(s-1)}{2}\,\Delta^2 f_0
++ \frac{s(s-1)(s-2)}{6}\,\Delta^3 f_0\]</span></p>
+<p><strong>Compute each term:</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Term</th>
+<th style="text-align: left;">Calculation</th>
+<th style="text-align: center;">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(f_0\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(s\,\Delta f_0\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(0.5 \times 7\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(3.5\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\dfrac{s(s-1)}{2}\,\Delta^2 f_0\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\dfrac{0.5\times(-0.5)}{2} \times 12 = \dfrac{-0.25}{2}\times 12\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(-1.5\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\dfrac{s(s-1)(s-2)}{6}\,\Delta^3 f_0\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\dfrac{0.5\times(-0.5)\times(-1.5)}{6}\times 6 = \dfrac{0.375}{6}\times 6\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0.375\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><span class="math display">\[P_3(1.5) = 1 + 3.5 - 1.5 + 0.375 = 3.375\]</span></p>
+<p><em>True value:</em> <span class="math inline">\((1.5)^3 = 3.375\)</span> ✓ (exact, because <span class="math inline">\(f(x) = x^3\)</span> is degree 3 and we used 4 nodes)</p>
+</section>
+<section id="example-4.7-newton-forward-on-a-real-table" class="level3" data-number="3.4.2">
+<h3 data-number="3.4.2" class="anchored" data-anchor-id="example-4.7-newton-forward-on-a-real-table"><span class="header-section-number">3.4.2</span> Example 4.7 — Newton Forward on a Real Table</h3>
+<p><strong>The following table gives values of</strong> <span class="math inline">\(e^x\)</span>:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(x\)</span></th>
+<th style="text-align: center;">0.0</th>
+<th style="text-align: center;">0.1</th>
+<th style="text-align: center;">0.2</th>
+<th style="text-align: center;">0.3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(e^x\)</span></td>
+<td style="text-align: center;">1.000000</td>
+<td style="text-align: center;">1.105171</td>
+<td style="text-align: center;">1.221403</td>
+<td style="text-align: center;">1.349859</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Estimate</strong> <span class="math inline">\(e^{0.15}\)</span>.</p>
+<p><em>(True value:</em> <span class="math inline">\(e^{0.15} = 1.161834\)</span>)</p>
+<p><strong>Step 1 — Build the difference table</strong> (<span class="math inline">\(h = 0.1\)</span>, <span class="math inline">\(x_0 = 0.0\)</span>):</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(x\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(f\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\Delta f\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\Delta^2 f\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\Delta^3 f\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0.0</td>
+<td style="text-align: center;"><strong>1.000000</strong></td>
+<td style="text-align: center;"><strong>0.105171</strong></td>
+<td style="text-align: center;"><strong>0.011061</strong></td>
+<td style="text-align: center;"><strong>0.001163</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0.1</td>
+<td style="text-align: center;">1.105171</td>
+<td style="text-align: center;">0.116232</td>
+<td style="text-align: center;">0.012224</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0.2</td>
+<td style="text-align: center;">1.221403</td>
+<td style="text-align: center;">0.128456</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0.3</td>
+<td style="text-align: center;">1.349859</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Step 2 — Compute</strong> <span class="math inline">\(s\)</span>, using <a href="#eq-s-forward" class="quarto-xref">Eq.&nbsp;12</a>:</p>
+<p><span class="math display">\[s = \frac{0.15 - 0.0}{0.1} = 1.5\]</span></p>
+<p><strong>Step 3 — Apply <a href="#eq-newton-forward" class="quarto-xref">Eq.&nbsp;13</a></strong> (using top row values in bold):</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Term</th>
+<th style="text-align: left;">Calculation</th>
+<th style="text-align: center;">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(f_0\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(1.000000\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1.000000\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(s\,\Delta f_0\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(1.5 \times 0.105171\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0.157757\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\dfrac{s(s-1)}{2}\Delta^2 f_0\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\dfrac{1.5\times 0.5}{2}\times 0.011061 = 0.375\times 0.011061\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0.004148\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\dfrac{s(s-1)(s-2)}{6}\Delta^3 f_0\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\dfrac{1.5\times 0.5\times(-0.5)}{6}\times 0.001163 = -0.0625\times 0.001163\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(-0.000073\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><span class="math display">\[P_3(0.15) = 1.000000 + 0.157757 + 0.004148 - 0.000073 = 1.161832\]</span></p>
+<p><em>True value:</em> <span class="math inline">\(e^{0.15} = 1.161834\)</span> — error of only <span class="math inline">\(0.000002\)</span>! ✓</p>
+</section>
+</section>
+<section id="newtons-backward-difference-formula" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="newtons-backward-difference-formula"><span class="header-section-number">3.5</span> Newton’s Backward Difference Formula</h2>
+<p>When we want to interpolate <strong>near the end of the table</strong> (i.e., <span class="math inline">\(x\)</span> is close to <span class="math inline">\(x_n\)</span>, the last node), we use the <strong>Backward Difference formula</strong>.</p>
+<p>First define the <strong>backward difference operator</strong> <span class="math inline">\(\nabla\)</span>:</p>
+<p><span id="eq-backward-diff-1"><span class="math display">\[\nabla f_i = f_i - f_{i-1} \tag{15}\]</span></span></p>
+<p><span id="eq-backward-diff-2"><span class="math display">\[\nabla^2 f_i = \nabla f_i - \nabla f_{i-1} = f_i - 2f_{i-1} + f_{i-2} \tag{16}\]</span></span></p>
+<p>Now define <span class="math inline">\(s\)</span> measuring distance <strong>backwards</strong> from the last node <span class="math inline">\(x_n\)</span>:</p>
+<p><span id="eq-s-backward"><span class="math display">\[s = \frac{x - x_n}{h} \qquad (\text{note: } s \leq 0 \text{ for } x \leq x_n) \tag{17}\]</span></span></p>
+<p>The <strong>Newton Backward Difference Formula</strong> is:</p>
+<p><span id="eq-newton-backward"><span class="math display">\[\boxed{P_n(x) = f_n + s\,\nabla f_n + \frac{s(s+1)}{2!}\,\nabla^2 f_n
++ \frac{s(s+1)(s+2)}{3!}\,\nabla^3 f_n + \cdots} \tag{18}\]</span></span></p>
+<p><strong>Only the bottom row (last diagonal) of the difference table is used:</strong> <span class="math inline">\(f_n,\; \nabla f_n,\; \nabla^2 f_n,\; \nabla^3 f_n, \ldots\)</span></p>
+<p>The backward differences can be read from the <strong>bottom-right diagonal</strong> of the same difference table built in the forward direction:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(x_i\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(f_i\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\Delta f_i\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\Delta^2 f_i\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\Delta^3 f_i\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(x_0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(f_0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\Delta f_0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\Delta^2 f_0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbf{\Delta^3 f_0 = \nabla^3 f_3}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(x_1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(f_1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\Delta f_1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbf{\Delta^2 f_1 = \nabla^2 f_3}\)</span></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(x_2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(f_2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbf{\Delta f_2 = \nabla f_3}\)</span></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(x_3\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbf{f_3}\)</span></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<p>So <span class="math inline">\(\nabla f_n = \Delta f_{n-1}\)</span>, <span class="math inline">\(\nabla^2 f_n = \Delta^2 f_{n-2}\)</span>, etc.</p>
+<section id="example-4.8-newton-backward-interpolation" class="level3" data-number="3.5.1">
+<h3 data-number="3.5.1" class="anchored" data-anchor-id="example-4.8-newton-backward-interpolation"><span class="header-section-number">3.5.1</span> Example 4.8 — Newton Backward Interpolation</h3>
+<p><strong>Using the</strong> <span class="math inline">\(e^x\)</span> table from Example 4.7, estimate <span class="math inline">\(e^{0.25}\)</span>.</p>
+<p><em>(True value:</em> <span class="math inline">\(e^{0.25} = 1.284025\)</span>)</p>
+<p><span class="math inline">\(x_n = 0.3\)</span>, <span class="math inline">\(h = 0.1\)</span>, <span class="math inline">\(x = 0.25\)</span>.</p>
+<p>By <a href="#eq-s-backward" class="quarto-xref">Eq.&nbsp;17</a>: <span class="math display">\[s = \frac{0.25 - 0.3}{0.1} = -0.5\]</span></p>
+<p><strong>Bottom-right diagonal</strong> (backward differences at <span class="math inline">\(x_n = 0.3\)</span>):</p>
+<p><span class="math display">\[f_n = 1.349859, \quad \nabla f_n = \Delta f_2 = 0.128456,
+\quad \nabla^2 f_n = \Delta^2 f_1 = 0.012224,
+\quad \nabla^3 f_n = \Delta^3 f_0 = 0.001163\]</span></p>
+<p><strong>Apply <a href="#eq-newton-backward" class="quarto-xref">Eq.&nbsp;18</a>:</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Term</th>
+<th style="text-align: left;">Calculation</th>
+<th style="text-align: center;">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(f_n\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(1.349859\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1.349859\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(s\,\nabla f_n\)</span></td>
+<td style="text-align: left;"><span class="math inline">\((-0.5)(0.128456)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(-0.064228\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\dfrac{s(s+1)}{2}\nabla^2 f_n\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\dfrac{(-0.5)(0.5)}{2}\times 0.012224 = -0.125\times 0.012224\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(-0.001528\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\dfrac{s(s+1)(s+2)}{6}\nabla^3 f_n\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\dfrac{(-0.5)(0.5)(1.5)}{6}\times 0.001163 = -0.0625\times 0.001163\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(-0.000073\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><span class="math display">\[P_3(0.25) = 1.349859 - 0.064228 - 0.001528 - 0.000073 = 1.284030\]</span></p>
+<p><em>True value:</em> <span class="math inline">\(e^{0.25} = 1.284025\)</span> — error of only <span class="math inline">\(0.000005\)</span> ✓</p>
+</section>
+</section>
+<section id="stirlings-and-bessels-formulas" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="stirlings-and-bessels-formulas"><span class="header-section-number">3.6</span> Stirling’s and Bessel’s Formulas</h2>
+<p>When <span class="math inline">\(x\)</span> is <strong>near the middle</strong> of the table, neither the forward nor the backward formula gives the best accuracy — they are optimised for the two ends.</p>
+<p><strong>Stirling’s formula</strong> and <strong>Bessel’s formula</strong> are central difference formulas designed for interpolation near the middle of the table. They use values from <strong>both sides</strong> of the point of interest, which gives better accuracy.</p>
+<section id="when-to-use-which-formula" class="level3" data-number="3.6.1">
+<h3 data-number="3.6.1" class="anchored" data-anchor-id="when-to-use-which-formula"><span class="header-section-number">3.6.1</span> When to Use Which Formula</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 43%">
+<col style="width: 31%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Formula</th>
+<th style="text-align: center;">Best used when <span class="math inline">\(x\)</span> is near…</th>
+<th style="text-align: center;">Uses values from…</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Newton Forward (<a href="#eq-newton-forward" class="quarto-xref">Eq.&nbsp;13</a>)</td>
+<td style="text-align: center;">Beginning of table (<span class="math inline">\(x \approx x_0\)</span>)</td>
+<td style="text-align: center;">Top row</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Newton Backward (<a href="#eq-newton-backward" class="quarto-xref">Eq.&nbsp;18</a>)</td>
+<td style="text-align: center;">End of table (<span class="math inline">\(x \approx x_n\)</span>)</td>
+<td style="text-align: center;">Bottom diagonal</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Stirling’s (<a href="#eq-stirling" class="quarto-xref">Eq.&nbsp;19</a>)</td>
+<td style="text-align: center;">Middle, <span class="math inline">\(s \approx 0\)</span></td>
+<td style="text-align: center;">Both sides of <span class="math inline">\(x_0\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Bessel’s (<a href="#eq-bessel" class="quarto-xref">Eq.&nbsp;21</a>)</td>
+<td style="text-align: center;">Middle, <span class="math inline">\(s \approx 0.5\)</span></td>
+<td style="text-align: center;">Both sides</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="stirlings-formula" class="level3" data-number="3.6.2">
+<h3 data-number="3.6.2" class="anchored" data-anchor-id="stirlings-formula"><span class="header-section-number">3.6.2</span> Stirling’s Formula</h3>
+<p>With <span class="math inline">\(s = (x - x_0)/h\)</span> measured from the middle node <span class="math inline">\(x_0\)</span>, and using the <strong>central difference</strong> notation <span class="math inline">\(\delta f_{i+1/2} = f_{i+1} - f_i\)</span>, Stirling’s formula is:</p>
+<p><span id="eq-stirling"><span class="math display">\[P(x) = f_0 + s\,\mu\delta f_0 + \frac{s^2}{2!}\delta^2 f_0
++ \frac{s(s^2-1)}{3!}\mu\delta^3 f_0 + \frac{s^2(s^2-1)}{4!}\delta^4 f_0 + \cdots \tag{19}\]</span></span></p>
+<p>where <span id="eq-stirling-mean"><span class="math display">\[\mu\delta f_0 = \frac{1}{2}\left(\Delta f_0 + \Delta f_{-1}\right) \tag{20}\]</span></span> is the <strong>mean of adjacent differences</strong>.</p>
+<p><strong>Reading <a href="#eq-stirling" class="quarto-xref">Eq.&nbsp;19</a>:</strong> odd-order terms (1st, 3rd) use the <em>average</em> of the two differences straddling <span class="math inline">\(x_0\)</span>; even-order terms (2nd, 4th) use a single, directly-centred difference. Stirling’s formula is most accurate when <span class="math inline">\(x\)</span> is close to a tabulated node, i.e.&nbsp;<span class="math inline">\(s\)</span> close to <span class="math inline">\(0\)</span>.</p>
+</section>
+<section id="bessels-formula" class="level3" data-number="3.6.3">
+<h3 data-number="3.6.3" class="anchored" data-anchor-id="bessels-formula"><span class="header-section-number">3.6.3</span> Bessel’s Formula</h3>
+<p>Bessel’s formula is particularly accurate when <span class="math inline">\(0.25 &lt; s &lt; 0.75\)</span> (i.e., <span class="math inline">\(x\)</span> is roughly midway between two nodes):</p>
+<p><span id="eq-bessel"><span class="math display">\[P(x) = \frac{f_0 + f_1}{2} + \left(s - \frac{1}{2}\right)\Delta f_0
++ \frac{s(s-1)}{2!} \cdot \frac{\Delta^2 f_{-1} + \Delta^2 f_0}{2}
++ \frac{\left(s-\frac{1}{2}\right)s(s-1)}{3!}\Delta^3 f_{-1} + \cdots \tag{21}\]</span></span></p>
+<p><strong>Reading <a href="#eq-bessel" class="quarto-xref">Eq.&nbsp;21</a>:</strong> the starting value is the <em>average</em> of the two function values straddling the gap; even-order terms (2nd, 4th) use the <em>average</em> of the two differences straddling the midpoint; odd-order terms (1st, 3rd) use a single, directly-centred difference. This is the mirror image of Stirling’s formula, because Bessel’s is centred <em>between</em> two nodes rather than <em>on</em> one node.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>In Practice
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For most examination problems and practical computations, Newton’s Forward and Backward formulas are sufficient. Stirling’s and Bessel’s formulas provide better accuracy when interpolating near the centre of the table and are covered here for completeness.</p>
+</div>
+</div>
+</section>
+<section id="example-4.8b-stirlings-and-bessels-formulas" class="level3" data-number="3.6.4">
+<h3 data-number="3.6.4" class="anchored" data-anchor-id="example-4.8b-stirlings-and-bessels-formulas"><span class="header-section-number">3.6.4</span> Example 4.8b — Stirling’s and Bessel’s Formulas</h3>
+<p><strong>Using the table</strong> <span class="math inline">\(f(x) = x^2\)</span> <strong>below, estimate</strong> <span class="math inline">\(f(1.5)\)</span> <strong>using both Stirling’s and Bessel’s formulas.</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(x\)</span></th>
+<th style="text-align: center;">0</th>
+<th style="text-align: center;">1</th>
+<th style="text-align: center;">2</th>
+<th style="text-align: center;">3</th>
+<th style="text-align: center;">4</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(f(x)=x^2\)</span></td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">16</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Difference table:</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(x_i\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(f_i\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\Delta f_i\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\Delta^2 f_i\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<p><em>(True value:</em> <span class="math inline">\(f(1.5) = 2.25\)</span>)</p>
+<p><strong>Stirling’s formula</strong>, centred at <span class="math inline">\(x_0=1\)</span>, so <span class="math inline">\(s = \dfrac{1.5-1}{1} = 0.5\)</span>:</p>
+<p>Here <span class="math inline">\(\Delta f_{-1} = 1\)</span> (row <span class="math inline">\(x=0\)</span>), <span class="math inline">\(\Delta f_0 = 3\)</span> (row <span class="math inline">\(x=1\)</span>), <span class="math inline">\(\Delta^2 f_{-1} = 2\)</span> (row <span class="math inline">\(x=0\)</span>).</p>
+<p>By <a href="#eq-stirling-mean" class="quarto-xref">Eq.&nbsp;20</a>: <span class="math inline">\(\mu\delta f_0 = \dfrac{1+3}{2} = 2\)</span>.</p>
+<p>Applying <a href="#eq-stirling" class="quarto-xref">Eq.&nbsp;19</a> (up to 2nd order): <span class="math display">\[P(1.5) = 1 + (0.5)(2) + \frac{(0.5)^2}{2}(2) = 1 + 1 + 0.25 = 2.25\]</span> ✓</p>
+<p><strong>Bessel’s formula</strong>, between <span class="math inline">\(x_0=1\)</span> and <span class="math inline">\(x_1=2\)</span>, so <span class="math inline">\(s=0.5\)</span>:</p>
+<p>Here <span class="math inline">\(f_0=1, f_1=4, \Delta f_0=3, \Delta^2 f_{-1}=2, \Delta^2 f_0=2\)</span>.</p>
+<p>Applying <a href="#eq-bessel" class="quarto-xref">Eq.&nbsp;21</a> (up to 2nd order): <span class="math display">\[P(1.5) = \frac{1+4}{2} + (0.5-0.5)(3) + \frac{(0.5)(-0.5)}{2}\cdot\frac{2+2}{2} = 2.5 + 0 - 0.25 = 2.25\]</span> ✓</p>
+<p>Both formulas give the exact value, <span class="math inline">\(2.25\)</span>, since <span class="math inline">\(f(x)=x^2\)</span> is degree 2 and we used differences up to exactly the 2nd order.</p>
+</section>
+</section>
+</section>
+<section id="using-interpolating-polynomials-for-derivatives-and-integrals" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Using Interpolating Polynomials for Derivatives and Integrals</h1>
+<p>We have spent this entire topic building polynomials <span class="math inline">\(P_n(x)\)</span> that pass through known data points. This section answers the natural next question: <strong>now that we have</strong> <span class="math inline">\(P_n(x)\)</span>, what can we do with it?</p>
+<p>The answer is: anything we could do with the original function <span class="math inline">\(f(x)\)</span>, but more easily — because <span class="math inline">\(P_n(x)\)</span> is just a polynomial.</p>
+<ul>
+<li><strong>Differentiating</strong> <span class="math inline">\(P_n(x)\)</span> gives us an approximation to <span class="math inline">\(f'(x)\)</span>, <span class="math inline">\(f''(x)\)</span>, and higher derivatives.</li>
+<li><strong>Integrating</strong> <span class="math inline">\(P_n(x)\)</span> gives us an approximation to <span class="math inline">\(\displaystyle\int f(x)\,dx\)</span>.</li>
+</ul>
+<p>Both ideas rest on the same trick: substitute <span class="math inline">\(x = x_0 + sh\)</span> into Newton’s Forward formula (<a href="#eq-newton-forward" class="quarto-xref">Eq.&nbsp;13</a>), then differentiate or integrate with respect to <span class="math inline">\(s\)</span> instead of <span class="math inline">\(x\)</span> — since <span class="math inline">\(s\)</span> is dimensionless and the resulting expressions are much simpler.</p>
+<section id="numerical-differentiation" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="numerical-differentiation"><span class="header-section-number">4.1</span> Numerical Differentiation</h2>
+<section id="deriving-the-first-derivative-formula" class="level3" data-number="4.1.1">
+<h3 data-number="4.1.1" class="anchored" data-anchor-id="deriving-the-first-derivative-formula"><span class="header-section-number">4.1.1</span> Deriving the First Derivative Formula</h3>
+<p>Recall Newton’s Forward formula (<a href="#eq-newton-forward" class="quarto-xref">Eq.&nbsp;13</a>), written in terms of <span class="math inline">\(s = \dfrac{x-x_0}{h}\)</span>:</p>
+<p><span class="math display">\[P_n(x) = f_0 + s\,\Delta f_0 + \frac{s(s-1)}{2!}\Delta^2 f_0 + \frac{s(s-1)(s-2)}{3!}\Delta^3 f_0 + \cdots\]</span></p>
+<p>To differentiate <span class="math inline">\(P_n(x)\)</span> with respect to <span class="math inline">\(x\)</span>, we use the chain rule. Since <span class="math inline">\(x = x_0 + sh\)</span>, we have <span class="math inline">\(\dfrac{ds}{dx} = \dfrac{1}{h}\)</span>, so:</p>
+<p><span id="eq-chain-rule"><span class="math display">\[\frac{d}{dx} = \frac{ds}{dx}\cdot\frac{d}{ds} = \frac{1}{h}\frac{d}{ds} \tag{22}\]</span></span></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Why This Substitution Helps
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Differentiating directly with respect to <span class="math inline">\(x\)</span> would force us to track <span class="math inline">\(h\)</span> inside every term. By switching to <span class="math inline">\(s\)</span> via <a href="#eq-chain-rule" class="quarto-xref">Eq.&nbsp;22</a>, we differentiate a clean polynomial in <span class="math inline">\(s\)</span> first, and only divide by <span class="math inline">\(h\)</span> (or <span class="math inline">\(h^2\)</span>, for second derivatives) at the very end. This keeps the algebra simple.</p>
+</div>
+</div>
+<p>We now differentiate each term of <span class="math inline">\(P_n(x)\)</span> with respect to <span class="math inline">\(s\)</span>:</p>
+<p><span id="eq-dPn-ds"><span class="math display">\[\frac{dP_n}{ds} = \Delta f_0 + \frac{2s-1}{2!}\Delta^2 f_0 + \frac{3s^2-6s+2}{3!}\Delta^3 f_0 + \cdots \tag{23}\]</span></span></p>
+<p><strong>Evaluated at</strong> <span class="math inline">\(x = x_0\)</span> (i.e.&nbsp;<span class="math inline">\(s=0\)</span>):</p>
+<p><span class="math display">\[\frac{dP_n}{ds}\bigg|_{s=0} = \Delta f_0 - \frac{1}{2}\Delta^2 f_0 + \frac{1}{3}\Delta^3 f_0 - \cdots\]</span></p>
+<p>Dividing by <span class="math inline">\(h\)</span> using <a href="#eq-chain-rule" class="quarto-xref">Eq.&nbsp;22</a> gives:</p>
+<p><span id="eq-first-derivative"><span class="math display">\[\boxed{f'(x_0) \approx \frac{1}{h}\left[\Delta f_0 - \frac{1}{2}\Delta^2 f_0 + \frac{1}{3}\Delta^3 f_0 - \frac{1}{4}\Delta^4 f_0 + \cdots\right]} \tag{24}\]</span></span></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>The Pattern in the Coefficients
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Notice the coefficients <span class="math inline">\(1, -\frac{1}{2}, \frac{1}{3}, -\frac{1}{4}, \ldots\)</span> in <a href="#eq-first-derivative" class="quarto-xref">Eq.&nbsp;24</a> alternate in sign and follow <span class="math inline">\(\dfrac{(-1)^{k+1}}{k}\)</span> for the <span class="math inline">\(k\)</span>-th difference term. This is the same pattern that appears in the Taylor series for <span class="math inline">\(\ln(1+s)\)</span> — not a coincidence, since Newton’s Forward formula and this series are deeply related through the calculus of finite differences.</p>
+</div>
+</div>
+</section>
+<section id="deriving-the-second-derivative-formula" class="level3" data-number="4.1.2">
+<h3 data-number="4.1.2" class="anchored" data-anchor-id="deriving-the-second-derivative-formula"><span class="header-section-number">4.1.2</span> Deriving the Second Derivative Formula</h3>
+<p>To get <span class="math inline">\(f''(x_0)\)</span>, we differentiate <span class="math inline">\(P_n(x)\)</span> <strong>twice</strong> with respect to <span class="math inline">\(s\)</span>, then divide by <span class="math inline">\(h^2\)</span> (since each derivative with respect to <span class="math inline">\(x\)</span> contributes a factor of <span class="math inline">\(\frac{1}{h}\)</span>, by <a href="#eq-chain-rule" class="quarto-xref">Eq.&nbsp;22</a>):</p>
+<p><span class="math display">\[\frac{d^2P_n}{ds^2}\bigg|_{s=0} = \Delta^2 f_0 - \Delta^3 f_0 + \frac{11}{12}\Delta^4 f_0 - \cdots\]</span></p>
+<p><span id="eq-second-derivative"><span class="math display">\[\boxed{f''(x_0) \approx \frac{1}{h^2}\left[\Delta^2 f_0 - \Delta^3 f_0 + \frac{11}{12}\Delta^4 f_0 - \cdots\right]} \tag{25}\]</span></span></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>A Quick Sanity Check on the Formula
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The leading term of <a href="#eq-second-derivative" class="quarto-xref">Eq.&nbsp;25</a> is <span class="math inline">\(\dfrac{\Delta^2 f_0}{h^2}\)</span>. This matches the familiar <strong>central second-difference approximation</strong>:</p>
+<p><span class="math display">\[f''(x_0) \approx \frac{f_2 - 2f_1 + f_0}{h^2} = \frac{\Delta^2 f_0}{h^2}\]</span></p>
+<p>The extra terms (<span class="math inline">\(-\Delta^3 f_0\)</span>, <span class="math inline">\(+\frac{11}{12}\Delta^4 f_0\)</span>, …) are simply <strong>correction terms</strong> that improve accuracy beyond this basic approximation.</p>
+</div>
+</div>
+</section>
+<section id="example-4.9-numerical-differentiation-first-derivative" class="level3" data-number="4.1.3">
+<h3 data-number="4.1.3" class="anchored" data-anchor-id="example-4.9-numerical-differentiation-first-derivative"><span class="header-section-number">4.1.3</span> Example 4.9 — Numerical Differentiation (First Derivative)</h3>
+<p><strong>Using the</strong> <span class="math inline">\(e^x\)</span> table from Example 4.7, estimate <span class="math inline">\((e^x)'\)</span> at <span class="math inline">\(x = 0\)</span>.</p>
+<p><em>(True value:</em> <span class="math inline">\(\dfrac{d}{dx}e^x\big|_{x=0} = e^0 = 1\)</span>)</p>
+<p>From the top row: <span class="math inline">\(\Delta f_0 = 0.105171\)</span>, <span class="math inline">\(\Delta^2 f_0 = 0.011061\)</span>, <span class="math inline">\(\Delta^3 f_0 = 0.001163\)</span>. Step size <span class="math inline">\(h = 0.1\)</span>.</p>
+<p>Applying <a href="#eq-first-derivative" class="quarto-xref">Eq.&nbsp;24</a>: <span class="math display">\[f'(0) \approx \frac{1}{0.1}\left[0.105171 - \frac{0.011061}{2} + \frac{0.001163}{3}\right]\]</span></p>
+<p><span class="math display">\[= 10\left[0.105171 - 0.005531 + 0.000388\right]\]</span></p>
+<p><span class="math display">\[= 10 \times 0.100028 = 1.000280\]</span></p>
+<p><em>True value:</em> <span class="math inline">\(1\)</span> — error of only <span class="math inline">\(0.000280\)</span> ✓</p>
+</section>
+<section id="example-4.10-numerical-differentiation-at-an-interior-node" class="level3" data-number="4.1.4">
+<h3 data-number="4.1.4" class="anchored" data-anchor-id="example-4.10-numerical-differentiation-at-an-interior-node"><span class="header-section-number">4.1.4</span> Example 4.10 — Numerical Differentiation at an Interior Node</h3>
+<p>Example 4.9 estimated <span class="math inline">\(f'\)</span> at <span class="math inline">\(x_0\)</span>, the <strong>first</strong> node of the table. But <a href="#eq-first-derivative" class="quarto-xref">Eq.&nbsp;24</a> works just as well at <strong>any</strong> node, provided we re-centre the formula there — that is, treat that node as a new “<span class="math inline">\(x_0\)</span>” and read the top row of differences starting from that row.</p>
+<p><strong>Estimate</strong> <span class="math inline">\((e^x)'\)</span> at <span class="math inline">\(x = 0.1\)</span>, using the same table.</p>
+<p><em>(True value:</em> <span class="math inline">\(\dfrac{d}{dx}e^x\big|_{x=0.1} = e^{0.1} = 1.105171\)</span>)</p>
+<p><strong>Step 1 — Re-centre the table at</strong> <span class="math inline">\(x_0 = 0.1\)</span>. Reading the differences starting from the row <span class="math inline">\(x=0.1\)</span>:</p>
+<p><span class="math display">\[\Delta f_0 = 0.116232, \qquad \Delta^2 f_0 = 0.012224\]</span></p>
+<p><em>(Only two differences are available here, since the table has just four points and we have used up one row by shifting the centre — this is a normal limitation when working near the end of a small table.)</em></p>
+<p><strong>Step 2 — Apply <a href="#eq-first-derivative" class="quarto-xref">Eq.&nbsp;24</a></strong>, with <span class="math inline">\(h = 0.1\)</span>:</p>
+<p><span class="math display">\[f'(0.1) \approx \frac{1}{0.1}\left[0.116232 - \frac{0.012224}{2}\right] = 10\left[0.116232 - 0.006112\right]\]</span></p>
+<p><span class="math display">\[= 10 \times 0.110120 = 1.101200\]</span></p>
+<p><strong>Step 3 — Compare with the true value:</strong></p>
+<p><span class="math display">\[f'(0.1) = e^{0.1} = 1.105171\]</span></p>
+<p><span class="math display">\[\text{Error} = |1.101200 - 1.105171| = 0.003971\]</span></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Why Is the Error Larger Here Than in Example 4.9?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In Example 4.9, we had <strong>three</strong> correction terms available (<span class="math inline">\(\Delta f_0, \Delta^2 f_0, \Delta^3 f_0\)</span>). Here, shifting the centre to <span class="math inline">\(x=0.1\)</span> leaves only <strong>two</strong> terms, because the table runs out of rows below <span class="math inline">\(x=0.1\)</span>. Fewer terms means a less accurate approximation — this is why <strong>larger tables</strong> generally give better numerical derivatives, especially for nodes other than the very first one.</p>
+</div>
+</div>
+</section>
+<section id="example-4.11-numerical-second-derivative" class="level3" data-number="4.1.5">
+<h3 data-number="4.1.5" class="anchored" data-anchor-id="example-4.11-numerical-second-derivative"><span class="header-section-number">4.1.5</span> Example 4.11 — Numerical Second Derivative</h3>
+<p><strong>Using an extended</strong> <span class="math inline">\(e^x\)</span> table (five points instead of four), estimate <span class="math inline">\((e^x)''\)</span> at <span class="math inline">\(x=0\)</span>.</p>
+<p><em>(True value:</em> <span class="math inline">\(\dfrac{d^2}{dx^2}e^x\big|_{x=0} = e^0 = 1\)</span>)</p>
+<p><strong>Step 1 — Build the extended table</strong> by adding one more point, <span class="math inline">\(x=0.4\)</span>, <span class="math inline">\(f(0.4) = e^{0.4} = 1.491825\)</span>:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 7%">
+<col style="width: 14%">
+<col style="width: 17%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(x\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(f\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\Delta f\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\Delta^2 f\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\Delta^3 f\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\Delta^4 f\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0.0</td>
+<td style="text-align: center;">1.000000</td>
+<td style="text-align: center;">0.105171</td>
+<td style="text-align: center;">0.011061</td>
+<td style="text-align: center;">0.001163</td>
+<td style="text-align: center;">0.000122</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0.1</td>
+<td style="text-align: center;">1.105171</td>
+<td style="text-align: center;">0.116232</td>
+<td style="text-align: center;">0.012224</td>
+<td style="text-align: center;">0.001286</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0.2</td>
+<td style="text-align: center;">1.221403</td>
+<td style="text-align: center;">0.128456</td>
+<td style="text-align: center;">0.013510</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0.3</td>
+<td style="text-align: center;">1.349859</td>
+<td style="text-align: center;">0.141966</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0.4</td>
+<td style="text-align: center;">1.491825</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Step 2 — Apply <a href="#eq-second-derivative" class="quarto-xref">Eq.&nbsp;25</a>, using all three available terms:</strong></p>
+<p><span class="math display">\[f''(0) \approx \frac{1}{h^2}\left[\Delta^2 f_0 - \Delta^3 f_0 + \frac{11}{12}\Delta^4 f_0\right]\]</span></p>
+<p><span class="math display">\[= \frac{1}{(0.1)^2}\left[0.011061 - 0.001163 + \frac{11}{12}(0.000122)\right]\]</span></p>
+<p><span class="math display">\[= 100\left[0.011061 - 0.001163 + 0.000112\right]\]</span></p>
+<p><span class="math display">\[= 100 \times 0.010010 = 1.0010\]</span></p>
+<p><strong>Step 3 — Compare with the true value:</strong></p>
+<p><span class="math display">\[f''(0) = e^0 = 1, \qquad \text{Error} = |1.0010 - 1| = 0.0010\]</span></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Comparing to a Shorter Calculation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If we had stopped after only the first term of <a href="#eq-second-derivative" class="quarto-xref">Eq.&nbsp;25</a> (the basic central-difference approximation):</p>
+<p><span class="math display">\[f''(0) \approx \frac{\Delta^2 f_0}{h^2} = \frac{0.011061}{0.01} = 1.1061\]</span></p>
+<p>— giving an error of <span class="math inline">\(0.1061\)</span>, over <strong>100 times larger</strong> than the error from using all three terms (<span class="math inline">\(0.0010\)</span>). This illustrates why the extra correction terms matter, especially for second derivatives.</p>
+</div>
+</div>
+</section>
+<section id="connecting-polynomials-to-integration-the-next-frontier" class="level3" data-number="4.1.6">
+<h3 data-number="4.1.6" class="anchored" data-anchor-id="connecting-polynomials-to-integration-the-next-frontier"><span class="header-section-number">4.1.6</span> Connecting Polynomials to Integration: The Next Frontier</h3>
+<p>Just as we have differentiated Newton’s forward difference interpolating polynomial to approximate derivatives, we can integrate it to approximate definite integrals. Suppose we want to evaluate a definite integral over a structured grid bounded by <span class="math inline">\(x_0\)</span> and <span class="math inline">\(x_n\)</span>.</p>
+<p>To simplify the calculus, we map the physical variable <span class="math inline">\(x\)</span> onto our dimensionless tracking variable <span class="math inline">\(s\)</span> using the exact same change of variable transformation: <span class="math display">\[x = x_0 + sh \implies dx = h\,ds\]</span></p>
+<p>By transforming the boundaries of integration alongside the differential operator, our limits shift systematically:</p>
+<ul>
+<li>When <span class="math inline">\(x = x_0\)</span>: <span class="math inline">\(x_0 = x_0 + sh \implies s = 0\)</span></li>
+<li>When <span class="math inline">\(x = x_n\)</span>: Since <span class="math inline">\(x_n = x_0 + nh\)</span>, substituting yields <span class="math inline">\(x_0 + nh = x_0 + sh \implies s = n\)</span></li>
+</ul>
+<p>Substituting these parameters directly into the classic definite integral structure yields a foundational, scaled calculus identity: <span id="eq-integral-substitution"><span class="math display">\[\int_{x_0}^{x_n} f(x)\,dx \approx \int_{x_0}^{x_n} P_n(x)\,dx = \int_0^n P_n(s) \cdot (h\,ds) = h\int_0^n P_n(s)\,ds \tag{26}\]</span></span></p>
+<p>Evaluating the polynomial integration sequence in terms of <span class="math inline">\(s\)</span> completely isolates the uniform grid step size <span class="math inline">\(h\)</span> from the inner calculus operations.</p>
+<hr>
+</section>
+<section id="coming-up-in-topic-5a-the-newton-cotes-framework" class="level3" data-number="4.1.7">
+<h3 data-number="4.1.7" class="anchored" data-anchor-id="coming-up-in-topic-5a-the-newton-cotes-framework"><span class="header-section-number">4.1.7</span> Coming Up in Topic 5(a): The Newton-Cotes Framework</h3>
+<p>We have successfully built a bridge connecting polynomial interpolation to both components of continuous calculus. The transformation formula in <a href="#eq-integral-substitution" class="quarto-xref">Eq.&nbsp;26</a> acts as a master key.</p>
+<p>In the next section, we will systematically change the polynomial degree <span class="math inline">\(n\)</span> to unlock the family of <strong>Newton-Cotes formulas</strong>:</p>
+<ul>
+<li>What geometric shape arises if we set <span class="math inline">\(n=1\)</span> to integrate a straight secant line across two grid points?</li>
+<li>How dramatically will our calculation error drop if we shift to <span class="math inline">\(n=2\)</span> to capture local curvature with a parabolic arc?</li>
+</ul>
+<p>Turn to <strong>Topic 5(a)</strong> to watch these algebraic substitutions unfold into the foundational rules of numerical quadrature.</p>
+<!--
+
+## Numerical Integration
+
+### Deriving the Approximate Integral
+
+We can integrate Newton's forward difference interpolating polynomial to approximate a definite integral over a structured grid. Let the integration domain be bounded by $x_0$ and $x_n$.
+
+To transform the integral into a simpler form, we execute a change of variable via substitution. Let: $$x = x_0 + sh$$
+
+Taking the derivative of both sides with respect to $s$ yields: $$dx = h\,ds$$
+
+Next, we establish the transformed upper and lower limits of integration: \* When $x = x_0$: $x_0 = x_0 + sh \implies 0 = sh \implies s = 0$ \* When $x = x_n$: Since $x_n = x_0 + nh$, we substitute to get $x_0 + nh = x_0 + sh \implies nh = sh \implies s = n$
+
+Substituting these components into our original definite integral yields: $$\int_{x_0}^{x_n} f(x)\,dx \approx \int_{x_0}^{x_n} P_n(x)\,dx = \int_0^n P_n(s) \cdot (h\,ds) = h\int_0^n P_n(s)\,ds$$ {#eq-integral-substitution}
+
+We now integrate the polynomial expressed in terms of the dimensionless variable $s$, which eliminates the physical step size $h$ from the inner calculus sequence.
+
+### Deriving the Trapezoidal Rule ($n=1$)
+
+For a grid spanning exactly two points—$(x_0, f_0)$ and $(x_1, f_1)$—the first-degree interpolating polynomial represents a straight line: $$P_1(s) = f_0 + s\,\Delta f_0$$
+
+We evaluate the integral from $s = 0$ to $s = 1$ using the Fundamental Theorem of Calculus: $$\int_0^1 P_1(s)\,ds = \int_0^1 \left(f_0 + s\,\Delta f_0\right)ds = \left[f_0 s + \frac{s^2}{2}\Delta f_0\right]_0^1$$
+
+Evaluating this expression at its upper and lower boundaries: $$= \left(f_0(1) + \frac{(1)^2}{2}\Delta f_0\right) - \left(f_0(0) + \frac{(0)^2}{2}\Delta f_0\right) = f_0 + \frac{1}{2}\Delta f_0$$
+
+We now unpack the first forward difference operator using its definitions, where $\Delta f_0 = f_1 - f_0$: $$= f_0 + \frac{1}{2}(f_1 - f_0) = f_0 + \frac{1}{2}f_1 - \frac{1}{2}f_0 = \frac{1}{2}f_0 + \frac{1}{2}f_1 = \frac{f_0 + f_1}{2}$$
+
+Finally, substituting this result back into @eq-integral-substitution requires multiplying the entire expression by $h$, generating the **Trapezoidal Rule**: $$\boxed{\int_{x_0}^{x_1} f(x)\,dx \approx \frac{h}{2}(f_0+f_1)}$$ {#eq-trapezoidal}
+
+::: callout-tip
+## Why "Trapezoidal"?
+
+Geometrically, $P_1(x)$ is a linear secant line connecting $(x_0,f_0)$ directly to $(x_1,f_1)$. The area bounded by this line, the x-axis, and the vertical lines at $x_0$ and $x_1$ forms a geometric trapezoid. The classic area formula for a trapezoid is $\text{Width} \times \text{Average Height}$, which matches our algebraic result: $h \times \frac{f_0+f_1}{2}$.
+:::
+
+### Deriving Simpson's Rule ($n=2$)
+
+For a grid spanning exactly three points—$(x_0,f_0)$, $(x_1,f_1)$, and $(x_2,f_2)$—the second-degree interpolating polynomial forms a quadratic parabola: $$P_2(s) = f_0 + s\,\Delta f_0 + \frac{s(s-1)}{2}\Delta^2 f_0$$
+
+Distribute the variable $s$ within the quadratic numerator before integrating to simplify the calculus: $$P_2(s) = f_0 + s\,\Delta f_0 + \left(\frac{s^2 - s}{2}\right)\Delta^2 f_0$$
+
+Integrate with respect to $s$ across the normalized limits from $0$ to $2$: $$\int_0^2 P_2(s)\,ds = \int_0^2 \left[f_0 + s\,\Delta f_0 + \left(\frac{s^2}{2} - \frac{s}{2}\right)\Delta^2 f_0\right]ds$$
+
+Applying the power rule term by term yields: $$= \left[ f_0 s \right]_0^2 + \left[ \frac{s^2}{2}\Delta f_0 \right]_0^2 + \left[ \left(\frac{s^3}{6} - \frac{s^2}{4}\right)\Delta^2 f_0 \right]_0^2$$
+
+Evaluate each term at the limits $s=2$ and $s=0$: $$= \left(2f_0 - 0\right) + \left(\frac{4}{2}\Delta f_0 - 0\right) + \left[\left(\frac{8}{6} - \frac{4}{4}\right)\Delta^2 f_0 - 0\right]$$ $$= 2f_0 + 2\Delta f_0 + \left(\frac{4}{3} - 1\right)\Delta^2 f_0 = 2f_0 + 2\Delta f_0 + \frac{1}{3}\Delta^2 f_0$$
+
+To transform this back into standard function values, substitute the formal definitions for the forward differences: \* $\Delta f_0 = f_1 - f_0$ \* $\Delta^2 f_0 = f_2 - 2f_1 + f_0$
+
+Substitute these expansions and distribute the scalar multipliers: $$= 2f_0 + 2(f_1 - f_0) + \frac{1}{3}(f_2 - 2f_1 + f_0)$$ $$= 2f_0 + 2f_1 - 2f_0 + \frac{1}{3}f_2 - \frac{2}{3}f_1 + \frac{1}{3}f_0$$
+
+Group like terms together systematically to isolate each function index: $$= \left(2 - 2 + \frac{1}{3}\right)f_0 + \left(2 - \frac{2}{3}\right)f_1 + \frac{1}{3}f_2$$ $$= \frac{1}{3}f_0 + \frac{4}{3}f_1 + \frac{1}{3}f_2 = \frac{1}{3}(f_0 + 4f_1 + f_2)$$
+
+Multiplying this inner result by the external factor $h$ from @eq-integral-substitution provides **Simpson's Rule**: $$\boxed{\int_{x_0}^{x_2} f(x)\,dx \approx \frac{h}{3}(f_0+4f_1+f_2)}$$ {#eq-simpson}
+
+::: callout-tip
+## Why Does the Middle Point Get Weight 4?
+
+Simpson's Rule assumes the underlying function behaves like a parabola curving over three points. The boundaries provide context, but the central point $f_1$ captures the peak, valley, or inflection of that local curve. Mathematically, weighting the center four times heavier compensates for the geometric geometry of a parabola over a uniform step size.
+:::
+
+### Example 4.12 — Trapezoidal Rule
+
+**Problem:** Using a given data set for $f(x) = e^x$, approximate $\displaystyle\int_0^{0.1} e^x\,dx$ using a single application of the Trapezoidal Rule.
+
+#### Step 1: Extract Data Points
+
+-   Lower limit: $x_0 = 0 \implies f_0 = e^0 = 1.000000$
+-   Upper limit: $x_1 = 0.1 \implies f_1 = e^{0.1} = 1.105171$
+-   Interval width: $h = x_1 - x_0 = 0.1 - 0 = 0.1$
+
+#### Step 2: Perform Formula Substitution
+
+Write down the base operational formula and plug in the known numeric terms: $$\int_0^{0.1} e^x\,dx \approx \frac{h}{2}(f_0 + f_1) = \frac{0.1}{2}(1.000000 + 1.105171)$$
+
+#### Step 3: Compute the Stepwise Calculations
+
+1.  Add the interior bracket values: $1.000000 + 1.105171 = 2.105171$
+2.  Divide the step parameter: $\frac{0.1}{2} = 0.05$
+3.  Complete the product: $0.05 \times 2.105171 = \mathbf{0.105259}$
+
+#### Step 4: Calculate the Absolute Error
+
+The true analytical solution is $\displaystyle\int_0^{0.1} e^x\,dx = \left[e^x\right]_0^{0.1} = e^{0.1} - e^0 = 1.105171 - 1 = 0.105171$. $$\text{Absolute Error} = |\text{Approximate} - \text{True}| = |0.105259 - 0.105171| = \mathbf{0.000088}$$
+
+### Example 4.13 — Simpson's Rule
+
+**Problem:** Using a given data set for $f(x) = e^x$, approximate $\displaystyle\int_0^{0.2} e^x\,dx$ using a single application of Simpson's Rule with a step size of $h=0.1$.
+
+#### Step 1: Extract Data Points
+
+-   $x_0 = 0 \implies f_0 = e^0 = 1.000000$
+-   $x_1 = 0.1 \implies f_1 = e^{0.1} = 1.105171$
+-   $x_2 = 0.2 \implies f_2 = e^{0.2} = 1.221403$
+-   Uniform step size: $h = 0.1$
+
+#### Step 2: Perform Formula Substitution
+
+$$\int_0^{0.2} e^x\,dx \approx \frac{h}{3}(f_0 + 4f_1 + f_2) = \frac{0.1}{3}\Big[1.000000 + 4(1.105171) + 1.221403\Big]$$
+
+#### Step 3: Compute the Stepwise Calculations
+
+1.  Evaluate the weighted term: $4 \times 1.105171 = 4.420684$
+2.  Sum the interior array components: $1.000000 + 4.420684 + 1.221403 = 6.642087$
+3.  Perform fractional division: $\frac{6.642087}{3} = 2.214029$
+4.  Apply the external step scale: $0.1 \times 2.214029 = \mathbf{0.221403}$
+
+#### Step 4: Calculate the Absolute Error
+
+The true analytical solution is $e^{0.2} - e^0 = 1.22140276 - 1 = 0.22140276$. $$\text{Absolute Error} = |0.22140290 - 0.22140276| = \mathbf{0.00000014}$$
+
+### Example 4.14 — Composite Trapezoidal Rule (Multiple Intervals)
+
+When integrating across a broad domain, we divide the global interval into multiple subintervals to maintain high local accuracy.
+
+**Problem:** Estimate $\displaystyle\int_0^{0.3} e^x\,dx$ using the Composite Trapezoidal Rule split across three consecutive subintervals of uniform width $h=0.1$.
+
+#### Step 1: Establish the Evaluation Grid
+
+Our boundary spans $x=0$ to $x=0.3$. With a step size $h=0.1$, our sequential grid points are: \* $x_0 = 0 \implies f_0 = 1.000000$ \* $x_1 = 0.1 \implies f_1 = 1.105171$ \* $x_2 = 0.2 \implies f_2 = 1.221403$ \* $x_3 = 0.3 \implies f_3 = 1.349859$
+
+#### Step 2: Direct Formula Construction
+
+The Composite Trapezoidal Rule groups endpoints and interior entries systematically: $$\int_{x_0}^{x_3} f(x)\,dx \approx h \left[ \frac{f_0 + f_3}{2} + f_1 + f_2 \right]$$
+
+Substitute the extracted numeric grid terms into this relationship: $$\int_0^{0.3} e^x\,dx \approx 0.1 \left[ \frac{1.000000 + 1.349859}{2} + 1.105171 + 1.221403 \right]$$
+
+#### Step 3: Compute the Stepwise Calculations
+
+1.  Average the boundary limits: $\frac{1.000000 + 1.349859}{2} = \frac{2.349859}{2} = 1.174930$
+2.  Sum the interior tracking coordinates: $1.105171 + 1.221403 = 2.326574$
+3.  Merge bracket totals: $1.174930 + 2.326574 = 3.501504$
+4.  Distribute step multiplier: $0.1 \times 3.501504 = \mathbf{0.350150}$
+
+#### Step 4: Calculate the Absolute Error
+
+The exact analytical validation limit evaluates to $e^{0.3} - e^0 = 1.3498588 - 1 = 0.349859$. $$\text{Absolute Error} = |0.350150 - 0.349859| = \mathbf{0.000291}$$
+
+### Example 4.15 — Composite Simpson's Rule (New Addendum)
+
+To perform higher-order multi-interval integration, we can patch together consecutive pairs of parabolic intervals. Because each application of Simpson's Rule requires 2 subintervals, the **Composite Simpson's Rule demands an even number of subintervals (an odd number of data points).**
+
+The generalized tracking formula for $n$ subintervals (where $n$ is even) is: $$\int_{x_0}^{x_n} f(x)\,dx \approx \frac{h}{3} \left[ f_0 + f_n + 4 \sum_{i \text{ odd}}^{n-1} f_i + 2 \sum_{j \text{ even}}^{n-2} f_j \right]$$
+
+**Problem:** Estimate $\displaystyle\int_0^{0.4} e^x\,dx$ using the Composite Simpson's Rule over four subintervals ($n=4$) with a uniform step size of $h=0.1$.
+
+#### Step 1: Establish the Evaluation Grid
+
+-   $x_0 = 0.0 \implies f_0 = e^0 = 1.000000$
+-   $x_1 = 0.1 \implies f_1 = e^{0.1} = 1.105171$ (Odd index)
+-   $x_2 = 0.2 \implies f_2 = e^{0.2} = 1.221403$ (Even index)
+-   $x_3 = 0.3 \implies f_3 = e^{0.3} = 1.349859$ (Odd index)
+-   $x_4 = 0.4 \implies f_4 = e^{0.4} = 1.491825$
+
+#### Step 2: Perform Formula Substitution
+
+Construct the specialized case template for $n=4$: $$\int_0^{0.4} e^x\,dx \approx \frac{h}{3} \left[ f_0 + f_4 + 4(f_1 + f_3) + 2(f_2) \right]$$
+
+Substitute our specific floating-point grid variables: $$\approx \frac{0.1}{3} \left[ 1.000000 + 1.491825 + 4(1.105171 + 1.349859) + 2(1.221403) \right]$$
+
+#### Step 3: Compute the Stepwise Calculations
+
+-   **Sum outer boundary terms:** $$1.000000 + 1.491825 = 2.491825$$
+-   **Sum and scale odd nodes:** $$1.105171 + 1.349859 = 2.455030 \implies 4 \times 2.455030 = 9.820120$$
+-   **Scale inner even nodes:** $$2 \times 1.221403 = 2.442806$$
+-   **Aggregate all grouped terms within the bracket:** $$2.491825 + 9.820120 + 2.442806 = 14.754751$$
+-   **Finalize scalar division and step scaling:** $$\frac{0.1}{3} \times 14.754751 = \mathbf{0.491825}$$
+
+#### Step 4: Calculate the Absolute Error
+
+The exact analytical target space evaluates to: $$e^{0.4} - e^0 = 1.49182470 - 1 = 0.49182470$$
+
+$$\text{Absolute Error} = |0.49182503 - 0.49182470| = \mathbf{0.00000033}$$
+
+
+## Summary: Differentiation and Integration from Interpolating Polynomials
+
+| Task | Formula | Derived From |
+|:-----------------------|:-----------------------|:-----------------------|
+| First derivative | @eq-first-derivative | Differentiate $P_n(s)$ once, divide by $h$ |
+| Second derivative | @eq-second-derivative | Differentiate $P_n(s)$ twice, divide by $h^2$ |
+| Trapezoidal Rule | @eq-trapezoidal | Integrate the linear interpolant ($n=1$) |
+| Simpson's Rule | @eq-simpson | Integrate the quadratic interpolant ($n=2$) |
+| Composite Trapezoidal | @eq-composite-trapezoidal | Apply the Trapezoidal Rule repeatedly across subintervals |
+
+-->
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Looking Ahead
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In <strong>Topic 5</strong>, we study the <strong>Newton–Cotes integration formulas</strong> in full detail, including Simpson’s <span class="math inline">\(\frac{1}{3}\)</span> Rule, Simpson’s <span class="math inline">\(\frac{3}{8}\)</span> Rule, and a careful treatment of their error bounds.</p>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="tutorial-questions" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Tutorial Questions</h1>
+<p><em>Show all working clearly.</em></p>
+<section id="section-a-concepts" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="section-a-concepts"><span class="header-section-number">5.1</span> Section A: Concepts</h2>
+<p><strong>Question 1</strong></p>
+<ol type="a">
+<li><p>Define polynomial interpolation. Why is it useful?</p></li>
+<li><p>Explain why polynomials are particularly convenient for approximating functions in numerical computation.</p></li>
+<li><p>State two situations where polynomial interpolation is the only practical approach to evaluate a function.</p></li>
+</ol>
+<!--
+**Question 2**
+
+(a) Write down the Lagrange basis polynomial $L_i(x)$ for a set of $n+1$ nodes (see @eq-lagrange-basis). What are the two key properties of $L_i(x)$?
+
+(b) Show that $\sum_{i=0}^n L_i(x) = 1$ for any $x$. *(Hint: What polynomial passes through the points* $(x_i, 1)$ for all $i$?)
+
+(c) What is the maximum degree of the Lagrange interpolating polynomial through $n+1$ distinct points? -->
+<p><strong>Question 2</strong></p>
+<p>State the difference between Newton’s Forward (<a href="#eq-newton-forward" class="quarto-xref">Eq.&nbsp;13</a>) and Backward (<a href="#eq-newton-backward" class="quarto-xref">Eq.&nbsp;18</a>) Difference formulas. When should each be used? Give an example situation for each.</p>
+</section>
+<section id="section-b-lagrange-interpolation" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="section-b-lagrange-interpolation"><span class="header-section-number">5.2</span> Section B: Lagrange Interpolation</h2>
+<p><strong>Question 3</strong></p>
+<p>Given the data:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(x\)</span></th>
+<th style="text-align: center;">0</th>
+<th style="text-align: center;">1</th>
+<th style="text-align: center;">3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(f(x)\)</span></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">55</td>
+</tr>
+</tbody>
+</table>
+<ol type="a">
+<li><p>Find the three Lagrange basis polynomials <span class="math inline">\(L_0(x)\)</span>, <span class="math inline">\(L_1(x)\)</span>, <span class="math inline">\(L_2(x)\)</span>.</p></li>
+<li><p>Write down the interpolating polynomial <span class="math inline">\(P_2(x)\)</span>.</p></li>
+<li><p>Estimate <span class="math inline">\(f(2)\)</span> using <span class="math inline">\(P_2(x)\)</span>.</p></li>
+<li><p>Verify by evaluating <span class="math inline">\(P_2(0)\)</span>, <span class="math inline">\(P_2(1)\)</span>, and <span class="math inline">\(P_2(3)\)</span> — do they match the data?</p></li>
+</ol>
+<p><strong>Question 4</strong></p>
+<p>The following table gives values of <span class="math inline">\(f(x) = \sqrt{x}\)</span>:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(x\)</span></th>
+<th style="text-align: center;">1</th>
+<th style="text-align: center;">4</th>
+<th style="text-align: center;">9</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(f(x)\)</span></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">3</td>
+</tr>
+</tbody>
+</table>
+<ol type="a">
+<li><p>Use Lagrange interpolation to estimate <span class="math inline">\(\sqrt{6}\)</span>.</p></li>
+<li><p>The true value is <span class="math inline">\(\sqrt{6} = 2.449490\)</span>. Calculate the absolute and relative error.</p></li>
+<li><p>Use the Lagrange error formula (<a href="#eq-lagrange-error-bound" class="quarto-xref">Eq.&nbsp;7</a>) to find an upper bound on the error. <em>(Hint:</em> <span class="math inline">\(f^{(3)}(x) = \frac{3}{8}x^{-5/2}\)</span>)</p></li>
+</ol>
+<p><strong>Question 5</strong></p>
+<p>Four data points are given:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(x\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(-1\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(0\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(1\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(2\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(f(x)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(5\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(7\)</span></td>
+</tr>
+</tbody>
+</table>
+<ol type="a">
+<li><p>Find the Lagrange interpolating polynomial <span class="math inline">\(P_3(x)\)</span>.</p></li>
+<li><p>Evaluate <span class="math inline">\(P_3(0.5)\)</span>.</p></li>
+</ol>
+<!--(c) Show that adding one more data point and re-computing gives a different polynomial. Why does this happen?-->
+</section>
+<section id="section-c-finite-difference-tables" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="section-c-finite-difference-tables"><span class="header-section-number">5.3</span> Section C: Finite Difference Tables</h2>
+<p><strong>Question 6</strong></p>
+<p>Build the complete forward difference table for:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(x\)</span></th>
+<th style="text-align: center;">0</th>
+<th style="text-align: center;">1</th>
+<th style="text-align: center;">2</th>
+<th style="text-align: center;">3</th>
+<th style="text-align: center;">4</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(f(x)\)</span></td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">12</td>
+<td style="text-align: center;">23</td>
+<td style="text-align: center;">38</td>
+</tr>
+</tbody>
+</table>
+<ol type="a">
+<li><p>Show all columns <span class="math inline">\(\Delta f\)</span>, <span class="math inline">\(\Delta^2 f\)</span>, <span class="math inline">\(\Delta^3 f\)</span>, <span class="math inline">\(\Delta^4 f\)</span>.</p></li>
+<li><p>What is <span class="math inline">\(\Delta^3 f_0\)</span>?</p></li>
+<li><p>Is <span class="math inline">\(f(x)\)</span> a polynomial? If so, what is its degree? How can you tell from the table?</p></li>
+</ol>
+<p><strong>Question 7</strong></p>
+<p>For the data:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(x\)</span></th>
+<th style="text-align: center;">10</th>
+<th style="text-align: center;">20</th>
+<th style="text-align: center;">30</th>
+<th style="text-align: center;">40</th>
+<th style="text-align: center;">50</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\sin(x°)\)</span></td>
+<td style="text-align: center;">0.1736</td>
+<td style="text-align: center;">0.3420</td>
+<td style="text-align: center;">0.5000</td>
+<td style="text-align: center;">0.6428</td>
+<td style="text-align: center;">0.7660</td>
+</tr>
+</tbody>
+</table>
+<p>Build the forward difference table. Use <strong>5 decimal places</strong> throughout.</p>
+</section>
+<section id="section-d-newton-forward-and-backward-difference-formulas" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="section-d-newton-forward-and-backward-difference-formulas"><span class="header-section-number">5.4</span> Section D: Newton Forward, and Backward Difference Formulas</h2>
+<p><strong>Question 8</strong></p>
+<p>Using the difference table from <strong>Question 6</strong>:</p>
+<ol type="a">
+<li><p>Use Newton’s Forward formula (<a href="#eq-newton-forward" class="quarto-xref">Eq.&nbsp;13</a>) to estimate <span class="math inline">\(f(1.5)\)</span>. Show each term separately.</p></li>
+<li><p>Use Newton’s Backward formula (<a href="#eq-newton-backward" class="quarto-xref">Eq.&nbsp;18</a>) to estimate <span class="math inline">\(f(3.5)\)</span>. Show each term separately.</p></li>
+<li><p>Compare your answers with the exact values, given that <span class="math inline">\(f(x) = 2x^2 + x + 2\)</span>.</p></li>
+</ol>
+<p><strong>Question 9</strong></p>
+<p>Using the <span class="math inline">\(\sin\)</span> table from <strong>Question 7</strong> (<span class="math inline">\(h = 10°\)</span>):</p>
+<ol type="a">
+<li><p>Use Newton’s Forward formula to estimate <span class="math inline">\(\sin(15°)\)</span>. <em>(True value:</em> <span class="math inline">\(\sin(15°) = 0.2588\)</span>)</p></li>
+<li><p>Use Newton’s Backward formula to estimate <span class="math inline">\(\sin(45°)\)</span>. <em>(True value:</em> <span class="math inline">\(\sin(45°) = 0.7071\)</span>)</p></li>
+<li><p>Calculate the error in each case. Which estimate is more accurate and why?</p></li>
+</ol>
+<p><strong>Question 10 </strong></p>
+<p>The following data is given for <span class="math inline">\(f(x) = e^x\)</span>:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(x\)</span></th>
+<th style="text-align: center;">1.0</th>
+<th style="text-align: center;">1.2</th>
+<th style="text-align: center;">1.4</th>
+<th style="text-align: center;">1.6</th>
+<th style="text-align: center;">1.8</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(e^x\)</span></td>
+<td style="text-align: center;">2.7183</td>
+<td style="text-align: center;">3.3201</td>
+<td style="text-align: center;">4.0552</td>
+<td style="text-align: center;">4.9530</td>
+<td style="text-align: center;">6.0496</td>
+</tr>
+</tbody>
+</table>
+<ol type="a">
+<li><p>Build the forward difference table.</p></li>
+<li><p>Estimate <span class="math inline">\(e^{1.1}\)</span> using Newton’s Forward formula (use up to <span class="math inline">\(\Delta^3\)</span>).</p></li>
+<li><p>Estimate <span class="math inline">\(e^{1.7}\)</span> using Newton’s Backward formula (use up to <span class="math inline">\(\Delta^3\)</span>).</p></li>
+<li><p>Compare both results with true values and compute percentage errors.</p></li>
+</ol>
+<!--
+**Question 11b (\*)**
+
+Using the same $e^x$ table from **Question 11**:
+
+(a) Use Stirling's formula (@eq-stirling), centred at $x_0=1.4$, to estimate $e^{1.5}$.
+
+(b) Use Bessel's formula (@eq-bessel), centred between $x_0=1.4$ and $x_1=1.6$, to estimate $e^{1.5}$.
+
+(c) The true value is $e^{1.5} = 4.4817$. Compare both estimates with the true value. Which is more accurate?
+
+-->
+</section>
+<section id="section-e-numerical-differentiation" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="section-e-numerical-differentiation"><span class="header-section-number">5.5</span> Section E: Numerical Differentiation</h2>
+<p><strong>Question 12</strong></p>
+<p>Using the <span class="math inline">\(e^x\)</span> table from <strong>Question 11</strong>:</p>
+<ol type="a">
+<li><p>Estimate <span class="math inline">\(f'(1.0)\)</span> using <a href="#eq-first-derivative" class="quarto-xref">Eq.&nbsp;24</a>, truncated to: <span class="math display">\[f'(x_0) \approx \frac{1}{h}\left[\Delta f_0 - \frac{1}{2}\Delta^2 f_0 + \frac{1}{3}\Delta^3 f_0\right]\]</span></p></li>
+<li><p>The true value is <span class="math inline">\(f'(1.0) = e^{1.0} = 2.7183\)</span>. What is the error?</p></li>
+<li><p>Estimate <span class="math inline">\(f''(1.0)\)</span> using <a href="#eq-second-derivative" class="quarto-xref">Eq.&nbsp;25</a>, truncated to: <span class="math display">\[f''(x_0) \approx \frac{1}{h^2}\left[\Delta^2 f_0 - \Delta^3 f_0\right]\]</span></p></li>
+</ol>
+<p>Compare with the true value <span class="math inline">\(e^{1.0} = 2.7183\)</span>.</p>
+<p><em>End of Topic 4 Tutorial Questions</em></p>
+<!--
+
+**Question 14 (\*)**
+
+Explain in your own words:
+
+(a) Why does differentiating the interpolating polynomial give an approximation to $f'(x)$?
+
+(b) Why does integrating the interpolating polynomial give an approximation to $\int f(x)\,dx$?
+
+(c) As the step size $h$ decreases, what happens to the accuracy of numerical differentiation? What about numerical integration? *(Hint: consider both the truncation error and rounding error.)*
+
+
+
+> **Seminar activity:** Bring your full difference table for Question 8 (the $\sin$ table) and your worked solutions for Questions 9 and 10 to the next seminar. Be ready to explain your Newton Forward calculation term by term.
+
+-->
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
