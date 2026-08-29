@@ -1,74 +1,77 @@
 ---
-
 layout: single
 permalink: /
 title: ""
 author_profile: true
 redirect_from:
-
-* /about/
-* /about.html
-
+  - /about/
+  - /about.html
 ---
 
 <style>
 
-/* =========================================================
-   MAIN CONTENT
-   ========================================================= */
+/* ===== MAIN CONTENT ===== */
 
-.page__content {
-  max-width: 980px;
-  margin: auto;
-  font-family: Inter, system-ui, sans-serif;
-  color: #334155;
-  line-height: 1.8;
+.page__content{
+  max-width:980px;
+  margin:auto;
+  font-family:Inter,system-ui,sans-serif;
+  color:#334155;
+  line-height:1.8;
 }
 
+/* Sections */
 
-/* =========================================================
-   INTRO
-   ========================================================= */
-
-.intro {
-  background: #f8fafc;
-  border: 1px solid #e2e8f0;
-  border-radius: 18px;
-  padding: 35px;
+.section{
+  margin:60px 0;
 }
 
-.intro p {
-  font-size: 1.08rem;
-  margin-bottom: 18px;
+.section h2{
+  font-size:2rem;
+  margin-bottom:18px;
+  color:#0f172a;
+  border-bottom:2px solid #e2e8f0;
+  padding-bottom:8px;
 }
 
+/* Intro */
 
-/* =========================================================
-   BUTTONS
-   ========================================================= */
-
-.buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 25px;
+.intro{
+  background:#f8fafc;
+  border:1px solid #e2e8f0;
+  border-radius:18px;
+  padding:35px;
 }
 
-.btn {
-  text-decoration: none;
-  padding: 11px 18px;
-  border-radius: 10px;
-  font-weight: 600;
-  transition: .25s;
+.intro p{
+  font-size:1.08rem;
+  margin-bottom:18px;
 }
 
-.btn-primary {
-  background: #2563eb;
-  color: white;
+/* Buttons */
+
+.buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:25px;
 }
 
-.btn-primary:hover {
-  background: #1d4ed8;
+.btn{
+  text-decoration:none;
+  padding:11px 18px;
+  border-radius:10px;
+  font-weight:600;
+  transition:.25s;
+}
+
+.btn-primary{
+  background:#2563eb;
+  color:white;
+}
+
+.btn-primary:hover{
+  background:#1d4ed8;
 }
 
 .btn-light {
@@ -84,134 +87,157 @@ redirect_from:
 }
 
 
-/* =========================================================
-   ANIMATION
-   ========================================================= */
+/* Research cards */
 
-.reveal {
-  opacity: 0;
-  transform: translateY(18px);
-  transition: .7s;
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:18px;
 }
 
-.reveal.active {
-  opacity: 1;
-  transform: none;
+.card{
+  background:white;
+  border:1px solid #e2e8f0;
+  border-radius:16px;
+  padding:22px;
+  transition:.25s;
 }
 
+.card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 8px 20px rgba(0,0,0,.06);
+}
 
-/* =========================================================
-   MOBILE
-   ========================================================= */
+.card h3{
+  margin-top:0;
+  margin-bottom:10px;
+  color:#0f172a;
+}
 
-@media (max-width: 768px) {
+/* Publications */
 
-  .intro {
-    padding: 25px;
-  }
+.publications ul{
+  padding-left:20px;
+}
+
+.publications li{
+  margin-bottom:12px;
+}
+
+/* Vision */
+
+.vision{
+  background:#f8fafc;
+  border-left:5px solid #2563eb;
+  padding:30px;
+  border-radius:14px;
+}
+
+/* Animation */
+
+.reveal{
+  opacity:0;
+  transform:translateY(18px);
+  transition:.7s;
+}
+
+.reveal.active{
+  opacity:1;
+  transform:none;
+}
+
+@media(max-width:768px){
+
+.section{
+margin:45px 0;
+}
+
+.intro{
+padding:25px;
+}
 
 }
 
 </style>
 
+<!-- =================================================== -->
+
 <section class="intro reveal">
 
-  <p>
+<p>
 
-```
-Welcome. My research explores how <strong>applied mathematics</strong>,
-<strong>statistics</strong>, and <strong>data science</strong> can
-address practical challenges in public health, education,
-and community development.
-```
+Welcome. My research explores how <strong>applied mathematics</strong>, 
+  <strong>statistics</strong>, and <strong>data science</strong> can 
+  address practical challenges in public health, education, 
+  and community development.
 
-  </p>
+</p>
 
-  <p>
+<p>
 
-```
 I am particularly interested in mathematical modelling, biostatistics,
-epidemiology, and evidence-based decision-making that supports
-sustainable development across Tanzania and beyond.
-```
+  epidemiology, and evidence-based decision-making that supports 
+  sustainable development across Tanzania and beyond.
 
-  </p>
+</p>
 
-  <p class="explore-text">
-
-```
+<p class="explore-text">
 Through my teaching and research activities, I develop and
 share mathematical, statistical, and data-driven approaches
 that connect theory with practical applications. The resources
 below provide access to selected courses and research activities
 related to these interests.
-```
+</p>
+<div class="buttons">
 
-  </p>
-
-  <div class="buttons">
-
-```
-<a
-  href="{{ site.baseurl }}/teaching/qms101/"
-  class="btn btn-primary">
-  Introductory Statistics
+<a href="{{ site.baseurl }}/teaching/qms101/" class="btn btn-primary">
+Introductory Statistics
 </a>
 
-
-<a
-  href="{{ site.baseurl }}/teaching/mat102/"
-  class="btn btn-light">
-  ODE
+<a href="{{ site.baseurl }}/teaching/mat102/" class="btn btn-light">
+ODE
 </a>
 
-
-<a
-  href="{{ site.baseurl }}/teaching/mat103/"
-  class="btn btn-primary">
-  Numerical Analysis I
+<a href="{{ site.baseurl }}/teaching/mat103/" class="btn btn-primary">
+Numerical Analysis I
 </a>
 
-
-<a
-  href="{{ site.baseurl }}/juco-dsg/"
-  class="btn btn-light">
-  DSRG
+<a href="{{ site.baseurl }}/juco-dsg/" class="btn btn-light">
+DSRG
 </a>
-```
 
-  </div>
+<!--<a href="{{ site.baseurl }}/files/CV.pdf" class="btn btn-light">
+Curriculum Vitae
+</a>-->
+
+</div>
 
 </section>
 
+<!-- =================================================== -->
+
 <script>
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function(){
 
-  const observer = new IntersectionObserver(
-    (entries) => {
+const observer=new IntersectionObserver((entries)=>{
 
-      entries.forEach((entry) => {
+entries.forEach(entry=>{
 
-        if (entry.isIntersecting) {
+if(entry.isIntersecting){
 
-          entry.target.classList.add("active");
+entry.target.classList.add("active");
 
-        }
+}
 
-      });
+});
 
-    },
-    {
-      threshold: 0.1
-    }
-  );
+},{threshold:0.1});
 
-
-  document
-    .querySelectorAll(".reveal")
-    .forEach((el) => observer.observe(el));
+document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
 
 });
 
 </script>
+
+
