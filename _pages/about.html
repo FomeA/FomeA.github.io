@@ -14,92 +14,115 @@ redirect_from:
 <style>
 
 /* =========================================================
-   LANDING PAGE
+   MAIN CONTENT
    ========================================================= */
 
 .page__content{
   max-width:980px;
   margin:0 auto;
   font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,
-               "Segoe UI",sans-serif;
+              "Segoe UI",sans-serif;
   color:#334155;
   line-height:1.8;
 }
 
+
 /* =========================================================
-   MAIN INTRODUCTION
+   LANDING CARD
    ========================================================= */
 
 .intro{
   position:relative;
   overflow:hidden;
 
-  margin:10px auto 35px;
-  padding:42px 46px;
+  margin:18px auto 0;
+  padding:48px 50px;
 
   background:
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(37,99,235,.09),
+      transparent 30%
+    ),
     linear-gradient(
       135deg,
       #f8fafc 0%,
-      #f8fbff 55%,
-      #eef5ff 100%
+      #f8fbff 100%
     );
 
   border:1px solid #dbe4ef;
-  border-radius:20px;
+  border-radius:22px;
 
   box-shadow:
-    0 8px 30px rgba(15,23,42,.05);
+    0 10px 35px rgba(15,23,42,.055);
 }
 
-/* Decorative accent */
+
+/* =========================================================
+   TOP ACCENT
+   ========================================================= */
 
 .intro::before{
   content:"";
+
   position:absolute;
   top:0;
   left:0;
+
   width:100%;
   height:4px;
+
   background:linear-gradient(
     90deg,
-    #2563eb,
-    #60a5fa,
-    #93c5fd
+    #2563eb 0%,
+    #3b82f6 50%,
+    #93c5fd 100%
   );
 }
 
-/* Decorative circle */
+
+/* =========================================================
+   SUBTLE DECORATIVE ELEMENT
+   ========================================================= */
 
 .intro::after{
   content:"";
+
   position:absolute;
 
-  width:190px;
-  height:190px;
+  width:210px;
+  height:210px;
 
-  right:-90px;
-  top:-90px;
+  right:-115px;
+  bottom:-120px;
 
   border-radius:50%;
 
-  background:rgba(37,99,235,.045);
+  border:35px solid rgba(37,99,235,.035);
 }
+
 
 /* =========================================================
-   INTRO TEXT
+   INTRODUCTION TEXT
    ========================================================= */
 
-.intro-content{
+.intro p{
   position:relative;
   z-index:2;
-  max-width:880px;
+
+  margin:0 0 22px;
+
+  font-size:1.08rem;
+  line-height:1.9;
 }
 
-.intro p{
-  margin:0 0 20px;
-  font-size:1.08rem;
-  line-height:1.85;
+.intro p:first-child{
+  margin-bottom:16px;
+
+  color:#0f172a;
+
+  font-size:1.25rem;
+  font-weight:650;
 }
 
 .intro p:last-of-type{
@@ -107,84 +130,48 @@ redirect_from:
 }
 
 .intro strong{
-  color:#1e40af;
+  color:#1d4ed8;
   font-weight:700;
 }
 
-/* Small academic label */
-
-.intro-label{
-  display:inline-block;
-
-  margin-bottom:18px;
-  padding:5px 12px;
-
-  border-radius:20px;
-
-  background:#e0ecff;
-  color:#1d4ed8;
-
-  font-size:.75rem;
-  font-weight:800;
-
-  letter-spacing:.08em;
-  text-transform:uppercase;
-}
 
 /* =========================================================
-   RESOURCE AREA
+   RESOURCE BUTTONS
    ========================================================= */
 
-.resources{
-  margin-top:30px;
-  padding-top:27px;
+.buttons{
+  position:relative;
+  z-index:2;
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(4,minmax(0,1fr));
+
+  gap:13px;
+
+  margin-top:34px;
+  padding-top:28px;
 
   border-top:1px solid #dbe4ef;
 }
 
-.resources-title{
-  margin:0 0 15px;
-
-  color:#0f172a;
-
-  font-size:.82rem;
-  font-weight:800;
-
-  letter-spacing:.08em;
-  text-transform:uppercase;
-}
-
-/* =========================================================
-   BUTTONS
-   ========================================================= */
-
-.buttons{
-  display:grid;
-
-  grid-template-columns:
-    repeat(4, minmax(0,1fr));
-
-  gap:12px;
-
-  margin-top:0;
-}
 
 .btn{
-  position:relative;
-
   display:flex;
   align-items:center;
   justify-content:center;
 
-  min-height:48px;
-  padding:11px 14px;
+  min-height:50px;
 
-  border-radius:10px;
+  padding:11px 15px;
+
+  border-radius:11px;
 
   text-align:center;
   text-decoration:none !important;
 
-  font-size:.9rem;
+  font-size:.88rem;
   font-weight:700;
 
   transition:
@@ -194,10 +181,12 @@ redirect_from:
     border-color .22s ease;
 }
 
+
 /* Primary */
 
 .btn-primary{
   background:#2563eb;
+
   border:1px solid #2563eb;
 
   color:#fff !important;
@@ -215,17 +204,18 @@ redirect_from:
   transform:translateY(-2px);
 
   box-shadow:
-    0 8px 18px rgba(37,99,235,.23);
+    0 9px 20px rgba(37,99,235,.23);
 }
 
-/* Secondary */
+
+/* Light */
 
 .btn-light{
   background:#fff !important;
 
   border:1px solid #cbd5e1 !important;
 
-  color:#1d4ed8 !important;
+  color:#2563eb !important;
 }
 
 .btn-light:hover{
@@ -238,51 +228,29 @@ redirect_from:
   transform:translateY(-2px);
 
   box-shadow:
-    0 7px 16px rgba(15,23,42,.07);
+    0 8px 18px rgba(15,23,42,.07);
 }
+
 
 /* =========================================================
-   SUBTLE PAGE DIVIDER
-   ========================================================= */
-
-.page-divider{
-  display:flex;
-  align-items:center;
-  gap:12px;
-
-  margin:34px 0 5px;
-
-  color:#94a3b8;
-  font-size:.76rem;
-  font-weight:600;
-  letter-spacing:.05em;
-}
-
-.page-divider::before,
-.page-divider::after{
-  content:"";
-  height:1px;
-  background:#e2e8f0;
-  flex:1;
-}
-
-/* =========================================================
-   ANIMATION
+   REVEAL ANIMATION
    ========================================================= */
 
 .reveal{
   opacity:0;
-  transform:translateY(14px);
+
+  transform:translateY(15px);
 
   transition:
-    opacity .65s ease,
-    transform .65s ease;
+    opacity .7s ease,
+    transform .7s ease;
 }
 
 .reveal.active{
   opacity:1;
   transform:none;
 }
+
 
 /* =========================================================
    TABLET
@@ -295,15 +263,16 @@ redirect_from:
   }
 
   .intro{
-    padding:38px 35px;
+    padding:40px 35px;
   }
 
   .buttons{
     grid-template-columns:
-      repeat(2, minmax(0,1fr));
+      repeat(2,minmax(0,1fr));
   }
 
 }
+
 
 /* =========================================================
    MOBILE
@@ -316,39 +285,39 @@ redirect_from:
   }
 
   .intro{
-    margin:5px 0 25px;
-    padding:31px 24px;
+    margin-top:5px;
+    padding:32px 24px;
 
-    border-radius:16px;
+    border-radius:17px;
   }
 
   .intro p{
     font-size:1rem;
-    line-height:1.75;
+    line-height:1.8;
   }
 
-  .intro-label{
-    margin-bottom:15px;
-  }
-
-  .resources{
-    margin-top:26px;
-    padding-top:23px;
+  .intro p:first-child{
+    font-size:1.12rem;
   }
 
   .buttons{
     grid-template-columns:1fr;
+
     gap:10px;
+
+    margin-top:27px;
+    padding-top:23px;
   }
 
   .btn{
-    min-height:46px;
+    min-height:47px;
   }
 
 }
 
+
 /* =========================================================
-   REDUCE MOTION
+   ACCESSIBILITY
    ========================================================= */
 
 @media(prefers-reduced-motion:reduce){
@@ -368,81 +337,65 @@ redirect_from:
 </style>
 
 <!-- =========================================================
-     LANDING CONTENT
+     LANDING PAGE
      ========================================================= -->
 
 <section class="intro reveal">
 
-  <div class="intro-content">
+  <p>
+    Welcome to my academic website.
+  </p>
 
-```
-<div class="intro-label">
-  Academic &amp; Research
-</div>
+  <p>
+    My research explores how
+    <strong>applied mathematics</strong>,
+    <strong>statistics</strong>, and
+    <strong>data science</strong>
+    can address practical challenges in public health,
+    education, and community development.
+  </p>
 
-<p>
-  Welcome to my academic website.
-</p>
-
-<p>
-  My research explores how
-  <strong>applied mathematics</strong>,
-  <strong>statistics</strong>, and
-  <strong>data science</strong>
-  can address practical challenges in public health,
-  education, and community development.
-</p>
-
-<p>
-  I am particularly interested in mathematical modelling,
-  biostatistics, epidemiology, and evidence-based
-  decision-making that supports sustainable development
-  across Tanzania and beyond.
-</p>
-
-<div class="resources">
-
-  <div class="resources-title">
-    Selected Learning Resources
-  </div>
+  <p>
+    I am particularly interested in mathematical modelling,
+    biostatistics, epidemiology, and evidence-based
+    decision-making that supports sustainable development
+    across Tanzania and beyond.
+  </p>
 
   <div class="buttons">
 
-    <a
-      href="{{ site.baseurl }}/teaching/qms101/"
-      class="btn btn-primary">
-      Introductory Statistics
-    </a>
+```
+<a
+  href="{{ site.baseurl }}/teaching/qms101/"
+  class="btn btn-primary">
+  Introductory Statistics
+</a>
 
-    <a
-      href="{{ site.baseurl }}/teaching/mat102/"
-      class="btn btn-light">
-      ODE
-    </a>
+<a
+  href="{{ site.baseurl }}/teaching/mat102/"
+  class="btn btn-light">
+  ODE
+</a>
 
-    <a
-      href="{{ site.baseurl }}/teaching/mat103/"
-      class="btn btn-primary">
-      Numerical Analysis I
-    </a>
+<a
+  href="{{ site.baseurl }}/teaching/mat103/"
+  class="btn btn-primary">
+  Numerical Analysis I
+</a>
 
-    <a
-      href="{{ site.baseurl }}/juco-dsg/"
-      class="btn btn-light">
-      DSRG
-    </a>
+<a
+  href="{{ site.baseurl }}/juco-dsg/"
+  class="btn btn-light">
+  DSRG
+</a>
 
-    <!--
-    <a
-      href="{{ site.baseurl }}/files/CV.pdf"
-      class="btn btn-light">
-      Curriculum Vitae
-    </a>
-    -->
-
-  </div>
-
-</div>
+<!--
+<a
+  href="{{ site.baseurl }}/files/CV.pdf"
+  class="btn btn-light">
+  Curriculum Vitae
+</a>
+-->
 ```
 
   </div>
