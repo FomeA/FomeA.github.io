@@ -1,1 +1,348 @@
+---
+layout: single
+permalink: /
+title: ""
+author_profile: true
+redirect_from:
+  - /about/
+  - /about.html
+---
+
+<style>
+
+/* ===== MAIN CONTENT ===== */
+
+.page__content{
+  max-width:900px;
+  margin:auto;
+  font-family:Inter,system-ui,sans-serif;
+  color:#334155;
+  line-height:1.8;
+}
+
+/* Sections */
+
+.section{
+  margin:60px 0;
+}
+
+.section h2{
+  font-size:2rem;
+  margin-bottom:18px;
+  color:#0f172a;
+  border-bottom:2px solid #e2e8f0;
+  padding-bottom:8px;
+}
+
+/* Intro */
+
+.intro{
+  background:#f8fafc;
+  border:1px solid #e2e8f0;
+  border-radius:18px;
+  padding:35px;
+}
+
+.intro p{
+  font-size:1.08rem;
+  margin-bottom:18px;
+}
+
+/* Buttons */
+
+.buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:25px;
+}
+
+.btn{
+  text-decoration:none;
+  padding:11px 18px;
+  border-radius:10px;
+  font-weight:600;
+  transition:.25s;
+}
+
+.btn-primary{
+  background:#2563eb;
+  color:white;
+}
+
+.btn-primary:hover{
+  background:#1d4ed8;
+}
+
+.btn-light {
+  background: white !important;
+  border: 1px solid #2563eb !important;
+  color: #2563eb !important;
+}
+
+.btn-light:hover {
+  background: #f8fafc !important;
+  border-color: #1d4ed8 !important;
+  color: #1d4ed8 !important;
+}
+
+
+/* Research cards */
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:18px;
+}
+
+.card{
+  background:white;
+  border:1px solid #e2e8f0;
+  border-radius:16px;
+  padding:22px;
+  transition:.25s;
+}
+
+.card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 8px 20px rgba(0,0,0,.06);
+}
+
+.card h3{
+  margin-top:0;
+  margin-bottom:10px;
+  color:#0f172a;
+}
+
+/* Publications */
+
+.publications ul{
+  padding-left:20px;
+}
+
+.publications li{
+  margin-bottom:12px;
+}
+
+/* Vision */
+
+.vision{
+  background:#f8fafc;
+  border-left:5px solid #2563eb;
+  padding:30px;
+  border-radius:14px;
+}
+
+/* Animation */
+
+.reveal{
+  opacity:0;
+  transform:translateY(18px);
+  transition:.7s;
+}
+
+.reveal.active{
+  opacity:1;
+  transform:none;
+}
+
+@media(max-width:768px){
+
+.section{
+margin:45px 0;
+}
+
+.intro{
+padding:25px;
+}
+
+}
+
+</style>
+
+<!-- =================================================== -->
+
+<section class="intro reveal">
+
+<p>
+
+Welcome to my academic website.
+
+My research explores how <strong>applied mathematics</strong>,
+<strong>statistics</strong>, and <strong>data science</strong> can
+address practical challenges in public health, education,
+and community development.
+
+</p>
+
+<p>
+
+I am particularly interested in mathematical modelling,
+biostatistics, epidemiology, and evidence-based decision-making
+that supports sustainable development across Tanzania and beyond.
+
+</p>
+
+<div class="buttons">
+
+<a href="{{ site.baseurl }}/research/" class="btn btn-primary">
+Research
+</a>
+
+<a href="{{ site.baseurl }}/publications/" class="btn btn-light">
+Publications
+</a>
+
+<a href="{{ site.baseurl }}/teaching/" class="btn btn-light">
+Teaching
+</a>
+
+<!--<a href="{{ site.baseurl }}/files/CV.pdf" class="btn btn-light">
+Curriculum Vitae
+</a>-->
+
+</div>
+
+</section>
+
+<!-- =================================================== -->
+
+<section class="section reveal">
+
+<h2>Research Interests</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>Epidemiological Modelling</h3>
+
+Developing mathematical models to understand infectious disease dynamics and evaluate intervention strategies.
+
+</div>
+
+<!--
+  <div class="card">
+
+<h3>Biostatistics</h3>
+
+Applying statistical methods to health, biomedical and public health research.
+
+</div> -->
+
+<div class="card">
+
+<h3>Education Analytics</h3>
+
+Using quantitative methods to improve student learning and educational outcomes.
+
+</div>
+
+<div class="card">
+
+<h3>Data Science</h3>
+
+Statistical modelling and data-driven approaches for evidence-based policy and decision-making.
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =================================================== -->
+<!--
+<section class="section publications reveal">
+
+
+  <h2>Selected Publications</h2>
+
+<ul>
+
+<li>Your most important publication (2025).</li>
+
+<li>Another recent publication (2024).</li>
+
+<li>Key publication related to your research.</li>
+
+</ul>
+
+<p>
+
+<a href="{{ site.baseurl }}/publications/">
+
+View all publications →
+
+</a>
+
+</p>
+
+</section> -->
+
+<!-- =================================================== -->
+
+<section class="section reveal">
+
+<h2>Teaching & Mentorship</h2>
+
+<p>
+
+I teach undergraduate and postgraduate courses in applied mathematics,
+statistics, research methods and data analysis. I also supervise student
+research projects and mentor young researchers interested in quantitative
+methods and interdisciplinary research.
+
+</p>
+
+<p>
+
+<a href="{{ site.baseurl }}/teaching/">
+
+Explore teaching →
+
+</a>
+
+</p>
+
+</section>
+
+<!-- =================================================== -->
+
+<section class="section reveal">
+
+<h2>Current Focus</h2>
+
+<div class="vision">
+
+My current work seeks to strengthen the use of mathematical and statistical
+methods in solving real-world challenges in health, education and social
+development through interdisciplinary research and collaborative partnerships.
+
+</div>
+
+</section>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function(){
+
+const observer=new IntersectionObserver((entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("active");
+
+}
+
+});
+
+},{threshold:0.1});
+
+document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+
+});
+
+</script>
 
