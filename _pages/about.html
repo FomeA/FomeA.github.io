@@ -1,238 +1,744 @@
 ---
+
 layout: single
 permalink: /
 title: ""
 author_profile: true
 redirect_from:
-  - /about/
-  - /about.html
+
+* /about/
+* /about.html
+
 ---
 
 <style>
 
-/* ===== MAIN CONTENT ===== */
+/* =========================================================
+   ACADEMIC LANDING PAGE
+   ========================================================= */
 
-.page__content{
-  max-width:900px;
-  margin:auto;
-  font-family:Inter,system-ui,sans-serif;
-  color:#334155;
-  line-height:1.8;
+.page__content {
+  max-width: 1050px;
+  margin: 0 auto;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont,
+               "Segoe UI", sans-serif;
+  color: #475569;
+  line-height: 1.75;
 }
 
-/* Sections */
+/* Remove excessive spacing from theme */
 
-.section{
-  margin:60px 0;
+.page__content p {
+  margin-bottom: 1.1rem;
 }
 
-.section h2{
-  font-size:2rem;
-  margin-bottom:18px;
-  color:#0f172a;
-  border-bottom:2px solid #e2e8f0;
-  padding-bottom:8px;
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  margin: 10px 0 70px;
+  padding: 55px 50px;
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 90% 10%, rgba(59,130,246,.16), transparent 35%),
+    linear-gradient(135deg, #f8fafc 0%, #eef4ff 100%);
+  border: 1px solid #dbe5f1;
+  box-shadow: 0 15px 40px rgba(15, 23, 42, .06);
 }
 
-/* Intro */
-
-.intro{
-  background:#f8fafc;
-  border:1px solid #e2e8f0;
-  border-radius:18px;
-  padding:35px;
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  right: -90px;
+  bottom: -100px;
+  border-radius: 50%;
+  background: rgba(37, 99, 235, .08);
 }
 
-.intro p{
-  font-size:1.08rem;
-  margin-bottom:18px;
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 780px;
 }
 
-/* Buttons */
-
-.buttons{
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px;
-  margin-top:25px;
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 18px;
+  padding: 6px 13px;
+  border-radius: 999px;
+  background: rgba(37, 99, 235, .09);
+  color: #1d4ed8;
+  font-size: .82rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
 }
 
-.btn{
-  text-decoration:none;
-  padding:11px 18px;
-  border-radius:10px;
-  font-weight:600;
-  transition:.25s;
+.eyebrow::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #2563eb;
 }
 
-.btn-primary{
-  background:#2563eb;
-  color:white;
+.hero h1 {
+  margin: 0 0 18px;
+  color: #0f172a;
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  line-height: 1.1;
+  letter-spacing: -.04em;
+  font-weight: 800;
 }
 
-.btn-primary:hover{
-  background:#1d4ed8;
+.hero h1 span {
+  color: #2563eb;
+}
+
+.hero-lead {
+  max-width: 720px;
+  margin-bottom: 28px;
+  color: #475569;
+  font-size: 1.15rem;
+  line-height: 1.8;
+}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 44px;
+  padding: 10px 18px;
+  border-radius: 11px;
+  text-decoration: none !important;
+  font-size: .92rem;
+  font-weight: 700;
+  transition:
+    transform .22s ease,
+    box-shadow .22s ease,
+    background .22s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background: #2563eb;
+  color: #fff !important;
+  box-shadow: 0 7px 18px rgba(37, 99, 235, .22);
+}
+
+.btn-primary:hover {
+  background: #1d4ed8;
+  color: #fff !important;
+  box-shadow: 0 10px 24px rgba(37, 99, 235, .28);
 }
 
 .btn-light {
-  background: white !important;
-  border: 1px solid #2563eb !important;
-  color: #2563eb !important;
+  background: rgba(255,255,255,.85);
+  border: 1px solid #cbd5e1;
+  color: #334155 !important;
 }
 
 .btn-light:hover {
-  background: #f8fafc !important;
-  border-color: #1d4ed8 !important;
-  color: #1d4ed8 !important;
+  background: #fff;
+  border-color: #94a3b8;
+  color: #1e293b !important;
+}
+
+/* =========================================================
+   SECTION
+   ========================================================= */
+
+.section {
+  margin: 75px 0;
+}
+
+.section-header {
+  margin-bottom: 30px;
+}
+
+.section-label {
+  margin-bottom: 7px;
+  color: #2563eb;
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.section h2 {
+  margin: 0;
+  color: #0f172a;
+  font-size: clamp(1.7rem, 3vw, 2.25rem);
+  line-height: 1.2;
+  letter-spacing: -.025em;
+}
+
+.section-intro {
+  max-width: 720px;
+  margin-top: 12px;
+  color: #64748b;
+}
+
+/* =========================================================
+   RESEARCH FOCUS
+   ========================================================= */
+
+.research-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.research-card {
+  position: relative;
+  padding: 28px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  box-shadow: 0 5px 18px rgba(15, 23, 42, .035);
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease,
+    border-color .25s ease;
+}
+
+.research-card:hover {
+  transform: translateY(-5px);
+  border-color: #bfdbfe;
+  box-shadow: 0 14px 30px rgba(15, 23, 42, .08);
+}
+
+.research-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  background: #eff6ff;
+  color: #2563eb;
+  font-size: .82rem;
+  font-weight: 800;
+}
+
+.research-card h3 {
+  margin: 0 0 10px;
+  color: #0f172a;
+  font-size: 1.12rem;
+}
+
+.research-card p {
+  margin: 0;
+  color: #64748b;
+  font-size: .94rem;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   TEACHING
+   ========================================================= */
+
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.course {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 21px 23px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 15px;
+  text-decoration: none !important;
+  transition: all .22s ease;
+}
+
+.course:hover {
+  transform: translateY(-3px);
+  border-color: #bfdbfe;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, .07);
+}
+
+.course-info strong {
+  display: block;
+  margin-bottom: 3px;
+  color: #0f172a;
+  font-size: 1rem;
+}
+
+.course-info span {
+  color: #64748b;
+  font-size: .86rem;
+}
+
+.course-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #eff6ff;
+  color: #2563eb;
+  font-weight: 700;
+  transition: transform .2s ease;
+}
+
+.course:hover .course-arrow {
+  transform: translateX(3px);
+}
+
+/* =========================================================
+   VISION
+   ========================================================= */
+
+.vision {
+  position: relative;
+  overflow: hidden;
+  padding: 38px 42px;
+  border-radius: 22px;
+  background: #0f172a;
+  color: #cbd5e1;
+  box-shadow: 0 15px 35px rgba(15, 23, 42, .12);
+}
+
+.vision::after {
+  content: "";
+  position: absolute;
+  right: -80px;
+  top: -100px;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: rgba(59,130,246,.13);
+}
+
+.vision-content {
+  position: relative;
+  z-index: 2;
+  max-width: 780px;
+}
+
+.vision .section-label {
+  color: #60a5fa;
+}
+
+.vision h2 {
+  margin: 0 0 14px;
+  color: #fff;
+}
+
+.vision p {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #cbd5e1;
+}
+
+/* =========================================================
+   ANIMATION
+   ========================================================= */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity .7s ease,
+    transform .7s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: none;
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+  .hero {
+    margin-top: 5px;
+    padding: 38px 27px;
+    border-radius: 22px;
+  }
+
+  .hero h1 {
+    font-size: 2.25rem;
+  }
+
+  .hero-lead {
+    font-size: 1rem;
+  }
+
+  .research-grid,
+  .course-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    margin: 58px 0;
+  }
+
+  .vision {
+    padding: 30px 27px;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .hero {
+    padding: 32px 22px;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .research-card {
+    padding: 23px;
+  }
+
 }
 
 
-/* Research cards */
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
 
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:18px;
-}
+@media (prefers-reduced-motion: reduce) {
 
-.card{
-  background:white;
-  border:1px solid #e2e8f0;
-  border-radius:16px;
-  padding:22px;
-  transition:.25s;
-}
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 
-.card:hover{
-  transform:translateY(-3px);
-  box-shadow:0 8px 20px rgba(0,0,0,.06);
-}
-
-.card h3{
-  margin-top:0;
-  margin-bottom:10px;
-  color:#0f172a;
-}
-
-/* Publications */
-
-.publications ul{
-  padding-left:20px;
-}
-
-.publications li{
-  margin-bottom:12px;
-}
-
-/* Vision */
-
-.vision{
-  background:#f8fafc;
-  border-left:5px solid #2563eb;
-  padding:30px;
-  border-radius:14px;
-}
-
-/* Animation */
-
-.reveal{
-  opacity:0;
-  transform:translateY(18px);
-  transition:.7s;
-}
-
-.reveal.active{
-  opacity:1;
-  transform:none;
-}
-
-@media(max-width:768px){
-
-.section{
-margin:45px 0;
-}
-
-.intro{
-padding:25px;
-}
+  .btn,
+  .research-card,
+  .course,
+  .course-arrow {
+    transition: none;
+  }
 
 }
 
 </style>
 
-<!-- =================================================== -->
+<!-- =========================================================
+     HERO
+     ========================================================= -->
 
-<section class="intro reveal">
+<section class="hero reveal">
 
-<p>
+  <div class="hero-content">
 
-Welcome to my academic website.
+```
+<div class="eyebrow">
+  Academic &amp; Research
+</div>
 
-My research explores how <strong>applied mathematics</strong>,
-<strong>statistics</strong>, and <strong>data science</strong> can
-address practical challenges in public health, education,
-and community development.
+<h1>
+  Mathematics, Statistics &amp;
+  <span>Data for Impact</span>
+</h1>
 
-</p>
-
-<p>
-
-I am particularly interested in mathematical modelling,
-biostatistics, epidemiology, and evidence-based decision-making
-that supports sustainable development across Tanzania and beyond.
-
+<p class="hero-lead">
+  Welcome to my academic website. My work explores how applied
+  mathematics, statistics, and data science can address practical
+  challenges in public health, education, and community development.
 </p>
 
 <div class="buttons">
 
-<a href="{{ site.baseurl }}/teaching/qms101/" class="btn btn-primary">
-Introductory Statistics
-</a>
+  <a href="{{ site.baseurl }}/teaching/qms101/"
+     class="btn btn-primary">
+    Introductory Statistics
+  </a>
 
-<a href="{{ site.baseurl }}/teaching/mat102/" class="btn btn-light">
-ODE
-</a>
+  <a href="{{ site.baseurl }}/teaching/mat102/"
+     class="btn btn-light">
+    Ordinary Differential Equations
+  </a>
 
-<a href="{{ site.baseurl }}/teaching/mat103/" class="btn btn-primary">
-Numerical Analysis I
-</a>
+  <a href="{{ site.baseurl }}/teaching/mat103/"
+     class="btn btn-light">
+    Numerical Analysis I
+  </a>
 
-<a href="{{ site.baseurl }}/juco-dsg/" class="btn btn-light">
-DSRG
-</a>
-
-<!--<a href="{{ site.baseurl }}/files/CV.pdf" class="btn btn-light">
-Curriculum Vitae
-</a>-->
+  <a href="{{ site.baseurl }}/juco-dsg/"
+     class="btn btn-light">
+    Data Science Research Group
+  </a>
 
 </div>
+```
+
+  </div>
 
 </section>
 
-<!-- =================================================== -->
+<!-- =========================================================
+     RESEARCH
+     ========================================================= -->
+
+<section class="section reveal">
+
+  <div class="section-header">
+
+```
+<div class="section-label">
+  Research
+</div>
+
+<h2>Areas of Interest</h2>
+
+<p class="section-intro">
+  My research sits at the intersection of mathematical theory,
+  statistical methods, and real-world evidence.
+</p>
+```
+
+  </div>
+
+  <div class="research-grid">
+
+```
+<div class="research-card">
+
+  <div class="research-number">01</div>
+
+  <h3>Mathematical Modelling</h3>
+
+  <p>
+    Developing mathematical models to understand complex systems
+    and support practical decision-making.
+  </p>
+
+</div>
+
+
+<div class="research-card">
+
+  <div class="research-number">02</div>
+
+  <h3>Biostatistics &amp; Epidemiology</h3>
+
+  <p>
+    Applying statistical and mathematical approaches to investigate
+    health outcomes, disease dynamics, and population-level patterns.
+  </p>
+
+</div>
+
+
+<div class="research-card">
+
+  <div class="research-number">03</div>
+
+  <h3>Data Science</h3>
+
+  <p>
+    Using data-driven methods to generate evidence that can inform
+    policy, planning, and sustainable development.
+  </p>
+
+</div>
+```
+
+  </div>
+
+</section>
+
+<!-- =========================================================
+     TEACHING
+     ========================================================= -->
+
+<section class="section reveal">
+
+  <div class="section-header">
+
+```
+<div class="section-label">
+  Teaching
+</div>
+
+<h2>Courses &amp; Resources</h2>
+
+<p class="section-intro">
+  Selected teaching materials, notes, and resources for students
+  interested in mathematics, statistics, and data analysis.
+</p>
+```
+
+  </div>
+
+  <div class="course-grid">
+
+```
+<a href="{{ site.baseurl }}/teaching/qms101/"
+   class="course">
+
+  <div class="course-info">
+    <strong>Introductory Statistics</strong>
+    <span>QMS 101 · Statistics fundamentals</span>
+  </div>
+
+  <div class="course-arrow">→</div>
+
+</a>
+
+
+<a href="{{ site.baseurl }}/teaching/mat102/"
+   class="course">
+
+  <div class="course-info">
+    <strong>Ordinary Differential Equations</strong>
+    <span>MAT 102 · ODEs and applications</span>
+  </div>
+
+  <div class="course-arrow">→</div>
+
+</a>
+
+
+<a href="{{ site.baseurl }}/teaching/mat103/"
+   class="course">
+
+  <div class="course-info">
+    <strong>Numerical Analysis I</strong>
+    <span>MAT 103 · Numerical methods</span>
+  </div>
+
+  <div class="course-arrow">→</div>
+
+</a>
+
+
+<a href="{{ site.baseurl }}/juco-dsg/"
+   class="course">
+
+  <div class="course-info">
+    <strong>Data Science Research Group</strong>
+    <span>Research · Data science &amp; collaboration</span>
+  </div>
+
+  <div class="course-arrow">→</div>
+
+</a>
+```
+
+  </div>
+
+</section>
+
+<!-- =========================================================
+     VISION
+     ========================================================= -->
+
+<section class="section reveal">
+
+  <div class="vision">
+
+```
+<div class="vision-content">
+
+  <div class="section-label">
+    Research Vision
+  </div>
+
+  <h2>From mathematics to meaningful impact.</h2>
+
+  <p>
+    I am particularly interested in mathematical modelling,
+    biostatistics, epidemiology, and evidence-based decision-making
+    that supports sustainable development across Tanzania and beyond.
+  </p>
+
+</div>
+```
+
+  </div>
+
+</section>
+
+<!-- =========================================================
+     SCROLL ANIMATION
+     ========================================================= -->
 
 <script>
 
-document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener("DOMContentLoaded", function () {
 
-const observer=new IntersectionObserver((entries)=>{
+  const elements = document.querySelectorAll(".reveal");
 
-entries.forEach(entry=>{
+  if (!("IntersectionObserver" in window)) {
 
-if(entry.isIntersecting){
+    elements.forEach(function (el) {
+      el.classList.add("active");
+    });
 
-entry.target.classList.add("active");
+    return;
+  }
 
-}
+  const observer = new IntersectionObserver(
+    function (entries) {
 
-});
+      entries.forEach(function (entry) {
 
-},{threshold:0.1});
+        if (entry.isIntersecting) {
 
-document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+          entry.target.classList.add("active");
+          observer.unobserve(entry.target);
+
+        }
+
+      });
+
+    },
+    {
+      threshold: 0.08
+    }
+  );
+
+  elements.forEach(function (el) {
+    observer.observe(el);
+  });
 
 });
 
 </script>
-
-
