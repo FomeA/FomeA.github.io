@@ -14,12 +14,12 @@ redirect_from:
 <style>
 
 /* =========================================================
-   ACADEMIC LANDING PAGE
+   GLOBAL
    ========================================================= */
 
 .page__content {
   max-width: 1050px;
-  margin: 0 auto;
+  margin: auto;
   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont,
                "Segoe UI", sans-serif;
   color: #475569;
@@ -32,14 +32,16 @@ redirect_from:
 
 
 /* =========================================================
-   HERO
+   HERO / INTRO
    ========================================================= */
 
-.hero {
+.intro {
   position: relative;
   overflow: hidden;
-  margin: 10px 0 70px;
+
+  margin: 15px 0 70px;
   padding: 55px 50px;
+
   border-radius: 28px;
 
   background:
@@ -60,34 +62,36 @@ redirect_from:
     0 15px 40px rgba(15, 23, 42, .06);
 }
 
-.hero::after {
+.intro::after {
   content: "";
+
   position: absolute;
 
-  width: 220px;
-  height: 220px;
+  width: 230px;
+  height: 230px;
 
   right: -90px;
-  bottom: -100px;
+  bottom: -110px;
 
   border-radius: 50%;
 
-  background: rgba(37, 99, 235, .08);
+  background: rgba(37, 99, 235, .07);
 }
 
-.hero-content {
+.intro-content {
   position: relative;
   z-index: 2;
-  max-width: 800px;
+  max-width: 850px;
 }
 
 
 /* =========================================================
-   EYEBROW
+   INTRO LABEL
    ========================================================= */
 
-.eyebrow {
+.intro-label {
   display: inline-flex;
+
   align-items: center;
   gap: 8px;
 
@@ -100,14 +104,15 @@ redirect_from:
 
   color: #1d4ed8;
 
-  font-size: .82rem;
-  font-weight: 700;
+  font-size: .78rem;
+  font-weight: 800;
 
-  letter-spacing: .08em;
+  letter-spacing: .1em;
+
   text-transform: uppercase;
 }
 
-.eyebrow::before {
+.intro-label::before {
   content: "";
 
   width: 7px;
@@ -120,47 +125,50 @@ redirect_from:
 
 
 /* =========================================================
-   HERO TITLE
+   MAIN TITLE
    ========================================================= */
 
-.hero h1 {
-  margin: 0 0 18px;
+.intro h1 {
+  margin: 0 0 22px;
 
   color: #0f172a;
 
   font-size: clamp(2.2rem, 5vw, 3.6rem);
 
-  line-height: 1.1;
+  line-height: 1.08;
 
-  letter-spacing: -.04em;
+  letter-spacing: -.045em;
 
   font-weight: 800;
 }
 
-.hero h1 span {
+.intro h1 span {
   color: #2563eb;
 }
 
 
 /* =========================================================
-   HERO TEXT
+   INTRO TEXT
    ========================================================= */
 
-.hero-lead {
-  max-width: 720px;
-
-  margin-bottom: 28px;
+.intro p {
+  max-width: 800px;
 
   color: #475569;
 
-  font-size: 1.15rem;
+  font-size: 1.08rem;
 
-  line-height: 1.8;
+  line-height: 1.85;
+}
+
+.intro p strong {
+  color: #1e293b;
+  font-weight: 700;
 }
 
 
 /* =========================================================
-   BUTTONS
+   FOUR QUICK-LINK BUTTONS
    ========================================================= */
 
 .buttons {
@@ -170,7 +178,7 @@ redirect_from:
 
   gap: 12px;
 
-  margin-top: 28px;
+  margin-top: 30px;
 }
 
 .btn {
@@ -179,9 +187,7 @@ redirect_from:
   align-items: center;
   justify-content: center;
 
-  gap: 7px;
-
-  min-height: 44px;
+  min-height: 45px;
 
   padding: 10px 18px;
 
@@ -189,14 +195,15 @@ redirect_from:
 
   text-decoration: none !important;
 
-  font-size: .92rem;
+  font-size: .9rem;
 
   font-weight: 700;
 
   transition:
     transform .22s ease,
     box-shadow .22s ease,
-    background .22s ease;
+    background .22s ease,
+    border-color .22s ease;
 }
 
 .btn:hover {
@@ -204,19 +211,23 @@ redirect_from:
 }
 
 
-/* Primary button */
+/* Blue */
 
 .btn-primary {
   background: #2563eb;
 
   color: #fff !important;
 
+  border: 1px solid #2563eb;
+
   box-shadow:
-    0 7px 18px rgba(37, 99, 235, .22);
+    0 7px 18px rgba(37, 99, 235, .20);
 }
 
 .btn-primary:hover {
   background: #1d4ed8;
+
+  border-color: #1d4ed8;
 
   color: #fff !important;
 
@@ -225,27 +236,30 @@ redirect_from:
 }
 
 
-/* Light button */
+/* White */
 
 .btn-light {
-  background: rgba(255,255,255,.85);
-
-  border: 1px solid #cbd5e1;
+  background: rgba(255,255,255,.9);
 
   color: #334155 !important;
+
+  border: 1px solid #cbd5e1;
 }
 
 .btn-light:hover {
   background: #fff;
 
+  color: #1e293b !important;
+
   border-color: #94a3b8;
 
-  color: #1e293b !important;
+  box-shadow:
+    0 8px 20px rgba(15, 23, 42, .06);
 }
 
 
 /* =========================================================
-   SECTIONS
+   RESEARCH SECTION
    ========================================================= */
 
 .section {
@@ -339,10 +353,10 @@ redirect_from:
   align-items: center;
   justify-content: center;
 
-  width: 34px;
-  height: 34px;
+  width: 36px;
+  height: 36px;
 
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 
   border-radius: 10px;
 
@@ -350,7 +364,7 @@ redirect_from:
 
   color: #2563eb;
 
-  font-size: .82rem;
+  font-size: .8rem;
 
   font-weight: 800;
 }
@@ -360,7 +374,7 @@ redirect_from:
 
   color: #0f172a;
 
-  font-size: 1.12rem;
+  font-size: 1.1rem;
 }
 
 .research-card p {
@@ -368,96 +382,9 @@ redirect_from:
 
   color: #64748b;
 
-  font-size: .94rem;
+  font-size: .93rem;
 
   line-height: 1.7;
-}
-
-
-/* =========================================================
-   TEACHING
-   ========================================================= */
-
-.course-grid {
-  display: grid;
-
-  grid-template-columns:
-    repeat(2, 1fr);
-
-  gap: 16px;
-}
-
-.course {
-  display: flex;
-
-  align-items: center;
-
-  justify-content: space-between;
-
-  gap: 18px;
-
-  padding: 21px 23px;
-
-  background: #fff;
-
-  border: 1px solid #e2e8f0;
-
-  border-radius: 15px;
-
-  text-decoration: none !important;
-
-  transition: all .22s ease;
-}
-
-.course:hover {
-  transform: translateY(-3px);
-
-  border-color: #bfdbfe;
-
-  box-shadow:
-    0 10px 25px rgba(15, 23, 42, .07);
-}
-
-.course-info strong {
-  display: block;
-
-  margin-bottom: 3px;
-
-  color: #0f172a;
-
-  font-size: 1rem;
-}
-
-.course-info span {
-  color: #64748b;
-
-  font-size: .86rem;
-}
-
-.course-arrow {
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  flex: 0 0 auto;
-
-  width: 34px;
-  height: 34px;
-
-  border-radius: 50%;
-
-  background: #eff6ff;
-
-  color: #2563eb;
-
-  font-weight: 700;
-
-  transition: transform .2s ease;
-}
-
-.course:hover .course-arrow {
-  transform: translateX(3px);
 }
 
 
@@ -470,13 +397,11 @@ redirect_from:
 
   overflow: hidden;
 
-  padding: 38px 42px;
+  padding: 40px 42px;
 
   border-radius: 22px;
 
   background: #0f172a;
-
-  color: #cbd5e1;
 
   box-shadow:
     0 15px 35px rgba(15, 23, 42, .12);
@@ -487,15 +412,15 @@ redirect_from:
 
   position: absolute;
 
-  right: -80px;
-  top: -100px;
+  width: 270px;
+  height: 270px;
 
-  width: 260px;
-  height: 260px;
+  right: -100px;
+  top: -120px;
 
   border-radius: 50%;
 
-  background: rgba(59,130,246,.13);
+  background: rgba(59,130,246,.12);
 }
 
 .vision-content {
@@ -503,7 +428,7 @@ redirect_from:
 
   z-index: 2;
 
-  max-width: 780px;
+  max-width: 800px;
 }
 
 .vision .section-label {
@@ -514,27 +439,31 @@ redirect_from:
   margin: 0 0 14px;
 
   color: #fff;
+
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+
+  line-height: 1.25;
 }
 
 .vision p {
   margin: 0;
 
-  font-size: 1.05rem;
+  color: #cbd5e1;
+
+  font-size: 1.03rem;
 
   line-height: 1.8;
-
-  color: #cbd5e1;
 }
 
 
 /* =========================================================
-   ANIMATION
+   SCROLL ANIMATION
    ========================================================= */
 
 .reveal {
   opacity: 0;
 
-  transform: translateY(22px);
+  transform: translateY(20px);
 
   transition:
     opacity .7s ease,
@@ -549,51 +478,54 @@ redirect_from:
 
 
 /* =========================================================
-   TABLET / MOBILE
+   TABLET
    ========================================================= */
 
 @media (max-width: 800px) {
 
-  .hero {
+  .intro {
     margin-top: 5px;
 
-    padding: 38px 27px;
+    padding: 40px 28px;
 
-    border-radius: 22px;
+    border-radius: 23px;
   }
 
-  .hero h1 {
-    font-size: 2.25rem;
+  .intro h1 {
+    font-size: 2.3rem;
   }
 
-  .hero-lead {
+  .intro p {
     font-size: 1rem;
   }
 
-  .research-grid,
-  .course-grid {
+  .research-grid {
     grid-template-columns: 1fr;
   }
 
   .section {
-    margin: 58px 0;
+    margin: 60px 0;
   }
 
   .vision {
-    padding: 30px 27px;
+    padding: 32px 28px;
   }
 
 }
 
 
 /* =========================================================
-   SMALL MOBILE
+   MOBILE
    ========================================================= */
 
 @media (max-width: 480px) {
 
-  .hero {
+  .intro {
     padding: 32px 22px;
+  }
+
+  .intro h1 {
+    font-size: 2rem;
   }
 
   .buttons {
@@ -605,14 +537,18 @@ redirect_from:
   }
 
   .research-card {
-    padding: 23px;
+    padding: 24px;
+  }
+
+  .vision {
+    padding: 30px 23px;
   }
 
 }
 
 
 /* =========================================================
-   ACCESSIBILITY
+   REDUCED MOTION
    ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
@@ -626,9 +562,7 @@ redirect_from:
   }
 
   .btn,
-  .research-card,
-  .course,
-  .course-arrow {
+  .research-card {
     transition: none;
   }
 
@@ -637,24 +571,26 @@ redirect_from:
 </style>
 
 <!-- =========================================================
-     HERO
+     INTRO / HERO
      ========================================================= -->
 
-<section class="hero reveal">
+<section class="intro reveal">
 
-  <div class="hero-content">
+  <div class="intro-content">
 
 ```
-<div class="eyebrow">
+<div class="intro-label">
   Academic &amp; Research
 </div>
+
 
 <h1>
   Mathematics, Statistics &amp;
   <span>Data for Impact</span>
 </h1>
 
-<p class="hero-lead">
+
+<p>
 
   Welcome to my academic website.
 
@@ -668,8 +604,18 @@ redirect_from:
 </p>
 
 
+<p>
+
+  I am particularly interested in mathematical modelling,
+  biostatistics, epidemiology, and evidence-based
+  decision-making that supports sustainable development
+  across Tanzania and beyond.
+
+</p>
+
+
 <!-- =====================================================
-     YOUR FOUR BUTTONS
+     ONLY THESE FOUR BUTTONS
      ===================================================== -->
 
 <div class="buttons">
@@ -790,128 +736,6 @@ redirect_from:
   </p>
 
 </div>
-```
-
-  </div>
-
-</section>
-
-<!-- =========================================================
-     TEACHING
-     ========================================================= -->
-
-<section class="section reveal">
-
-  <div class="section-header">
-
-```
-<div class="section-label">
-  Teaching
-</div>
-
-<h2>
-  Courses &amp; Resources
-</h2>
-
-<p class="section-intro">
-
-  Selected teaching materials, notes, and resources for students
-  interested in mathematics, statistics, and data analysis.
-
-</p>
-```
-
-  </div>
-
-  <div class="course-grid">
-
-```
-<a href="{{ site.baseurl }}/teaching/qms101/"
-   class="course">
-
-  <div class="course-info">
-
-    <strong>
-      Introductory Statistics
-    </strong>
-
-    <span>
-      QMS 101 · Statistics fundamentals
-    </span>
-
-  </div>
-
-  <div class="course-arrow">
-    →
-  </div>
-
-</a>
-
-
-<a href="{{ site.baseurl }}/teaching/mat102/"
-   class="course">
-
-  <div class="course-info">
-
-    <strong>
-      Ordinary Differential Equations
-    </strong>
-
-    <span>
-      MAT 102 · ODEs and applications
-    </span>
-
-  </div>
-
-  <div class="course-arrow">
-    →
-  </div>
-
-</a>
-
-
-<a href="{{ site.baseurl }}/teaching/mat103/"
-   class="course">
-
-  <div class="course-info">
-
-    <strong>
-      Numerical Analysis I
-    </strong>
-
-    <span>
-      MAT 103 · Numerical methods
-    </span>
-
-  </div>
-
-  <div class="course-arrow">
-    →
-  </div>
-
-</a>
-
-
-<a href="{{ site.baseurl }}/juco-dsg/"
-   class="course">
-
-  <div class="course-info">
-
-    <strong>
-      Data Science Research Group
-    </strong>
-
-    <span>
-      Research · Data science &amp; collaboration
-    </span>
-
-  </div>
-
-  <div class="course-arrow">
-    →
-  </div>
-
-</a>
 ```
 
   </div>
