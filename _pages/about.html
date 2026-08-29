@@ -1,144 +1,415 @@
 ---
+
 layout: single
 permalink: /
 title: ""
 author_profile: true
 redirect_from:
-  - /about/
-  - /about.html
+
+* /about/
+* /about.html
+
 ---
 
 <style>
 
-/* ===== MAIN CONTENT ===== */
+/* =========================================================
+   ACADEMIC LANDING PAGE
+   ========================================================= */
 
-.page__content{
-  max-width:900px;
-  margin:auto;
-  font-family:Inter,system-ui,sans-serif;
-  color:#334155;
-  line-height:1.8;
+.home-page{
+  max-width:1180px;
+  margin:0 auto;
+  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  color:#475569;
+  line-height:1.75;
 }
 
-/* Sections */
+/* ---------- HERO ---------- */
 
-.section{
-  margin:60px 0;
-}
-
-.section h2{
-  font-size:2rem;
-  margin-bottom:18px;
-  color:#0f172a;
-  border-bottom:2px solid #e2e8f0;
-  padding-bottom:8px;
-}
-
-/* Intro */
-
-.intro{
-  background:#f8fafc;
+.hero{
+  position:relative;
+  overflow:hidden;
+  margin:10px 0 70px;
+  padding:65px 55px;
+  border-radius:28px;
+  background:
+    radial-gradient(circle at 90% 10%,rgba(59,130,246,.18),transparent 30%),
+    radial-gradient(circle at 10% 90%,rgba(14,165,233,.12),transparent 28%),
+    linear-gradient(135deg,#f8fafc 0%,#eef5ff 100%);
   border:1px solid #e2e8f0;
-  border-radius:18px;
-  padding:35px;
 }
 
-.intro p{
-  font-size:1.08rem;
+.hero:after{
+  content:"";
+  position:absolute;
+  width:260px;
+  height:260px;
+  right:-100px;
+  bottom:-120px;
+  border-radius:50%;
+  background:rgba(37,99,235,.07);
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  max-width:850px;
+}
+
+.eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
   margin-bottom:18px;
+  padding:7px 13px;
+  border-radius:999px;
+  background:#dbeafe;
+  color:#1d4ed8;
+  font-size:.82rem;
+  font-weight:700;
+  letter-spacing:.04em;
+  text-transform:uppercase;
 }
 
-/* Buttons */
+.eyebrow span{
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:#2563eb;
+}
+
+.hero h1{
+  margin:0 0 20px;
+  color:#0f172a;
+  font-size:clamp(2.2rem,5vw,4.2rem);
+  line-height:1.08;
+  letter-spacing:-.045em;
+  font-weight:800;
+}
+
+.hero h1 strong{
+  color:#2563eb;
+}
+
+.hero-lead{
+  max-width:780px;
+  margin:0;
+  font-size:1.18rem;
+  color:#475569;
+  line-height:1.85;
+}
+
+/* ---------- BUTTONS ---------- */
 
 .buttons{
   display:flex;
   flex-wrap:wrap;
   gap:12px;
-  margin-top:25px;
+  margin-top:30px;
 }
 
 .btn{
-  text-decoration:none;
-  padding:11px 18px;
-  border-radius:10px;
-  font-weight:600;
-  transition:.25s;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:12px 20px;
+  border-radius:11px;
+  text-decoration:none !important;
+  font-size:.94rem;
+  font-weight:700;
+  transition:all .25s ease;
 }
 
 .btn-primary{
   background:#2563eb;
-  color:white;
+  color:#fff !important;
+  box-shadow:0 7px 18px rgba(37,99,235,.18);
 }
 
 .btn-primary:hover{
   background:#1d4ed8;
+  transform:translateY(-2px);
+  box-shadow:0 10px 22px rgba(37,99,235,.25);
 }
 
-.btn-light {
-  background: white !important;
-  border: 1px solid #2563eb !important;
-  color: #2563eb !important;
+.btn-light{
+  background:#fff;
+  border:1px solid #cbd5e1;
+  color:#1e3a8a !important;
 }
 
-.btn-light:hover {
-  background: #f8fafc !important;
-  border-color: #1d4ed8 !important;
-  color: #1d4ed8 !important;
+.btn-light:hover{
+  border-color:#2563eb;
+  background:#eff6ff;
+  transform:translateY(-2px);
 }
 
+/* ---------- QUICK STATS ---------- */
 
-/* Research cards */
-
-.grid{
+.stats{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:18px;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+  margin-top:-35px;
+  margin-bottom:75px;
+  position:relative;
+  z-index:4;
 }
 
-.card{
-  background:white;
+.stat{
+  padding:22px 24px;
+  background:#fff;
   border:1px solid #e2e8f0;
   border-radius:16px;
-  padding:22px;
-  transition:.25s;
+  box-shadow:0 8px 25px rgba(15,23,42,.06);
 }
 
-.card:hover{
-  transform:translateY(-3px);
-  box-shadow:0 8px 20px rgba(0,0,0,.06);
+.stat-number{
+  display:block;
+  color:#2563eb;
+  font-size:1.55rem;
+  font-weight:800;
+  line-height:1.2;
 }
 
-.card h3{
+.stat-label{
+  display:block;
+  margin-top:5px;
+  color:#64748b;
+  font-size:.9rem;
+}
+
+/* ---------- SECTIONS ---------- */
+
+.section{
+  margin:75px 0;
+}
+
+.section-header{
+  margin-bottom:30px;
+}
+
+.section-kicker{
+  margin-bottom:6px;
+  color:#2563eb;
+  font-size:.78rem;
+  font-weight:800;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+}
+
+.section h2{
+  margin:0;
+  color:#0f172a;
+  font-size:2rem;
+  line-height:1.2;
+  letter-spacing:-.025em;
+}
+
+.section-intro{
+  max-width:720px;
+  margin-top:12px;
+  color:#64748b;
+}
+
+/* ---------- RESEARCH ---------- */
+
+.research-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.research-card{
+  position:relative;
+  padding:28px;
+  background:#fff;
+  border:1px solid #e2e8f0;
+  border-radius:18px;
+  transition:all .25s ease;
+}
+
+.research-card:hover{
+  transform:translateY(-5px);
+  border-color:#bfdbfe;
+  box-shadow:0 14px 35px rgba(15,23,42,.08);
+}
+
+.icon{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:44px;
+  height:44px;
+  margin-bottom:20px;
+  border-radius:12px;
+  background:#eff6ff;
+  color:#2563eb;
+  font-size:1.25rem;
+  font-weight:800;
+}
+
+.research-card h3{
+  margin:0 0 10px;
+  color:#0f172a;
+  font-size:1.12rem;
+}
+
+.research-card p{
+  margin:0;
+  color:#64748b;
+  font-size:.94rem;
+}
+
+/* ---------- FEATURED AREA ---------- */
+
+.featured{
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:22px;
+}
+
+.featured-main,
+.featured-side{
+  padding:32px;
+  border-radius:20px;
+  border:1px solid #e2e8f0;
+}
+
+.featured-main{
+  background:linear-gradient(145deg,#0f172a,#1e3a8a);
+  color:#e2e8f0;
+}
+
+.featured-main .section-kicker{
+  color:#93c5fd;
+}
+
+.featured-main h2{
+  color:#fff;
+  margin-bottom:16px;
+}
+
+.featured-main p{
+  color:#cbd5e1;
+}
+
+.featured-side{
+  background:#f8fafc;
+}
+
+.featured-side h3{
   margin-top:0;
-  margin-bottom:10px;
   color:#0f172a;
 }
 
-/* Publications */
-
-.publications ul{
+.featured-side ul{
   padding-left:20px;
+  margin-bottom:0;
 }
 
-.publications li{
-  margin-bottom:12px;
+.featured-side li{
+  margin-bottom:9px;
 }
 
-/* Vision */
+/* ---------- TEACHING ---------- */
+
+.teaching-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:15px;
+}
+
+.course{
+  padding:21px;
+  border:1px solid #e2e8f0;
+  border-radius:15px;
+  background:#fff;
+  text-decoration:none !important;
+  transition:.25s;
+}
+
+.course:hover{
+  transform:translateY(-3px);
+  border-color:#93c5fd;
+  box-shadow:0 10px 25px rgba(15,23,42,.07);
+}
+
+.course-code{
+  color:#2563eb;
+  font-size:.76rem;
+  font-weight:800;
+  letter-spacing:.08em;
+}
+
+.course h3{
+  margin:7px 0 0;
+  color:#0f172a;
+  font-size:1rem;
+}
+
+/* ---------- VISION ---------- */
 
 .vision{
+  position:relative;
+  padding:40px;
+  border-radius:22px;
   background:#f8fafc;
-  border-left:5px solid #2563eb;
-  padding:30px;
-  border-radius:14px;
+  border:1px solid #e2e8f0;
 }
 
-/* Animation */
+.vision:before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:25px;
+  bottom:25px;
+  width:5px;
+  border-radius:5px;
+  background:#2563eb;
+}
+
+.vision h2{
+  margin-top:0;
+  color:#0f172a;
+}
+
+.vision p{
+  max-width:850px;
+  margin-bottom:0;
+  font-size:1.05rem;
+}
+
+/* ---------- CTA ---------- */
+
+.cta{
+  text-align:center;
+  padding:55px 30px;
+  margin:80px 0 30px;
+  border-radius:24px;
+  background:#eff6ff;
+  border:1px solid #dbeafe;
+}
+
+.cta h2{
+  margin:0 0 12px;
+  color:#0f172a;
+}
+
+.cta p{
+  max-width:650px;
+  margin:0 auto 25px;
+  color:#64748b;
+}
+
+/* ---------- ANIMATION ---------- */
 
 .reveal{
   opacity:0;
-  transform:translateY(18px);
-  transition:.7s;
+  transform:translateY(20px);
+  transition:opacity .65s ease,transform .65s ease;
 }
 
 .reveal.active{
@@ -146,93 +417,459 @@ redirect_from:
   transform:none;
 }
 
-@media(max-width:768px){
+/* ---------- RESPONSIVE ---------- */
 
-.section{
-margin:45px 0;
+@media(max-width:900px){
+
+  .hero{
+    padding:45px 32px;
+  }
+
+  .research-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .teaching-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .featured{
+    grid-template-columns:1fr;
+  }
+
 }
 
-.intro{
-padding:25px;
-}
+@media(max-width:650px){
+
+  .hero{
+    margin-top:0;
+    padding:35px 23px;
+    border-radius:20px;
+  }
+
+  .hero h1{
+    font-size:2.25rem;
+  }
+
+  .hero-lead{
+    font-size:1rem;
+  }
+
+  .stats{
+    grid-template-columns:1fr;
+    margin:15px 0 55px;
+  }
+
+  .section{
+    margin:55px 0;
+  }
+
+  .research-grid,
+  .teaching-grid{
+    grid-template-columns:1fr;
+  }
+
+  .featured-main,
+  .featured-side,
+  .vision{
+    padding:27px;
+  }
+
+  .buttons{
+    flex-direction:column;
+  }
+
+  .btn{
+    width:100%;
+  }
 
 }
 
 </style>
 
-<!-- =================================================== -->
+<div class="home-page">
 
-<section class="intro reveal">
+<!-- =========================================================
+     HERO
+     ========================================================= -->
 
-<p>
+<section class="hero reveal">
 
-Welcome to my academic website.
+  <div class="hero-content">
 
-My research explores how <strong>applied mathematics</strong>,
-<strong>statistics</strong>, and <strong>data science</strong> can
-address practical challenges in public health, education,
-and community development.
+```
+<div class="eyebrow">
+  <span></span>
+  Academic & Research Portfolio
+</div>
 
-</p>
+<h1>
+  Mathematics, Statistics &amp;
+  <strong>Data for Impact.</strong>
+</h1>
 
-<p>
-
-I am particularly interested in mathematical modelling,
-biostatistics, epidemiology, and evidence-based decision-making
-that supports sustainable development across Tanzania and beyond.
-
+<p class="hero-lead">
+  Welcome to my academic website. I explore how applied mathematics,
+  statistics, and data science can be used to understand complex
+  real-world problems and support evidence-based decisions in
+  public health, education, and community development.
 </p>
 
 <div class="buttons">
 
-<a href="{{ site.baseurl }}/teaching/qms101/" class="btn btn-primary">
-Introductory Statistics
-</a>
+  <a href="{{ site.baseurl }}/teaching/qms101/" class="btn btn-primary">
+    Explore My Teaching →
+  </a>
 
-<a href="{{ site.baseurl }}/teaching/mat102/" class="btn btn-light">
-ODE
-</a>
-
-<a href="{{ site.baseurl }}/teaching/mat103/" class="btn btn-primary">
-Numerical Analysis I
-</a>
-
-<a href="{{ site.baseurl }}/juco-dsg/" class="btn btn-light">
-DSRG
-</a>
-
-<!--<a href="{{ site.baseurl }}/files/CV.pdf" class="btn btn-light">
-Curriculum Vitae
-</a>-->
+  <a href="{{ site.baseurl }}/juco-dsg/" class="btn btn-light">
+    Research &amp; Data Science
+  </a>
 
 </div>
+```
+
+  </div>
 
 </section>
 
-<!-- =================================================== -->
+<!-- =========================================================
+     QUICK HIGHLIGHTS
+     ========================================================= -->
+
+<section class="stats reveal">
+
+  <div class="stat">
+    <span class="stat-number">Mathematics</span>
+    <span class="stat-label">Modelling &amp; quantitative methods</span>
+  </div>
+
+  <div class="stat">
+    <span class="stat-number">Statistics</span>
+    <span class="stat-label">Biostatistics &amp; evidence-based analysis</span>
+  </div>
+
+  <div class="stat">
+    <span class="stat-number">Data Science</span>
+    <span class="stat-label">Data-driven research &amp; decision-making</span>
+  </div>
+
+</section>
+
+<!-- =========================================================
+     RESEARCH
+     ========================================================= -->
+
+<section class="section reveal">
+
+  <div class="section-header">
+
+```
+<div class="section-kicker">Research Focus</div>
+
+<h2>Areas of Interest</h2>
+
+<p class="section-intro">
+  My work sits at the intersection of quantitative methods,
+  mathematical modelling, and real-world applications.
+</p>
+```
+
+  </div>
+
+  <div class="research-grid">
+
+```
+<div class="research-card">
+
+  <div class="icon">∑</div>
+
+  <h3>Mathematical Modelling</h3>
+
+  <p>
+    Developing mathematical models to describe, analyse, and
+    understand complex systems and their dynamics.
+  </p>
+
+</div>
+
+
+<div class="research-card">
+
+  <div class="icon">Σ</div>
+
+  <h3>Biostatistics</h3>
+
+  <p>
+    Applying statistical methods to health and biomedical data
+    to generate meaningful and reliable evidence.
+  </p>
+
+</div>
+
+
+<div class="research-card">
+
+  <div class="icon">⌁</div>
+
+  <h3>Epidemiology</h3>
+
+  <p>
+    Using quantitative approaches to investigate disease patterns,
+    risk factors, and population-level health outcomes.
+  </p>
+
+</div>
+
+
+<div class="research-card">
+
+  <div class="icon">01</div>
+
+  <h3>Data Science</h3>
+
+  <p>
+    Transforming data into useful insights through statistical
+    analysis, computation, and reproducible research.
+  </p>
+
+</div>
+
+
+<div class="research-card">
+
+  <div class="icon">↗</div>
+
+  <h3>Numerical Analysis</h3>
+
+  <p>
+    Exploring computational methods for solving mathematical
+    problems that arise in science and applied research.
+  </p>
+
+</div>
+
+
+<div class="research-card">
+
+  <div class="icon">+</div>
+
+  <h3>Public Health</h3>
+
+  <p>
+    Connecting quantitative research with practical challenges
+    in public health and sustainable community development.
+  </p>
+
+</div>
+```
+
+  </div>
+
+</section>
+
+<!-- =========================================================
+     FEATURED RESEARCH / PHILOSOPHY
+     ========================================================= -->
+
+<section class="section featured reveal">
+
+  <div class="featured-main">
+
+```
+<div class="section-kicker">Research Philosophy</div>
+
+<h2>From mathematical ideas to practical impact.</h2>
+
+<p>
+  I am interested in research that does more than produce numbers.
+  The goal is to develop quantitative approaches that help explain
+  real problems, communicate evidence clearly, and support better
+  decisions.
+</p>
+
+<p>
+  My interests particularly focus on applications relevant to
+  Tanzania and other settings where rigorous quantitative evidence
+  can contribute to sustainable development.
+</p>
+```
+
+  </div>
+
+  <div class="featured-side">
+
+```
+<h3>Core Approach</h3>
+
+<ul>
+  <li>Mathematical thinking</li>
+  <li>Statistical reasoning</li>
+  <li>Data-driven analysis</li>
+  <li>Computational methods</li>
+  <li>Evidence-based decision-making</li>
+  <li>Real-world applications</li>
+</ul>
+```
+
+  </div>
+
+</section>
+
+<!-- =========================================================
+     TEACHING
+     ========================================================= -->
+
+<section class="section reveal">
+
+  <div class="section-header">
+
+```
+<div class="section-kicker">Teaching</div>
+
+<h2>Courses &amp; Learning Resources</h2>
+
+<p class="section-intro">
+  Selected teaching resources covering statistics, differential
+  equations, numerical methods, and data science.
+</p>
+```
+
+  </div>
+
+  <div class="teaching-grid">
+
+```
+<a href="{{ site.baseurl }}/teaching/qms101/" class="course">
+
+  <div class="course-code">QMS 101</div>
+
+  <h3>Introductory Statistics</h3>
+
+</a>
+
+
+<a href="{{ site.baseurl }}/teaching/mat102/" class="course">
+
+  <div class="course-code">MAT 102</div>
+
+  <h3>Ordinary Differential Equations</h3>
+
+</a>
+
+
+<a href="{{ site.baseurl }}/teaching/mat103/" class="course">
+
+  <div class="course-code">MAT 103</div>
+
+  <h3>Numerical Analysis I</h3>
+
+</a>
+
+
+<a href="{{ site.baseurl }}/juco-dsg/" class="course">
+
+  <div class="course-code">DSRG</div>
+
+  <h3>Data Science Research Group</h3>
+
+</a>
+```
+
+  </div>
+
+</section>
+
+<!-- =========================================================
+     VISION
+     ========================================================= -->
+
+<section class="section reveal">
+
+  <div class="vision">
+
+```
+<h2>Vision</h2>
+
+<p>
+  To contribute to a stronger culture of quantitative thinking,
+  rigorous research, and data-informed decision-making—using
+  mathematics, statistics, and data science to help address
+  challenges that matter to people and communities.
+</p>
+```
+
+  </div>
+
+</section>
+
+<!-- =========================================================
+     CALL TO ACTION
+     ========================================================= -->
+
+<section class="cta reveal">
+
+  <h2>Explore the work</h2>
+
+  <p>
+    Browse the teaching resources, research activities, and
+    data-science initiatives available through this website.
+  </p>
+
+  <div class="buttons" style="justify-content:center;">
+
+```
+<a href="{{ site.baseurl }}/teaching/qms101/" class="btn btn-primary">
+  Teaching Resources →
+</a>
+
+<a href="{{ site.baseurl }}/juco-dsg/" class="btn btn-light">
+  Data Science Research →
+</a>
+```
+
+  </div>
+
+</section>
+
+</div>
+
+<!-- =========================================================
+     SCROLL ANIMATION
+     ========================================================= -->
 
 <script>
 
 document.addEventListener("DOMContentLoaded", function(){
 
-const observer=new IntersectionObserver((entries)=>{
+  const elements = document.querySelectorAll(".reveal");
 
-entries.forEach(entry=>{
+  if (!("IntersectionObserver" in window)) {
+    elements.forEach(el => el.classList.add("active"));
+    return;
+  }
 
-if(entry.isIntersecting){
+  const observer = new IntersectionObserver(
+    (entries) => {
 
-entry.target.classList.add("active");
+      entries.forEach(entry => {
 
-}
+        if(entry.isIntersecting){
 
-});
+          entry.target.classList.add("active");
+          observer.unobserve(entry.target);
 
-},{threshold:0.1});
+        }
 
-document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+      });
+
+    },
+    {
+      threshold:0.08
+    }
+  );
+
+  elements.forEach(el => observer.observe(el));
 
 });
 
 </script>
-
-
