@@ -9,7 +9,7 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "default" # The available themes options are "default", "air", "sunrise", "mint", "dirt" and "contrast"
-title                    : "Anna Daniel Fome" #"Your Name / Site Title"
+title                    : "Dr. Anna Fome" #"Your Name / Site Title"
 title_separator          : "-"
 name                     : &name "Anna Daniel Fome"
 description              : &description "Academic website of Anna Daniel Fome"   # Update this with a general description of your site, this is the default if not overridden by a page
@@ -24,16 +24,16 @@ repository               : "FomeA/FomeA.github.io" #"academicpages/academicpages
 author:
   # Biographic information
   avatar           : "https://FomeA.github.io/images/159.png" #"/FomeA.github.io/images/159.png" #"/images/159.png" #avatar: "https://raw.githubusercontent.com/FomeA/FomeA.github.io/main/assets/images/159.png"
-  name             : "Anna D Fome"
+  name             : "Anna Daniel Fome"
   pronouns         : "She/her"  
-  bio              : "PhD in Biomathematics"
+  bio              : "Doctor of Natural Sciences"
   location         : "Tanzania"
   employer         : "Jordan University College"  
   url              : "https://www.juco.ac.tz"
   email            : "anna.fome@juco.ac.tz" 
 
   # Academic websites
-  academia         : # URL
+  academia         : "https://independent.academia.edu/AnnieFome"
   arxiv            : # URL - Update with the correct link to your profile
   googlescholar    : "https://scholar.google.com/citations?user=QmDq9JsAAAAJ&hl=en&oi=ao"
   inspire-hep      : # URL
@@ -66,7 +66,7 @@ author:
   keybase          : # Username
   instagram        : # Username
   lastfm           : # Username
-  linkedin         : https://www.linkedin.com/feed/ #"https://www.linkedin.com/in/anna-fome-117531135/" # Username
+  linkedin         : "https://www.linkedin.com/in/anna-fome-phd-117531135/" #"https://www.linkedin.com/in/anna-fome-117531135/" # Username
   mastodon         : # URL
   medium           : # URL
   pinterest        : # Username
