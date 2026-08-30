@@ -586,6 +586,7 @@ data and systems into useful evidence for decision-making, with
 particular interest in applications in Tanzania and beyond.
 </p>
 
+<!--
 <div class="research-keywords">
   <span>Mathematical Modelling</span>
   <span>Biostatistics</span>
@@ -593,23 +594,19 @@ particular interest in applications in Tanzania and beyond.
   <span>Data Science</span>
   <span>Numerical Analysis</span>
   <span>Public Health</span>
-</div>
+</div> -->
 
-<div class="buttons">
-
+<!--<div class="buttons">
 <a href="{{ site.baseurl }}/files/CV.pdf" class="btn btn-primary">
 Curriculum Vitae
 </a>
-
 <a href="{{ site.baseurl }}/publications/" class="btn btn-light">
 Publications
 </a>
-
 <a href="{{ site.baseurl }}/juco-dsg/" class="btn btn-light">
 Research Group
 </a>
-
-</div>
+</div>-->
 
 </section>
 
