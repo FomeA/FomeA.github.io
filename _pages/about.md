@@ -1,0 +1,1043 @@
+---
+layout: single
+permalink: /
+title: ""
+author_profile: true
+redirect_from:
+  - /about/
+  - /about.html
+---
+
+<style>
+
+/* =========================================================
+   ACADEMIC HOMEPAGE
+   ========================================================= */
+
+.page__content {
+  max-width: 980px;
+  margin: auto;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #334155;
+  line-height: 1.75;
+}
+
+/* =========================================================
+   SECTIONS
+   ========================================================= */
+
+.section {
+  margin: 65px 0;
+}
+
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 12px;
+  color: #0f172a;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 10px;
+  letter-spacing: -0.02em;
+}
+
+.section-intro {
+  color: #64748b;
+  margin: 0 0 28px;
+  font-size: 1.02rem;
+}
+
+/* =========================================================
+   INTRO
+   ========================================================= */
+
+.intro {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 38px;
+  margin-bottom: 65px;
+}
+
+.intro p {
+  font-size: 1.08rem;
+  margin: 0 0 18px;
+}
+
+.intro p:last-of-type {
+  margin-bottom: 0;
+}
+
+.intro strong {
+  color: #0f172a;
+}
+
+/* Research keywords */
+
+.research-keywords {
+  margin-top: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.research-keywords span {
+  background: white;
+  border: 1px solid #dbe3ec;
+  border-radius: 999px;
+  padding: 6px 13px;
+  font-size: .88rem;
+  font-weight: 600;
+  color: #475569;
+}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  padding: 11px 18px;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: .25s ease;
+}
+
+.btn-primary {
+  background: #2563eb;
+  color: white !important;
+}
+
+.btn-primary:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+.btn-light {
+  background: white !important;
+  border: 1px solid #2563eb !important;
+  color: #2563eb !important;
+}
+
+.btn-light:hover {
+  background: #f8fafc !important;
+  border-color: #1d4ed8 !important;
+  color: #1d4ed8 !important;
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   CARDS
+   ========================================================= */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.card {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 24px;
+  transition: .25s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, .06);
+}
+
+.card h3 {
+  margin-top: 0;
+  margin-bottom: 9px;
+  color: #0f172a;
+  font-size: 1.15rem;
+}
+
+.card p {
+  margin-bottom: 12px;
+  font-size: .96rem;
+}
+
+.card-link {
+  color: #2563eb;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: .92rem;
+}
+
+.card-link:hover {
+  text-decoration: underline;
+}
+
+/* =========================================================
+   RESEARCH
+   ========================================================= */
+
+.research-card {
+  border-top: 4px solid #2563eb;
+}
+
+/* =========================================================
+   PUBLICATIONS
+   ========================================================= */
+
+.publication-list {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+
+.publication {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 22px 25px;
+}
+
+.publication p {
+  margin: 7px 0;
+}
+
+.publication-status {
+  display: inline-block;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .07em;
+  color: #2563eb;
+  margin-bottom: 4px;
+}
+
+.publication-title {
+  color: #0f172a;
+}
+
+.publication-meta {
+  font-size: .88rem;
+  color: #64748b;
+}
+
+.publication-meta a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.publication-meta a:hover {
+  text-decoration: underline;
+}
+
+.more-link {
+  margin-top: 22px;
+  text-align: right;
+}
+
+.more-link a {
+  color: #2563eb;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.more-link a:hover {
+  text-decoration: underline;
+}
+
+/* =========================================================
+   CONFERENCES
+   ========================================================= */
+
+.conference-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.conference {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  padding: 17px 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.conference:first-child {
+  border-top: 1px solid #e2e8f0;
+}
+
+.conference-name {
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.conference-type {
+  white-space: nowrap;
+  font-size: .86rem;
+  font-weight: 600;
+  color: #64748b;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 5px 10px;
+}
+
+/* =========================================================
+   GRANTS
+   ========================================================= */
+
+.grant-card h3 {
+  margin-bottom: 7px;
+}
+
+.grant-card p {
+  margin: 0;
+}
+
+/* =========================================================
+   VISION
+   ========================================================= */
+
+.vision {
+  background: #f8fafc;
+  border-left: 5px solid #2563eb;
+  padding: 30px;
+  border-radius: 14px;
+}
+
+.vision p {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+/* =========================================================
+   FOCUS BOX
+   ========================================================= */
+
+.focus-box {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 25px;
+  margin-top: 20px;
+}
+
+.focus-box h3 {
+  margin-top: 0;
+  color: #0f172a;
+}
+
+.focus-box ul {
+  margin-bottom: 0;
+}
+
+/* =========================================================
+   ANIMATION
+   ========================================================= */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: none;
+}
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+.btn:focus-visible,
+a:focus-visible {
+  outline: 3px solid #93c5fd;
+  outline-offset: 3px;
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  .section {
+    margin: 48px 0;
+  }
+
+  .intro {
+    padding: 25px;
+    margin-bottom: 48px;
+  }
+
+  .intro p {
+    font-size: 1rem;
+  }
+
+  .section h2 {
+    font-size: 1.65rem;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  .conference {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .conference-type {
+    white-space: normal;
+  }
+
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .card,
+  .btn {
+    transition: none;
+  }
+
+  .card:hover,
+  .btn:hover {
+    transform: none;
+  }
+
+}
+
+</style>
+
+
+<!-- =========================================================
+     INTRODUCTION
+     ========================================================= -->
+
+<section class="intro reveal">
+
+<p>
+I am an <strong>applied mathematician and educator</strong> interested in
+mathematical modelling, statistics, epidemiology, and data science.
+My research focuses on developing quantitative approaches for
+understanding and addressing practical challenges in public health,
+education, and community development.
+</p>
+
+<p>
+My work brings together <strong>mathematical modelling</strong>,
+<strong>biostatistics</strong>, <strong>numerical methods</strong>,
+and <strong>statistical computing</strong> to translate complex
+data and systems into useful evidence for decision-making, with
+particular interest in applications in Tanzania and beyond.
+</p>
+
+<div class="research-keywords">
+  <span>Mathematical Modelling</span>
+  <span>Biostatistics</span>
+  <span>Epidemiology</span>
+  <span>Data Science</span>
+  <span>Numerical Analysis</span>
+  <span>Public Health</span>
+</div>
+
+<div class="buttons">
+
+<a href="{{ site.baseurl }}/files/CV.pdf" class="btn btn-primary">
+Curriculum Vitae
+</a>
+
+<a href="{{ site.baseurl }}/publications/" class="btn btn-light">
+Publications
+</a>
+
+<a href="{{ site.baseurl }}/juco-dsg/" class="btn btn-light">
+Research Group
+</a>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     RESEARCH ACTIVITIES
+     ========================================================= -->
+
+<section class="section reveal">
+
+<h2>Research Activities</h2>
+
+<p class="section-intro">
+My current research activities combine mathematical modelling,
+statistical analysis, and data science to address problems in
+infectious diseases and public health.
+</p>
+
+<div class="grid">
+
+<div class="card research-card">
+
+<h3>Data Science Research Group</h3>
+
+<p>
+The <strong>Data Science Research Group (DSRG)</strong> brings together
+research, training, and collaborative activities in data science,
+statistical modelling, computational methods, and applied research.
+</p>
+
+<a href="{{ site.baseurl }}/juco-dsg/" class="card-link">
+Explore DSRG →
+</a>
+
+</div>
+
+
+<div class="card research-card">
+
+<h3>Malaria & TB Co-infections</h3>
+
+<p>
+Ongoing research investigating quantitative and mathematical approaches
+to understanding the dynamics and public-health implications of
+malaria and tuberculosis co-infections.
+</p>
+
+</div>
+
+
+<div class="card research-card">
+
+<h3>TB & HIV Co-infection</h3>
+
+<p>
+Ongoing research on the dynamics of tuberculosis and HIV co-infection,
+with an emphasis on mathematical modelling and evidence-based
+public-health decision-making.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     TEACHING
+     ========================================================= -->
+
+<section class="section reveal">
+
+<h2>Teaching</h2>
+
+<p class="section-intro">
+Teaching activities connect mathematical theory, statistical reasoning,
+and computational methods with practical applications.
+</p>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>Introductory Statistics</h3>
+
+<p>
+Foundations of statistical reasoning, data analysis, interpretation,
+and applied statistics.
+</p>
+
+<a href="{{ site.baseurl }}/teaching/qms101/" class="card-link">
+Explore course →
+</a>
+
+</div>
+
+
+<div class="card">
+
+<h3>Ordinary Differential Equations</h3>
+
+<p>
+Analytical and qualitative methods for differential equations and
+their applications in mathematical modelling.
+</p>
+
+<a href="{{ site.baseurl }}/teaching/mat102/" class="card-link">
+Explore course →
+</a>
+
+</div>
+
+
+<div class="card">
+
+<h3>Numerical Analysis I</h3>
+
+<p>
+Numerical methods for solving mathematical problems using
+computational and approximation techniques.
+</p>
+
+<a href="{{ site.baseurl }}/teaching/mat103/" class="card-link">
+Explore course →
+</a>
+
+</div>
+
+
+<div class="card">
+
+<h3>Mentorship & Supervision</h3>
+
+<p>
+Supporting students and early-career researchers through research,
+quantitative methods, academic development, and independent study.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     SELECTED PUBLICATIONS
+     ========================================================= -->
+
+<section class="section reveal">
+
+<h2>Selected Publications</h2>
+
+<p class="section-intro">
+Selected peer-reviewed publications and scholarly contributions in
+mathematical modelling, epidemiology, and applied mathematics.
+</p>
+
+<div class="publication-list">
+
+
+<div class="publication">
+
+<span class="publication-status">
+PUBLISHED · 2025
+</span>
+
+<p>
+<strong class="publication-title">
+Fome, A.D., Isti, R., Bock, W., Lange, B., Klar, A.
+</strong>
+(2025).
+Influenza–COVID-19 co-circulation in Germany 2020–2022:
+competitive dynamics with quarantine & cross-immunity.
+<em>BMC Public Health.</em>
+</p>
+
+<p class="publication-meta">
+DOI:
+<a href="https://doi.org/10.1186/s12889-025-24362-z"
+target="_blank" rel="noopener">
+10.1186/s12889-025-24362-z
+</a>
+· Cited: 2
+</p>
+
+</div>
+
+
+<div class="publication">
+
+<span class="publication-status">
+PUBLISHED · 2025
+</span>
+
+<p>
+<strong class="publication-title">
+Fome, A.D., Bock, W., Klar, A.
+</strong>
+(2025).
+Competitive respiratory disease system with quarantine:
+epidemic thresholds & cross-immunity.
+<em>Applied Mathematics and Computation.</em>
+</p>
+
+<p class="publication-meta">
+DOI:
+<a href="https://doi.org/10.1016/j.amc.2024.128968"
+target="_blank" rel="noopener">
+10.1016/j.amc.2024.128968
+</a>
+· Cited: 4
+</p>
+
+</div>
+
+
+<div class="publication">
+
+<span class="publication-status">
+PUBLISHED · 2023
+</span>
+
+<p>
+<strong class="publication-title">
+Fome, A.D. et al.
+</strong>
+(2023).
+A deterministic SIR model for studying the impact of media
+on epidemic dynamics.
+<em>Healthcare Analytics, 3.</em>
+</p>
+
+<p class="publication-meta">
+DOI:
+<a href="https://doi.org/10.1016/j.health.2023.100189"
+target="_blank" rel="noopener">
+10.1016/j.health.2023.100189
+</a>
+· Cited: 17
+</p>
+
+</div>
+
+
+<div class="publication">
+
+<span class="publication-status">
+PUBLISHED · 2022
+</span>
+
+<p>
+<strong class="publication-title">
+Fome, A.D. et al.
+</strong>
+(2022).
+Hematological & biochemical reference ranges for SCD patients
+in Tanzania.
+<em>Hemato, 3</em>(1), 82–97.
+</p>
+
+<p class="publication-meta">
+DOI:
+<a href="https://doi.org/10.3390/hemato3010007"
+target="_blank" rel="noopener">
+10.3390/hemato3010007
+</a>
+· Cited: 9
+</p>
+
+</div>
+
+
+<div class="publication">
+
+<span class="publication-status">
+BOOK CHAPTER · 2026
+</span>
+
+<p>
+<strong class="publication-title">
+Fome, A.D., Bock, W., Klar, A.
+</strong>
+(2026).
+Dynamics Around Equilibria in a Competitive Respiratory Disease
+System with Quarantine.
+In Burnecki, K., Szwabiński, J., Teuerle, M. (eds.),
+<em>Progress in Industrial Mathematics at ECMI 2023</em>.
+Mathematics in Industry, Vol. 41. Springer, Cham.
+</p>
+
+<p class="publication-meta">
+DOI:
+<a href="https://doi.org/10.1007/978-3-032-20404-2_16"
+target="_blank" rel="noopener">
+10.1007/978-3-032-20404-2_16
+</a>
+</p>
+
+</div>
+
+</div>
+
+<p class="more-link">
+<a href="{{ site.baseurl }}/publications/">
+View full list of publications →
+</a>
+</p>
+
+</section>
+
+
+<!-- =========================================================
+     TALKS & CONFERENCES
+     ========================================================= -->
+
+<section class="section reveal">
+
+<h2>Talks & Conferences</h2>
+
+<p class="section-intro">
+Selected presentations, posters, research visits, and scientific
+meetings.
+</p>
+
+<div class="conference-list">
+
+
+<div class="conference">
+
+<span class="conference-name">
+4th Ifakara Annual Scientific Conference, Tanzania
+</span>
+
+<span class="conference-type">
+Talk
+</span>
+
+</div>
+
+
+<div class="conference">
+
+<span class="conference-name">
+6th Young Researchers Symposium, RPTU, Germany
+</span>
+
+<span class="conference-type">
+Pitch + Poster
+</span>
+
+</div>
+
+
+<div class="conference">
+
+<span class="conference-name">
+2nd MONID Infectious Disease Modelling Conference, Halle, Germany
+</span>
+
+<span class="conference-type">
+Pitch + Poster
+</span>
+
+</div>
+
+
+<div class="conference">
+
+<span class="conference-name">
+Research Visit, Linnaeus University, Växjö, Sweden
+</span>
+
+<span class="conference-type">
+Talk
+</span>
+
+</div>
+
+
+<div class="conference">
+
+<span class="conference-name">
+Joint African-Nordic Conference in Mathematics, Uganda
+</span>
+
+<span class="conference-type">
+Talk (Hybrid)
+</span>
+
+</div>
+
+
+<div class="conference">
+
+<span class="conference-name">
+22nd ECMI Conference on Industrial & Applied Mathematics, Poland
+</span>
+
+<span class="conference-type">
+Talk
+</span>
+
+</div>
+
+
+<div class="conference">
+
+<span class="conference-name">
+14th DSABNS Conference on Dynamical Systems, Bilbao, Spain
+</span>
+
+<span class="conference-type">
+Poster
+</span>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     GRANTS & SCHOLARSHIPS
+     ========================================================= -->
+
+<section class="section reveal">
+
+<h2>Grants & Scholarships</h2>
+
+<p class="section-intro">
+Selected scholarships and research funding supporting academic
+training, research, and professional development.
+</p>
+
+<div class="grid">
+
+
+<div class="card grant-card">
+
+<h3>DAAD Scholarship</h3>
+
+<p>
+PhD in Mathematics<br>
+RPTU Kaiserslautern-Landau, Germany
+</p>
+
+</div>
+
+
+<div class="card grant-card">
+
+<h3>AIMS–GSK Funds</h3>
+
+<p>
+Funding support for an internship at the
+Muhimbili Sickle-Cell Program.
+</p>
+
+</div>
+
+
+<div class="card grant-card">
+
+<h3>Mastercard Foundation Scholarship</h3>
+
+<p>
+MSc Mathematical Sciences<br>
+African Institute for Mathematical Sciences (AIMS)
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     MENTORSHIP & SUPERVISION
+     ========================================================= -->
+
+<section class="section reveal">
+
+<h2>Mentorship & Supervision</h2>
+
+<div class="focus-box">
+
+<h3>Supporting the next generation of researchers</h3>
+
+<p>
+I am interested in mentoring and supervising students and early-career
+researchers working in areas related to mathematics, statistics,
+data science, mathematical modelling, and public health.
+</p>
+
+<ul>
+<li>Research project development</li>
+<li>Mathematical and statistical modelling</li>
+<li>Data analysis and scientific computing</li>
+<li>Academic writing and research communication</li>
+<li>Undergraduate and postgraduate research mentorship</li>
+</ul>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     RESEARCH VISION
+     ========================================================= -->
+
+<section class="section reveal">
+
+<h2>Research Vision</h2>
+
+<div class="vision">
+
+<p>
+My goal is to develop and promote mathematical, statistical, and
+data-driven approaches that connect theory with practical applications.
+Through research, teaching, mentorship, and collaboration, I aim to
+contribute to evidence-based solutions for challenges in public health,
+education, and sustainable development in Tanzania and beyond.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     ANIMATION
+     ========================================================= -->
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function() {
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+
+      entries.forEach((entry) => {
+
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+          observer.unobserve(entry.target);
+        }
+
+      });
+
+    },
+    {
+      threshold: 0.1
+    }
+  );
+
+  document
+    .querySelectorAll(".reveal")
+    .forEach((el) => observer.observe(el));
+
+});
+
+</script>
