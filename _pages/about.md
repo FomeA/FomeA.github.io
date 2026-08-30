@@ -401,6 +401,112 @@ a:focus-visible {
 }
 
 /* =========================================================
+   PAGE NAVIGATOR
+   ========================================================= */
+
+.page-navigator {
+  position: fixed;
+  top: 50%;
+  right: 24px;
+  transform: translateY(-50%);
+  z-index: 1000;
+  width: 190px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 15px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  backdrop-filter: blur(10px);
+}
+
+.page-navigator-title {
+  margin: 0 0 10px;
+  padding-bottom: 9px;
+  border-bottom: 1px solid #e2e8f0;
+  font-size: .78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: #64748b;
+}
+
+.page-navigator a {
+  display: block;
+  padding: 6px 9px;
+  margin: 2px 0;
+  border-radius: 7px;
+  color: #64748b;
+  text-decoration: none;
+  font-size: .86rem;
+  line-height: 1.35;
+  transition: .2s ease;
+}
+
+.page-navigator a:hover {
+  color: #2563eb;
+  background: #eff6ff;
+}
+
+.page-navigator a.active {
+  color: #2563eb;
+  background: #eff6ff;
+  font-weight: 700;
+  border-left: 3px solid #2563eb;
+  padding-left: 6px;
+}
+
+/* Smooth navigation */
+
+html {
+  scroll-behavior: smooth;
+}
+
+.section,
+.intro {
+  scroll-margin-top: 35px;
+}
+
+/* =========================================================
+   MOBILE NAVIGATOR
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+  .page-navigator {
+    position: sticky;
+    top: 10px;
+    right: auto;
+    transform: none;
+    width: auto;
+    margin: 0 0 30px;
+    padding: 10px 12px;
+  }
+
+  .page-navigator-title {
+    margin-bottom: 7px;
+    padding-bottom: 6px;
+  }
+
+  .page-navigator-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .page-navigator a {
+    display: inline-block;
+    margin: 0;
+    padding: 6px 9px;
+  }
+
+  .page-navigator a.active {
+    border-left: none;
+    padding-left: 9px;
+  }
+
+}
+  
+/* =========================================================
    REDUCED MOTION
    ========================================================= */
 
@@ -426,12 +532,43 @@ a:focus-visible {
 
 </style>
 
+<!-- =========================================================
+     PAGE NAVIGATOR
+     ========================================================= -->
+
+<nav class="page-navigator" aria-label="Page navigation">
+
+  <div class="page-navigator-title">
+    On this page
+  </div>
+
+  <div class="page-navigator-links">
+
+    <a href="#about">About</a>
+
+    <a href="#research">Research</a>
+
+    <a href="#teaching">Teaching</a>
+
+    <a href="#publications">Publications</a>
+
+    <a href="#conferences">Talks & Conferences</a>
+
+    <a href="#grants">Grants & Scholarships</a>
+
+    <a href="#mentorship">Mentorship</a>
+
+    <a href="#vision">Research Vision</a>
+
+  </div>
+
+</nav>
 
 <!-- =========================================================
      INTRODUCTION
      ========================================================= -->
 
-<section class="intro reveal">
+<section id="about" class="intro reveal">
 
 <p>
 I am an <strong>applied mathematician and educator</strong> interested in
@@ -481,7 +618,8 @@ Research Group
      RESEARCH ACTIVITIES
      ========================================================= -->
 
-<section class="section reveal">
+<section id="research" class="section reveal">
+
 
 <h2>Research Activities</h2>
 
@@ -544,7 +682,7 @@ public-health decision-making.
      TEACHING
      ========================================================= -->
 
-<section class="section reveal">
+<section id="teaching" class="section reveal">
 
 <h2>Teaching</h2>
 
@@ -623,7 +761,7 @@ quantitative methods, academic development, and independent study.
      SELECTED PUBLICATIONS
      ========================================================= -->
 
-<section class="section reveal">
+<section id="publications" class="section reveal">
 
 <h2>Selected Publications</h2>
 
@@ -790,8 +928,7 @@ View full list of publications →
      TALKS & CONFERENCES
      ========================================================= -->
 
-<section class="section reveal">
-
+<section id="conferences" class="section reveal">
 <h2>Talks & Conferences</h2>
 
 <p class="section-intro">
@@ -901,8 +1038,7 @@ Poster
      GRANTS & SCHOLARSHIPS
      ========================================================= -->
 
-<section class="section reveal">
-
+<section id="grants" class="section reveal">
 <h2>Grants & Scholarships</h2>
 
 <p class="section-intro">
@@ -958,8 +1094,7 @@ African Institute for Mathematical Sciences (AIMS)
      MENTORSHIP & SUPERVISION
      ========================================================= -->
 
-<section class="section reveal">
-
+<section id="mentorship" class="section reveal">
 <h2>Mentorship & Supervision</h2>
 
 <div class="focus-box">
@@ -989,8 +1124,7 @@ data science, mathematical modelling, and public health.
      RESEARCH VISION
      ========================================================= -->
 
-<section class="section reveal">
-
+<section id="vision" class="section reveal">
 <h2>Research Vision</h2>
 
 <div class="vision">
@@ -1016,14 +1150,18 @@ education, and sustainable development in Tanzania and beyond.
 
 document.addEventListener("DOMContentLoaded", function() {
 
-  const observer = new IntersectionObserver(
+  /* =========================================================
+     REVEAL ANIMATION
+     ========================================================= */
+
+  const revealObserver = new IntersectionObserver(
     (entries) => {
 
       entries.forEach((entry) => {
 
         if (entry.isIntersecting) {
           entry.target.classList.add("active");
-          observer.unobserve(entry.target);
+          revealObserver.unobserve(entry.target);
         }
 
       });
@@ -1036,7 +1174,54 @@ document.addEventListener("DOMContentLoaded", function() {
 
   document
     .querySelectorAll(".reveal")
-    .forEach((el) => observer.observe(el));
+    .forEach((el) => revealObserver.observe(el));
+
+
+  /* =========================================================
+     PAGE NAVIGATOR
+     ========================================================= */
+
+  const sections = document.querySelectorAll(
+    "#about, #research, #teaching, #publications, #conferences, #grants, #mentorship, #vision"
+  );
+
+  const navLinks = document.querySelectorAll(
+    ".page-navigator a"
+  );
+
+  const navObserver = new IntersectionObserver(
+    (entries) => {
+
+      entries.forEach((entry) => {
+
+        if (entry.isIntersecting) {
+
+          navLinks.forEach((link) => {
+            link.classList.remove("active");
+          });
+
+          const activeLink = document.querySelector(
+            '.page-navigator a[href="#' + entry.target.id + '"]'
+          );
+
+          if (activeLink) {
+            activeLink.classList.add("active");
+          }
+
+        }
+
+      });
+
+    },
+    {
+      rootMargin: "-25% 0px -60% 0px",
+      threshold: 0
+    }
+  );
+
+  sections.forEach((section) => {
+    navObserver.observe(section);
+  });
 
 });
 
