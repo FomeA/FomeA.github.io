@@ -1112,6 +1112,13 @@ data science, mathematical modelling, and public health.
 <li>Undergraduate and postgraduate research mentorship</li>
 </ul>
 
+<!-- BOOKING -->
+<h2 class="section-title">📅 Book a Session</h2>
+
+<a class="book-btn" href="https://calendar.app.google/RF8rbheuphgiRurh6" target="_blank">
+📅 Schedule a mentorship session here
+</a>
+
 </div>
 
 </section>
