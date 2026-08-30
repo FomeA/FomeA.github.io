@@ -7,28 +7,33 @@
 # NOTE that only one of the CV options should be selected, the first is for the
 #      Markdown formatted page while the second is generated using JSON.
 #
-#<!--- title: "Home"
-#    url: /-->
-
 main:
- 
-  - title: "Teaching"
-    url: /teaching/ 
-    
-  - title: "Mentorship"
-    url: /mentorship/
-    
-  - title: "Research"
-    url: /research/
-  
-  #- title: "Publications"
-  #  url: /publications/
+  - title: "Home"
+    url: /
 
-  - title: "Inspiration"
-    url: /inspiration/  
+  #- title: "Teaching"
+  #  url: /teaching/ 
+    
+  #- title: "Mentorship"
+  #  url: /mentorship/
+    
+  #- title: "Research"
+  #  url: /research/
+  
+  - title: "Communication"
+    url: /communication/ 
 
   - title: "DSRG"
     url: /juco-dsg/
+
+  - title: "Girls in STEM"
+    url: /inspiration/ 
+
+  - title: "Galley"
+    url: /galley/ 
+
+   - title: "Contact"
+    url: /contact/ 
 
 qms101:
   - title: "Course Overview"
