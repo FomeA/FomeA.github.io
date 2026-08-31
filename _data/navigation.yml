@@ -20,8 +20,8 @@ main:
   #- title: "Research"
   #  url: /research/
   
-  - title: "Communication"
-    url: /communication/ 
+  #- title: "Communication"
+  #  url: /communication/ 
 
   - title: "DSRG"
     url: /juco-dsg/
