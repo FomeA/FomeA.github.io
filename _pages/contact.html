@@ -1,1 +1,499 @@
+---
+layout: archive
+title: "Contact"
+permalink: /contact/
+author_profile: true
+---
 
+<div class="page__content">
+
+<!-- HERO -->
+<section class="hero-box">
+  <p>
+    Academic teaching in Applied Mathematics and Statistics, and capacity-building training for students and professionals.
+  </p>
+</section>
+
+<!-- SEARCH -->
+<div class="search-box">
+  <input type="text" id="searchInput" placeholder="Search teaching or training..." aria-label="Search teaching or training courses">
+</div>
+
+<!-- ===================== -->
+<!-- TEACHING SECTION -->
+<!-- ===================== -->
+<section aria-labelledby="teaching-title">
+  <h2 id="teaching-title" class="section-title">Teaching (University Courses)</h2>
+  <div class="grid" id="teaching-grid">
+    <a class="card teaching" href="/teaching/qms101/">
+      <h3>QMS 101</h3>
+      <p>Introductory Statistics</p>
+      <span class="tag">Statistics</span>
+    </a>
+    <a class="card teaching" href="/teaching/mat103/">
+      <h3>MAT 103</h3>
+      <p>Numerical Analysis I</p>
+      <span class="tag">Applied Mathematics</span>
+    </a>
+    <a class="card teaching" href="/teaching/mat102/">
+      <h3>MAT 102</h3>
+      <p>Ordinary Differential Equations</p>
+      <span class="tag">Applied Mathematics</span>
+    </a>
+  </div>
+</section>
+
+<!-- ===================== -->
+<!-- TRAINING SECTION -->
+<!-- ===================== -->
+<section aria-labelledby="training-title">
+  <h2 id="training-title" class="section-title">Training & Research Initiatives</h2>
+  
+  <!-- RESEARCH GROUP FEATURE BANNER (Placed cleanly outside the grid) -->
+  <section class="research-hero-banner">
+    <div class="hero-inner">
+      <p class="kicker">Call for Participants</p>
+      <!-- <h3>JUCo Data Science & Modelling Research Group</h3>
+      <p class="subtitle">
+        Interdisciplinary Research Initiative &middot; Jordan University College, Morogoro
+      </p> -->
+      <p class="lead">
+        Learn data science and mathematical modelling by working on real problems in education,
+        health, and development.
+      </p>
+      <div class="cta-row">
+        <!-- <a href="/juco-dsg./" class="btn primary">Apply Now</a> -->
+        <a href="/juco-dsg/" class="btn ghost">Explore Programme</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHORT COURSES GRID -->
+  <h3 class="sub-section-title">Short Courses & Workshops</h3>
+  <div class="grid" id="training-grid">
+    <div class="card training">
+      <h3>Research Data Analysis</h3>
+      <p>Statistical analysis using SPSS and R.</p>
+      <span class="tag">Workshop</span>
+    </div>
+
+    <div class="card training">
+      <h3>Mathematical Modeling</h3>
+      <p>Introduction to modeling real-world problems using mathematics.</p>
+      <span class="tag">Capacity Building</span>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<!-- ===================== -->
+<!-- STYLE -->
+<!-- ===================== -->
+<style>
+/* =========================
+   GLOBAL
+========================= */
+
+.page__content{
+  max-width: 1200px;
+  margin:auto;
+}
+
+body{
+  font-family: Inter, system-ui, sans-serif;
+  color:#111827;
+  background:#fafafa;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero-box{
+  background:
+    radial-gradient(circle at top right,
+    rgba(59,130,246,.15),
+    transparent 40%),
+    white;
+
+  padding:60px 50px;
+  border-radius:28px;
+  margin-bottom:40px;
+
+  box-shadow:
+    0 10px 40px rgba(0,0,0,.04);
+}
+
+.hero-box p{
+  font-size:1.35rem;
+  line-height:1.7;
+  max-width:850px;
+  color:#374151;
+  margin:0;
+}
+
+/* =========================
+   SEARCH
+========================= */
+
+.search-box{
+  margin-bottom:50px;
+}
+
+.search-box input{
+  width:100%;
+  padding:18px 22px;
+  border:none;
+  border-radius:18px;
+  font-size:1rem;
+
+  background:white;
+
+  box-shadow:
+    0 4px 20px rgba(0,0,0,.05);
+
+  transition:.2s;
+}
+
+.search-box input:focus{
+  outline:none;
+  transform:translateY(-1px);
+
+  box-shadow:
+    0 10px 30px rgba(59,130,246,.12);
+}
+
+/* =========================
+   SECTION TITLES
+========================= */
+
+.section-title{
+  font-size:2rem;
+  font-weight:700;
+  margin-top:70px;
+  margin-bottom:25px;
+
+  color:#111827;
+}
+
+.sub-section-title{
+  margin-top:45px;
+  margin-bottom:20px;
+
+  font-size:1.2rem;
+  font-weight:600;
+
+  color:#4b5563;
+}
+
+/* =========================
+   GRID
+========================= */
+
+.grid{
+  display:grid;
+
+  grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+  gap:24px;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.card{
+  background:white;
+
+  border-radius:24px;
+
+  padding:28px;
+
+  text-decoration:none;
+  color:inherit;
+
+  transition:.25s ease;
+
+  border:1px solid rgba(0,0,0,.04);
+
+  box-shadow:
+    0 4px 20px rgba(0,0,0,.03);
+}
+
+.card:hover{
+  transform:translateY(-6px);
+
+  box-shadow:
+    0 18px 40px rgba(0,0,0,.08);
+}
+
+.card h3{
+  margin:0 0 10px;
+
+  font-size:1.25rem;
+  line-height:1.3;
+
+  color:#111827;
+}
+
+.card p{
+  margin:0 0 20px;
+
+  color:#6b7280;
+  line-height:1.6;
+}
+
+/* TAGS */
+
+.tag{
+  display:inline-flex;
+  align-items:center;
+
+  padding:8px 14px;
+
+  border-radius:999px;
+
+  font-size:.8rem;
+  font-weight:600;
+}
+
+.teaching .tag{
+  background:#eff6ff;
+  color:#2563eb;
+}
+
+.training .tag{
+  background:#fff7ed;
+  color:#ea580c;
+}
+
+/* =========================
+   RESEARCH HERO
+========================= */
+
+.research-hero-banner{
+  position:relative;
+
+  overflow:hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0f172a,
+      #1e293b
+    );
+
+  padding:60px;
+
+  border-radius:30px;
+
+  margin:40px 0;
+
+  color:white;
+
+  box-shadow:
+    0 20px 50px rgba(15,23,42,.18);
+}
+
+/* decorative glow */
+
+.research-hero-banner::before{
+  content:"";
+
+  position:absolute;
+
+  width:420px;
+  height:420px;
+
+  background:
+    radial-gradient(
+      rgba(59,130,246,.35),
+      transparent 70%
+    );
+
+  top:-180px;
+  right:-120px;
+}
+
+.hero-inner{
+  position:relative;
+  z-index:2;
+}
+
+.kicker{
+  display:inline-flex;
+
+  padding:8px 14px;
+
+  border-radius:999px;
+
+  background:
+    rgba(255,255,255,.08);
+
+  backdrop-filter:blur(8px);
+
+  font-size:.75rem;
+  font-weight:700;
+
+  letter-spacing:.08em;
+
+  text-transform:uppercase;
+
+  margin-bottom:18px;
+}
+
+.research-hero-banner h3{
+  font-size:2.4rem;
+  line-height:1.1;
+
+  margin:0 0 14px;
+
+  color:white;
+}
+
+.subtitle{
+  color:rgba(255,255,255,.75);
+
+  margin-bottom:18px;
+
+  font-size:1rem;
+}
+
+.lead{
+  max-width:700px;
+
+  font-size:1.15rem;
+
+  line-height:1.8;
+
+  color:rgba(255,255,255,.92);
+
+  margin-bottom:30px;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.cta-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:14px 24px;
+
+  border-radius:14px;
+
+  font-weight:600;
+
+  text-decoration:none;
+
+  transition:.2s ease;
+}
+
+.btn.primary{
+  background:#ffffff;  
+
+  color:#000000 !important;
+
+  font-weight:700;
+
+  border:2px solid white;
+
+  box-shadow:
+    0 8px 20px rgba(0,0,0,.15);
+}
+
+.btn.primary:hover{
+  background:#f3f4f6;
+
+  color:#000000 !important;
+}
+
+.btn.ghost{
+  border:1px solid rgba(255,255,255,.35);
+
+  color:white !important;
+}
+
+  color:white;
+
+  background:
+    rgba(255,255,255,.05);
+
+  backdrop-filter:blur(10px);
+}
+
+.btn.ghost:hover{
+  background:
+    rgba(255,255,255,.12);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+  .hero-box,
+  .research-hero-banner{
+    padding:35px 28px;
+  }
+
+  .hero-box p{
+    font-size:1.05rem;
+  }
+
+  .research-hero-banner h3{
+    font-size:1.8rem;
+  }
+
+  .section-title{
+    font-size:1.6rem;
+  }
+
+}
+</style>
+
+<!-- ===================== -->
+<!-- SCRIPT -->
+<!-- ===================== -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const input = document.getElementById("searchInput");
+  const cards = document.querySelectorAll(".card");
+  const banner = document.querySelector(".research-hero-banner");
+
+  input.addEventListener("input", function() {
+    const val = this.value.trim().toLowerCase();
+
+    // Filter cards
+    cards.forEach(card => {
+      const text = card.textContent.toLowerCase();
+      if (text.includes(val)) {
+        card.classList.remove("is-hidden");
+      } else {
+        card.classList.add("is-hidden");
+      }
+    });
+
+    // Also filter the banner so it goes away if search doesn't match
+    if (banner) {
+      const bannerText = banner.textContent.toLowerCase();
+      if (bannerText.includes(val)) {
+        banner.classList.remove("is-hidden");
+      } else {
+        banner.classList.add("is-hidden");
+      }
+    }
+  });
+});
+</script>
