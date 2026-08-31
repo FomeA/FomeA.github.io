@@ -4,7 +4,7 @@ layout: single
 title: "Get in Touch"
 permalink: /contact/
 author_profile: true
----
+--------------------
 
 <style>
 
@@ -13,110 +13,104 @@ author_profile: true
    ========================================================= */
 
 .contact-page {
-  max-width: 900px;
-  margin: 40px auto;
+  max-width: 850px;
+  margin: 45px auto;
   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont,
                "Segoe UI", sans-serif;
   color: #334155;
   line-height: 1.75;
 }
 
-/* =========================================================
-   INTRO
-   ========================================================= */
-
 .contact-intro {
   background: #f8fafc;
   border: 1px solid #e2e8f0;
   border-radius: 18px;
   padding: 35px;
-  margin-bottom: 30px;
+  margin-bottom: 35px;
 }
 
 .contact-intro h2 {
   margin-top: 0;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
   color: #0f172a;
   font-size: 2rem;
 }
 
 .contact-intro p {
-  margin-bottom: 0;
+  margin: 0;
   color: #64748b;
   font-size: 1.05rem;
 }
 
-/* =========================================================
-   CONTACT GRID
-   ========================================================= */
-
-.contact-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 18px;
-}
-
-.contact-card {
+.contact-details {
   background: white;
   border: 1px solid #e2e8f0;
   border-radius: 16px;
-  padding: 25px;
-  transition: .25s ease;
+  padding: 30px;
 }
 
-.contact-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, .06);
-}
-
-.contact-card h3 {
+.contact-details h3 {
   margin-top: 0;
-  margin-bottom: 8px;
+  margin-bottom: 20px;
   color: #0f172a;
-  font-size: 1.15rem;
 }
 
-.contact-card p {
-  margin: 0;
+.contact-item {
+  margin-bottom: 18px;
+}
+
+.contact-item:last-child {
+  margin-bottom: 0;
+}
+
+.contact-label {
+  display: block;
+  margin-bottom: 4px;
   color: #64748b;
-  font-size: .95rem;
+  font-size: .82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .06em;
 }
 
-.contact-card a {
+.contact-item a {
   color: #2563eb;
   text-decoration: none;
   font-weight: 600;
-  word-break: break-word;
 }
 
-.contact-card a:hover {
+.contact-item a:hover {
   text-decoration: underline;
 }
 
-/* =========================================================
-   COLLABORATION
-   ========================================================= */
-
-.contact-message {
-  margin-top: 30px;
-  padding: 28px;
+.mentorship-box {
+  margin-top: 25px;
+  padding: 25px 28px;
   background: #f8fafc;
   border-left: 5px solid #2563eb;
   border-radius: 14px;
 }
 
-.contact-message h3 {
+.mentorship-box p {
   margin-top: 0;
-  color: #0f172a;
+  color: #475569;
 }
 
-.contact-message p {
-  margin-bottom: 0;
+.book-btn {
+  display: inline-block;
+  padding: 11px 18px;
+  border-radius: 10px;
+  background: #2563eb;
+  color: white !important;
+  text-decoration: none !important;
+  font-weight: 600;
+  transition: .25s ease;
 }
 
-/* =========================================================
-   MOBILE
-   ========================================================= */
+.book-btn:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
 
 @media (max-width: 768px) {
 
@@ -124,16 +118,13 @@ author_profile: true
     margin: 25px auto;
   }
 
-  .contact-intro {
+  .contact-intro,
+  .contact-details {
     padding: 25px;
   }
 
   .contact-intro h2 {
     font-size: 1.65rem;
-  }
-
-  .contact-card {
-    padding: 20px;
   }
 
 }
@@ -142,93 +133,57 @@ author_profile: true
 
 <div class="contact-page">
 
-<!-- =========================================================
-     INTRODUCTION
-     ========================================================= -->
-
 <section class="contact-intro">
 
 <!--<h2>Get in Touch</h2>-->
 
 <p>
-I welcome professional inquiries, research collaborations,
-academic discussions, student and researcher mentorship,
-and opportunities for scientific and educational engagement.
+I welcome professional inquiries, research collaborations, academic discussions,
+student and researcher mentorship, and opportunities for scientific and
+educational engagement.
 </p>
 
 </section>
 
-<!-- =========================================================
-     CONTACT INFORMATION
-     ========================================================= -->
+<section class="contact-details">
 
-<div class="contact-grid">
+<h3>Contact Information</h3>
 
-<div class="contact-card">
+<div class="contact-item">
 
-<h3>Email</h3>
+<span class="contact-label">Email</span>
 
-<p>
 <a href="mailto:YOUR-EMAIL@example.com">
 anna.fome@juco.ac.tz
 </a>
-</p>
 
 </div>
 
-<div class="contact-card">
+<div class="contact-item">
 
-<h3>Research</h3>
+<span class="contact-label">LinkedIn</span>
 
-<p>
-For research collaborations, mathematical modelling,
-data science, epidemiology, and related academic inquiries.
-</p>
-
-</div>
-
-<div class="contact-card">
-
-<h3>Teaching & Mentorship</h3>
-
-<p>
-For questions related to teaching, student projects,
-research supervision, and mentorship.
-</p>
+<a href="https://www.linkedin.com/in/anna-fome-phd-117531135/"
+target="_blank"
+rel="noopener noreferrer">
+LinkedIn </a>
 
 </div>
-
-<div class="contact-card">
-
-<h3>Professional Profiles</h3>
-
-<p>
-  You can also connect with me through
-  <a href="https://www.linkedin.com/in/anna-fome-phd-117531135/"
-     target="_blank"
-     rel="noopener noreferrer">
-    LinkedIn
-  </a>.
-</p>
-
-</div>
-
-</div>
-
-<!-- =========================================================
-     COLLABORATION
-     ========================================================= -->
-
-<section class="contact-message">
-
-<h3>Interested in Collaboration?</h3>
-
-<p>
-I am particularly interested in collaborations involving
-mathematical modelling, statistics, data science, epidemiology,
-public health, and interdisciplinary research.
-</p>
 
 </section>
+
+<div class="mentorship-box">
+
+<p style="margin-bottom: 1.5em;">
+  Schedule a mentorship session using the link below.
+</p>
+
+<a class="book-btn"
+href="https://calendar.app.google/RF8rbheuphgiRurh6"
+target="_blank"
+rel="noopener noreferrer">
+📅 Book Mentorship Session </a>
+
+</div>
 
 </div>
