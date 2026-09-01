@@ -738,7 +738,7 @@ Explore course →
 </div>
 
 
-<div class="card">
+<!--<div class="card">
 
 <h3>Mentorship & Supervision</h3>
 
@@ -747,7 +747,7 @@ Supporting students and early-career researchers through research,
 quantitative methods, academic development, and independent study.
 </p>
 
-</div>
+</div>-->
 
 </div>
 
