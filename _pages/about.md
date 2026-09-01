@@ -767,6 +767,34 @@ Selected peer-reviewed publications and scholarly contributions in
 mathematical modelling, epidemiology, and applied mathematics.
 </p>
 
+<div class="publication">
+
+<span class="publication-status">
+BOOK CHAPTER · 2026
+</span>
+
+<p>
+<strong class="publication-title">
+Fome, A.D., Bock, W., Klar, A.
+</strong>
+(2026).
+Dynamics Around Equilibria in a Competitive Respiratory Disease
+System with Quarantine.
+In Burnecki, K., Szwabiński, J., Teuerle, M. (eds.),
+<em>Progress in Industrial Mathematics at ECMI 2023</em>.
+Mathematics in Industry, Vol. 41. Springer, Cham.
+</p>
+
+<p class="publication-meta">
+DOI:
+<a href="https://doi.org/10.1007/978-3-032-20404-2_16"
+target="_blank" rel="noopener">
+10.1007/978-3-032-20404-2_16
+</a>
+</p>
+
+</div>
+
 <div class="publication-list">
 
 
@@ -792,7 +820,6 @@ DOI:
 target="_blank" rel="noopener">
 10.1186/s12889-025-24362-z
 </a>
-· Cited: 2
 </p>
 
 </div>
@@ -820,7 +847,6 @@ DOI:
 target="_blank" rel="noopener">
 10.1016/j.amc.2024.128968
 </a>
-· Cited: 4
 </p>
 
 </div>
@@ -848,7 +874,6 @@ DOI:
 target="_blank" rel="noopener">
 10.1016/j.health.2023.100189
 </a>
-· Cited: 17
 </p>
 
 </div>
@@ -875,36 +900,6 @@ DOI:
 <a href="https://doi.org/10.3390/hemato3010007"
 target="_blank" rel="noopener">
 10.3390/hemato3010007
-</a>
-· Cited: 9
-</p>
-
-</div>
-
-
-<div class="publication">
-
-<span class="publication-status">
-BOOK CHAPTER · 2026
-</span>
-
-<p>
-<strong class="publication-title">
-Fome, A.D., Bock, W., Klar, A.
-</strong>
-(2026).
-Dynamics Around Equilibria in a Competitive Respiratory Disease
-System with Quarantine.
-In Burnecki, K., Szwabiński, J., Teuerle, M. (eds.),
-<em>Progress in Industrial Mathematics at ECMI 2023</em>.
-Mathematics in Industry, Vol. 41. Springer, Cham.
-</p>
-
-<p class="publication-meta">
-DOI:
-<a href="https://doi.org/10.1007/978-3-032-20404-2_16"
-target="_blank" rel="noopener">
-10.1007/978-3-032-20404-2_16
 </a>
 </p>
 
