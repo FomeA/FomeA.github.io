@@ -244,7 +244,201 @@ font-size:2.3rem;
 }
 
 }
+
+/* =========================
+   TEAM SECTION
+   ========================= */
+
+#team {
+  background: var(--light);
+  padding: 80px 0;
+}
+
+.team-group {
+  margin-top: 45px;
+}
+
+.team-group-title {
+  text-align: center;
+  color: var(--navy);
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.team-group-title::after {
+  content: "";
+  display: block;
+  width: 55px;
+  height: 4px;
+  background: var(--teal);
+  margin: 12px auto 0;
+  border-radius: 4px;
+}
+
+/* Programme Leads */
+.team-grid-leads {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Facilitators */
+.team-grid-facilitators {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(240px, 1fr));
+  gap: 25px;
+}
+
+/* Profile Card */
+.profile-card {
+  background: var(--white);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(16, 37, 66, 0.08);
+  border-top: 5px solid var(--teal);
+  transition: all 0.3s ease;
+}
+
+.profile-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 32px rgba(16, 37, 66, 0.14);
+  border-top-color: var(--gold);
+}
+
+/* Image area */
+.profile-image {
+  width: 100%;
+  height: 280px;
+  background: #e9eef4;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Image placeholder */
+.photo-placeholder {
+  color: var(--muted);
+  font-size: 1rem;
+  text-align: center;
+  padding: 20px;
+}
+
+.profile-content {
+  padding: 25px;
+}
+
+.profile-role {
+  color: var(--teal);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin-bottom: 8px;
+}
+
+.profile-card h3 {
+  color: var(--navy);
+  margin: 0 0 12px;
+  font-size: 1.35rem;
+}
+
+.profile-bio {
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* Cohort Members */
+.cohort-members-wrapper {
+  max-width: 850px;
+  margin: 35px auto 0;
+}
+
+.cohort-card {
+  display: block;
+  text-decoration: none;
+  background: var(--navy);
+  color: var(--white);
+  border-radius: 16px;
+  padding: 35px;
+  text-align: center;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(16, 37, 66, 0.12);
+}
+
+.cohort-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--gold);
+  box-shadow: 0 14px 32px rgba(16, 37, 66, 0.2);
+  color: var(--white);
+  text-decoration: none;
+}
+
+.cohort-card-icon {
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+}
+
+.cohort-card h3 {
+  color: var(--white);
+  margin: 0 0 10px;
+  font-size: 1.6rem;
+}
+
+.cohort-card p {
+  color: rgba(255,255,255,0.8);
+  margin: 0 auto 18px;
+  max-width: 650px;
+  line-height: 1.7;
+}
+
+.cohort-card-link {
+  display: inline-block;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .team-grid-facilitators {
+    grid-template-columns: repeat(2, minmax(240px, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .team-grid-leads,
+  .team-grid-facilitators {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-image {
+    height: 300px;
+  }
+
+  .team-group-title {
+    font-size: 1.5rem;
+  }
+
+  .cohort-card {
+    padding: 28px 20px;
+  }
+}
+
 </style>
+  
 </head>
 
 <body id="top">
@@ -497,29 +691,265 @@ Who Can Join?
 
 <section id="team">
 
-<div class="container">
+  <div class="container">
 
-<h2 class="section-title">
-Our Team
-</h2>
+    <h2 class="section-title">
+      Our Team
+    </h2>
 
-<div class="cards">
+    <p style="text-align:center; max-width:800px; margin:0 auto; color:var(--muted); line-height:1.8;">
+      JUCo DSRG brings together programme leaders, facilitators, mentors,
+      and emerging researchers committed to developing mathematical and
+      data-driven approaches to health research.
+    </p>
 
-<div class="card">
-<h3>Programme Lead</h3>
-</div>
 
-<div class="card">
-<h3>Research Mentors</h3>
-</div>
+    <!-- =========================
+         PROGRAMME LEADS
+         ========================= -->
 
-<div class="card">
-<h3>First Cohort</h3>
-</div>
+    <div class="team-group">
 
-</div>
+      <h3 class="team-group-title">
+        Programme Leads
+      </h3>
 
-</div>
+      <div class="team-grid-leads">
+
+        <!-- Programme Lead 1 -->
+        <div class="profile-card">
+
+          <div class="profile-image">
+
+            <!--
+              Replace the src below with the actual image.
+              Example:
+              src="{{ site.baseurl }}/images/team/john-doe.jpg"
+            -->
+
+            <img
+              src="{{ site.baseurl }}/images/team/programme-lead-1.jpg"
+              alt="Programme Lead 1"
+            >
+
+          </div>
+
+          <div class="profile-content">
+
+            <div class="profile-role">
+              Programme Lead
+            </div>
+
+            <h3>
+              Programme Lead Name
+            </h3>
+
+            <p class="profile-bio">
+              Add a short biography here describing the programme lead's
+              academic background, research interests, professional
+              experience, and contribution to the JUCo DSRG programme.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- Programme Lead 2 -->
+        <div class="profile-card">
+
+          <div class="profile-image">
+
+            <!-- Replace with the actual image -->
+            <img
+              src="{{ site.baseurl }}/images/team/programme-lead-2.jpg"
+              alt="Programme Lead 2"
+            >
+
+          </div>
+
+          <div class="profile-content">
+
+            <div class="profile-role">
+              Programme Lead
+            </div>
+
+            <h3>
+              Programme Lead Name
+            </h3>
+
+            <p class="profile-bio">
+              Add a short biography here describing the programme lead's
+              academic background, research interests, professional
+              experience, and contribution to the JUCo DSRG programme.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- =========================
+         FACILITATORS
+         ========================= -->
+
+    <div class="team-group">
+
+      <h3 class="team-group-title">
+        Facilitators
+      </h3>
+
+      <div class="team-grid-facilitators">
+
+        <!-- Facilitator 1 -->
+        <div class="profile-card">
+
+          <div class="profile-image">
+
+            <img
+              src="{{ site.baseurl }}/images/team/facilitator-1.jpg"
+              alt="Facilitator 1"
+            >
+
+          </div>
+
+          <div class="profile-content">
+
+            <div class="profile-role">
+              Facilitator
+            </div>
+
+            <h3>
+              Facilitator Name
+            </h3>
+
+            <p class="profile-bio">
+              Add a short biography describing the facilitator's
+              expertise, research interests, and role in supporting
+              JUCo DSRG participants.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- Facilitator 2 -->
+        <div class="profile-card">
+
+          <div class="profile-image">
+
+            <img
+              src="{{ site.baseurl }}/images/team/facilitator-2.jpg"
+              alt="Facilitator 2"
+            >
+
+          </div>
+
+          <div class="profile-content">
+
+            <div class="profile-role">
+              Facilitator
+            </div>
+
+            <h3>
+              Facilitator Name
+            </h3>
+
+            <p class="profile-bio">
+              Add a short biography describing the facilitator's
+              expertise, research interests, and role in supporting
+              JUCo DSRG participants.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- Facilitator 3 -->
+        <div class="profile-card">
+
+          <div class="profile-image">
+
+            <img
+              src="{{ site.baseurl }}/images/team/facilitator-3.jpg"
+              alt="Facilitator 3"
+            >
+
+          </div>
+
+          <div class="profile-content">
+
+            <div class="profile-role">
+              Facilitator
+            </div>
+
+            <h3>
+              Facilitator Name
+            </h3>
+
+            <p class="profile-bio">
+              Add a short biography describing the facilitator's
+              expertise, research interests, and role in supporting
+              JUCo DSRG participants.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- =========================
+         COHORT MEMBERS
+         ========================= -->
+
+    <div class="team-group">
+
+      <h3 class="team-group-title">
+        Cohort Members
+      </h3>
+
+      <div class="cohort-members-wrapper">
+
+        <a
+          href="{{ site.baseurl }}/cohortmembers.html"
+          class="cohort-card"
+        >
+
+          <div class="cohort-card-icon">
+            👥
+          </div>
+
+          <h3>
+            First Cohort
+          </h3>
+
+          <p>
+            Meet the first cohort of JUCo DSRG researchers and discover
+            their academic backgrounds, research interests, projects,
+            and contributions to the programme.
+          </p>
+
+          <span class="cohort-card-link">
+            View Cohort Members →
+          </span>
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
 
 </section>
 
