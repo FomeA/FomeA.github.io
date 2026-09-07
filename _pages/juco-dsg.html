@@ -154,7 +154,68 @@ color:white;
 border:1px solid rgba(255,255,255,.4);
 color:white;
 }
+/* PROGRAMME LEAD IN HERO */
 
+.hero-lead{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:18px;
+  margin:30px auto 35px;
+  max-width:520px;
+  text-align:left;
+}
+
+.hero-lead-image{
+  width:85px;
+  height:85px;
+  object-fit:cover;
+  border-radius:50%;
+  border:3px solid rgba(255,255,255,.8);
+  box-shadow:0 8px 25px rgba(0,0,0,.25);
+}
+
+.hero-lead-info span{
+  font-size:.75rem;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  opacity:.75;
+}
+
+.hero-lead-info h3{
+  margin:2px 0 3px;
+  font-size:1.25rem;
+  font-weight:600;
+}
+
+.hero-lead-info p{
+  margin:0;
+  font-size:.9rem;
+  opacity:.85;
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+  .hero-lead{
+    gap:12px;
+    max-width:330px;
+  }
+
+  .hero-lead-image{
+    width:70px;
+    height:70px;
+  }
+
+  .hero-lead-info h3{
+    font-size:1.05rem;
+  }
+
+  .hero-lead-info p{
+    font-size:.8rem;
+  }
+}
+  
 /* SECTIONS */
 
 section{
@@ -299,6 +360,23 @@ Data Science & Modelling Research Group
 JUCo DSRG is a formally established research initiative at Jordan University College. We bring together motivated students and researchers to develop skills in data science, statistical analysis, and mathematical modelling while addressing real-world institutional, health, and development challenges.
 </p>
 -->
+
+<!-- PROGRAMME LEAD -->
+<div class="hero-lead">
+
+  <img
+    src="https://FomeA.github.io/images/159.png"
+    alt="Dr. Anna Fome"
+    class="hero-lead-image"
+  >
+
+  <div class="hero-lead-info">
+    <span>Programme Lead</span>
+    <h3>Dr. Anna Fome</h3>
+    <p>Mathematician and researcher in data science and mathematical modelling.</p>
+  </div>
+
+</div>
   
 <div class="buttons">
 
