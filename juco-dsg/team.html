@@ -90,6 +90,89 @@ color:white;
 text-decoration:none;
 }
 
+/* PAGE BASICS */
+
+.dsg-page {
+  min-height: 100vh;
+}
+
+.dsg-page a {
+  color: var(--blue);
+}
+
+.hero {
+  min-height: 130px;
+  padding-top: 75px;
+  background: var(--navy);
+}
+
+.hero-content {
+  min-height: 55px;
+}
+
+.section-title {
+  text-align: center;
+  color: var(--navy);
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  margin-bottom: 20px;
+  font-weight: 800;
+}
+
+.contact-details {
+  padding: 70px 0;
+  background: var(--white);
+  text-align: center;
+}
+
+.contact-details h2 {
+  color: var(--navy);
+  margin-bottom: 15px;
+}
+
+.contact-details p {
+  color: var(--muted);
+}
+
+.contact-details a {
+  color: var(--teal);
+  font-weight: 600;
+}
+
+footer {
+  background: #000;
+  color: rgba(255,255,255,0.75);
+  text-align: center;
+  padding: 25px 15px;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 800px) {
+  nav {
+    height: auto;
+    min-height: 75px;
+    padding: 15px 0;
+  }
+
+  .nav-inner {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .nav-links {
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav-links a {
+    font-size: 0.85rem;
+  }
+
+  .hero {
+    padding-top: 120px;
+  }
+}
+
 /* =========================
    TEAM SECTION
    ========================= */
@@ -288,25 +371,22 @@ text-decoration:none;
 }
 
 </style>
-  
-</head>
 
-<body id="top">
 
 <nav>
 <div class="container nav-inner">
 
-<a href="#top" class="logo">
+<a href="{{ site.baseurl }}/juco-dsg/" class="logo">
 JUCo <span>DSRG</span>
 </a>
 
 <div class="nav-links">
-<a href="#about">About</a>
-<a href="vision.html">Vision</a>
-<a href="curriculum.html">Curriculum</a>
-<a href="#research">Research</a>
-<a href="#team">Team</a>
-<a href="#join">Join</a>
+<a href="{{ site.baseurl }}/juco-dsg/#about">About</a>
+<a href="{{ site.baseurl }}/vision.html">Vision</a>
+<a href="{{ site.baseurl }}/curriculum.html">Curriculum</a>
+<a href="{{ site.baseurl }}/juco-dsg/#research">Research</a>
+<a href="{{ site.baseurl }}/team.html">Team</a>
+<a href="{{ site.baseurl }}/juco-dsg/#join">Join</a>
 <a href="#contact">Contact</a>
 </div>
 
@@ -569,3 +649,5 @@ JUCo <span>DSRG</span>
 <footer>
 © 2026 JUCo DSRG · Jordan University College
 </footer>
+
+</div>
