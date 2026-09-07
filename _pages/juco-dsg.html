@@ -7,28 +7,43 @@ author_profile: false
 
 <style>
 
+/* =========================================================
+   JUCo DSRG — PAGE STYLES
+   ========================================================= */
+
 :root {
   --dsg-navy: #102a43;
   --dsg-navy-dark: #0b1f33;
   --dsg-teal: #168b8b;
-  --dsg-gold: #c99a3d;
+  --dsg-teal-light: #eaf6f5;
+  --dsg-gold: #b88932;
+
   --dsg-text: #243b53;
   --dsg-muted: #627d98;
-  --dsg-light: #f5f7f9;
-  --dsg-border: #e3e8ed;
+  --dsg-light: #f6f8fa;
+  --dsg-border: #e1e7ec;
   --dsg-white: #ffffff;
 }
 
 
 /* =========================================================
-   BASE
+   PAGE BASE
    ========================================================= */
 
 .dsg-page {
+  width: 100%;
+  margin: 0;
+  padding: 0;
   color: var(--dsg-text);
   background: var(--dsg-white);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-               Roboto, Helvetica, Arial, sans-serif;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
   line-height: 1.65;
 }
 
@@ -52,18 +67,18 @@ author_profile: false
    NAVIGATION
    ========================================================= */
 
-.dsg-page .dsg-nav {
-  height: 70px;
-  background: rgba(255,255,255,.96);
+.dsg-nav {
+  width: 100%;
+  height: 68px;
+  background: rgba(255, 255, 255, 0.98);
   border-bottom: 1px solid var(--dsg-border);
   position: sticky;
   top: 0;
   z-index: 1000;
-  backdrop-filter: blur(10px);
 }
 
 .dsg-nav-inner {
-  height: 70px;
+  height: 68px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -71,9 +86,10 @@ author_profile: false
 
 .dsg-logo {
   color: var(--dsg-navy);
-  font-weight: 800;
   font-size: 1.05rem;
-  letter-spacing: -.02em;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
 }
 
 .dsg-logo span {
@@ -83,14 +99,14 @@ author_profile: false
 .dsg-nav-links {
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 24px;
 }
 
 .dsg-nav-links a {
   color: #526575;
-  font-size: .85rem;
+  font-size: 0.82rem;
   font-weight: 600;
-  transition: color .2s ease;
+  transition: color 0.2s ease;
 }
 
 .dsg-nav-links a:hover {
@@ -98,10 +114,14 @@ author_profile: false
 }
 
 .dsg-nav-apply {
-  padding: 9px 17px;
-  border-radius: 6px;
+  padding: 8px 16px;
+  border-radius: 5px;
   background: var(--dsg-navy);
   color: white !important;
+}
+
+.dsg-nav-apply:hover {
+  background: var(--dsg-teal);
 }
 
 
@@ -112,45 +132,37 @@ author_profile: false
 .dsg-hero {
   background:
     linear-gradient(
-      90deg,
-      #f7f9fb 0%,
-      #ffffff 62%,
-      #eef6f6 100%
+      110deg,
+      #f5f8fa 0%,
+      #ffffff 68%,
+      #eef7f6 100%
     );
-  padding: 78px 0 72px;
   border-bottom: 1px solid var(--dsg-border);
+  padding: 76px 0 72px;
 }
 
-.dsg-hero-grid {
-  display: grid;
-  grid-template-columns: 270px 1fr;
-  gap: 70px;
-  align-items: center;
+.dsg-hero-content {
+  max-width: 880px;
 }
-
-
-
-
-/* Hero Content */
 
 .dsg-eyebrow {
   color: var(--dsg-teal);
-  font-size: .72rem;
+  font-size: 0.68rem;
   font-weight: 800;
-  letter-spacing: .16em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  margin-bottom: 15px;
+  margin-bottom: 13px;
 }
 
 .dsg-hero h1 {
   color: var(--dsg-navy);
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(2rem, 3.2vw, 3rem);
+  font-size: clamp(2.05rem, 3.5vw, 3.15rem);
   font-weight: 400;
-  line-height: 1.15;
-  letter-spacing: -.02em;
-  max-width: 650px;
-  margin: 0 0 18px;
+  line-height: 1.14;
+  letter-spacing: -0.025em;
+  max-width: 700px;
+  margin: 0 0 17px;
 }
 
 .dsg-hero h1 span {
@@ -160,43 +172,55 @@ author_profile: false
 .dsg-hero-subtitle {
   max-width: 680px;
   color: #526575;
-  font-size: 1.05rem;
+  font-size: 0.98rem;
   line-height: 1.7;
-  margin: 0 0 28px;
+  margin: 0 0 27px;
 }
 
 .dsg-hero-buttons {
   display: flex;
   flex-wrap: wrap;
-  gap: 11px;
+  gap: 10px;
 }
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
 
 .dsg-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 11px 19px;
-  border-radius: 6px;
-  font-size: .82rem;
+  min-height: 40px;
+  padding: 9px 17px;
+  border-radius: 5px;
+  font-size: 0.79rem;
   font-weight: 700;
-  transition: all .2s ease;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .dsg-btn-primary {
   background: var(--dsg-navy);
   color: white;
+  border: 1px solid var(--dsg-navy);
 }
 
 .dsg-btn-primary:hover {
-  background: var(--dsg-navy-dark);
+  background: var(--dsg-teal);
+  border-color: var(--dsg-teal);
   color: white;
   transform: translateY(-1px);
 }
 
 .dsg-btn-outline {
-  border: 1px solid #b8c5cf;
-  color: var(--dsg-navy);
   background: white;
+  color: var(--dsg-navy);
+  border: 1px solid #b9c6d0;
 }
 
 .dsg-btn-outline:hover {
@@ -210,7 +234,7 @@ author_profile: false
    ========================================================= */
 
 .dsg-section {
-  padding: 72px 0;
+  padding: 68px 0;
 }
 
 .dsg-section-light {
@@ -219,14 +243,14 @@ author_profile: false
 
 .dsg-section-heading {
   max-width: 720px;
-  margin-bottom: 35px;
+  margin-bottom: 32px;
 }
 
 .dsg-section-label {
   color: var(--dsg-teal);
-  font-size: .68rem;
+  font-size: 0.66rem;
   font-weight: 800;
-  letter-spacing: .16em;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
   margin-bottom: 7px;
 }
@@ -234,16 +258,17 @@ author_profile: false
 .dsg-section-title {
   color: var(--dsg-navy);
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(2rem, 3vw, 2.55rem);
+  font-size: clamp(1.85rem, 2.8vw, 2.35rem);
   font-weight: 400;
   line-height: 1.2;
-  margin: 0 0 12px;
+  margin: 0 0 11px;
 }
 
 .dsg-section-intro {
-  color: var(--dsg-muted);
   max-width: 680px;
-  font-size: .98rem;
+  color: var(--dsg-muted);
+  font-size: 0.91rem;
+  line-height: 1.65;
   margin: 0;
 }
 
@@ -254,34 +279,38 @@ author_profile: false
 
 .dsg-about-grid {
   display: grid;
-  grid-template-columns: 1.15fr .85fr;
+  grid-template-columns: 1.25fr 0.75fr;
   gap: 65px;
   align-items: start;
 }
 
 .dsg-about-text p {
   color: #526575;
-  font-size: .98rem;
-  margin: 0 0 18px;
+  font-size: 0.91rem;
+  line-height: 1.7;
+  margin: 0 0 17px;
 }
 
 .dsg-about-highlight {
+  margin-top: 8px;
+  padding: 8px 0 8px 24px;
   border-left: 3px solid var(--dsg-teal);
-  padding: 8px 0 8px 25px;
 }
 
 .dsg-about-highlight strong {
   display: block;
   color: var(--dsg-navy);
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   font-weight: 400;
-  margin-bottom: 6px;
+  line-height: 1.35;
+  margin-bottom: 7px;
 }
 
 .dsg-about-highlight span {
   color: var(--dsg-muted);
-  font-size: .85rem;
+  font-size: 0.82rem;
+  line-height: 1.55;
 }
 
 
@@ -292,79 +321,83 @@ author_profile: false
 .dsg-research-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 22px;
+  gap: 20px;
 }
 
 .dsg-research-card {
   background: white;
   border: 1px solid var(--dsg-border);
-  border-radius: 12px;
-  padding: 30px;
-  transition: transform .2s ease, box-shadow .2s ease;
+  border-radius: 10px;
+  padding: 27px;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .dsg-research-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 14px 35px rgba(16,42,67,.08);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(16, 42, 67, 0.07);
 }
 
 .dsg-research-number {
   color: var(--dsg-gold);
-  font-size: .75rem;
+  font-size: 0.7rem;
   font-weight: 800;
-  letter-spacing: .1em;
-  margin-bottom: 15px;
+  letter-spacing: 0.1em;
+  margin-bottom: 13px;
 }
 
 .dsg-research-card h3 {
   color: var(--dsg-navy);
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.55rem;
+  font-size: 1.42rem;
   font-weight: 400;
-  margin: 0 0 12px;
+  line-height: 1.3;
+  margin: 0 0 10px;
 }
 
 .dsg-research-card p {
   color: var(--dsg-muted);
-  font-size: .88rem;
+  font-size: 0.84rem;
   line-height: 1.65;
   margin: 0;
 }
 
 
 /* =========================================================
-   BENEFITS
+   BENEFITS / CARDS
    ========================================================= */
 
 .dsg-benefits {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
+  gap: 17px;
 }
 
 .dsg-benefit {
-  padding: 22px;
   background: white;
   border: 1px solid var(--dsg-border);
-  border-radius: 10px;
+  border-radius: 9px;
+  padding: 21px;
 }
 
 .dsg-benefit-number {
   color: var(--dsg-teal);
-  font-size: .7rem;
+  font-size: 0.66rem;
   font-weight: 800;
-  margin-bottom: 9px;
+  margin-bottom: 7px;
 }
 
 .dsg-benefit h3 {
   color: var(--dsg-navy);
-  font-size: .98rem;
+  font-size: 0.91rem;
+  line-height: 1.35;
   margin: 0 0 6px;
 }
 
 .dsg-benefit p {
   color: var(--dsg-muted);
-  font-size: .82rem;
+  font-size: 0.79rem;
   line-height: 1.55;
   margin: 0;
 }
@@ -376,66 +409,76 @@ author_profile: false
 
 .dsg-eligibility-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 70px;
+  align-items: start;
 }
 
 .dsg-list {
+  list-style: none;
   margin: 0;
   padding: 0;
-  list-style: none;
 }
 
 .dsg-list li {
   position: relative;
-  padding: 12px 0 12px 25px;
+  padding: 11px 0 11px 25px;
   border-bottom: 1px solid var(--dsg-border);
   color: #526575;
-  font-size: .9rem;
+  font-size: 0.86rem;
+  line-height: 1.55;
 }
 
 .dsg-list li::before {
   content: "✓";
   position: absolute;
   left: 0;
+  top: 11px;
   color: var(--dsg-teal);
   font-weight: 800;
 }
 
-  .dsg-inclusion-note {
-  margin-top: 24px;
-  padding: 18px 20px;
-  background: #eef7f6;
+
+/* =========================================================
+   WOMEN / INCLUSION
+   ========================================================= */
+
+.dsg-inclusion-note {
+  margin-top: 23px;
+  padding: 17px 19px;
+  background: var(--dsg-teal-light);
   border-left: 3px solid var(--dsg-teal);
-  border-radius: 6px;
+  border-radius: 5px;
 }
 
 .dsg-inclusion-note strong {
   display: block;
   color: var(--dsg-navy);
-  font-size: .9rem;
+  font-size: 0.86rem;
+  line-height: 1.4;
   margin-bottom: 4px;
 }
 
 .dsg-inclusion-note span {
   display: block;
   color: var(--dsg-muted);
-  font-size: .82rem;
+  font-size: 0.78rem;
   line-height: 1.55;
 }
 
+
 /* =========================================================
-   JOIN CTA
+   CTA
    ========================================================= */
 
 .dsg-cta {
   background: var(--dsg-navy);
-  padding: 65px 0;
+  padding: 60px 0;
   text-align: center;
 }
 
 .dsg-cta-inner {
-  max-width: 700px;
+  max-width: 690px;
   margin: 0 auto;
 }
 
@@ -446,25 +489,28 @@ author_profile: false
 .dsg-cta h2 {
   color: white;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(2rem, 3vw, 2.7rem);
+  font-size: clamp(1.85rem, 3vw, 2.45rem);
   font-weight: 400;
-  line-height: 1.2;
-  margin: 0 0 13px;
+  line-height: 1.22;
+  margin: 0 0 12px;
 }
 
 .dsg-cta p {
   color: #c9d5df;
-  font-size: .92rem;
-  margin: 0 auto 25px;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  margin: 0 auto 23px;
 }
 
 .dsg-cta .dsg-btn-primary {
   background: white;
+  border-color: white;
   color: var(--dsg-navy);
 }
 
 .dsg-cta .dsg-btn-primary:hover {
-  background: #f1f5f7;
+  background: #edf2f5;
+  border-color: #edf2f5;
 }
 
 
@@ -474,24 +520,25 @@ author_profile: false
 
 .dsg-contact {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 50px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 45px;
 }
 
 .dsg-contact-box {
-  padding: 25px 0;
+  padding: 21px 0;
   border-top: 1px solid var(--dsg-border);
 }
 
 .dsg-contact-box h3 {
   color: var(--dsg-navy);
-  font-size: .95rem;
-  margin: 0 0 7px;
+  font-size: 0.88rem;
+  margin: 0 0 6px;
 }
 
 .dsg-contact-box p {
   color: var(--dsg-muted);
-  font-size: .88rem;
+  font-size: 0.83rem;
+  line-height: 1.55;
   margin: 0;
 }
 
@@ -506,9 +553,9 @@ author_profile: false
    ========================================================= */
 
 .dsg-footer {
-  background: #f5f7f9;
+  background: #f4f6f8;
   border-top: 1px solid var(--dsg-border);
-  padding: 25px 0;
+  padding: 22px 0;
 }
 
 .dsg-footer-inner {
@@ -520,8 +567,48 @@ author_profile: false
 
 .dsg-footer p {
   color: #718096;
-  font-size: .75rem;
+  font-size: 0.7rem;
   margin: 0;
+}
+
+
+/* =========================================================
+   HIDE ACADEMICPAGES FOOTER ON THIS PAGE
+   ========================================================= */
+
+body:has(.dsg-page) .page__footer {
+  display: none !important;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .dsg-nav-links {
+    gap: 15px;
+  }
+
+  .dsg-nav-links a {
+    font-size: 0.76rem;
+  }
+
+  .dsg-about-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .dsg-eligibility-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .dsg-benefits {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
 }
 
 
@@ -529,87 +616,40 @@ author_profile: false
    MOBILE
    ========================================================= */
 
-@media (max-width: 900px) {
+@media (max-width: 650px) {
+
+  .dsg-container {
+    width: calc(100% - 28px);
+  }
+
+  .dsg-nav {
+    height: 62px;
+  }
+
+  .dsg-nav-inner {
+    height: 62px;
+  }
 
   .dsg-nav-links {
     display: none;
   }
 
   .dsg-hero {
-    padding: 55px 0;
-  }
-
-  .dsg-hero-grid {
-    grid-template-columns: 1fr;
-    gap: 38px;
-  }
-
-  .dsg-lead {
-    max-width: 270px;
-    margin: 0 auto;
-    order: 2;
-  }
-
-  .dsg-hero-content {
-    order: 1;
-    text-align: center;
+    padding: 52px 0 55px;
   }
 
   .dsg-hero h1 {
-    margin-left: auto;
-    margin-right: auto;
+    font-size: 2rem;
+    line-height: 1.15;
   }
 
   .dsg-hero-subtitle {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .dsg-hero-buttons {
-    justify-content: center;
-  }
-
-  .dsg-about-grid,
-  .dsg-eligibility-grid,
-  .dsg-contact {
-    grid-template-columns: 1fr;
-    gap: 35px;
-  }
-
-  .dsg-research-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .dsg-benefits {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-
-@media (max-width: 600px) {
-
-  .dsg-container {
-    width: min(100% - 28px, 1120px);
-  }
-
-  .dsg-nav,
-  .dsg-nav-inner {
-    height: 62px;
-  }
-
-  .dsg-hero {
-    padding: 45px 0 50px;
-  }
-
-  .dsg-hero h1 {
-  font-size: 2rem;
-}
-  .dsg-hero-subtitle {
-    font-size: .92rem;
+    font-size: 0.9rem;
   }
 
   .dsg-hero-buttons {
     flex-direction: column;
+    width: 100%;
   }
 
   .dsg-btn {
@@ -617,37 +657,33 @@ author_profile: false
   }
 
   .dsg-section {
-    padding: 55px 0;
+    padding: 53px 0;
   }
 
   .dsg-section-title {
-    font-size: 2rem;
+    font-size: 1.9rem;
+  }
+
+  .dsg-research-grid {
+    grid-template-columns: 1fr;
   }
 
   .dsg-benefits {
     grid-template-columns: 1fr;
   }
 
-  .dsg-research-card {
-    padding: 24px;
+  .dsg-contact {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   .dsg-footer-inner {
     flex-direction: column;
     text-align: center;
   }
+
 }
 
-  /* =========================================================
-   HIDE ACADEMICPAGES THEME FOOTER ON JUCo DSRG PAGE
-   ========================================================= */
-
-.dsg-page ~ footer,
-.dsg-page + footer,
-body:has(.dsg-page) .page__footer {
-  display: none !important;
-}
-  
 </style>
 
 
@@ -665,21 +701,28 @@ body:has(.dsg-page) .page__footer {
         JUCo <span>DSRG</span>
       </a>
 
-     <div class="dsg-nav-links">
-  <a href="#about">About</a>
-  <a href="#research">Research</a>
-  <a href="#benefits">Benefits</a>
-  <a href="#eligibility">Eligibility</a>
-  <a href="team.html">Our Team</a>
-  <a href="#contact">Contact</a>
+      <div class="dsg-nav-links">
 
-  <a
-    href="https://docs.google.com/forms/d/e/1FAIpQLSdE_PLZIWvUD9PIuf6cEvt1kiW3G8rO6i7HODfC_QFsuVM6fw/viewform?usp=header"
-    class="dsg-nav-apply"
-  >
-    Apply
-  </a>
-</div>
+        <a href="#about">About</a>
+
+        <a href="#research">Research</a>
+
+        <a href="#benefits">Benefits</a>
+
+        <a href="#eligibility">Eligibility</a>
+
+        <a href="team.html">Our Team</a>
+
+        <a href="#contact">Contact</a>
+
+        <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSdE_PLZIWvUD9PIuf6cEvt1kiW3G8rO6i7HODfC_QFsuVM6fw/viewform?usp=header"
+          class="dsg-nav-apply"
+        >
+          Apply
+        </a>
+
+      </div>
 
     </div>
 
@@ -695,82 +738,53 @@ body:has(.dsg-page) .page__footer {
 
     <section class="dsg-hero">
 
-      <div class="dsg-container dsg-hero-grid">
+      <div class="dsg-container dsg-hero-content">
 
+        <div class="dsg-eyebrow">
+          JUCo DSRG · 2026/2027
+        </div>
 
-        <!-- PROGRAMME LEAD -->
+        <h1>
+          Data Science &amp;
+          <span>Modelling</span>
+          Research Group
+        </h1>
 
-        <div class="dsg-lead">
+        <p class="dsg-hero-subtitle">
+          An interdisciplinary early-career research initiative
+          at Jordan University College, Morogoro, bringing together
+          mathematics, data science, statistical analysis,
+          and mathematical modelling.
+        </p>
 
-          <img
-            src="https://FomeA.github.io/images/159.png"
-            alt="Dr. Anna Fome"
-            class="dsg-lead-image"
+        <div class="dsg-hero-buttons">
+
+          <a
+            href="curriculum.html"
+            class="dsg-btn dsg-btn-primary"
           >
+            Explore Programme
+          </a>
 
-          <div class="dsg-lead-label">
-            PROGRAMME LEAD
-          </div>
+          <a
+            href="#research"
+            class="dsg-btn dsg-btn-outline"
+          >
+            Research Areas
+          </a>
 
-          <h3>
-            Dr. Anna Fome
-          </h3>
-
-          <p>
-            Mathematician and researcher in data science,
-            statistical analysis, and mathematical modelling.
-          </p>
-
-          <a href="team.html" class="dsg-profile-link">
-            View Profile →
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSdE_PLZIWvUD9PIuf6cEvt1kiW3G8rO6i7HODfC_QFsuVM6fw/viewform?usp=header"
+            class="dsg-btn dsg-btn-outline"
+          >
+            Apply Now
           </a>
 
         </div>
 
+      </div>
 
-        <!-- HERO CONTENT -->
-
-        <section class="dsg-hero">
-
-  <div class="dsg-container dsg-hero-content">
-
-    <div class="dsg-eyebrow">
-      JUCo DSRG · 2026/2027
-    </div>
-
-    <h1>
-      Data Science &amp;
-      <span>Modelling</span>
-      Research Group
-    </h1>
-
-    <p class="dsg-hero-subtitle">
-      An interdisciplinary early-career research initiative
-      at Jordan University College, Morogoro, bringing together
-      mathematics, data science, statistical analysis,
-      and mathematical modelling.
-    </p>
-
-    <div class="dsg-hero-buttons">
-
-      <a href="curriculum.html" class="dsg-btn dsg-btn-primary">
-        Explore Programme
-      </a>
-
-      <!--<a href="#research" class="dsg-btn dsg-btn-outline">
-        Research Areas
-    </a>
-
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdE_PLZIWvUD9PIuf6cEvt1kiW3G8rO6i7HODfC_QFsuVM6fw/viewform?usp=header"
-         class="dsg-btn dsg-btn-outline">
-        Apply Now
-      </a>-->
-
-    </div>
-
-  </div>
-
-</section>
+    </section>
 
 
     <!-- ===================================================
@@ -929,62 +943,110 @@ body:has(.dsg-page) .page__footer {
 
 
           <div class="dsg-benefit">
-            <div class="dsg-benefit-number">01</div>
-            <h3>Data Science Skills</h3>
+
+            <div class="dsg-benefit-number">
+              01
+            </div>
+
+            <h3>
+              Data Science Skills
+            </h3>
+
             <p>
               Develop practical skills in data analysis,
               statistics, and computational methods.
             </p>
+
           </div>
 
 
           <div class="dsg-benefit">
-            <div class="dsg-benefit-number">02</div>
-            <h3>Mathematical Modelling</h3>
+
+            <div class="dsg-benefit-number">
+              02
+            </div>
+
+            <h3>
+              Mathematical Modelling
+            </h3>
+
             <p>
               Learn how mathematical models can represent
               real-world systems and research problems.
             </p>
+
           </div>
 
 
           <div class="dsg-benefit">
-            <div class="dsg-benefit-number">03</div>
-            <h3>Research Experience</h3>
+
+            <div class="dsg-benefit-number">
+              03
+            </div>
+
+            <h3>
+              Research Experience
+            </h3>
+
             <p>
               Gain experience developing questions,
               analysing evidence, and communicating findings.
             </p>
+
           </div>
 
 
           <div class="dsg-benefit">
-            <div class="dsg-benefit-number">04</div>
-            <h3>Academic Development</h3>
+
+            <div class="dsg-benefit-number">
+              04
+            </div>
+
+            <h3>
+              Academic Development
+            </h3>
+
             <p>
               Strengthen quantitative reasoning and
               academic research skills.
             </p>
+
           </div>
 
 
           <div class="dsg-benefit">
-            <div class="dsg-benefit-number">05</div>
-            <h3>Mentorship</h3>
+
+            <div class="dsg-benefit-number">
+              05
+            </div>
+
+            <h3>
+              Mentorship
+            </h3>
+
             <p>
               Work within a supportive environment with
               guidance from experienced researchers.
             </p>
+
           </div>
 
 
           <div class="dsg-benefit">
-            <div class="dsg-benefit-number">06</div>
-            <h3>Career Preparation</h3>
+
+            <div class="dsg-benefit-number">
+              06
+            </div>
+
+            <h3>
+              Career Preparation
+            </h3>
+
             <p>
               Build transferable analytical skills useful
               for research, industry, and postgraduate study.
             </p>
+
           </div>
 
 
@@ -1048,19 +1110,22 @@ body:has(.dsg-page) .page__footer {
 
           </ul>
 
+
+          <div class="dsg-inclusion-note">
+
+            <strong>
+              Women are encouraged to apply.
+            </strong>
+
+            <span>
+              We particularly welcome applications from women
+              interested in mathematics, data science, statistics,
+              computing, and quantitative research.
+            </span>
+
+          </div>
+
         </div>
-
-        <div class="dsg-inclusion-note">
-
-  <strong>Women are encouraged to join.</strong>
-
-  <span>
-    We particularly welcome applications from women interested
-    in mathematics, data science, statistics, computing,
-    and quantitative research.
-  </span>
-
-</div>
 
       </div>
 
@@ -1090,41 +1155,78 @@ body:has(.dsg-page) .page__footer {
 
         <div class="dsg-benefits">
 
+
           <div class="dsg-benefit">
-            <div class="dsg-benefit-number">01</div>
-            <h3>Motivation</h3>
+
+            <div class="dsg-benefit-number">
+              01
+            </div>
+
+            <h3>
+              Motivation
+            </h3>
+
             <p>
               Genuine interest in research, data, mathematics,
               or modelling.
             </p>
+
           </div>
 
+
           <div class="dsg-benefit">
-            <div class="dsg-benefit-number">02</div>
-            <h3>Commitment</h3>
+
+            <div class="dsg-benefit-number">
+              02
+            </div>
+
+            <h3>
+              Commitment
+            </h3>
+
             <p>
               Willingness to participate consistently
               throughout the programme.
             </p>
+
           </div>
 
+
           <div class="dsg-benefit">
-            <div class="dsg-benefit-number">03</div>
-            <h3>Quantitative Interest</h3>
+
+            <div class="dsg-benefit-number">
+              03
+            </div>
+
+            <h3>
+              Quantitative Interest
+            </h3>
+
             <p>
               Curiosity about using numbers, evidence,
               and models to understand problems.
             </p>
+
           </div>
 
+
           <div class="dsg-benefit">
-            <div class="dsg-benefit-number">04</div>
-            <h3>No Prior Coding Required</h3>
+
+            <div class="dsg-benefit-number">
+              04
+            </div>
+
+            <h3>
+              No Prior Coding Required
+            </h3>
+
             <p>
               Beginners are welcome and can develop
               computational skills during the programme.
             </p>
+
           </div>
+
 
         </div>
 
@@ -1134,7 +1236,7 @@ body:has(.dsg-page) .page__footer {
 
 
     <!-- ===================================================
-         CTA
+         CALL TO ACTION
          =================================================== -->
 
     <section class="dsg-cta">
@@ -1189,6 +1291,7 @@ body:has(.dsg-page) .page__footer {
 
         <div class="dsg-contact">
 
+
           <div class="dsg-contact-box">
 
             <h3>
@@ -1216,6 +1319,7 @@ body:has(.dsg-page) .page__footer {
             </p>
 
           </div>
+
 
         </div>
 
