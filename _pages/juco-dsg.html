@@ -703,6 +703,16 @@ author_profile: false
   }
 }
 
+  /* =========================================================
+   HIDE ACADEMICPAGES THEME FOOTER ON JUCo DSRG PAGE
+   ========================================================= */
+
+.dsg-page ~ footer,
+.dsg-page + footer,
+body:has(.dsg-page) .page__footer {
+  display: none !important;
+}
+  
 </style>
 
 
