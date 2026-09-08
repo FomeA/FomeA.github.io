@@ -9,1005 +9,114 @@ redirect_from:
 ---
 
 <style>
-
-/* =========================================================
-   ACADEMIC HOMEPAGE
-   ========================================================= */
-
-.page__content {
-  max-width: 980px;
-  margin: auto;
-  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  color: #334155;
-  line-height: 1.75;
-}
-
-/* =========================================================
-   SECTIONS
-   ========================================================= */
-
-.section {
-  margin: 65px 0;
-}
-
-.section h2 {
-  font-size: 2rem;
-  margin-bottom: 12px;
-  color: #0f172a;
-  border-bottom: 2px solid #e2e8f0;
-  padding-bottom: 10px;
-  letter-spacing: -0.02em;
-}
-
-.section-intro {
-  color: #64748b;
-  margin: 0 0 28px;
-  font-size: 1.02rem;
-}
-
-/* =========================================================
-   INTRO
-   ========================================================= */
-
-.intro {
-  background: #f8fafc;
-  border: 1px solid #e2e8f0;
-  border-radius: 18px;
-  padding: 38px;
-  margin-bottom: 65px;
-}
-
-.intro p {
-  font-size: 1.08rem;
-  margin: 0 0 18px;
-}
-
-.intro p:last-of-type {
-  margin-bottom: 0;
-}
-
-.intro strong {
-  color: #0f172a;
-}
-
-/* Research keywords */
-
-.research-keywords {
-  margin-top: 25px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 9px;
-}
-
-.research-keywords span {
-  background: white;
-  border: 1px solid #dbe3ec;
-  border-radius: 999px;
-  padding: 6px 13px;
-  font-size: .88rem;
-  font-weight: 600;
-  color: #475569;
-}
-
-/* =========================================================
-   BUTTONS
-   ========================================================= */
-
-.buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 28px;
-}
-
-.btn {
-  display: inline-block;
-  text-decoration: none;
-  padding: 11px 18px;
-  border-radius: 10px;
-  font-weight: 600;
-  transition: .25s ease;
-}
-
-.btn-primary {
-  background: #2563eb;
-  color: white !important;
-}
-
-.btn-primary:hover {
-  background: #1d4ed8;
-  transform: translateY(-1px);
-}
-
-.btn-light {
-  background: white !important;
-  border: 1px solid #2563eb !important;
-  color: #2563eb !important;
-}
-
-.btn-light:hover {
-  background: #f8fafc !important;
-  border-color: #1d4ed8 !important;
-  color: #1d4ed8 !important;
-  transform: translateY(-1px);
-}
-
-/* =========================================================
-   CARDS
-   ========================================================= */
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 18px;
-}
-
-.card {
-  background: white;
-  border: 1px solid #e2e8f0;
-  border-radius: 16px;
-  padding: 24px;
-  transition: .25s ease;
-}
-
-.card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, .06);
-}
-
-.card h3 {
-  margin-top: 0;
-  margin-bottom: 9px;
-  color: #0f172a;
-  font-size: 1.15rem;
-}
-
-.card p {
-  margin-bottom: 12px;
-  font-size: .96rem;
-}
-
-.card-link {
-  color: #2563eb;
-  font-weight: 600;
-  text-decoration: none;
-  font-size: .92rem;
-}
-
-.card-link:hover {
-  text-decoration: underline;
-}
-
-/* =========================================================
-   RESEARCH
-   ========================================================= */
-
-.research-card {
-  border-top: 4px solid #2563eb;
-}
-
-/* =========================================================
-   PUBLICATIONS
-   ========================================================= */
-
-.publication-list {
-  display: flex;
-  flex-direction: column;
-  gap: 17px;
-}
-
-.publication {
-  background: white;
-  border: 1px solid #e2e8f0;
-  border-radius: 14px;
-  padding: 22px 25px;
-}
-
-.publication p {
-  margin: 7px 0;
-}
-
-.publication-status {
-  display: inline-block;
-  font-size: .72rem;
-  font-weight: 700;
-  letter-spacing: .07em;
-  color: #2563eb;
-  margin-bottom: 4px;
-}
-
-.publication-title {
-  color: #0f172a;
-}
-
-.publication-meta {
-  font-size: .88rem;
-  color: #64748b;
-}
-
-.publication-meta a {
-  color: #2563eb;
-  text-decoration: none;
-}
-
-.publication-meta a:hover {
-  text-decoration: underline;
-}
-
-.more-link {
-  margin-top: 22px;
-  text-align: right;
-}
-
-.more-link a {
-  color: #2563eb;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.more-link a:hover {
-  text-decoration: underline;
-}
-
-/* =========================================================
-   CONFERENCES
-   ========================================================= */
-
-.conference-list {
-  display: flex;
-  flex-direction: column;
-}
-
-.conference {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 25px;
-  padding: 17px 0;
-  border-bottom: 1px solid #e2e8f0;
-}
-
-.conference:first-child {
-  border-top: 1px solid #e2e8f0;
-}
-
-.conference-name {
-  color: #0f172a;
-  font-weight: 600;
-}
-
-.conference-type {
-  white-space: nowrap;
-  font-size: .86rem;
-  font-weight: 600;
-  color: #64748b;
-  background: #f8fafc;
-  border: 1px solid #e2e8f0;
-  border-radius: 8px;
-  padding: 5px 10px;
-}
-
-/* =========================================================
-   GRANTS
-   ========================================================= */
-
-.grant-card h3 {
-  margin-bottom: 7px;
-}
-
-.grant-card p {
-  margin: 0;
-}
-
-/* =========================================================
-   VISION
-   ========================================================= */
-
-.vision {
-  background: #f8fafc;
-  border-left: 5px solid #2563eb;
-  padding: 30px;
-  border-radius: 14px;
-}
-
-.vision p {
-  margin: 0;
-  font-size: 1.05rem;
-}
-
-/* =========================================================
-   FOCUS BOX
-   ========================================================= */
-
-.focus-box {
-  background: #fff;
-  border: 1px solid #e2e8f0;
-  border-radius: 16px;
-  padding: 25px;
-  margin-top: 20px;
-}
-
-.focus-box h3 {
-  margin-top: 0;
-  color: #0f172a;
-}
-
-.focus-box ul {
-  margin-bottom: 0;
-}
-
-/* =========================================================
-   ANIMATION
-   ========================================================= */
-
-.reveal {
-  opacity: 0;
-  transform: translateY(18px);
-  transition: opacity .7s ease, transform .7s ease;
-}
-
-.reveal.active {
-  opacity: 1;
-  transform: none;
-}
-
-/* =========================================================
-   ACCESSIBILITY
-   ========================================================= */
-
-.btn:focus-visible,
-a:focus-visible {
-  outline: 3px solid #93c5fd;
-  outline-offset: 3px;
-}
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media (max-width: 768px) {
-
-  .section {
-    margin: 48px 0;
-  }
-
-  .intro {
-    padding: 25px;
-    margin-bottom: 48px;
-  }
-
-  .intro p {
-    font-size: 1rem;
-  }
-
-  .section h2 {
-    font-size: 1.65rem;
-  }
-
-  .card {
-    padding: 20px;
-  }
-
-  .conference {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-  }
-
-  .conference-type {
-    white-space: normal;
-  }
-
-}
-
-/* =========================================================
-   REDUCED MOTION
-   ========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-  .reveal {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
-
-  .card,
-  .btn {
-    transition: none;
-  }
-
-  .card:hover,
-  .btn:hover {
-    transform: none;
-  }
-
-}
-
+.daf-page{--navy:#0b1f3a;--navy2:#102a43;--teal:#0f766e;--gold:#c49a3a;--ink:#172033;--text:#3d4a5d;--muted:#6b7788;--line:#dfe5ec;--soft:#f5f7fa;--white:#fff;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--text);line-height:1.75;margin:0 auto}
+.daf-page *{box-sizing:border-box}.daf-container{max-width:1120px;margin:0 auto;padding:0 28px}
+.daf-hero{position:relative;overflow:hidden;background:radial-gradient(circle at 88% 18%,rgba(196,154,58,.18),transparent 28%),linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;margin:0 -28px}
+.daf-hero-inner{position:relative;z-index:1;min-height:510px;display:grid;grid-template-columns:1.35fr .65fr;align-items:center;gap:55px;padding:68px 28px}
+.daf-kicker{display:inline-flex;align-items:center;gap:10px;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:#dcebe9;margin-bottom:20px}.daf-kicker:before{content:"";width:30px;height:2px;background:var(--gold)}
+.daf-hero h1{max-width:760px;margin:0;font-size:clamp(2.55rem,5vw,4.5rem);line-height:1.03;letter-spacing:-.045em;color:#fff;font-weight:750}.daf-hero h1 span{color:#8fd1c9}
+.daf-hero-lead{max-width:690px;margin:25px 0 0;color:#d9e2eb;font-size:1.16rem;line-height:1.8}
+.daf-hero-actions{display:flex;flex-wrap:wrap;gap:11px;margin-top:30px}.daf-btn{display:inline-block;text-decoration:none!important;padding:11px 18px;border-radius:8px;font-weight:700;transition:.2s ease}.daf-btn-primary{background:var(--gold);color:#172033!important}.daf-btn-primary:hover{transform:translateY(-2px);background:#d1aa50}.daf-btn-ghost{color:#fff!important;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.05)}.daf-btn-ghost:hover{transform:translateY(-2px);background:rgba(255,255,255,.1)}
+.daf-hero-side{border-left:1px solid rgba(255,255,255,.18);padding-left:38px}.daf-side-label{margin:0 0 18px;color:#a8bac9;font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase}.daf-research-list{list-style:none;padding:0;margin:0}.daf-research-list li{padding:13px 0;border-bottom:1px solid rgba(255,255,255,.12);color:#edf3f7;font-weight:600}.daf-research-list li:last-child{border-bottom:0}
+.daf-identity{padding:34px 0;border-bottom:1px solid var(--line)}.daf-identity-inner{display:flex;align-items:center;justify-content:space-between;gap:25px}.daf-identity-label{color:var(--muted);font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap}.daf-keywords{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:8px 10px}.daf-keywords span{color:var(--navy);font-size:.83rem;font-weight:700;letter-spacing:.03em}
+.daf-section{padding:78px 0}.daf-section+.daf-section{border-top:1px solid var(--line)}.daf-section-head{max-width:720px;margin-bottom:38px}.daf-eyebrow{color:var(--teal);font-size:.75rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;margin-bottom:8px}.daf-section h2{margin:0;color:var(--navy);font-size:clamp(2rem,4vw,2.75rem);line-height:1.15;letter-spacing:-.035em}.daf-section-intro{margin:15px 0 0;color:var(--muted);font-size:1.03rem}
+.daf-research-feature{display:grid;grid-template-columns:1.15fr .85fr;gap:42px;align-items:stretch}.daf-feature-main{padding:38px;background:var(--soft);border:1px solid var(--line);border-radius:14px;border-top:4px solid var(--teal)}.daf-feature-main h3{margin:0 0 15px;color:var(--navy);font-size:1.55rem;letter-spacing:-.02em}.daf-feature-main p{margin:0 0 20px}.daf-feature-main strong{color:var(--navy)}.daf-theme-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}.daf-theme{padding:20px;border:1px solid var(--line);background:#fff;border-radius:10px}.daf-theme h4{margin:0 0 7px;color:var(--navy);font-size:.98rem}.daf-theme p{margin:0;font-size:.9rem;color:var(--muted)}.daf-feature-side{display:flex;flex-direction:column;justify-content:center;padding:10px 0}.daf-feature-side h3{color:var(--navy);margin:0 0 15px;font-size:1.3rem}.daf-feature-side p{margin:0 0 20px}
+.daf-publications{display:flex;flex-direction:column;gap:14px}.daf-publication{display:grid;grid-template-columns:105px 1fr;gap:25px;padding:24px 0;border-bottom:1px solid var(--line)}.daf-publication:first-child{border-top:1px solid var(--line)}.daf-pub-year{color:var(--teal);font-size:.82rem;font-weight:800;letter-spacing:.08em}.daf-pub-title{margin:0 0 6px;color:var(--navy);font-weight:700;font-size:1.03rem}.daf-pub-meta{margin:0;color:var(--muted);font-size:.88rem}.daf-pub-meta a{color:var(--teal);text-decoration:none;font-weight:650}
+.daf-two-column{display:grid;grid-template-columns:1fr 1fr;gap:65px}.daf-info-block h3{color:var(--navy);margin:0 0 15px;font-size:1.35rem}.daf-info-block p{margin-top:0}.daf-info-list{list-style:none;padding:0;margin:20px 0 0}.daf-info-list li{padding:12px 0;border-bottom:1px solid var(--line)}.daf-info-list li:before{content:"→";color:var(--teal);font-weight:800;margin-right:10px}
+.daf-journey{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.daf-journey-card{padding:27px;background:var(--soft);border:1px solid var(--line);border-radius:12px}.daf-journey-card h3{margin:0 0 8px;color:var(--navy);font-size:1.05rem}.daf-journey-card p{margin:0;color:var(--muted);font-size:.92rem}
+.daf-vision{background:var(--navy);color:#fff;border-radius:16px;padding:48px;position:relative;overflow:hidden}.daf-vision h2{color:#fff;max-width:650px}.daf-vision p{max-width:760px;margin:20px 0 0;color:#dbe4ec;font-size:1.08rem}
+.daf-footer{margin-top:15px;padding:35px 0 45px;border-top:1px solid var(--line);color:var(--muted);font-size:.86rem}.daf-footer-inner{display:flex;justify-content:space-between;gap:20px}.daf-footer strong{color:var(--navy)}
+.daf-reveal{opacity:0;transform:translateY(14px);transition:opacity .65s ease,transform .65s ease}.daf-reveal.active{opacity:1;transform:none}.daf-page a:focus-visible{outline:3px solid #8fd1c9;outline-offset:3px}
+@media(max-width:850px){.daf-hero{margin-left:-18px;margin-right:-18px}.daf-hero-inner,.daf-research-feature,.daf-two-column{grid-template-columns:1fr}.daf-hero-inner{min-height:auto;gap:42px;padding-top:55px;padding-bottom:55px}.daf-hero-side{border-left:0;border-top:1px solid rgba(255,255,255,.18);padding-left:0;padding-top:25px}.daf-identity-inner{align-items:flex-start;flex-direction:column}.daf-keywords{justify-content:flex-start}.daf-journey{grid-template-columns:1fr}.daf-publication{grid-template-columns:70px 1fr;gap:15px}}
+@media(max-width:560px){.daf-container{padding-left:20px;padding-right:20px}.daf-hero h1{font-size:2.45rem}.daf-hero-lead{font-size:1rem}.daf-section{padding:58px 0}.daf-feature-main{padding:25px}.daf-theme-grid{grid-template-columns:1fr}.daf-vision{padding:32px 25px}.daf-footer-inner{flex-direction:column}}
+@media(prefers-reduced-motion:reduce){.daf-reveal{opacity:1;transform:none;transition:none}.daf-btn{transition:none}}
 </style>
 
-<!-- =========================================================
-     INTRODUCTION
-     ========================================================= -->
-
-<section class="intro reveal">
-
-<p>
-I am an <strong>applied mathematician and educator</strong> interested in
-mathematical modelling, statistics, epidemiology, and data science.
-My research focuses on developing quantitative approaches for
-understanding and addressing practical challenges in public health,
-education, and community development.
-</p>
-
-<p>
-My work brings together <strong>mathematical modelling</strong>,
-<strong>biostatistics</strong>, <strong>numerical methods</strong>,
-and <strong>statistical computing</strong> to translate complex
-data and systems into useful evidence for decision-making, with
-particular interest in applications in Tanzania and beyond.
-</p>
-
-<div class="research-keywords">
-  <span>Mathematical Modelling</span>
-  <span>Biostatistics</span>
-  <span>Epidemiology</span>
-  <span>Data Science</span>
-  <span>Numerical Analysis</span>
-  <span>Public Health</span>
+<div class="daf-page">
+<section class="daf-hero">
+<div class="daf-container daf-hero-inner">
+<div>
+<div class="daf-kicker">Applied Mathematics · Research · Education</div>
+<h1>Dr. Anna <span>Fome</span></h1>
+<p class="daf-hero-lead">Applied mathematician, researcher, and educator working at the intersection of mathematical modelling, statistics, data science, and public health.</p>
+<div class="daf-hero-actions">
+<a href="#research" class="daf-btn daf-btn-primary">Explore Research</a>
+<a href="{{ site.baseurl }}/publications/" class="daf-btn daf-btn-ghost">Publications</a>
+<a href="{{ site.baseurl }}/files/CV.pdf" class="daf-btn daf-btn-ghost">Curriculum Vitae</a>
 </div>
-
-<div class="buttons">
-
-<a href="{{ site.baseurl }}/files/CV.pdf" class="btn btn-primary">
-Curriculum Vitae
-</a>
-
-<a href="{{ site.baseurl }}/publications/" class="btn btn-light">
-Publications
-</a>
-
-<a href="{{ site.baseurl }}/juco-dsg/" class="btn btn-light">
-Research Group
-</a>
-
 </div>
-
-</section>
-
-<!-- =========================================================
-     RESEARCH ACTIVITIES
-     ========================================================= -->
-
-<section class="section reveal">
-
-<h2>Research Activities</h2>
-
-<p class="section-intro">
-My current research activities combine mathematical modelling,
-statistical analysis, and data science to address problems in
-infectious diseases and public health.
-</p>
-
-<div class="grid">
-
-<div class="card research-card">
-
-<h3>Data Science Research Group</h3>
-
-<p>
-The <strong>Data Science Research Group (DSRG)</strong> brings together
-research, training, and collaborative activities in data science,
-statistical modelling, computational methods, and applied research.
-</p>
-
-<a href="{{ site.baseurl }}/juco-dsg/" class="card-link">
-Explore DSRG →
-</a>
-
-</div>
-
-<div class="card research-card">
-
-<h3>Malaria & TB Co-infections</h3>
-
-<p>
-Ongoing research investigating quantitative and mathematical approaches
-to understanding the dynamics and public-health implications of
-malaria and tuberculosis co-infections.
-</p>
-
-</div>
-
-<div class="card research-card">
-
-<h3>TB & HIV Co-infection</h3>
-
-<p>
-Ongoing research on the dynamics of tuberculosis and HIV co-infection,
-with an emphasis on mathematical modelling and evidence-based
-public-health decision-making.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- =========================================================
-     TEACHING
-     ========================================================= -->
-
-<section class="section reveal">
-
-<h2>Teaching</h2>
-
-<p class="section-intro">
-Teaching activities connect mathematical theory, statistical reasoning,
-and computational methods with practical applications.
-</p>
-
-<div class="grid">
-
-<div class="card">
-
-<h3>Introductory Statistics</h3>
-
-<p>
-Foundations of statistical reasoning, data analysis, interpretation,
-and applied statistics.
-</p>
-
-<a href="{{ site.baseurl }}/teaching/qms101/" class="card-link">
-Explore course →
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>Ordinary Differential Equations</h3>
-
-<p>
-Analytical and qualitative methods for differential equations and
-their applications in mathematical modelling.
-</p>
-
-<a href="{{ site.baseurl }}/teaching/mat102/" class="card-link">
-Explore course →
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>Numerical Analysis I</h3>
-
-<p>
-Numerical methods for solving mathematical problems using
-computational and approximation techniques.
-</p>
-
-<a href="{{ site.baseurl }}/teaching/mat103/" class="card-link">
-Explore course →
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>Mentorship & Supervision</h3>
-
-<p>
-Supporting students and early-career researchers through research,
-quantitative methods, academic development, and independent study.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- =========================================================
-     SELECTED PUBLICATIONS
-     ========================================================= -->
-
-<section class="section reveal">
-
-<h2>Selected Publications</h2>
-
-<p class="section-intro">
-Selected peer-reviewed publications and scholarly contributions in
-mathematical modelling, epidemiology, and applied mathematics.
-</p>
-
-<div class="publication-list">
-
-<div class="publication">
-
-<span class="publication-status">
-PUBLISHED · 2025
-</span>
-
-<p>
-<strong class="publication-title">
-Fome, A.D., Isti, R., Bock, W., Lange, B., Klar, A.
-</strong>
-(2025).
-Influenza–COVID-19 co-circulation in Germany 2020–2022:
-competitive dynamics with quarantine & cross-immunity.
-<em>BMC Public Health.</em>
-</p>
-
-<p class="publication-meta">
-DOI:
-<a href="https://doi.org/10.1186/s12889-025-24362-z"
-target="_blank" rel="noopener">
-10.1186/s12889-025-24362-z
-</a>
-· Cited: 2
-</p>
-
-</div>
-
-<div class="publication">
-
-<span class="publication-status">
-PUBLISHED · 2025
-</span>
-
-<p>
-<strong class="publication-title">
-Fome, A.D., Bock, W., Klar, A.
-</strong>
-(2025).
-Competitive respiratory disease system with quarantine:
-epidemic thresholds & cross-immunity.
-<em>Applied Mathematics and Computation.</em>
-</p>
-
-<p class="publication-meta">
-DOI:
-<a href="https://doi.org/10.1016/j.amc.2024.128968"
-target="_blank" rel="noopener">
-10.1016/j.amc.2024.128968
-</a>
-· Cited: 4
-</p>
-
-</div>
-
-<div class="publication">
-
-<span class="publication-status">
-PUBLISHED · 2023
-</span>
-
-<p>
-<strong class="publication-title">
-Fome, A.D. et al.
-</strong>
-(2023).
-A deterministic SIR model for studying the impact of media
-on epidemic dynamics.
-<em>Healthcare Analytics, 3.</em>
-</p>
-
-<p class="publication-meta">
-DOI:
-<a href="https://doi.org/10.1016/j.health.2023.100189"
-target="_blank" rel="noopener">
-10.1016/j.health.2023.100189
-</a>
-· Cited: 17
-</p>
-
-</div>
-
-<div class="publication">
-
-<span class="publication-status">
-PUBLISHED · 2022
-</span>
-
-<p>
-<strong class="publication-title">
-Fome, A.D. et al.
-</strong>
-(2022).
-Hematological & biochemical reference ranges for SCD patients
-in Tanzania.
-<em>Hemato, 3</em>(1), 82–97.
-</p>
-
-<p class="publication-meta">
-DOI:
-<a href="https://doi.org/10.3390/hemato3010007"
-target="_blank" rel="noopener">
-10.3390/hemato3010007
-</a>
-· Cited: 9
-</p>
-
-</div>
-
-<div class="publication">
-
-<span class="publication-status">
-BOOK CHAPTER · 2026
-</span>
-
-<p>
-<strong class="publication-title">
-Fome, A.D., Bock, W., Klar, A.
-</strong>
-(2026).
-Dynamics Around Equilibria in a Competitive Respiratory Disease
-System with Quarantine.
-In Burnecki, K., Szwabiński, J., Teuerle, M. (eds.),
-<em>Progress in Industrial Mathematics at ECMI 2023</em>.
-Mathematics in Industry, Vol. 41. Springer, Cham.
-</p>
-
-<p class="publication-meta">
-DOI:
-<a href="https://doi.org/10.1007/978-3-032-20404-2_16"
-target="_blank" rel="noopener">
-10.1007/978-3-032-20404-2_16
-</a>
-</p>
-
-</div>
-
-</div>
-
-<p class="more-link">
-<a href="{{ site.baseurl }}/publications/">
-View full list of publications →
-</a>
-</p>
-
-</section>
-
-<!-- =========================================================
-     TALKS & CONFERENCES
-     ========================================================= -->
-
-<section class="section reveal">
-
-<h2>Talks & Conferences</h2>
-
-<p class="section-intro">
-Selected presentations, posters, research visits, and scientific
-meetings.
-</p>
-
-<div class="conference-list">
-
-<div class="conference">
-
-<span class="conference-name">
-4th Ifakara Annual Scientific Conference, Tanzania
-</span>
-
-<span class="conference-type">
-Talk
-</span>
-
-</div>
-
-<div class="conference">
-
-<span class="conference-name">
-6th Young Researchers Symposium, RPTU, Germany
-</span>
-
-<span class="conference-type">
-Pitch + Poster
-</span>
-
-</div>
-
-<div class="conference">
-
-<span class="conference-name">
-2nd MONID Infectious Disease Modelling Conference, Halle, Germany
-</span>
-
-<span class="conference-type">
-Pitch + Poster
-</span>
-
-</div>
-
-<div class="conference">
-
-<span class="conference-name">
-Research Visit, Linnaeus University, Växjö, Sweden
-</span>
-
-<span class="conference-type">
-Talk
-</span>
-
-</div>
-
-<div class="conference">
-
-<span class="conference-name">
-Joint African-Nordic Conference in Mathematics, Uganda
-</span>
-
-<span class="conference-type">
-Talk (Hybrid)
-</span>
-
-</div>
-
-<div class="conference">
-
-<span class="conference-name">
-22nd ECMI Conference on Industrial & Applied Mathematics, Poland
-</span>
-
-<span class="conference-type">
-Talk
-</span>
-
-</div>
-
-<div class="conference">
-
-<span class="conference-name">
-14th DSABNS Conference on Dynamical Systems, Bilbao, Spain
-</span>
-
-<span class="conference-type">
-Poster
-</span>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- =========================================================
-     GRANTS & SCHOLARSHIPS
-     ========================================================= -->
-
-<section class="section reveal">
-
-<h2>Grants & Scholarships</h2>
-
-<p class="section-intro">
-Selected scholarships and research funding supporting academic
-training, research, and professional development.
-</p>
-
-<div class="grid">
-
-<div class="card grant-card">
-
-<h3>DAAD Scholarship</h3>
-
-<p>
-PhD in Mathematics<br>
-RPTU Kaiserslautern-Landau, Germany
-</p>
-
-</div>
-
-<div class="card grant-card">
-
-<h3>AIMS–GSK Funds</h3>
-
-<p>
-Funding support for an internship at the
-Muhimbili Sickle-Cell Program.
-</p>
-
-</div>
-
-<div class="card grant-card">
-
-<h3>Mastercard Foundation Scholarship</h3>
-
-<p>
-MSc Mathematical Sciences<br>
-African Institute for Mathematical Sciences (AIMS)
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- =========================================================
-     MENTORSHIP & SUPERVISION
-     ========================================================= -->
-
-<section class="section reveal">
-
-<h2>Mentorship & Supervision</h2>
-
-<div class="focus-box">
-
-<h3>Supporting the next generation of researchers</h3>
-
-<p>
-I am interested in mentoring and supervising students and early-career
-researchers working in areas related to mathematics, statistics,
-data science, mathematical modelling, and public health.
-</p>
-
-<ul>
-<li>Research project development</li>
-<li>Mathematical and statistical modelling</li>
-<li>Data analysis and scientific computing</li>
-<li>Academic writing and research communication</li>
-<li>Undergraduate and postgraduate research mentorship</li>
+<aside class="daf-hero-side">
+<p class="daf-side-label">Research interests</p>
+<ul class="daf-research-list">
+<li>Mathematical Modelling</li><li>Epidemiology &amp; Public Health</li><li>Biostatistics &amp; Data Science</li><li>Numerical &amp; Statistical Methods</li>
 </ul>
-
+</aside>
 </div>
-
 </section>
 
-<!-- =========================================================
-     VISION
-     ========================================================= -->
+<section class="daf-identity"><div class="daf-container daf-identity-inner">
+<div class="daf-identity-label">Research focus</div>
+<div class="daf-keywords"><span>MODELLING</span><span>·</span><span>EPIDEMIOLOGY</span><span>·</span><span>BIOSTATISTICS</span><span>·</span><span>DATA SCIENCE</span><span>·</span><span>NUMERICAL ANALYSIS</span></div>
+</div></section>
 
-<section class="section reveal">
-
-<h2>Research Vision</h2>
-
-<div class="vision">
-
-<p>
-My goal is to develop and promote mathematical, statistical, and
-data-driven approaches that connect theory with practical applications.
-Through research, teaching, mentorship, and collaboration, I aim to
-contribute to evidence-based solutions for challenges in public health,
-education, and sustainable development in Tanzania and beyond.
-</p>
-
+<main>
+<section class="daf-section daf-reveal" id="research"><div class="daf-container">
+<div class="daf-section-head"><div class="daf-eyebrow">Research</div><h2>Understanding complex systems through mathematics and data.</h2><p class="daf-section-intro">My research combines mathematical modelling, statistical analysis, and computational methods to investigate practical problems in infectious diseases and public health.</p></div>
+<div class="daf-research-feature">
+<div class="daf-feature-main">
+<h3>Mathematical Modelling of Infectious Diseases</h3>
+<p>I develop and analyse quantitative models to understand disease dynamics, interactions between infections, and factors that influence public-health outcomes. My work brings together <strong>mathematical modelling</strong>, <strong>biostatistics</strong>, numerical methods, and statistical computing.</p>
+<div class="daf-theme-grid">
+<div class="daf-theme"><h4>Malaria &amp; TB</h4><p>Quantitative approaches to malaria and tuberculosis co-infections.</p></div>
+<div class="daf-theme"><h4>TB &amp; HIV</h4><p>Modelling co-infection dynamics and implications for public health.</p></div>
+<div class="daf-theme"><h4>Respiratory Diseases</h4><p>Competitive disease systems, quarantine, and cross-immunity.</p></div>
+<div class="daf-theme"><h4>Statistical &amp; Computational Methods</h4><p>Data-driven analysis supporting mathematical and applied research.</p></div>
 </div>
+</div>
+<div class="daf-feature-side"><h3>From theory to evidence</h3><p>The goal is not only to develop mathematical theory, but to use quantitative methods to generate evidence that can help explain complex systems and inform decision-making.</p><a href="{{ site.baseurl }}/juco-dsg/" class="daf-btn daf-btn-primary">Explore JUCo DSRG →</a></div>
+</div></div></section>
 
-</section>
+<section class="daf-section daf-reveal"><div class="daf-container">
+<div class="daf-section-head"><div class="daf-eyebrow">Selected work</div><h2>Recent publications</h2><p class="daf-section-intro">Selected peer-reviewed publications and scholarly contributions in mathematical modelling, epidemiology, and applied mathematics.</p></div>
+<div class="daf-publications">
+<article class="daf-publication"><div class="daf-pub-year">2026</div><div><p class="daf-pub-title">Fome, A.D., Bock, W., Klar, A. — Dynamics Around Equilibria in a Competitive Respiratory Disease System with Quarantine.</p><p class="daf-pub-meta">In <em>Progress in Industrial Mathematics at ECMI 2023</em>, Mathematics in Industry, Vol. 41. Springer. · <a href="https://doi.org/10.1007/978-3-032-20404-2_16" target="_blank" rel="noopener">DOI</a></p></div></article>
+<article class="daf-publication"><div class="daf-pub-year">2025</div><div><p class="daf-pub-title">Fome, A.D., Isti, R., Bock, W., Lange, B., Klar, A. — Influenza–COVID-19 co-circulation in Germany 2020–2022: competitive dynamics with quarantine &amp; cross-immunity.</p><p class="daf-pub-meta"><em>BMC Public Health.</em> · <a href="https://doi.org/10.1186/s12889-025-24362-z" target="_blank" rel="noopener">DOI</a> · Cited: 2</p></div></article>
+<article class="daf-publication"><div class="daf-pub-year">2025</div><div><p class="daf-pub-title">Fome, A.D., Bock, W., Klar, A. — Competitive respiratory disease system with quarantine: epidemic thresholds &amp; cross-immunity.</p><p class="daf-pub-meta"><em>Applied Mathematics and Computation.</em> · <a href="https://doi.org/10.1016/j.amc.2024.128968" target="_blank" rel="noopener">DOI</a> · Cited: 4</p></div></article>
+<article class="daf-publication"><div class="daf-pub-year">2023</div><div><p class="daf-pub-title">Fome, A.D. et al. — A deterministic SIR model for studying the impact of media on epidemic dynamics.</p><p class="daf-pub-meta"><em>Healthcare Analytics, 3.</em> · <a href="https://doi.org/10.1016/j.health.2023.100189" target="_blank" rel="noopener">DOI</a> · Cited: 17</p></div></article>
+</div>
+<p style="margin:26px 0 0"><a href="{{ site.baseurl }}/publications/" class="daf-btn daf-btn-primary">View all publications →</a></p>
+</div></section>
 
-<!-- =========================================================
-     ANIMATION
-     ========================================================= -->
+<section class="daf-section daf-reveal"><div class="daf-container"><div class="daf-two-column">
+<div class="daf-info-block"><div class="daf-eyebrow">Teaching</div><h3>Connecting mathematics with application.</h3><p>Teaching activities connect mathematical theory, statistical reasoning, and computational methods with practical applications.</p><ul class="daf-info-list"><li><a href="{{ site.baseurl }}/teaching/qms101/">Introductory Statistics</a></li><li><a href="{{ site.baseurl }}/teaching/mat102/">Ordinary Differential Equations</a></li><li><a href="{{ site.baseurl }}/teaching/mat103/">Numerical Analysis I</a></li></ul></div>
+<div class="daf-info-block"><div class="daf-eyebrow">Mentorship</div><h3>Supporting the next generation of researchers.</h3><p>I am interested in mentoring and supervising students and early-career researchers working in mathematics, statistics, data science, mathematical modelling, and public health.</p><ul class="daf-info-list"><li>Research project development</li><li>Mathematical and statistical modelling</li><li>Data analysis and scientific computing</li><li>Academic writing and research communication</li><li>Undergraduate and postgraduate research mentorship</li></ul></div>
+</div></div></section>
+
+<section class="daf-section daf-reveal"><div class="daf-container">
+<div class="daf-section-head"><div class="daf-eyebrow">Academic journey</div><h2>Research, training &amp; international engagement.</h2><p class="daf-section-intro">Selected academic experiences supporting research development, collaboration, and professional growth.</p></div>
+<div class="daf-journey">
+<div class="daf-journey-card"><h3>DAAD Scholarship</h3><p>PhD in Mathematics · RPTU Kaiserslautern-Landau, Germany</p></div>
+<div class="daf-journey-card"><h3>AIMS–GSK Funds</h3><p>Funding support for an internship at the Muhimbili Sickle-Cell Program.</p></div>
+<div class="daf-journey-card"><h3>Mastercard Foundation Scholarship</h3><p>MSc Mathematical Sciences · African Institute for Mathematical Sciences (AIMS)</p></div>
+<div class="daf-journey-card"><h3>International Conferences</h3><p>Research presentations and posters across Tanzania, Germany, Sweden, Poland, Uganda, and Spain.</p></div>
+<div class="daf-journey-card"><h3>Research Visits</h3><p>Academic engagement including a research visit to Linnaeus University, Växjö, Sweden.</p></div>
+<div class="daf-journey-card"><h3>JUCo DSRG</h3><p>Leading a research and training initiative in data science, statistical modelling, and applied research.</p></div>
+</div></div></section>
+
+<section class="daf-section daf-reveal"><div class="daf-container"><div class="daf-vision">
+<div class="daf-eyebrow" style="color:#8fd1c9">Research vision</div><h2>Mathematics that connects theory, data, and real-world problems.</h2>
+<p>My goal is to develop and promote mathematical, statistical, and data-driven approaches that connect theory with practical applications. Through research, teaching, mentorship, and collaboration, I aim to contribute to evidence-based solutions for challenges in public health, education, and sustainable development in Tanzania and beyond.</p>
+</div></div></section>
+</main>
+
+<footer class="daf-footer"><div class="daf-container daf-footer-inner"><div><strong>Dr. Anna Fome</strong><br>Applied Mathematics · Data Science · Modelling</div><div>Research · Teaching · Mentorship</div></div></footer>
+</div>
 
 <script>
-
-document.addEventListener("DOMContentLoaded", function() {
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-
-      entries.forEach((entry) => {
-
-        if (entry.isIntersecting) {
-          entry.target.classList.add("active");
-          observer.unobserve(entry.target);
-        }
-
-      });
-
-    },
-    {
-      threshold: 0.1
-    }
-  );
-
-  document
-    .querySelectorAll(".reveal")
-    .forEach((el) => observer.observe(el));
-
+document.addEventListener("DOMContentLoaded",function(){
+ const items=document.querySelectorAll(".daf-reveal");
+ if(!("IntersectionObserver" in window)){items.forEach(el=>el.classList.add("active"));return;}
+ const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("active");observer.unobserve(entry.target);}})},{threshold:.08});
+ items.forEach(el=>observer.observe(el));
 });
-
 </script>
