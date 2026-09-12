@@ -1040,7 +1040,7 @@ data science, mathematical modelling, and public health.
      RESEARCH VISION
      ========================================================= -->
 
-<section id="vision" class="section reveal">
+<!--<section id="vision" class="section reveal">
 <h2>Research Vision</h2>
 
 <div class="vision">
@@ -1055,7 +1055,7 @@ education, and sustainable development in Tanzania and beyond.
 
 </div>
 
-</section>
+</section> -->
 
 
 <!-- =========================================================
