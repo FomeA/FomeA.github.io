@@ -1032,7 +1032,7 @@ html {
         href="{{ site.baseurl }}/teaching/qms050/"
       >
         <span class="course-card-number">01</span>
-        <h4>Course Title Four</h4>
+        <h4> QMS 050: Business Maths \& Stats </h4>
         <span class="course-card-link">
           View course <span>↗</span>
         </span>
@@ -1040,10 +1040,10 @@ html {
 
       <a
         class="course-card"
-        href="{{ site.baseurl }}/teaching/course-5/"
+        href="{{ site.baseurl }}/teaching/mat050/"
       >
         <span class="course-card-number">02</span>
-        <h4>Course Title Five</h4>
+        <h4>MAT 050: Maths content I </h4>
         <span class="course-card-link">
           View course <span>↗</span>
         </span>
@@ -1051,10 +1051,10 @@ html {
 
       <a
         class="course-card"
-        href="{{ site.baseurl }}/teaching/course-6/"
+        href="{{ site.baseurl }}/teaching/mat101/"
       >
         <span class="course-card-number">03</span>
-        <h4>Course Title Six</h4>
+        <h4>MAT 101: Linear Algebra I</h4>
         <span class="course-card-link">
           View course <span>↗</span>
         </span>
