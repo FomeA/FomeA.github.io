@@ -986,33 +986,32 @@ html {
         class="course-card"
         href="{{ site.baseurl }}/teaching/qms101/"
       >
-        <span class="course-card-number">01</span>
-        <h4>CQMS 101</h4>
-        <p>Introductory Statistics </p>
+        <span class="course-card-number"> QMS 101 </span>
+        <!--<h4>QMS 101</h4>-->
         <span class="course-card-link">
-          View course <span>↗</span>
+          Introductory Statistics <span>↗</span>
         </span>
       </a>
 
       <a
         class="course-card"
-        href="{{ site.baseurl }}/teaching/course-2/"
+        href="{{ site.baseurl }}/teaching/mat102/"
       >
-        <span class="course-card-number">02</span>
-        <h4>Course Title Two</h4>
+        <span class="course-card-number">MAT 102</span>
+        <!--<h4>Course Title Two</h4>-->
         <span class="course-card-link">
-          View course <span>↗</span>
+          Ordinary DE <span>↗</span>
         </span>
       </a>
 
       <a
         class="course-card"
-        href="{{ site.baseurl }}/teaching/course-3/"
+        href="{{ site.baseurl }}/teaching/mat103/"
       >
-        <span class="course-card-number">03</span>
-        <h4>Course Title Three</h4>
+        <span class="course-card-number">MAT 103</span>
+        <!--<h4>Course Title Three</h4>-->
         <span class="course-card-link">
-          View course <span>↗</span>
+          Numerical Analysis I <span>↗</span>
         </span>
       </a>
 
@@ -1030,7 +1029,7 @@ html {
 
       <a
         class="course-card"
-        href="{{ site.baseurl }}/teaching/course-4/"
+        href="{{ site.baseurl }}/teaching/qms050/"
       >
         <span class="course-card-number">01</span>
         <h4>Course Title Four</h4>
