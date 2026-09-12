@@ -986,10 +986,10 @@ html {
         class="course-card"
         href="{{ site.baseurl }}/teaching/qms101/"
       >
-        <span class="course-card-number"> QMS 101 </span>
-        <!--<h4>QMS 101</h4>-->
+        <span class="course-card-number"> 01 </span>
+        <h4>QMS 101: Introductory Statistics</h4>
         <span class="course-card-link">
-          Introductory Statistics <span>↗</span>
+          View course <span>↗</span>
         </span>
       </a>
 
@@ -997,10 +997,10 @@ html {
         class="course-card"
         href="{{ site.baseurl }}/teaching/mat102/"
       >
-        <span class="course-card-number">MAT 102</span>
-        <!--<h4>Course Title Two</h4>-->
+        <span class="course-card-number">02</span>
+        <h4>MAT 102: Ordinary DE</h4>
         <span class="course-card-link">
-          Ordinary DE <span>↗</span>
+          View course <span>↗</span>
         </span>
       </a>
 
@@ -1008,10 +1008,10 @@ html {
         class="course-card"
         href="{{ site.baseurl }}/teaching/mat103/"
       >
-        <span class="course-card-number">MAT 103</span>
-        <!--<h4>Course Title Three</h4>-->
+        <span class="course-card-number">03</span>
+        <h4>MAT 103: Numerical Analysis I </h4>
         <span class="course-card-link">
-          Numerical Analysis I <span>↗</span>
+          View course <span>↗</span>
         </span>
       </a>
 
