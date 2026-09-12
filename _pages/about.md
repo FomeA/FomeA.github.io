@@ -617,60 +617,62 @@ Research Group
 
 <section id="research" class="section reveal">
 
+  <div class="section-heading">
+    <div>
+      <div class="section-label">Research Activities</div>
+      <h2>Research with purpose and application.</h2>
+    </div>
+  </div>
 
-<h2>Research Activities</h2>
+  <p class="section-intro">
+    My research brings together mathematical modelling, statistical analysis,
+    and data science to address challenges in health, education, and society.
+  </p>
 
-<p class="section-intro">
-My current research activities combine mathematical modelling,
-statistical analysis, and data science to address problems in
-infectious diseases and public health.
-</p>
+  <div class="research-cards">
 
-<div class="grid">
+    <article class="research-card">
+      <div class="research-card-number">01 · DISEASE MODELLING</div>
+      <h3>Disease Modeling</h3>
+      <p>
+        Creating mathematical models to analyze how quarantine,
+        cross-immunity, and media awareness campaigns affect the spread
+        of co-circulating respiratory viruses.
+      </p>
+    </article>
 
-<div class="card research-card">
+    <article class="research-card">
+      <div class="research-card-number">02 · CLINICAL HEALTH</div>
+      <h3>Clinical Health Metrics</h3>
+      <p>
+        Establishing baseline reference data for steady-state Sickle Cell
+        Disease patients in Tanzania to improve local hospital care.
+      </p>
+    </article>
 
-<h3>Data Science Research Group</h3>
+    <article class="research-card">
+      <div class="research-card-number">03 · SOCIO-EDUCATIONAL</div>
+      <h3>Socio-Educational Analytics</h3>
+      <p>
+        Investigating how lifestyle choices, internet habits, and social
+        environments impact the academic performance of university students.
+      </p>
+    </article>
 
-<p>
-The <strong>Data Science Research Group (DSRG)</strong> brings together
-research, training, and collaborative activities in data science,
-statistical modelling, computational methods, and applied research.
-</p>
+    <article class="research-card">
+      <div class="research-card-number">04 · RESEARCH LEADERSHIP</div>
+      <h3>Data Science Leadership</h3>
+      <p>
+        Leading an institutional research group that trains African scholars
+        in R, Python, and statistical modeling techniques.
+      </p>
 
-<a href="{{ site.baseurl }}/juco-dsg/" class="card-link">
-Explore DSRG →
-</a>
+      <a href="{{ site.baseurl }}/juco-dsg/" class="dsg-link">
+        Explore JUCo DSRG →
+      </a>
+    </article>
 
-</div>
-
-
-<div class="card research-card">
-
-<h3>Malaria & TB Co-infections</h3>
-
-<p>
-Ongoing research investigating quantitative and mathematical approaches
-to understanding the dynamics and public-health implications of
-malaria and tuberculosis co-infections.
-</p>
-
-</div>
-
-
-<div class="card research-card">
-
-<h3>TB & HIV Co-infection</h3>
-
-<p>
-Ongoing research on the dynamics of tuberculosis and HIV co-infection,
-with an emphasis on mathematical modelling and evidence-based
-public-health decision-making.
-</p>
-
-</div>
-
-</div>
+  </div>
 
 </section>
 
