@@ -558,7 +558,7 @@ html {
 
     <a href="#mentorship">Mentorship</a>
 
-    <a href="#vision">Research Vision</a>
+    <!--<a href="#vision">Research Vision</a>-->
 
   </div>
 
