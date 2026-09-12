@@ -1256,7 +1256,7 @@ html {
     <div class="conference">
       <div class="conference-content">
         <strong>Joint African-Nordic Conference in Mathematics</strong>
-        <span>Uganda · Hybrid talk</span>
+        <span>Uganda · Talk</span>
       </div>
 
       <a
