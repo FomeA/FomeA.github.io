@@ -742,158 +742,90 @@ Research Group
 
 <section id="publications" class="section reveal">
 
-<h2>Selected Publications</h2>
+  <div class="section-heading">
+    <div>
+      <div class="section-label">Selected Publications</div>
+      <h2>Recent scholarly contributions.</h2>
+    </div>
+  </div>
 
-<p class="section-intro">
-Selected peer-reviewed publications and scholarly contributions in
-mathematical modelling, epidemiology, and applied mathematics.
-</p>
+  <p class="section-intro">
+    Selected publications in mathematical modelling, epidemiology,
+    and applied mathematics.
+  </p>
 
-<div class="publication">
+  <div class="publication-list">
 
-<span class="publication-status">
-BOOK CHAPTER · 2026
-</span>
+    <a class="publication"
+       href="https://doi.org/10.1007/978-3-032-20404-2_16"
+       target="_blank"
+       rel="noopener">
+      <span class="publication-meta">Book Chapter · 2026</span>
+      <span class="publication-title">
+        Dynamics Around Equilibria in a Competitive Respiratory Disease System with Quarantine.
+      </span>
+      <span class="publication-journal">
+        Progress in Industrial Mathematics at ECMI 2023 · Springer
+      </span>
+    </a>
 
-<p>
-<strong class="publication-title">
-Fome, A.D., Bock, W., Klar, A.
-</strong>
-(2026).
-Dynamics Around Equilibria in a Competitive Respiratory Disease
-System with Quarantine.
-In Burnecki, K., Szwabiński, J., Teuerle, M. (eds.),
-<em>Progress in Industrial Mathematics at ECMI 2023</em>.
-Mathematics in Industry, Vol. 41. Springer, Cham.
-</p>
+    <a class="publication"
+       href="https://doi.org/10.1186/s12889-025-24362-z"
+       target="_blank"
+       rel="noopener">
+      <span class="publication-meta">Journal Article · 2025</span>
+      <span class="publication-title">
+        Influenza–COVID-19 co-circulation in Germany 2020–2022: competitive dynamics with quarantine and cross-immunity.
+      </span>
+      <span class="publication-journal">
+        BMC Public Health
+      </span>
+    </a>
 
-<p class="publication-meta">
-DOI:
-<a href="https://doi.org/10.1007/978-3-032-20404-2_16"
-target="_blank" rel="noopener">
-10.1007/978-3-032-20404-2_16
-</a>
-</p>
+    <a class="publication"
+       href="https://doi.org/10.1016/j.amc.2024.128968"
+       target="_blank"
+       rel="noopener">
+      <span class="publication-meta">Journal Article · 2025</span>
+      <span class="publication-title">
+        Competitive respiratory disease system with quarantine: epidemic thresholds and cross-immunity.
+      </span>
+      <span class="publication-journal">
+        Applied Mathematics and Computation
+      </span>
+    </a>
 
-</div>
+    <a class="publication"
+       href="https://doi.org/10.1016/j.health.2023.100189"
+       target="_blank"
+       rel="noopener">
+      <span class="publication-meta">Journal Article · 2023</span>
+      <span class="publication-title">
+        A deterministic SIR model for studying the impact of media on epidemic dynamics.
+      </span>
+      <span class="publication-journal">
+        Healthcare Analytics
+      </span>
+    </a>
 
-<div class="publication-list">
+    <a class="publication"
+       href="https://doi.org/10.3390/hemato3010007"
+       target="_blank"
+       rel="noopener">
+      <span class="publication-meta">Journal Article · 2022</span>
+      <span class="publication-title">
+        Hematological and biochemical reference ranges for SCD patients in Tanzania.
+      </span>
+      <span class="publication-journal">
+        Hemato
+      </span>
+    </a>
 
+  </div>
 
-<div class="publication">
-
-<span class="publication-status">
-PUBLISHED · 2025
-</span>
-
-<p>
-<strong class="publication-title">
-Fome, A.D., Isti, R., Bock, W., Lange, B., Klar, A.
-</strong>
-(2025).
-Influenza–COVID-19 co-circulation in Germany 2020–2022:
-competitive dynamics with quarantine & cross-immunity.
-<em>BMC Public Health.</em>
-</p>
-
-<p class="publication-meta">
-DOI:
-<a href="https://doi.org/10.1186/s12889-025-24362-z"
-target="_blank" rel="noopener">
-10.1186/s12889-025-24362-z
-</a>
-</p>
-
-</div>
-
-
-<div class="publication">
-
-<span class="publication-status">
-PUBLISHED · 2025
-</span>
-
-<p>
-<strong class="publication-title">
-Fome, A.D., Bock, W., Klar, A.
-</strong>
-(2025).
-Competitive respiratory disease system with quarantine:
-epidemic thresholds & cross-immunity.
-<em>Applied Mathematics and Computation.</em>
-</p>
-
-<p class="publication-meta">
-DOI:
-<a href="https://doi.org/10.1016/j.amc.2024.128968"
-target="_blank" rel="noopener">
-10.1016/j.amc.2024.128968
-</a>
-</p>
-
-</div>
-
-
-<div class="publication">
-
-<span class="publication-status">
-PUBLISHED · 2023
-</span>
-
-<p>
-<strong class="publication-title">
-Fome, A.D. et al.
-</strong>
-(2023).
-A deterministic SIR model for studying the impact of media
-on epidemic dynamics.
-<em>Healthcare Analytics, 3.</em>
-</p>
-
-<p class="publication-meta">
-DOI:
-<a href="https://doi.org/10.1016/j.health.2023.100189"
-target="_blank" rel="noopener">
-10.1016/j.health.2023.100189
-</a>
-</p>
-
-</div>
-
-
-<div class="publication">
-
-<span class="publication-status">
-PUBLISHED · 2022
-</span>
-
-<p>
-<strong class="publication-title">
-Fome, A.D. et al.
-</strong>
-(2022).
-Hematological & biochemical reference ranges for SCD patients
-in Tanzania.
-<em>Hemato, 3</em>(1), 82–97.
-</p>
-
-<p class="publication-meta">
-DOI:
-<a href="https://doi.org/10.3390/hemato3010007"
-target="_blank" rel="noopener">
-10.3390/hemato3010007
-</a>
-</p>
-
-</div>
-
-</div>
-
-<p class="more-link">
-<a href="{{ site.baseurl }}/publications/">
-View full list of publications →
-</a>
-</p>
+  <a class="section-link" href="{{ site.baseurl }}/publications/">
+    View full publication list →
+  </a>
 
 </section>
 
