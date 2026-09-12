@@ -684,7 +684,7 @@ Research Group
 
   <div class="section-heading">
     <div>
-      <div class="section-label">Teaching</div>
+     <!-- <div class="section-label">Teaching</div>-->
       <h2>Courses by semester.</h2>
     </div>
   </div>
@@ -699,16 +699,16 @@ Research Group
       <h3><span>I</span> Semester I</h3>
 
       <div class="course-list">
-        <a class="course-link" href="{{ site.baseurl }}/teaching/course-1/">
-          Course 1 <small>View →</small>
-        </a>
+        Course 1  <a class="course-link" href="{{ site.baseurl }}/teaching/course-1/">
+          <small>View →</small>
+        </a> |
 
-        <a class="course-link" href="{{ site.baseurl }}/teaching/course-2/">
-          Course 2 <small>View →</small>
-        </a>
+         Course 2  <a class="course-link" href="{{ site.baseurl }}/teaching/course-2/">
+         <small>View →</small>
+        </a> |
 
-        <a class="course-link" href="{{ site.baseurl }}/teaching/course-3/">
-          Course 3 <small>View →</small>
+       Course 3   <a class="course-link" href="{{ site.baseurl }}/teaching/course-3/">
+          <small>View →</small>
         </a>
       </div>
     </article>
