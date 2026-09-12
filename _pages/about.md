@@ -835,107 +835,112 @@ Research Group
      ========================================================= -->
 
 <section id="conferences" class="section reveal">
-<h2>Talks & Conferences</h2>
 
-<p class="section-intro">
-Selected presentations, posters, research visits, and scientific
-meetings.
-</p>
+  <div class="section-heading">
+    <div>
+      <div class="section-label">Academic Engagement</div>
+      <h2>Talks &amp; Conferences.</h2>
+    </div>
+  </div>
 
-<div class="conference-list">
+  <p class="section-intro">
+    Selected presentations, posters, research visits, and scientific meetings.
+  </p>
 
+  <div class="conference-list">
 
-<div class="conference">
+    <div class="conference">
+      <div class="conference-content">
+        <strong>4th Ifakara Annual Scientific Conference</strong>
+        <span>Tanzania · Talk</span>
+      </div>
+      <a class="conference-link"
+         href="https://www.icipe.org/"
+         target="_blank"
+         rel="noopener">
+        Website ↗
+      </a>
+    </div>
 
-<span class="conference-name">
-4th Ifakara Annual Scientific Conference, Tanzania
-</span>
+    <div class="conference">
+      <div class="conference-content">
+        <strong>6th Young Researchers Symposium, RPTU</strong>
+        <span>Germany · Pitch + Poster</span>
+      </div>
+      <a class="conference-link"
+         href="https://rptu.de/"
+         target="_blank"
+         rel="noopener">
+        RPTU ↗
+      </a>
+    </div>
 
-<span class="conference-type">
-Talk
-</span>
+    <div class="conference">
+      <div class="conference-content">
+        <strong>2nd MONID Infectious Disease Modelling Conference</strong>
+        <span>Halle, Germany · Pitch + Poster</span>
+      </div>
+      <a class="conference-link"
+         href="https://monid.org/"
+         target="_blank"
+         rel="noopener">
+        MONID ↗
+      </a>
+    </div>
 
-</div>
+    <div class="conference">
+      <div class="conference-content">
+        <strong>Research Visit, Linnaeus University</strong>
+        <span>Växjö, Sweden · Research visit and talk</span>
+      </div>
+      <a class="conference-link"
+         href="https://lnu.se/en/"
+         target="_blank"
+         rel="noopener">
+        Linnaeus ↗
+      </a>
+    </div>
 
+    <div class="conference">
+      <div class="conference-content">
+        <strong>Joint African-Nordic Conference in Mathematics</strong>
+        <span>Uganda · Hybrid talk</span>
+      </div>
+      <a class="conference-link"
+         href="https://www.mathunion.org/"
+         target="_blank"
+         rel="noopener">
+        IMU ↗
+      </a>
+    </div>
 
-<div class="conference">
+    <div class="conference">
+      <div class="conference-content">
+        <strong>22nd ECMI Conference on Industrial &amp; Applied Mathematics</strong>
+        <span>Poland · Talk</span>
+      </div>
+      <a class="conference-link"
+         href="https://ecmiindmath.org/"
+         target="_blank"
+         rel="noopener">
+        ECMI ↗
+      </a>
+    </div>
 
-<span class="conference-name">
-6th Young Researchers Symposium, RPTU, Germany
-</span>
+    <div class="conference">
+      <div class="conference-content">
+        <strong>14th DSABNS Conference on Dynamical Systems</strong>
+        <span>Bilbao, Spain · Poster</span>
+      </div>
+      <a class="conference-link"
+         href="https://www.dsabns.org/"
+         target="_blank"
+         rel="noopener">
+        DSABNS ↗
+      </a>
+    </div>
 
-<span class="conference-type">
-Pitch + Poster
-</span>
-
-</div>
-
-
-<div class="conference">
-
-<span class="conference-name">
-2nd MONID Infectious Disease Modelling Conference, Halle, Germany
-</span>
-
-<span class="conference-type">
-Pitch + Poster
-</span>
-
-</div>
-
-
-<div class="conference">
-
-<span class="conference-name">
-Research Visit, Linnaeus University, Växjö, Sweden
-</span>
-
-<span class="conference-type">
-Talk
-</span>
-
-</div>
-
-
-<div class="conference">
-
-<span class="conference-name">
-Joint African-Nordic Conference in Mathematics, Uganda
-</span>
-
-<span class="conference-type">
-Talk (Hybrid)
-</span>
-
-</div>
-
-
-<div class="conference">
-
-<span class="conference-name">
-22nd ECMI Conference on Industrial & Applied Mathematics, Poland
-</span>
-
-<span class="conference-type">
-Talk
-</span>
-
-</div>
-
-
-<div class="conference">
-
-<span class="conference-name">
-14th DSABNS Conference on Dynamical Systems, Bilbao, Spain
-</span>
-
-<span class="conference-type">
-Poster
-</span>
-
-</div>
-
-</div>
+  </div>
 
 </section>
 
