@@ -1022,7 +1022,7 @@ html {
   <div class="semester-group">
     <div class="semester-heading">
       <h3>Semester II</h3>
-      <span>02</span>
+      <!--<span>02</span>-->
     </div>
 
     <div class="course-grid">
