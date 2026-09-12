@@ -977,17 +977,18 @@ html {
   <div class="semester-group">
     <div class="semester-heading">
       <h3>Semester I</h3>
-      <span>01</span>
+      <!--<span>01</span>-->
     </div>
 
     <div class="course-grid">
 
       <a
         class="course-card"
-        href="{{ site.baseurl }}/teaching/course-1/"
+        href="{{ site.baseurl }}/teaching/qms101/"
       >
         <span class="course-card-number">01</span>
-        <h4>Course Title One</h4>
+        <h4>CQMS 101</h4>
+        <p>Introductory Statistics </p>
         <span class="course-card-link">
           View course <span>↗</span>
         </span>
