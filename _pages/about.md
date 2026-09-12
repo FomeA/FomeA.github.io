@@ -678,78 +678,58 @@ public-health decision-making.
 <!-- =========================================================
      TEACHING
      ========================================================= -->
-
 <section id="teaching" class="section reveal">
 
-<h2>Teaching</h2>
+  <div class="section-heading">
+    <div>
+      <div class="section-label">Teaching</div>
+      <h2>Courses by semester.</h2>
+    </div>
+  </div>
 
-<p class="section-intro">
-Teaching activities connect mathematical theory, statistical reasoning,
-and computational methods with practical applications.
-</p>
+  <p class="section-intro">
+    Select a course to visit its dedicated page.
+  </p>
 
-<div class="grid">
+  <div class="teaching-grid">
 
-<div class="card">
+    <article class="semester-card">
+      <h3><span>I</span> Semester I</h3>
 
-<h3>Introductory Statistics</h3>
+      <div class="course-list">
+        <a class="course-link" href="{{ site.baseurl }}/teaching/course-1/">
+          Course 1 <small>View →</small>
+        </a>
 
-<p>
-Foundations of statistical reasoning, data analysis, interpretation,
-and applied statistics.
-</p>
+        <a class="course-link" href="{{ site.baseurl }}/teaching/course-2/">
+          Course 2 <small>View →</small>
+        </a>
 
-<a href="{{ site.baseurl }}/teaching/qms101/" class="card-link">
-Explore course →
-</a>
+        <a class="course-link" href="{{ site.baseurl }}/teaching/course-3/">
+          Course 3 <small>View →</small>
+        </a>
+      </div>
+    </article>
 
-</div>
+    <article class="semester-card">
+      <h3><span>II</span> Semester II</h3>
 
+      <div class="course-list">
+        <a class="course-link" href="{{ site.baseurl }}/teaching/course-4/">
+          Course 1 <small>View →</small>
+        </a>
 
-<div class="card">
+        <a class="course-link" href="{{ site.baseurl }}/teaching/course-5/">
+          Course 2 <small>View →</small>
+        </a>
 
-<h3>Ordinary Differential Equations</h3>
+        <a class="course-link" href="{{ site.baseurl }}/teaching/course-6/">
+          Course 3 <small>View →</small>
+        </a>
+      </div>
+    </article>
 
-<p>
-Analytical and qualitative methods for differential equations and
-their applications in mathematical modelling.
-</p>
-
-<a href="{{ site.baseurl }}/teaching/mat102/" class="card-link">
-Explore course →
-</a>
-
-</div>
-
-
-<div class="card">
-
-<h3>Numerical Analysis I</h3>
-
-<p>
-Numerical methods for solving mathematical problems using
-computational and approximation techniques.
-</p>
-
-<a href="{{ site.baseurl }}/teaching/mat103/" class="card-link">
-Explore course →
-</a>
-
-</div>
-
-
-<!--<div class="card">
-
-<h3>Mentorship & Supervision</h3>
-
-<p>
-Supporting students and early-career researchers through research,
-quantitative methods, academic development, and independent study.
-</p>
-
-</div>-->
-
-</div>
+  </div>
 
 </section>
 
