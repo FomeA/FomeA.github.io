@@ -186,6 +186,198 @@ redirect_from:
   border-top: 4px solid #2563eb;
 }
 
+  /* =========================================
+   Teaching Section
+========================================= */
+
+.teaching-section {
+  margin-top: 4rem;
+}
+
+.section-heading {
+  max-width: 680px;
+  margin-bottom: 2rem;
+}
+
+.section-kicker {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #2e8b78;
+  font-size: 0.7rem;
+  font-weight: 750;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.section-heading h2 {
+  margin: 0 0 0.65rem;
+  color: #102542;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 750;
+  letter-spacing: -0.045em;
+}
+
+.section-heading p {
+  max-width: 620px;
+  margin: 0;
+  color: #687789;
+  font-size: 0.98rem;
+  line-height: 1.75;
+}
+
+/* Semester Group */
+
+.semester-group {
+  margin-bottom: 2.25rem;
+}
+
+.semester-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.semester-heading h3 {
+  margin: 0;
+  color: #102542;
+  font-size: 1.25rem;
+  font-weight: 750;
+  letter-spacing: -0.025em;
+}
+
+.semester-heading span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 27px;
+  height: 27px;
+  border: 1px solid #cfe2dc;
+  border-radius: 50%;
+  color: #2e8b78;
+  font-size: 0.65rem;
+  font-weight: 750;
+}
+
+/* Course Card Grid */
+
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+/* Individual Course Cards */
+
+.course-card {
+  position: relative;
+  display: flex;
+  min-height: 145px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.15rem;
+  overflow: hidden;
+  border: 1px solid #dce5eb;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(16, 37, 66, 0.035);
+  color: inherit;
+  text-decoration: none;
+  transition:
+    border-color 0.25s ease,
+    background-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+.course-card::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 3px;
+  background: #2e8b78;
+  content: "";
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.course-card:hover {
+  border-color: #a9cec3;
+  background: #fbfefd;
+  box-shadow: 0 14px 32px rgba(16, 37, 66, 0.08);
+  transform: translateY(-3px);
+}
+
+.course-card:hover::before {
+  opacity: 1;
+}
+
+.course-card-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: #edf6f2;
+  color: #2e8b78;
+  font-size: 0.7rem;
+  font-weight: 750;
+}
+
+.course-card h4 {
+  width: 100%;
+  margin: 0;
+  color: #1b3049;
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+}
+
+.course-card-link {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: #7b8996;
+  font-size: 0.72rem;
+  font-weight: 650;
+  transition: color 0.2s ease;
+}
+
+.course-card-link span {
+  font-size: 0.95rem;
+  transition: transform 0.2s ease;
+}
+
+.course-card:hover .course-card-link {
+  color: #2e8b78;
+}
+
+.course-card:hover .course-card-link span {
+  transform: translate(2px, -2px);
+}
+
+/* Responsive */
+
+@media (max-width: 750px) {
+  .course-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 460px) {
+  .course-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .course-card {
+    min-height: 125px;
+  }
+}
 /* =========================================================
    PUBLICATIONS
    ========================================================= */
