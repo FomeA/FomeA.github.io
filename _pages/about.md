@@ -1032,7 +1032,7 @@ html {
         href="{{ site.baseurl }}/teaching/qms050/"
       >
         <span class="course-card-number">01</span>
-        <h4> QMS 050: Business Maths \& Stats </h4>
+        <h4> QMS 050: Business Maths & Stats </h4>
         <span class="course-card-link">
           View course <span>↗</span>
         </span>
