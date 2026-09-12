@@ -680,59 +680,93 @@ Research Group
 <!-- =========================================================
      TEACHING
      ========================================================= -->
-<section id="teaching" class="section reveal">
-
+<section class="academic-section teaching-section" id="teaching">
   <div class="section-heading">
-    <div>
-     <!-- <div class="section-label">Teaching</div>-->
-      <h2>Courses by semester.</h2>
+    <span class="section-kicker">Teaching Portfolio</span>
+    <h2>Teaching</h2>
+    <p>
+      Courses taught across undergraduate and postgraduate programmes,
+      organized by semester.
+    </p>
+  </div>
+
+  <!-- Semester I -->
+  <div class="semester-group">
+    <div class="semester-heading">
+      <h3>Semester I</h3>
+      <span>01</span>
+    </div>
+
+    <div class="course-grid">
+
+      <a
+        class="course-card"
+        href="{{ site.baseurl }}/teaching/course-1/"
+      >
+        <span class="course-card-number">01</span>
+        <h4>Course Title One</h4>
+        <span class="course-card-link">View course <span>↗</span></span>
+      </a>
+
+      <a
+        class="course-card"
+        href="{{ site.baseurl }}/teaching/course-2/"
+      >
+        <span class="course-card-number">02</span>
+        <h4>Course Title Two</h4>
+        <span class="course-card-link">View course <span>↗</span></span>
+      </a>
+
+      <a
+        class="course-card"
+        href="{{ site.baseurl }}/teaching/course-3/"
+      >
+        <span class="course-card-number">03</span>
+        <h4>Course Title Three</h4>
+        <span class="course-card-link">View course <span>↗</span></span>
+      </a>
+
     </div>
   </div>
 
-  <p class="section-intro">
-    Select a course to visit its dedicated page.
-  </p>
+  <!-- Semester II -->
+  <div class="semester-group">
+    <div class="semester-heading">
+      <h3>Semester II</h3>
+      <span>02</span>
+    </div>
 
-  <div class="teaching-grid">
+    <div class="course-grid">
 
-    <article class="semester-card">
-      <h3><span>I</span> Semester I</h3>
+      <a
+        class="course-card"
+        href="{{ site.baseurl }}/teaching/course-4/"
+      >
+        <span class="course-card-number">01</span>
+        <h4>Course Title Four</h4>
+        <span class="course-card-link">View course <span>↗</span></span>
+      </a>
 
-      <div class="course-list">
-        Course 1  <a class="course-link" href="{{ site.baseurl }}/teaching/course-1/">
-          <small>View →</small>
-        </a> |
+      <a
+        class="course-card"
+        href="{{ site.baseurl }}/teaching/course-5/"
+      >
+        <span class="course-card-number">02</span>
+        <h4>Course Title Five</h4>
+        <span class="course-card-link">View course <span>↗</span></span>
+      </a>
 
-         Course 2  <a class="course-link" href="{{ site.baseurl }}/teaching/course-2/">
-         <small>View →</small>
-        </a> |
+      <a
+        class="course-card"
+        href="{{ site.baseurl }}/teaching/course-6/"
+      >
+        <span class="course-card-number">03</span>
+        <h4>Course Title Six</h4>
+        <span class="course-card-link">View course <span>↗</span></span>
+      </a>
 
-       Course 3   <a class="course-link" href="{{ site.baseurl }}/teaching/course-3/">
-          <small>View →</small>
-        </a>
-      </div>
-    </article>
-
-    <article class="semester-card">
-      <h3><span>II</span> Semester II</h3>
-
-      <div class="course-list">
-        <a class="course-link" href="{{ site.baseurl }}/teaching/course-4/">
-          Course 1 <small>View →</small>
-        </a>
-
-        <a class="course-link" href="{{ site.baseurl }}/teaching/course-5/">
-          Course 2 <small>View →</small>
-        </a>
-
-        <a class="course-link" href="{{ site.baseurl }}/teaching/course-6/">
-          Course 3 <small>View →</small>
-        </a>
-      </div>
-    </article>
-
+    </div>
   </div>
-
 </section>
 
 
