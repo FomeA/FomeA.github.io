@@ -1,1 +1,899 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MAT 050 — Mathematics Academic Content I</title>
+
+  <style>
+    :root {
+      --green-dark: #22372b;
+      --green: #3d624b;
+      --green-light: #e8f0e8;
+      --cream: #faf9f5;
+      --white: #ffffff;
+      --ink: #1e2b23;
+      --muted: #68736b;
+      --line: #e1e5df;
+      --gold: #b9892f;
+      --red: #a34c36;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.55;
+    }
+
+    /* HERO */
+    .hero {
+      background: var(--green-dark);
+      color: white;
+      border-bottom: 4px solid var(--gold);
+    }
+
+    .hero-inner,
+    .container {
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .hero-inner {
+      padding: 48px 24px 42px;
+    }
+
+    .kicker {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .pill {
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      color: #d8e3d9;
+      border-radius: 999px;
+      padding: 4px 11px;
+      font-size: 11px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      max-width: 700px;
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(30px, 5vw, 46px);
+      line-height: 1.1;
+      font-weight: 600;
+      letter-spacing: -0.025em;
+    }
+
+    .institution {
+      margin-top: 12px;
+      color: #c8d5ca;
+      font-size: 13px;
+    }
+
+    .purpose {
+      max-width: 650px;
+      margin: 22px 0 0;
+      color: #e0e8df;
+      font-size: 15px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      max-width: 600px;
+      margin-top: 32px;
+    }
+
+    .stat-value {
+      display: block;
+      color: #e2bd68;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 25px;
+      font-weight: 600;
+    }
+
+    .stat-label {
+      color: #b9c9bb;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* GENERAL SECTIONS */
+    .container {
+      padding: 10px 24px 60px;
+    }
+
+    .section {
+      padding-top: 42px;
+    }
+
+    .section-heading {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 25px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    .lede {
+      color: var(--muted);
+      font-size: 14px;
+      margin: 6px 0 22px;
+    }
+
+    /* LEARNING OUTCOMES */
+    .outcomes {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .outcome {
+      display: flex;
+      gap: 12px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 15px 16px;
+      font-size: 13.5px;
+    }
+
+    .letter {
+      flex: 0 0 25px;
+      height: 25px;
+      display: grid;
+      place-items: center;
+      border-radius: 6px;
+      background: var(--green-light);
+      color: var(--green);
+      font-size: 12px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    /* ASSESSMENT */
+    .assessment {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .assess-row {
+      display: grid;
+      grid-template-columns: 180px 1fr 48px;
+      gap: 14px;
+      align-items: center;
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--line);
+      font-size: 13px;
+    }
+
+    .assess-row:last-child {
+      border-bottom: 0;
+    }
+
+    .track {
+      height: 9px;
+      background: #edf0eb;
+      border-radius: 99px;
+      overflow: hidden;
+    }
+
+    .fill {
+      height: 100%;
+      border-radius: inherit;
+      background: var(--green);
+    }
+
+    .assess-row:nth-child(2) .fill {
+      background: #779a81;
+    }
+
+    .assess-row:nth-child(3) .fill {
+      background: var(--gold);
+    }
+
+    .assess-row:nth-child(4) .fill {
+      background: var(--red);
+    }
+
+    .percent {
+      text-align: right;
+      font-weight: 600;
+      color: var(--green-dark);
+    }
+
+    /* WEEK NAVIGATION */
+    .week-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin: 20px 0 14px;
+    }
+
+    .week-btn {
+      min-width: 44px;
+      height: 38px;
+      padding: 0 10px;
+      border: 1px solid var(--line);
+      background: white;
+      color: var(--muted);
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 600;
+      transition: 0.15s ease;
+    }
+
+    .week-btn:hover {
+      border-color: var(--green);
+      color: var(--green);
+    }
+
+    .week-btn.active {
+      background: var(--green-dark);
+      border-color: var(--green-dark);
+      color: white;
+    }
+
+    .week-btn.test {
+      color: var(--red);
+      border-color: #dfb9ae;
+    }
+
+    .week-btn.test.active {
+      background: var(--red);
+      border-color: var(--red);
+      color: white;
+    }
+
+    /* WEEK CARD */
+    .week-card {
+      display: none;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 25px;
+    }
+
+    .week-card.visible {
+      display: block;
+    }
+
+    .week-card.test-card {
+      border-top: 4px solid var(--red);
+    }
+
+    .week-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 15px;
+      margin-bottom: 24px;
+    }
+
+    .week-label {
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .test-card .week-label {
+      color: var(--red);
+    }
+
+    .week-title {
+      margin: 4px 0 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 24px;
+      line-height: 1.2;
+    }
+
+    .hours {
+      flex: 0 0 auto;
+      color: var(--muted);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 5px 11px;
+      font-size: 11px;
+      white-space: nowrap;
+    }
+
+    .week-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    .week-block h4 {
+      margin: 0 0 9px;
+      color: var(--green);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+    }
+
+    .week-block ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .week-block li {
+      margin-bottom: 7px;
+      font-size: 13.5px;
+    }
+
+    /* METHODOLOGY */
+    .method-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .info-box {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 20px;
+    }
+
+    .info-box h4 {
+      margin: 0 0 9px;
+      font-size: 12px;
+      color: var(--green);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .info-box p {
+      margin: 0;
+      font-size: 13.5px;
+      color: var(--muted);
+    }
+
+    footer {
+      margin-top: 45px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    /* MOBILE */
+    @media (max-width: 650px) {
+      .hero-inner {
+        padding: 36px 18px;
+      }
+
+      .container {
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+
+      .stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+
+      .outcomes,
+      .week-grid,
+      .method-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .assess-row {
+        grid-template-columns: 1fr 45px;
+        gap: 8px 12px;
+      }
+
+      .assess-row .track {
+        grid-column: 1;
+      }
+
+      .assess-row .percent {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+        align-self: center;
+      }
+
+      .week-card {
+        padding: 20px;
+      }
+
+      .week-title {
+        font-size: 21px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="kicker">
+        <span class="pill">MAT 050</span>
+        <span class="pill">Diploma</span>
+        <span class="pill">No prerequisite</span>
+      </div>
+
+      <h1>Mathematics Academic Content I</h1>
+
+      <div class="institution">
+        St. Augustine University of Tanzania · Jordan University College
+      </div>
+
+      <p class="purpose">
+        Prepares student teachers with mathematical knowledge, skills and
+        attitudes for solving problems and teaching mathematics at ordinary
+        level secondary school.
+      </p>
+
+      <div class="stats">
+        <div>
+          <span class="stat-value">12</span>
+          <span class="stat-label">Weeks</span>
+        </div>
+        <div>
+          <span class="stat-value">2 hrs</span>
+          <span class="stat-label">Per week</span>
+        </div>
+        <div>
+          <span class="stat-value">24 hrs</span>
+          <span class="stat-label">Contact time</span>
+        </div>
+        <div>
+          <span class="stat-value">3</span>
+          <span class="stat-label">Credit hours</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- LEARNING OUTCOMES -->
+    <section class="section">
+      <h2 class="section-heading">Learning outcomes</h2>
+      <p class="lede">
+        By the end of the course, students will be able to:
+      </p>
+
+      <div class="outcomes">
+        <div class="outcome">
+          <span class="letter">a</span>
+          <span>Create new knowledge from already known mathematics concepts.</span>
+        </div>
+        <div class="outcome">
+          <span class="letter">b</span>
+          <span>Perform computations using scientific calculators and other electronic devices.</span>
+        </div>
+        <div class="outcome">
+          <span class="letter">c</span>
+          <span>Use a computer to solve mathematical problems.</span>
+        </div>
+        <div class="outcome">
+          <span class="letter">d</span>
+          <span>Think critically and logically in interpreting and solving problems.</span>
+        </div>
+        <div class="outcome">
+          <span class="letter">e</span>
+          <span>Integrate and share mathematical skills with the community.</span>
+        </div>
+        <div class="outcome">
+          <span class="letter">f</span>
+          <span>Apply mathematical knowledge and techniques in other fields.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ASSESSMENT -->
+    <section class="section">
+      <h2 class="section-heading">Assessment scheme</h2>
+      <p class="lede">Total contribution to the final grade.</p>
+
+      <div class="assessment">
+        <div class="assess-row">
+          <span>Individual assignment</span>
+          <div class="track"><div class="fill" style="width: 10%"></div></div>
+          <span class="percent">10%</span>
+        </div>
+
+        <div class="assess-row">
+          <span>Group assignment</span>
+          <div class="track"><div class="fill" style="width: 10%"></div></div>
+          <span class="percent">10%</span>
+        </div>
+
+        <div class="assess-row">
+          <span>Tests</span>
+          <div class="track"><div class="fill" style="width: 20%"></div></div>
+          <span class="percent">20%</span>
+        </div>
+
+        <div class="assess-row">
+          <span>End of semester exam</span>
+          <div class="track"><div class="fill" style="width: 60%"></div></div>
+          <span class="percent">60%</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- WEEKLY PLAN -->
+    <section class="section">
+      <h2 class="section-heading">Weekly teaching plan</h2>
+      <p class="lede">
+        Select a week to view its topics, learning focus, activities and materials.
+      </p>
+
+      <div class="week-nav" id="weekNav" role="tablist"></div>
+      <div id="weekCards"></div>
+    </section>
+
+    <!-- METHODOLOGY -->
+    <section class="section">
+      <h2 class="section-heading">Methodology &amp; materials</h2>
+
+      <div class="method-grid" style="margin-top: 18px;">
+        <div class="info-box">
+          <h4>Teaching methodology</h4>
+          <p>
+            Question and answer, group discussion followed by presentation,
+            KWL method, demonstration, and interactive lecture.
+          </p>
+        </div>
+
+        <div class="info-box">
+          <h4>Instructional materials &amp; equipment</h4>
+          <p>
+            Geometrical instruments, graph papers, graph board and rubber
+            bands, hand-outs, overhead projector, flip charts and felt pens.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      MAT 050 · Mathematics Academic Content I · 12-week interactive teaching plan
+    </footer>
+
+  </main>
+
+  <script>
+    const weeks = [
+      {
+        title: "Calculating devices",
+        topics: [
+          "Scientific calculators — keys, memory, statistical & equation modes",
+          "Computer packages: overview of Excel, LINGO, GeoGebra"
+        ],
+        focus: [
+          "Operate a scientific calculator confidently for arithmetic, powers, roots and trig functions",
+          "Recognise what each computer package is used for in mathematics"
+        ],
+        activities: [
+          "Course orientation: outcomes, assessment scheme, expectations",
+          "Hands-on calculator drill in pairs",
+          "Live demo: entering a simple equation in GeoGebra / Excel"
+        ],
+        materials: [
+          "Scientific calculators (one per student where possible)",
+          "Projector / demo computer with Excel, LINGO, GeoGebra installed"
+        ]
+      },
+      {
+        title: "Sets — operations & simplification",
+        topics: [
+          "Basic operations of sets (union, intersection, complement, difference)",
+          "Simplification of set expressions"
+        ],
+        focus: [
+          "Apply set operations correctly",
+          "Simplify compound set expressions using laws of set algebra"
+        ],
+        activities: [
+          "Q&A recap of set notation",
+          "Group work: simplify a set of expressions, then present solutions"
+        ],
+        materials: [
+          "Hand-outs of set laws",
+          "Flip chart for group presentations"
+        ]
+      },
+      {
+        title: "Sets — counting & Venn diagrams",
+        topics: [
+          "Number of elements of a set (cardinality, inclusion–exclusion)",
+          "Venn diagram representation and problem solving"
+        ],
+        focus: [
+          "Compute n(A∪B), n(A∩B) using the inclusion–exclusion principle",
+          "Represent and solve word problems using Venn diagrams"
+        ],
+        activities: [
+          "Demonstration: shading regions on a 2- and 3-set Venn diagram",
+          "Individual practice on real-life counting problems"
+        ],
+        materials: [
+          "Felt pens, flip charts",
+          "Venn diagram templates"
+        ]
+      },
+      {
+        title: "Logic — statements, connectives & laws",
+        topics: [
+          "Logical statements",
+          "Logical connectives (¬, ∧, ∨, →, ↔)",
+          "Laws of algebra of propositions"
+        ],
+        focus: [
+          "Distinguish statements from non-statements",
+          "Build and evaluate truth tables",
+          "Apply the laws of propositional algebra to simplify statements"
+        ],
+        activities: [
+          "Interactive lecture with truth-table construction on the board",
+          "KWL: what do you Know / Want to know / have you Learned about logic"
+        ],
+        materials: [
+          "Graph board",
+          "Hand-outs of truth-table exercises"
+        ]
+      },
+      {
+        title: "Linear programming — foundations",
+        topics: [
+          "Introduction and definition of terms",
+          "Linear functions and inequality graphs"
+        ],
+        focus: [
+          "Define key LP terms: objective function, constraints, feasible region",
+          "Graph linear inequalities and identify the feasible region"
+        ],
+        activities: [
+          "Demonstration on graph paper: plotting inequalities",
+          "Paired practice sketching feasible regions"
+        ],
+        materials: [
+          "Graph papers",
+          "Geometrical instruments"
+        ]
+      },
+      {
+        title: "Linear programming — formulation & graphical solution",
+        topics: [
+          "Formulation of a linear programming problem",
+          "Graphical solution method"
+        ],
+        focus: [
+          "Translate a word problem into an LP model",
+          "Solve a 2-variable LP problem graphically to find the optimal point"
+        ],
+        activities: [
+          "Group discussion: formulate an LP model from a case scenario, then present",
+          "Guided practice on the graphical (corner-point) method"
+        ],
+        materials: [
+          "Graph papers and board",
+          "Rubber bands for boundary demonstration"
+        ]
+      },
+      {
+        title: "Linear programming — transportation problem",
+        topics: [
+          "Transportation problem: set-up and solution methods",
+          "Revision of calculating devices, sets, logic and LP"
+        ],
+        focus: [
+          "Set up a transportation tableau and find an initial feasible solution",
+          "Consolidate weeks 1–7 ahead of Test 1"
+        ],
+        activities: [
+          "Demonstration: North-West Corner / Least-Cost method",
+          "Structured revision session with Q&A"
+        ],
+        materials: [
+          "Hand-outs summarising weeks 1–7",
+          "Practice questions"
+        ]
+      },
+      {
+        title: "Test 1",
+        isTest: true,
+        topics: [
+          "Assessed content: Calculating devices, Sets and Logic, Linear Programming"
+        ],
+        focus: [
+          "Demonstrate individual mastery of weeks 1–7 under test conditions"
+        ],
+        activities: [
+          "Sit Test 1 (closed book, full session)",
+          "Brief instructions and time allocation given at the start of class"
+        ],
+        materials: [
+          "Test paper",
+          "Scientific calculators",
+          "Geometrical instruments"
+        ]
+      },
+      {
+        title: "Matrices — types & determinants",
+        topics: [
+          "Types of matrices (row, column, square, zero, identity, diagonal, etc.)",
+          "Determinants of 2×2 and 3×3 matrices"
+        ],
+        focus: [
+          "Classify matrices by type",
+          "Compute determinants of 2×2 and 3×3 matrices"
+        ],
+        activities: [
+          "Interactive lecture with worked examples",
+          "Individual practice computing determinants"
+        ],
+        materials: [
+          "Hand-outs of matrix types",
+          "Scientific calculators for verification"
+        ]
+      },
+      {
+        title: "Matrices — inverses & simultaneous equations",
+        topics: [
+          "Inverse of 2×2 and 3×3 matrices",
+          "Applying the inverse to solve simultaneous equations (up to 3 unknowns)"
+        ],
+        focus: [
+          "Find the inverse of a matrix using the adjoint/cofactor method",
+          "Solve systems of up to 3 simultaneous equations using matrix inverses"
+        ],
+        activities: [
+          "Demonstration on the board, then guided practice",
+          "Group assignment set: solve a 3-unknown system using matrices"
+        ],
+        materials: [
+          "Graph board",
+          "Scientific calculators / Excel for cross-checking"
+        ]
+      },
+      {
+        title: "Probability & central tendency",
+        topics: [
+          "Introduction to probability",
+          "Measures of central tendency (mean, median, mode)"
+        ],
+        focus: [
+          "Apply basic probability rules to simple events",
+          "Compute mean, median and mode for grouped and ungrouped data"
+        ],
+        activities: [
+          "Q&A introduction to probability using everyday examples (dice, cards)",
+          "Demonstration of central tendency calculations, then individual practice"
+        ],
+        materials: [
+          "Dice / cards for demonstration",
+          "Hand-outs with data sets"
+        ]
+      },
+      {
+        title: "Dispersion & course review",
+        topics: [
+          "Measures of dispersion (range, variance, standard deviation)",
+          "Consolidated review of the course"
+        ],
+        focus: [
+          "Compute range, variance and standard deviation for a data set",
+          "Connect all five course topics ahead of the end-of-semester exam"
+        ],
+        activities: [
+          "Worked examples and individual practice on dispersion",
+          "Whole-course revision session: open Q&A across all five topics"
+        ],
+        materials: [
+          "Hand-outs with data sets",
+          "Consolidated revision sheet covering all units"
+        ]
+      }
+    ];
+
+    const weekNav = document.getElementById("weekNav");
+    const weekCards = document.getElementById("weekCards");
+
+    function createList(items) {
+      return `<ul>${items.map(item => `<li>${item}</li>`).join("")}</ul>`;
+    }
+
+    weeks.forEach((week, index) => {
+      // Navigation button
+      const button = document.createElement("button");
+      button.className =
+        "week-btn" +
+        (week.isTest ? " test" : "") +
+        (index === 0 ? " active" : "");
+
+      button.textContent = week.isTest ? "Test 1" : `W${index + 1}`;
+      button.setAttribute("role", "tab");
+      button.setAttribute("aria-selected", index === 0 ? "true" : "false");
+
+      button.addEventListener("click", () => showWeek(index));
+      weekNav.appendChild(button);
+
+      // Week content card
+      const card = document.createElement("article");
+      card.className =
+        "week-card" +
+        (week.isTest ? " test-card" : "") +
+        (index === 0 ? " visible" : "");
+
+      card.innerHTML = `
+        <div class="week-top">
+          <div>
+            <div class="week-label">
+              ${week.isTest ? "Week 8 · Assessment" : `Week ${index + 1}`}
+            </div>
+            <h3 class="week-title">${week.title}</h3>
+          </div>
+          <span class="hours">2 hours</span>
+        </div>
+
+        <div class="week-grid">
+          <div class="week-block">
+            <h4>Topics</h4>
+            ${createList(week.topics)}
+          </div>
+
+          <div class="week-block">
+            <h4>Learning focus</h4>
+            ${createList(week.focus)}
+          </div>
+
+          <div class="week-block">
+            <h4>Classroom activities</h4>
+            ${createList(week.activities)}
+          </div>
+
+          <div class="week-block">
+            <h4>Materials</h4>
+            ${createList(week.materials)}
+          </div>
+        </div>
+      `;
+
+      weekCards.appendChild(card);
+    });
+
+    function showWeek(index) {
+      [...weekNav.children].forEach((button, i) => {
+        const active = i === index;
+        button.classList.toggle("active", active);
+        button.setAttribute("aria-selected", active ? "true" : "false");
+      });
+
+      [...weekCards.children].forEach((card, i) => {
+        card.classList.toggle("visible", i === index);
+      });
+    }
+  </script>
+
+</body>
+</html>
