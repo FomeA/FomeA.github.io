@@ -974,6 +974,51 @@ html {
   </p>
 
   <!-- Semester I -->
+    <div class="semester-group">
+    <div class="semester-heading">
+      <h3>Semester II</h3>
+      <!--<span>02</span>-->
+    </div>
+
+    <div class="course-grid">
+
+      <a
+        class="course-card"
+        href="{{ site.baseurl }}/teaching/qms050/"
+      >
+        <span class="course-card-number">01</span>
+        <h4> QMS 050: Business Maths & Stats </h4>
+        <span class="course-card-link">
+          View course <span>↗</span>
+        </span>
+      </a>
+
+      <a
+        class="course-card"
+        href="{{ site.baseurl }}/teaching/mat050/"
+      >
+        <span class="course-card-number">02</span>
+        <h4>MAT 050: Maths content I </h4>
+        <span class="course-card-link">
+          View course <span>↗</span>
+        </span>
+      </a>
+
+      <a
+        class="course-card"
+        href="{{ site.baseurl }}/teaching/mat101/"
+      >
+        <span class="course-card-number">03</span>
+        <h4>MAT 101: Linear Algebra I</h4>
+        <span class="course-card-link">
+          View course <span>↗</span>
+        </span>
+      </a>
+
+    </div>
+  </div>
+  
+ <!-- Semester II -->
   <div class="semester-group">
     <div class="semester-heading">
       <h3>Semester I</h3>
@@ -1010,51 +1055,6 @@ html {
       >
         <span class="course-card-number">03</span>
         <h4>MAT 103: Numerical Analysis I </h4>
-        <span class="course-card-link">
-          View course <span>↗</span>
-        </span>
-      </a>
-
-    </div>
-  </div>
-
-  <!-- Semester II -->
-  <div class="semester-group">
-    <div class="semester-heading">
-      <h3>Semester II</h3>
-      <!--<span>02</span>-->
-    </div>
-
-    <div class="course-grid">
-
-      <a
-        class="course-card"
-        href="{{ site.baseurl }}/teaching/qms050/"
-      >
-        <span class="course-card-number">01</span>
-        <h4> QMS 050: Business Maths & Stats </h4>
-        <span class="course-card-link">
-          View course <span>↗</span>
-        </span>
-      </a>
-
-      <a
-        class="course-card"
-        href="{{ site.baseurl }}/teaching/mat050/"
-      >
-        <span class="course-card-number">02</span>
-        <h4>MAT 050: Maths content I </h4>
-        <span class="course-card-link">
-          View course <span>↗</span>
-        </span>
-      </a>
-
-      <a
-        class="course-card"
-        href="{{ site.baseurl }}/teaching/mat101/"
-      >
-        <span class="course-card-number">03</span>
-        <h4>MAT 101: Linear Algebra I</h4>
         <span class="course-card-link">
           View course <span>↗</span>
         </span>
