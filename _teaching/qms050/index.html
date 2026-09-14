@@ -1,1 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QMS 050 — Business Mathematics and Statistics</title>
 
+  <style>
+    :root {
+      --green-dark: #22372b;
+      --green: #3d624b;
+      --green-light: #e8f0e8;
+      --cream: #faf9f5;
+      --white: #ffffff;
+      --ink: #1e2b23;
+      --muted: #68736b;
+      --line: #e1e5df;
+      --gold: #b9892f;
+      --red: #a34c36;
+      --blue: #547c91;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.55;
+    }
+
+    /* HERO */
+    .hero {
+      background: var(--green-dark);
+      color: white;
+      border-bottom: 4px solid var(--gold);
+    }
+
+    .hero-inner,
+    .container {
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .hero-inner {
+      padding: 48px 24px 42px;
+    }
+
+    .kicker {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .pill {
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      color: #d8e3d9;
+      border-radius: 999px;
+      padding: 4px 11px;
+      font-size: 11px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      max-width: 750px;
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(30px, 5vw, 46px);
+      line-height: 1.1;
+      font-weight: 600;
+      letter-spacing: -0.025em;
+    }
+
+    .institution {
+      margin-top: 12px;
+      color: #c8d5ca;
+      font-size: 14px;
+    }
+
+    .semester {
+      display: inline-block;
+      margin-top: 18px;
+      color: #e2bd68;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .purpose {
+      max-width: 700px;
+      margin: 18px 0 0;
+      color: #e0e8df;
+      font-size: 15px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      max-width: 650px;
+      margin-top: 32px;
+    }
+
+    .stat-value {
+      display: block;
+      color: #e2bd68;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 25px;
+      font-weight: 600;
+    }
+
+    .stat-label {
+      color: #b9c9bb;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* GENERAL SECTIONS */
+    .container {
+      padding: 10px 24px 60px;
+    }
+
+    .section {
+      padding-top: 42px;
+    }
+
+    .section-heading {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 25px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    .lede {
+      color: var(--muted);
+      font-size: 14px;
+      margin: 6px 0 22px;
+    }
+
+    /* INTRODUCTION / DESCRIPTION */
+    .description-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--green);
+      border-radius: 10px;
+      padding: 20px 22px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .description-card p {
+      margin: 0;
+    }
+
+    /* LEARNING OUTCOMES */
+    .outcomes {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .outcome {
+      display: flex;
+      gap: 12px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 15px 16px;
+      font-size: 13.5px;
+    }
+
+    .letter {
+      flex: 0 0 25px;
+      height: 25px;
+      display: grid;
+      place-items: center;
+      border-radius: 6px;
+      background: var(--green-light);
+      color: var(--green);
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    /* METHODOLOGY */
+    .method-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 18px 20px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .method-card strong {
+      display: block;
+      color: var(--green);
+      margin-bottom: 6px;
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    /* COURSE CONTENT SUMMARY */
+    .modules {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    .module-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 16px;
+    }
+
+    .module-number {
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+
+    .module-card h3 {
+      margin: 6px 0 5px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 18px;
+      line-height: 1.2;
+    }
+
+    .module-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 12.5px;
+    }
+
+    /* WEEK NAVIGATION */
+    .week-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin: 20px 0 14px;
+    }
+
+    .week-btn {
+      min-width: 44px;
+      height: 38px;
+      padding: 0 10px;
+      border: 1px solid var(--line);
+      background: white;
+      color: var(--muted);
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 600;
+      transition: 0.15s ease;
+    }
+
+    .week-btn:hover {
+      border-color: var(--green);
+      color: var(--green);
+    }
+
+    .week-btn.active {
+      background: var(--green-dark);
+      border-color: var(--green-dark);
+      color: white;
+    }
+
+    .week-btn.test {
+      color: var(--red);
+      border-color: #dfb9ae;
+    }
+
+    .week-btn.test.active {
+      background: var(--red);
+      border-color: var(--red);
+      color: white;
+    }
+
+    .week-btn.presentation {
+      color: var(--blue);
+      border-color: #b8ccd5;
+    }
+
+    .week-btn.presentation.active {
+      background: var(--blue);
+      border-color: var(--blue);
+      color: white;
+    }
+
+    /* WEEK CARD */
+    .week-card {
+      display: none;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 25px;
+    }
+
+    .week-card.visible {
+      display: block;
+    }
+
+    .week-card.test-card {
+      border-top: 4px solid var(--red);
+    }
+
+    .week-card.presentation-card {
+      border-top: 4px solid var(--blue);
+    }
+
+    .week-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 15px;
+      margin-bottom: 24px;
+    }
+
+    .week-label {
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .test-card .week-label {
+      color: var(--red);
+    }
+
+    .presentation-card .week-label {
+      color: var(--blue);
+    }
+
+    .week-title {
+      margin: 4px 0 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 24px;
+      line-height: 1.2;
+    }
+
+    .hours {
+      flex: 0 0 auto;
+      color: var(--muted);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 5px 11px;
+      font-size: 11px;
+      white-space: nowrap;
+    }
+
+    .week-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    .week-block h4 {
+      margin: 0 0 9px;
+      color: var(--green);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+    }
+
+    .week-block li {
+      margin-bottom: 7px;
+      font-size: 13.5px;
+    }
+
+    .week-block ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .note-box {
+      margin-top: 24px;
+      padding: 13px 15px;
+      border-radius: 8px;
+      background: #f5f7f3;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .test-card .note-box {
+      background: #fbf0ed;
+      color: #8f4432;
+    }
+
+    .presentation-card .note-box {
+      background: #edf4f7;
+      color: #466a7b;
+    }
+
+    /* FOOTER */
+    footer {
+      margin-top: 45px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    /* MOBILE */
+    @media (max-width: 750px) {
+      .modules {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 650px) {
+      .hero-inner {
+        padding: 36px 18px;
+      }
+
+      .container {
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+
+      .stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+
+      .outcomes,
+      .week-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .modules {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .week-card {
+        padding: 20px;
+      }
+
+      .week-title {
+        font-size: 21px;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .modules {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="kicker">
+        <span class="pill">QMS 050</span>
+        <span class="pill">Business Studies</span>
+        <span class="pill">Semester I</span>
+      </div>
+
+      <h1>Business Mathematics and Statistics</h1>
+
+      <div class="institution">
+        Course Code: QMS 050
+      </div>
+
+      <div class="semester">Semester I · 12-Week Course Plan</div>
+
+      <p class="purpose">
+        Develops the mathematical and statistical knowledge and skills needed
+        to present, summarize and analyse data, and apply quantitative tools
+        in business and planning processes.
+      </p>
+
+      <div class="stats">
+        <div>
+          <span class="stat-value">12</span>
+          <span class="stat-label">Weeks</span>
+        </div>
+        <div>
+          <span class="stat-value">2 hrs</span>
+          <span class="stat-label">Per week</span>
+        </div>
+        <div>
+          <span class="stat-value">8</span>
+          <span class="stat-label">Modules</span>
+        </div>
+        <div>
+          <span class="stat-value">2</span>
+          <span class="stat-label">Major assessments</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- INTRODUCTION -->
+    <section class="section">
+      <h2 class="section-heading">Introduction</h2>
+      <p class="lede">Course overview and purpose.</p>
+
+      <div class="description-card">
+        <p>
+          This course aims equipping candidates with the necessary knowledge
+          and skills of identifying techniques in presenting, summarizing and
+          analysing data. It also enables students to apply mathematical and
+          statistical tools in business and planning process.
+        </p>
+      </div>
+    </section>
+
+    <!-- LEARNING OUTCOMES -->
+    <section class="section">
+      <h2 class="section-heading">Learning outcomes</h2>
+      <p class="lede">
+        At the end of the course, each student should be able to:
+      </p>
+
+      <div class="outcomes">
+        <div class="outcome">
+          <span class="letter">1</span>
+          <span>Solve business problems using mathematical and statistical techniques.</span>
+        </div>
+
+        <div class="outcome">
+          <span class="letter">2</span>
+          <span>Apply mathematical and statistical knowledge in presenting, summarizing and analysing data.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEACHING METHODOLOGY -->
+    <section class="section">
+      <h2 class="section-heading">Teaching methodology</h2>
+      <p class="lede">Approaches used throughout the course.</p>
+
+      <div class="method-card">
+        <strong>Teaching approaches</strong>
+        Question and answer, group discussion, and interactive lecture.
+      </div>
+    </section>
+
+    <!-- COURSE CONTENT -->
+    <!--
+    <section class="section">
+      <h2 class="section-heading">Course content</h2>
+      <p class="lede">
+        The course is organised into eight progressive modules.
+      </p>
+
+      <div class="modules">
+        <div class="module-card">
+          <div class="module-number">Module 1</div>
+          <h3>Mathematics Foundations</h3>
+          <p>Fractions, percentages, algebra, powers, indices, sequences and series.</p>
+        </div>
+
+        <div class="module-card">
+          <div class="module-number">Module 2</div>
+          <h3>Equations & Graphs</h3>
+          <p>Coordinates, straight lines, quadratic and cubic equations.</p>
+        </div>
+
+        <div class="module-card">
+          <div class="module-number">Module 3</div>
+          <h3>Calculus</h3>
+          <p>Differentiation, integration, stationary points and optimisation.</p>
+        </div>
+
+        <div class="module-card">
+          <div class="module-number">Module 4</div>
+          <h3>Linear Programming</h3>
+          <p>LP introduction, formulation and graphical solution.</p>
+        </div>
+
+        <div class="module-card">
+          <div class="module-number">Module 5</div>
+          <h3>Data Presentation</h3>
+          <p>Data collection, frequency distributions and statistical graphs.</p>
+        </div>
+
+        <div class="module-card">
+          <div class="module-number">Module 6</div>
+          <h3>Central Tendency</h3>
+          <p>Mean, median and mode.</p>
+        </div>
+
+        <div class="module-card">
+          <div class="module-number">Module 7</div>
+          <h3>Dispersion</h3>
+          <p>Range, mean deviation, variance, standard deviation and CV.</p>
+        </div>
+
+        <div class="module-card">
+          <div class="module-number">Module 8</div>
+          <h3>Correlation & Regression</h3>
+          <p>Scatter diagrams, curve fitting, least squares, regression and correlation.</p>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- WEEKLY PLAN -->
+    <section class="section">
+      <h2 class="section-heading">Weekly teaching plan</h2>
+      <p class="lede">
+        Select a week to view its content, hours and teaching notes.
+      </p>
+
+      <div class="week-nav" id="weekNav" role="tablist" aria-label="Weekly teaching plan"></div>
+      <div id="weekCards"></div>
+    </section>
+
+    <footer>
+      QMS 050 · Business Mathematics and Statistics · Semester I · 12-week teaching plan
+    </footer>
+
+  </main>
+
+  <script>
+    const weeks = [
+      {
+        title: "Module 1 (Part 1): Fractions, Percentages, Algebra",
+        content: [
+          "Fractions",
+          "Percentages",
+          "Algebra"
+        ],
+        hours: "2 hours",
+        notes: "Diagnostic warm-up across all 5 streams."
+      },
+      {
+        title: "Module 1 (Part 2): Powers & Indices, Sequences & Series",
+        content: [
+          "Powers and indices",
+          "Sequences and series",
+          "Arithmetic progression (AP)",
+          "Geometric progression (GP)"
+        ],
+        hours: "2 hours",
+        notes: "Link GP to compound growth."
+      },
+      {
+        title: "Module 2: Coordinates, Graphs & Equations",
+        content: [
+          "Coordinates and graphs",
+          "Straight line",
+          "Quadratic equations",
+          "Cubic equations"
+        ],
+        hours: "2 hours",
+        notes: "Compressed into one week — heavier session. Move briskly and prioritise straight lines and quadratics if time is short."
+      },
+      {
+        title: "Module 3 (Part 1): Introduction to Calculus & Differentiation",
+        content: [
+          "Introduction to calculus",
+          "Differentiation"
+        ],
+        hours: "2 hours",
+        notes: "Motivate with cost and revenue functions."
+      },
+      {
+        title: "Module 3 (Part 2): Integration & Optimisation",
+        content: [
+          "Integration",
+          "Stationary points",
+          "Optimisation",
+          "Maximum and minimum values"
+        ],
+        hours: "2 hours",
+        notes: "Tie concepts to profit maximisation and cost minimisation."
+      },
+      {
+        title: "Module 4 (Part 1): Introduction to Linear Programming",
+        content: [
+          "Introduction to linear programming",
+          "Formulation of a linear programming model"
+        ],
+        hours: "2 hours",
+        notes: "Module 4 introduced here as instructed."
+      },
+      {
+        title: "Module 4 (Part 2): Graphical Solution Method",
+        content: [
+          "Graphical solution method",
+          "Practice exercises",
+          "Review of Modules 1–4"
+        ],
+        hours: "2 hours",
+        notes: "Extra time for graphical LP, as students often need repetition. Can double as light revision before the test."
+      },
+      {
+        title: "Test — Modules 1–4",
+        isTest: true,
+        content: [
+          "Assessment covers Modules 1–4",
+          "Fractions, percentages and algebra",
+          "Powers, indices, sequences and series",
+          "Coordinates, graphs and equations",
+          "Calculus and linear programming"
+        ],
+        hours: "2 hours",
+        notes: "No lecture. Full session for the test."
+      },
+      {
+        title: "Module 5: Data Collection & Presentation",
+        isAssignment: true,
+        content: [
+          "Data collection methods",
+          "Frequency distribution",
+          "Histogram",
+          "Frequency polygon",
+          "Ogive",
+          "Group assignment introduced"
+        ],
+        hours: "2 hours",
+        notes: "Assignment brief covering Modules 5–8 is issued here, giving students the full remaining teaching period to work on it."
+      },
+      {
+        title: "Module 6 + Module 7: Central Tendency & Dispersion",
+        content: [
+          "Mean and median (in class)",
+          "Mode assigned as homework / self-study",
+          "Range",
+          "Mean deviation",
+          "Variance",
+          "Standard deviation",
+          "Coefficient of variation"
+        ],
+        hours: "2 hours",
+        notes: "Homework should include worked mode examples and practice questions, checked briefly at the start of Week 11."
+      },
+      {
+        title: "Module 8: Correlation & Regression",
+        content: [
+          "Scatter diagram",
+          "Curve fitting",
+          "Least squares method",
+          "Simple regression",
+          "Simple correlation"
+        ],
+        hours: "2 hours",
+        notes: "Start with a quick recap and check on the Mode homework before moving into new content."
+      },
+      {
+        title: "Group Assignment Presentations — Modules 5–8",
+        isPresentation: true,
+        content: [
+          "Group assignment presentations",
+          "Coverage: Modules 5–8",
+          "Presentation of findings",
+          "Brief question and answer session",
+          "Feedback and discussion"
+        ],
+        hours: "2 hours",
+        notes: "No lecture. Presentations, brief Q&A and feedback."
+      }
+    ];
+
+    const weekNav = document.getElementById("weekNav");
+    const weekCards = document.getElementById("weekCards");
+
+    function createList(items) {
+      return `<ul>${items.map(item => `<li>${item}</li>`).join("")}</ul>`;
+    }
+
+    weeks.forEach((week, index) => {
+      // Navigation button
+      const button = document.createElement("button");
+
+      let buttonClass = "week-btn";
+      if (week.isTest) buttonClass += " test";
+      if (week.isPresentation) buttonClass += " presentation";
+      if (index === 0) buttonClass += " active";
+
+      button.className = buttonClass;
+      button.textContent = week.isTest
+        ? "Test"
+        : week.isPresentation
+          ? "Present"
+          : `W${index + 1}`;
+
+      button.setAttribute("role", "tab");
+      button.setAttribute("aria-selected", index === 0 ? "true" : "false");
+      button.setAttribute("aria-label", `Week ${index + 1}: ${week.title}`);
+
+      button.addEventListener("click", () => showWeek(index));
+      weekNav.appendChild(button);
+
+      // Week content card
+      let cardClass = "week-card";
+      if (week.isTest) cardClass += " test-card";
+      if (week.isPresentation) cardClass += " presentation-card";
+      if (index === 0) cardClass += " visible";
+
+      const card = document.createElement("article");
+      card.className = cardClass;
+      card.setAttribute("role", "tabpanel");
+
+      const label = week.isTest
+        ? "Week 8 · Assessment"
+        : week.isPresentation
+          ? "Week 12 · Presentation"
+          : `Week ${index + 1}`;
+
+      card.innerHTML = `
+        <div class="week-top">
+          <div>
+            <div class="week-label">${label}</div>
+            <h3 class="week-title">${week.title}</h3>
+          </div>
+          <span class="hours">${week.hours}</span>
+        </div>
+
+        <div class="week-grid">
+          <div class="week-block">
+            <h4>Content</h4>
+            ${createList(week.content)}
+          </div>
+
+          <div class="week-block">
+            <h4>Teaching notes</h4>
+            <p style="margin:0; font-size:13.5px; color:#68736b;">
+              ${week.notes}
+            </p>
+          </div>
+        </div>
+
+        <div class="note-box">
+          <strong>${week.isTest ? "Assessment note" : week.isPresentation ? "Presentation note" : "Weekly note"}:</strong>
+          ${week.notes}
+        </div>
+      `;
+
+      weekCards.appendChild(card);
+    });
+
+    function showWeek(index) {
+      [...weekNav.children].forEach((button, i) => {
+        const active = i === index;
+        button.classList.toggle("active", active);
+        button.setAttribute("aria-selected", active ? "true" : "false");
+      });
+
+      [...weekCards.children].forEach((card, i) => {
+        card.classList.toggle("visible", i === index);
+      });
+    }
+  </script>
+
+</body>
+</html>
