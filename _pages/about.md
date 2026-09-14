@@ -976,7 +976,7 @@ html {
   <!-- Semester I -->
     <div class="semester-group">
     <div class="semester-heading">
-      <h3>Semester II</h3>
+      <h3>Semester I</h3>
       <!--<span>02</span>-->
     </div>
 
@@ -1021,7 +1021,7 @@ html {
  <!-- Semester II -->
   <div class="semester-group">
     <div class="semester-heading">
-      <h3>Semester I</h3>
+      <h3>Semester II </h3>
       <!--<span>01</span>-->
     </div>
 
