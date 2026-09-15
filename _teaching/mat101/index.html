@@ -1,1 +1,1322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAT 101 - Linear Algebra I</title>
 
+    <style>
+        :root {
+            --green: #14532d;
+            --green-light: #f0f7f2;
+            --gold: #c59d5f;
+            --text: #1f2937;
+            --muted: #5b6470;
+            --border: #dce5df;
+            --white: #ffffff;
+            --background: #f8fbf9;
+            --shadow: 0 4px 14px rgba(20, 83, 45, 0.07);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: min(1100px, 92%);
+            margin: auto;
+        }
+
+        /* Hero */
+        .hero {
+            background: var(--green);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero small {
+            color: #e7c982;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: bold;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.2rem, 5vw, 3.8rem);
+            margin: 12px 0 5px;
+        }
+
+        .hero h2 {
+            font-size: clamp(1.1rem, 2vw, 1.5rem);
+            font-weight: normal;
+            color: #e4efe6;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: 18px auto 0;
+            color: #dcebdd;
+        }
+
+        .hero-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 25px;
+        }
+
+        .hero-info span {
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.1);
+            padding: 7px 13px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background: white;
+            border-bottom: 1px solid var(--border);
+            box-shadow: 0 2px 7px rgba(0, 0, 0, 0.04);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 5px;
+            padding: 10px 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--green);
+            font-size: 0.85rem;
+            font-weight: bold;
+            padding: 7px 12px;
+            border-radius: 7px;
+        }
+
+        nav a:hover {
+            background: var(--green-light);
+        }
+
+        /* Sections */
+        section {
+            padding: 50px 0;
+        }
+
+        section:nth-of-type(even) {
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 28px;
+        }
+
+        .section-title small {
+            color: #a17a3e;
+            text-transform: uppercase;
+            letter-spacing: 1.3px;
+            font-weight: bold;
+        }
+
+        .section-title h2 {
+            color: var(--green);
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            margin: 7px 0;
+        }
+
+        .section-title p {
+            max-width: 700px;
+            margin: auto;
+            color: var(--muted);
+        }
+
+        /* Overview */
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-bottom: 22px;
+        }
+
+        .overview-item {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 18px 12px;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        .overview-item strong {
+            display: block;
+            color: var(--green);
+            font-size: 0.9rem;
+            margin-bottom: 4px;
+        }
+
+        .overview-item span {
+            color: var(--muted);
+            font-size: 0.88rem;
+        }
+
+        .info-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: var(--shadow);
+        }
+
+        .info-card h3 {
+            color: var(--green);
+            margin-bottom: 10px;
+        }
+
+        .info-card p {
+            color: var(--muted);
+            margin-bottom: 10px;
+        }
+
+        .info-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Outcomes */
+        .outcomes {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 13px;
+        }
+
+        .outcome {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 16px;
+            color: var(--muted);
+            font-size: 0.92rem;
+            box-shadow: var(--shadow);
+        }
+
+        .outcome strong {
+            color: var(--green);
+            margin-right: 7px;
+        }
+
+        /* Assessment */
+        #assessment {
+            background: var(--background);
+        }
+
+        .assessment-box {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .assessment-row {
+            display: grid;
+            grid-template-columns: 1.2fr 2fr 80px;
+            gap: 15px;
+            padding: 17px 20px;
+            border-bottom: 1px solid var(--border);
+            align-items: center;
+        }
+
+        .assessment-row:last-child {
+            border-bottom: none;
+        }
+
+        .assessment-row.header {
+            background: var(--green-light);
+            color: var(--green);
+            font-weight: bold;
+        }
+
+        .assessment-row div {
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        .assessment-row.header div,
+        .assessment-row .weight {
+            color: var(--green);
+            font-weight: bold;
+        }
+
+        .weight {
+            text-align: right;
+        }
+
+        .total {
+            display: flex;
+            justify-content: space-between;
+            background: var(--green);
+            color: white;
+            padding: 15px 20px;
+            font-weight: bold;
+        }
+
+        /* Weekly Plan */
+        #weekly-plan {
+            background: white;
+        }
+
+        .weekly-note {
+            max-width: 800px;
+            margin: 0 auto 25px;
+            padding: 15px 18px;
+            background: var(--green-light);
+            border: 1px solid var(--border);
+            border-left: 5px solid var(--gold);
+            border-radius: 9px;
+            text-align: center;
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        .weekly-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .week-item {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .week-button {
+            width: 100%;
+            border: none;
+            background: white;
+            color: var(--green);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            padding: 17px 20px;
+            text-align: left;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        .week-button:hover {
+            background: var(--green-light);
+        }
+
+        .week-button .arrow {
+            font-size: 1.2rem;
+            transition: transform 0.25s ease;
+        }
+
+        .week-item.active .arrow {
+            transform: rotate(180deg);
+        }
+
+        .week-details {
+            display: none;
+            border-top: 1px solid var(--border);
+            padding: 20px;
+            background: #fbfdfb;
+        }
+
+        .week-item.active .week-details {
+            display: block;
+        }
+
+        .week-details h4 {
+            color: var(--green);
+            margin-bottom: 15px;
+        }
+
+        .session-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .session {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 9px;
+            padding: 16px;
+        }
+
+        .session h5 {
+            color: var(--green);
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+        }
+
+        .session ul {
+            padding-left: 18px;
+            color: var(--muted);
+            font-size: 0.88rem;
+        }
+
+        .session li {
+            margin-bottom: 5px;
+        }
+
+        .week-message {
+            background: #fff8e8;
+            border: 1px solid #ead8ad;
+            color: #765b2d;
+            border-radius: 8px;
+            padding: 12px 14px;
+            font-size: 0.88rem;
+            margin-top: 15px;
+        }
+
+        .test-week .week-button {
+            color: #9a6a1f;
+        }
+
+        .revision-week .week-button {
+            color: var(--green);
+        }
+
+        /* References */
+        .references {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .reference {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 18px;
+            color: var(--muted);
+            font-size: 0.9rem;
+            box-shadow: var(--shadow);
+        }
+
+        .reference strong {
+            color: var(--green);
+        }
+
+        .reference-note {
+            margin-top: 18px;
+            padding: 14px 17px;
+            background: #fff8e8;
+            border: 1px solid #ead8ad;
+            border-radius: 9px;
+            color: #765b2d;
+            font-size: 0.85rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--green);
+            color: white;
+            text-align: center;
+            padding: 28px 0;
+        }
+
+        footer h3 {
+            margin-bottom: 6px;
+        }
+
+        footer p {
+            color: #dcebdd;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 850px) {
+            .overview-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .assessment-row {
+                grid-template-columns: 1fr 1.5fr 60px;
+            }
+        }
+
+        @media (max-width: 650px) {
+            section {
+                padding: 38px 0;
+            }
+
+            .outcomes,
+            .references,
+            .session-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .assessment-row {
+                grid-template-columns: 1fr;
+                gap: 4px;
+            }
+
+            .assessment-row.header {
+                display: none;
+            }
+
+            .assessment-row .weight {
+                text-align: left;
+            }
+
+            .week-button {
+                font-size: 0.92rem;
+                padding: 15px;
+            }
+
+            .week-details {
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 430px) {
+            .overview-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding: 45px 15px;
+            }
+
+            .hero-info {
+                flex-direction: column;
+            }
+
+            .hero-info span {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Hero -->
+    <header class="hero">
+        <div class="container">
+            <small>Course Teaching Plan</small>
+            <h1>MAT 101</h1>
+            <h2>Linear Algebra I</h2>
+
+            <p>
+                An introductory course covering matrices, determinants, systems of
+                linear equations, eigenvalues, eigenvectors, and linear transformations.
+            </p>
+
+            <div class="hero-info">
+                <span>15 Weeks</span>
+                <span>3 Contact Hours Weekly</span>
+                <span>1-Hour Seminar</span>
+                <span>2-Hour Lecture</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-content">
+            <a href="#overview">Overview</a>
+            <a href="#outcomes">Outcomes</a>
+            <a href="#assessment">Assessment</a>
+            <a href="#weekly-plan">Weekly Plan</a>
+            <a href="#references">References</a>
+        </div>
+    </nav>
+
+    <!-- Overview -->
+    <section id="overview">
+        <div class="container">
+            <div class="section-title">
+                <small>Course Information</small>
+                <h2>Course Overview</h2>
+            </div>
+
+            <div class="overview-grid">
+                <div class="overview-item">
+                    <strong>Course Code</strong>
+                    <span>MAT 101</span>
+                </div>
+
+                <div class="overview-item">
+                    <strong>Course Title</strong>
+                    <span>Linear Algebra I</span>
+                </div>
+
+                <div class="overview-item">
+                    <strong>Duration</strong>
+                    <span>15 Weeks</span>
+                </div>
+
+                <div class="overview-item">
+                    <strong>Contact Hours</strong>
+                    <span>3 Hours Weekly</span>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <h3>Course Description</h3>
+                <p>
+                    This course introduces the basic principles of linear algebra,
+                    focusing on matrices, matrix operations, elementary row operations,
+                    determinants, matrix inverses, systems of linear equations,
+                    eigenvalues, eigenvectors, and linear transformations.
+                </p>
+                <p>
+                    Students will develop computational and problem-solving skills
+                    necessary for applying linear algebraic methods to mathematical
+                    and practical problems.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Outcomes -->
+    <section id="outcomes">
+        <div class="container">
+            <div class="section-title">
+                <small>Competencies</small>
+                <h2>Learning Outcomes</h2>
+                <p>By the end of the course, students should be able to:</p>
+            </div>
+
+            <div class="outcomes">
+                <div class="outcome">
+                    <strong>1.</strong>
+                    Define matrices and identify different types of matrices.
+                </div>
+
+                <div class="outcome">
+                    <strong>2.</strong>
+                    Perform matrix addition, subtraction, scalar multiplication,
+                    and matrix multiplication.
+                </div>
+
+                <div class="outcome">
+                    <strong>3.</strong>
+                    Apply elementary row operations to simplify matrices.
+                </div>
+
+                <div class="outcome">
+                    <strong>4.</strong>
+                    Determine row echelon and reduced row echelon forms.
+                </div>
+
+                <div class="outcome">
+                    <strong>5.</strong>
+                    Calculate determinants and apply their properties.
+                </div>
+
+                <div class="outcome">
+                    <strong>6.</strong>
+                    Find matrix inverses using row operations and determinants.
+                </div>
+
+                <div class="outcome">
+                    <strong>7.</strong>
+                    Solve systems of linear equations using different methods.
+                </div>
+
+                <div class="outcome">
+                    <strong>8.</strong>
+                    Find eigenvalues and eigenvectors of suitable matrices.
+                </div>
+
+                <div class="outcome">
+                    <strong>9.</strong>
+                    Explain and represent linear transformations using matrices.
+                </div>
+
+                <div class="outcome">
+                    <strong>10.</strong>
+                    Apply change of basis, coordinate transformations, and rotation
+                    matrices.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Assessment -->
+    <section id="assessment">
+        <div class="container">
+            <div class="section-title">
+                <small>Evaluation</small>
+                <h2>Assessment Scheme</h2>
+                <p>
+                    Student performance will be evaluated through coursework,
+                    an in-semester test, and a final examination.
+                </p>
+            </div>
+
+            <div class="assessment-box">
+                <div class="assessment-row header">
+                    <div>Component</div>
+                    <div>Description</div>
+                    <div class="weight">Weight</div>
+                </div>
+
+                <div class="assessment-row">
+                    <div><strong>Test</strong></div>
+                    <div>Written test covering Weeks 1–7</div>
+                    <div class="weight">20%</div>
+                </div>
+
+                <div class="assessment-row">
+                    <div><strong>Assignment</strong></div>
+                    <div>Exercises, problem sets, and coursework</div>
+                    <div class="weight">20%</div>
+                </div>
+
+                <div class="assessment-row">
+                    <div><strong>Final Examination</strong></div>
+                    <div>Comprehensive examination covering the course</div>
+                    <div class="weight">60%</div>
+                </div>
+
+                <div class="total">
+                    <span>Total</span>
+                    <span>100%</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Weekly Plan -->
+    <section id="weekly-plan">
+        <div class="container">
+            <div class="section-title">
+                <small>Course Schedule</small>
+                <h2>Weekly Teaching Plan</h2>
+                <p>
+                    Click any week to view the seminar and lecture details.
+                </p>
+            </div>
+
+            <div class="weekly-note">
+                Normal weeks contain a <strong>1-hour seminar</strong> and a
+                <strong>2-hour lecture</strong>. Week 8 is reserved for the
+                <strong>2-hour test</strong>.
+            </div>
+
+            <div class="weekly-list">
+
+                <!-- Week 1 -->
+                <div class="week-item">
+                    <button class="week-button" type="button">
+                        <span>Week 1: Introduction to Matrices</span>
+                        <span class="arrow">⌄</span>
+                    </button>
+
+                    <div class="week-details">
+                        <h4>Topic: Introduction to Matrices</h4>
+
+                        <div class="session-grid">
+                            <div class="session">
+                                <h5>Seminar — 1 Hour</h5>
+                                <ul>
+                                    <li>Meaning and notation of matrices</li>
+                                    <li>Rows, columns, and matrix entries</li>
+                                    <li>Basic matrix identification exercises</li>
+                                </ul>
+                            </div>
+
+                            <div class="session">
+                                <h5>Lecture — 2 Hours</h5>
+                                <ul>
+                                    <li>Definition and notation of a matrix</li>
+                                    <li>Order or size of a matrix</li>
+                                    <li>Equality of matrices</li>
+                                    <li>Representation of data using matrices</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 2 -->
+                <div class="week-item">
+                    <button class="week-button" type="button">
+                        <span>Week 2: Special Types and Matrix Operations</span>
+                        <span class="arrow">⌄</span>
+                    </button>
+
+                    <div class="week-details">
+                        <h4>Topic: Special Types of Matrices and Matrix Operations</h4>
+
+                        <div class="session-grid">
+                            <div class="session">
+                                <h5>Seminar — 1 Hour</h5>
+                                <ul>
+                                    <li>Identification of special matrices</li>
+                                    <li>Matrix addition and subtraction</li>
+                                    <li>Scalar multiplication exercises</li>
+                                </ul>
+                            </div>
+
+                            <div class="session">
+                                <h5>Lecture — 2 Hours</h5>
+                                <ul>
+                                    <li>Row, column, square, and rectangular matrices</li>
+                                    <li>Zero, diagonal, identity, and triangular matrices</li>
+                                    <li>Symmetric matrices</li>
+                                    <li>Matrix addition, subtraction, and multiplication</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 3 -->
+                <div class="week-item">
+                    <button class="week-button" type="button">
+                        <span>Week 3: Elementary Row Operations</span>
+                        <span class="arrow">⌄</span>
+                    </button>
+
+                    <div class="week-details">
+                        <h4>Topic: Elementary Row Operations</h4>
+
+                        <div class="session-grid">
+                            <div class="session">
+                                <h5>Seminar — 1 Hour</h5>
+                                <ul>
+                                    <li>Row interchange</li>
+                                    <li>Row scaling</li>
+                                    <li>Row replacement exercises</li>
+                                </ul>
+                            </div>
+
+                            <div class="session">
+                                <h5>Lecture — 2 Hours</h5>
+                                <ul>
+                                    <li>Definition of elementary row operations</li>
+                                    <li>Interchanging rows</li>
+                                    <li>Multiplying a row by a non-zero scalar</li>
+                                    <li>Adding a multiple of one row to another</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 4 -->
+                <div class="week-item">
+                    <button class="week-button" type="button">
+                        <span>Week 4: Row Echelon Forms and Matrix Inverse</span>
+                        <span class="arrow">⌄</span>
+                    </button>
+
+                    <div class="week-details">
+                        <h4>Topic: Row Echelon Forms and Inverse by Row Operations</h4>
+
+                        <div class="session-grid">
+                            <div class="session">
+                                <h5>Seminar — 1 Hour</h5>
+                                <ul>
+                                    <li>Identification of echelon forms</li>
+                                    <li>Matrix reduction exercises</li>
+                                    <li>Guided inverse calculations</li>
+                                </ul>
+                            </div>
+
+                            <div class="session">
+                                <h5>Lecture — 2 Hours</h5>
+                                <ul>
+                                    <li>Row echelon form</li>
+                                    <li>Reduced row echelon form</li>
+                                    <li>Pivot positions</li>
+                                    <li>Rank of a matrix</li>
+                                    <li>Inverse using augmented matrices</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 5 -->
+                <div class="week-item">
+                    <button class="week-button" type="button">
+                        <span>Week 5: Introduction to Determinants</span>
+                        <span class="arrow">⌄</span>
+                    </button>
+
+                    <div class="week-details">
+                        <h4>Topic: Introduction to Determinants</h4>
+
+                        <div class="session-grid">
+                            <div class="session">
+                                <h5>Seminar — 1 Hour</h5>
+                                <ul>
+                                    <li>2 × 2 determinant calculations</li>
+                                    <li>3 × 3 determinant calculations</li>
+                                    <li>Expansion practice</li>
+                                </ul>
+                            </div>
+
+                            <div class="session">
+                                <h5>Lecture — 2 Hours</h5>
+                                <ul>
+                                    <li>Definition of a determinant</li>
+                                    <li>Determinants of 2 × 2 and 3 × 3 matrices</li>
+                                    <li>Minors and cofactors</li>
+                                    <li>Cofactor expansion</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 6 -->
+                <div class="week-item">
+                    <button class="week-button" type="button">
+                        <span>Week 6: Properties and Evaluation of Determinants</span>
+                        <span class="arrow">⌄</span>
+                    </button>
+
+                    <div class="week-details">
+                        <h4>Topic: Properties and Evaluation of Determinants</h4>
+
+                        <div class="session-grid">
+                            <div class="session">
+                                <h5>Seminar — 1 Hour</h5>
+                                <ul>
+                                    <li>Application of determinant properties</li>
+                                    <li>Simplification of determinant calculations</li>
+                                    <li>Row-operation exercises</li>
+                                </ul>
+                            </div>
+
+                            <div class="session">
+                                <h5>Lecture — 2 Hours</h5>
+                                <ul>
+                                    <li>Determinants of triangular matrices</li>
+                                    <li>Effect of row interchange</li>
+                                    <li>Effect of scalar multiplication</li>
+                                    <li>Effect of row replacement</li>
+                                    <li>Evaluation through row reduction</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 7 -->
+                <div class="week-item">
+                    <button class="week-button" type="button">
+                        <span>Week 7: Inverse of a Matrix Using Determinants</span>
+                        <span class="arrow">⌄</span>
+                    </button>
+
+                    <div class="week-details">
+                        <h4>Topic: Inverse of a Matrix Using Determinants</h4>
+
+                        <div class="session-grid">
+                            <div class="session">
+                                <h5>Seminar — 1 Hour</h5>
+                                <ul>
+                                    <li>Minors and cofactors</li>
+                                    <li>Adjoint matrix construction</li>
+                                    <li>Inverse calculation exercises</li>
+                                </ul>
+                            </div>
+
+                            <div class="session">
+                                <h5>Lecture — 2 Hours</h5>
+                                <ul>
+                                    <li>Singular and non-singular matrices</li>
+                                    <li>Adjoint and cofactor matrices</li>
+                                    <li>Inverse matrix formula</li>
+                                    <li>Conditions for matrix invertibility</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="week-message">
+                            Test preparation: Review Weeks 1–7 and complete revision exercises.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 8 -->
+                <div class="week-item test-week">
+                    <button class="week-button" type="button">
+                        <span>Week 8: In-Semester Test — 2 Hours</span>
+                        <span class="arrow">⌄</span>
+                    </button>
+
+                    <div class="week-details">
+                        <h4>Topic: Test Covering Weeks 1–7</h4>
+
+                        <div class="session-grid">
+                            <div class="session">
+                                <h5>Preparation / Consultation</h5>
+                                <ul>
+                                    <li>Clarification of difficult concepts</li>
+                                    <li>Test instructions</li>
+                                    <li>Brief academic consultation</li>
+                                </ul>
+                            </div>
+
+                            <div class="session">
+                                <h5>Test Session — 2 Hours</h5>
+                                <ul>
+                                    <li>Matrix concepts and operations</li>
+                                    <li>Elementary row operations</li>
+                                    <li>Row echelon forms</li>
+                                    <li>Matrix inverses</li>
+                                    <li>Determinants and their properties</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 9 -->
+                <div class="week-item">
+                    <button class="week-button" type="button">
+                        <span>Week 9: Systems of Linear Equations</span>
+                        <span class="arrow">⌄</span>
+                    </button>
+
+                    <div class="week-details">
+                        <h4>Topic: Systems of Linear Equations</h4>
+
+                        <div class="session-grid">
+                            <div class="session">
+                                <h5>Seminar — 1 Hour</h5>
+                                <ul>
+                                    <li>Writing systems in matrix form</li>
+                                    <li>Augmented matrix exercises</li>
+                                    <li>Simple elimination problems</li>
+                                </ul>
+                            </div>
+
+                            <div class="session">
+                                <h5>Lecture — 2 Hours</h5>
+                                <ul>
+                                    <li>Definition of linear systems</li>
+                                    <li>Consistent and inconsistent systems</li>
+                                    <li>Unique and infinitely many solutions</li>
+                                    <li>Homogeneous systems</li>
+                                    <li>Augmented matrices</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 10 -->
+                <div class="week-item">
+                    <button class="week-button" type="button">
+                        <span>Week 10: Matrix Form and Gaussian Elimination</span>
+                        <span class="arrow">⌄</span>
+                    </button>
+
+                    <div class="week-details">
+                        <h4>Topic: Matrix Form and Gaussian Elimination</h4>
+
+                        <div class="session-grid">
+                            <div class="session">
+                                <h5>Seminar — 1 Hour</h5>
+                                <ul>
+                                    <li>Conversion of equations to matrices</li>
+                                    <li>Row reduction of systems</li>
+                                    <li>Interpretation of solution sets</li>
+                                </ul>
+                            </div>
+
+                            <div class="session">
+                                <h5>Lecture — 2 Hours</h5>
+                                <ul>
+                                    <li>Matrix representation of systems</li>
+                                    <li>Gaussian elimination</li>
+                                    <li>Back substitution</li>
+                                    <li>Pivot and free variables</li>
+                                    <li>Geometric interpretation of solutions</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 11 -->
+                <div class="week-item">
+                    <button class="week-button" type="button">
+                        <span>Week 11: Gauss-Jordan, Inverse Method, and Cramer’s Rule</span>
+                        <span class="arrow">⌄</span>
+                    </button>
+
+                    <div class="week-details">
+                        <h4>Topic: Methods for Solving Linear Systems</h4>
+
+                        <div class="session-grid">
+                            <div class="session">
+                                <h5>Seminar — 1 Hour</h5>
+                                <ul>
+                                    <li>Gauss-Jordan elimination practice</li>
+                                    <li>Inverse matrix method</li>
+                                    <li>Cramer’s rule exercises</li>
+                                </ul>
+                            </div>
+
+                            <div class="session">
+                                <h5>Lecture — 2 Hours</h5>
+                                <ul>
+                                    <li>Gauss-Jordan elimination</li>
+                                    <li>Inverse matrix method</li>
+                                    <li>Cramer’s rule</li>
+                                    <li>Comparison of solution methods</li>
+                                    <li>Applications of linear systems</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 12 -->
+                <div class="week-item">
+                    <button class="week-button" type="button">
+                        <span>Week 12: Eigenvalues and Eigenvectors</span>
+                        <span class="arrow">⌄</span>
+                    </button>
+
+                    <div class="week-details">
+                        <h4>Topic: Eigenvalues and Eigenvectors</h4>
+
+                        <div class="session-grid">
+                            <div class="session">
+                                <h5>Seminar — 1 Hour</h5>
+                                <ul>
+                                    <li>Eigenvalue equation</li>
+                                    <li>Characteristic polynomial practice</li>
+                                    <li>Simple eigenvalue calculations</li>
+                                </ul>
+                            </div>
+
+                            <div class="session">
+                                <h5>Lecture — 2 Hours</h5>
+                                <ul>
+                                    <li>Definition of eigenvalues and eigenvectors</li>
+                                    <li>Eigenvalue equation</li>
+                                    <li>Characteristic matrix</li>
+                                    <li>Characteristic polynomial</li>
+                                    <li>Characteristic equation</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 13 -->
+                <div class="week-item">
+                    <button class="week-button" type="button">
+                        <span>Week 13: Computing Eigenvectors</span>
+                        <span class="arrow">⌄</span>
+                    </button>
+
+                    <div class="week-details">
+                        <h4>Topic: Computing Eigenvectors</h4>
+
+                        <div class="session-grid">
+                            <div class="session">
+                                <h5>Seminar — 1 Hour</h5>
+                                <ul>
+                                    <li>Finding eigenvectors</li>
+                                    <li>Solving homogeneous systems</li>
+                                    <li>Checking eigenvector solutions</li>
+                                </ul>
+                            </div>
+
+                            <div class="session">
+                                <h5>Lecture — 2 Hours</h5>
+                                <ul>
+                                    <li>Finding eigenvectors from eigenvalues</li>
+                                    <li>Solving (A − λI)x = 0</li>
+                                    <li>Eigenspaces</li>
+                                    <li>Geometric interpretation of eigenvectors</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 14 -->
+                <div class="week-item">
+                    <button class="week-button" type="button">
+                        <span>Week 14: Linear Transformations</span>
+                        <span class="arrow">⌄</span>
+                    </button>
+
+                    <div class="week-details">
+                        <h4>Topic: Linear Transformations and Coordinate Representations</h4>
+
+                        <div class="session-grid">
+                            <div class="session">
+                                <h5>Seminar — 1 Hour</h5>
+                                <ul>
+                                    <li>Testing whether a mapping is linear</li>
+                                    <li>Finding kernels and ranges</li>
+                                    <li>Matrix representation exercises</li>
+                                </ul>
+                            </div>
+
+                            <div class="session">
+                                <h5>Lecture — 2 Hours</h5>
+                                <ul>
+                                    <li>Definition of linear transformations</li>
+                                    <li>Kernel and range</li>
+                                    <li>Inverse transformations</li>
+                                    <li>Matrices of transformations</li>
+                                    <li>Coordinate transformations</li>
+                                    <li>Change of basis</li>
+                                    <li>Rotation matrices and coordinate axes</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 15 -->
+                <div class="week-item revision-week">
+                    <button class="week-button" type="button">
+                        <span>Week 15: Comprehensive Course Revision</span>
+                        <span class="arrow">⌄</span>
+                    </button>
+
+                    <div class="week-details">
+                        <h4>Topic: Comprehensive Revision and Examination Preparation</h4>
+
+                        <div class="session-grid">
+                            <div class="session">
+                                <h5>Seminar — 1 Hour</h5>
+                                <ul>
+                                    <li>Review of key definitions and formulas</li>
+                                    <li>Common examination errors</li>
+                                    <li>Student questions and clarification</li>
+                                    <li>Short revision exercises</li>
+                                </ul>
+                            </div>
+
+                            <div class="session">
+                                <h5>Lecture — 2 Hours</h5>
+                                <ul>
+                                    <li>Revision of matrices and determinants</li>
+                                    <li>Revision of inverses and row reduction</li>
+                                    <li>Revision of linear systems</li>
+                                    <li>Revision of eigenvalues and eigenvectors</li>
+                                    <li>Revision of linear transformations</li>
+                                    <li>Final examination preparation</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="week-message">
+                            This week is reserved for consolidation and final examination preparation.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- References -->
+    <section id="references">
+        <div class="container">
+            <div class="section-title">
+                <small>Recommended Reading</small>
+                <h2>References</h2>
+            </div>
+
+            <div class="references">
+                <div class="reference">
+                    <strong>Kolman, B. (1984).</strong>
+                    <em>Introductory Linear Algebra with Applications</em>
+                    (4th ed.). MacMillan Publishing Co.
+                </div>
+
+                <div class="reference">
+                    <strong>Anton, H. (1997).</strong>
+                    <em>Elementary Linear Algebra</em>.
+                    Prentice-Hall International, Inc.
+                </div>
+
+                <div class="reference">
+                    <strong>Apostol, T. (1997).</strong>
+                    <em>Multi Variable Calculus and Linear Algebra</em>
+                    (2nd ed.). John Wiley and Sons.
+                </div>
+
+                <div class="reference">
+                    <strong>Anton, H., &amp; Rorres, C. (2010).</strong>
+                    <em>Elementary Linear Algebra: Applications Version</em>
+                    (10th ed.). John Wiley and Sons.
+                </div>
+            </div>
+
+            <div class="reference-note">
+                Bibliographic details should be checked against the institution’s
+                library catalogue before official publication.
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <h3>MAT 101 · Linear Algebra I</h3>
+            <p>15-Week Course Teaching Plan</p>
+        </div>
+    </footer>
+
+    <script>
+        const weekButtons = document.querySelectorAll(".week-button");
+
+        weekButtons.forEach(button => {
+            button.addEventListener("click", () => {
+                const currentItem = button.parentElement;
+                const isActive = currentItem.classList.contains("active");
+
+                // Close all weeks
+                document.querySelectorAll(".week-item").forEach(item => {
+                    item.classList.remove("active");
+                });
+
+                // Open selected week if it was previously closed
+                if (!isActive) {
+                    currentItem.classList.add("active");
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
