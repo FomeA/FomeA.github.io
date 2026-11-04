@@ -401,6 +401,100 @@
             color: #9a6a1f;
         }
 
+        /* Topic Notes */
+        #notes {
+            background: var(--background);
+        }
+
+        .notes-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 12px;
+        }
+
+        .note-card {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            background: white;
+            border: 1px solid var(--border);
+            border-top: 3px solid var(--border);
+            border-radius: 10px;
+            padding: 14px;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .note-card.ready {
+            border-top-color: var(--gold);
+        }
+
+        .note-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 22px rgba(20, 83, 45, 0.12);
+        }
+
+        .note-week {
+            color: #a17a3e;
+            font-size: 0.75rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .note-card h3 {
+            color: var(--green);
+            font-size: 0.95rem;
+            line-height: 1.3;
+            flex: 1;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 850px) {
+            .notes-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 560px) {
+            .notes-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .dl-btn {
+            justify-content: center;
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 8px 14px;
+            border-radius: 8px;
+            background: var(--green);
+            color: white;
+            font-size: 0.85rem;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background 0.15s ease, transform 0.15s ease;
+        }
+
+        .dl-btn:hover {
+            background: #1d6b3c;
+            transform: translateY(-1px);
+        }
+
+        .dl-btn svg {
+            width: 15px;
+            height: 15px;
+        }
+
+        .dl-btn.locked {
+            background: #f1f4f2;
+            color: var(--muted);
+            font-weight: normal;
+            cursor: default;
+            transform: none;
+        }
+
         .revision-week .week-button {
             color: var(--green);
         }
@@ -548,6 +642,7 @@
             <a href="#outcomes">Outcomes</a>
             <a href="#assessment">Assessment</a>
             <a href="#weekly-plan">Weekly Plan</a>
+            <a href="#notes">Topic Notes</a>
             <a href="#references">References</a>
         </div>
     </nav>
@@ -1249,6 +1344,21 @@
     </section>
 
    
+    <!-- Topic Notes -->
+    <section id="notes">
+        <div class="container">
+            <div class="section-title">
+                <small>Course Materials</small>
+                <h2>Topic Notes</h2>
+                <p>
+                    Notes for each topic are released after it has been taught.
+                </p>
+            </div>
+
+            <div class="notes-grid" id="notesGrid"></div>
+        </div>
+    </section>
+
      <!-- =========================
          Reading List
     ========================== -->
@@ -1320,6 +1430,38 @@
     </footer>
 
     <script>
+        /* =========================================================
+           TOPIC NOTES — edit the "file" values only.
+           Put each notes file in the same folder as index.html and
+           replace null with its exact file name, in quotes, e.g.
+           file: "Week-1-Notes.pdf"
+           While file is null, students see "Available after Week X".
+           ========================================================= */
+        const notes = [
+            { topic: "Matrices", file: "MAT101_Module1_Matrices.pdf" },
+            { topic: "Determinants", file: null },
+            { topic: "Systems of Linear Equations", file: null },
+            { topic: "Eigenvalues and Eigenvectors", file: null },
+            { topic: "Linear Transformations", file: null }
+        ];
+
+        const downloadIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>';
+
+        const notesGrid = document.getElementById("notesGrid");
+
+        notes.forEach((n, i) => {
+            const card = document.createElement("div");
+            card.className = "note-card" + (n.file ? " ready" : "");
+            card.innerHTML = `
+                <span class="note-week">Topic ${i + 1}</span>
+                <h3>${n.topic}</h3>
+                ${n.file
+                    ? `<a class="dl-btn" href="${encodeURI(n.file)}" download>${downloadIcon}Download</a>`
+                    : `<span class="dl-btn locked">Coming soon</span>`}
+            `;
+            notesGrid.appendChild(card);
+        });
+
         const weekButtons = document.querySelectorAll(".week-button");
 
         weekButtons.forEach(button => {
