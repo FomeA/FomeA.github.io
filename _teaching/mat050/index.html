@@ -372,6 +372,93 @@
       color: var(--muted);
     }
 
+    /* TOPIC NOTES */
+    .notes-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+    }
+
+    .note-card {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      background: white;
+      border: 1px solid var(--line);
+      border-top: 3px solid var(--line);
+      border-radius: 10px;
+      padding: 14px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .note-card.ready {
+      border-top-color: var(--gold);
+    }
+
+    .note-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 22px -12px rgba(34, 55, 43, 0.35);
+    }
+
+    .note-num {
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+
+    .note-card h3 {
+      flex: 1;
+      margin: 0 0 10px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 16px;
+      line-height: 1.25;
+    }
+
+    .dl-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      padding: 8px 12px;
+      border-radius: 8px;
+      background: var(--green-dark);
+      color: white;
+      font-size: 12.5px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.15s ease;
+    }
+
+    .dl-btn:hover {
+      background: var(--green);
+    }
+
+    .dl-btn svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    .dl-btn.locked {
+      background: #f2f3ef;
+      color: var(--muted);
+      font-weight: normal;
+      cursor: default;
+    }
+
+    @media (max-width: 850px) {
+      .notes-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 560px) {
+      .notes-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
     footer {
       margin-top: 45px;
       padding-top: 18px;
@@ -441,9 +528,9 @@
 
       <h1>Mathematics Academic Content I</h1>
 
-     <!-- <div class="institution">
+      <!--<div class="institution">
         St. Augustine University of Tanzania · Jordan University College
-      </div> -->
+      </div>-->
 
       <p class="purpose">
         Prepares student teachers with mathematical knowledge, skills and
@@ -552,6 +639,14 @@
       <div id="weekCards"></div>
     </section>
 
+    <!-- TOPIC NOTES -->
+    <section class="section" id="notes">
+      <h2 class="section-heading">Topic notes</h2>
+      <p class="lede">Notes for each topic are released after it has been taught.</p>
+
+      <div class="notes-grid" id="notesGrid"></div>
+    </section>
+
     <!-- METHODOLOGY -->
     <section class="section">
       <h2 class="section-heading">Methodology &amp; materials</h2>
@@ -582,6 +677,35 @@
   </main>
 
   <script>
+    /* =========================================================
+       TOPIC NOTES — edit the "file" values only.
+       Put the notes file in the same folder as index.html and
+       replace null with its exact file name, e.g.
+       { topic: "Sets and Logic", file: "Sets-and-Logic.pdf" },
+       ========================================================= */
+    const notes = [
+      { topic: "Calculating Devices",        file: null },
+      { topic: "Sets and Logic",             file: null },
+      { topic: "Linear Programming",         file: null },
+      { topic: "Matrices",                   file: null },
+      { topic: "Probability and Statistics", file: null }
+    ];
+
+    const downloadIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>';
+
+    const notesGrid = document.getElementById("notesGrid");
+    notes.forEach((n, i) => {
+      const card = document.createElement("div");
+      card.className = "note-card" + (n.file ? " ready" : "");
+      card.innerHTML = `
+        <span class="note-num">Topic ${i + 1}</span>
+        <h3>${n.topic}</h3>
+        ${n.file
+          ? `<a class="dl-btn" href="${encodeURI(n.file)}" download>${downloadIcon}Download</a>`
+          : `<span class="dl-btn locked">Coming soon</span>`}
+      `;
+      notesGrid.appendChild(card);
+    });
     const weeks = [
       {
         title: "Calculating devices",
