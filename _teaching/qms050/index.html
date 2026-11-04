@@ -212,7 +212,7 @@
       text-transform: uppercase;
     }
 
-    /* COURSE CONTENT SUMMARY */
+    /* MODULE SLIDES */
     .modules {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -220,6 +220,8 @@
     }
 
     .module-card {
+      display: flex;
+      flex-direction: column;
       background: white;
       border: 1px solid var(--line);
       border-radius: 10px;
@@ -242,9 +244,53 @@
     }
 
     .module-card p {
-      margin: 0;
+      margin: 0 0 14px;
       color: var(--muted);
       font-size: 12.5px;
+      flex: 1;
+    }
+
+    /* DOWNLOAD BUTTONS */
+    .dl-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      padding: 8px 12px;
+      border-radius: 8px;
+      background: var(--green-dark);
+      color: white;
+      font-size: 12.5px;
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid var(--green-dark);
+      transition: 0.15s ease;
+    }
+
+    .dl-btn:hover {
+      background: var(--green);
+      border-color: var(--green);
+    }
+
+    .dl-btn svg {
+      width: 14px;
+      height: 14px;
+      flex: 0 0 auto;
+    }
+
+    .dl-btn.locked {
+      background: #f2f3ef;
+      color: var(--muted);
+      border-color: var(--line);
+      cursor: default;
+      font-weight: normal;
+    }
+
+    .week-downloads {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 20px;
     }
 
     /* WEEK NAVIGATION */
@@ -558,63 +604,14 @@
       </div>
     </section>
 
-    <!-- COURSE CONTENT -->
-    <!--
-    <section class="section">
-      <h2 class="section-heading">Course content</h2>
+    <!-- MODULE SLIDES -->
+    <!-- <section class="section" id="slides">
+      <h2 class="section-heading">Module slides</h2>
       <p class="lede">
-        The course is organised into eight progressive modules.
+        Slides are released at the end of each module. Click to download.
       </p>
 
-      <div class="modules">
-        <div class="module-card">
-          <div class="module-number">Module 1</div>
-          <h3>Mathematics Foundations</h3>
-          <p>Fractions, percentages, algebra, powers, indices, sequences and series.</p>
-        </div>
-
-        <div class="module-card">
-          <div class="module-number">Module 2</div>
-          <h3>Equations & Graphs</h3>
-          <p>Coordinates, straight lines, quadratic and cubic equations.</p>
-        </div>
-
-        <div class="module-card">
-          <div class="module-number">Module 3</div>
-          <h3>Calculus</h3>
-          <p>Differentiation, integration, stationary points and optimisation.</p>
-        </div>
-
-        <div class="module-card">
-          <div class="module-number">Module 4</div>
-          <h3>Linear Programming</h3>
-          <p>LP introduction, formulation and graphical solution.</p>
-        </div>
-
-        <div class="module-card">
-          <div class="module-number">Module 5</div>
-          <h3>Data Presentation</h3>
-          <p>Data collection, frequency distributions and statistical graphs.</p>
-        </div>
-
-        <div class="module-card">
-          <div class="module-number">Module 6</div>
-          <h3>Central Tendency</h3>
-          <p>Mean, median and mode.</p>
-        </div>
-
-        <div class="module-card">
-          <div class="module-number">Module 7</div>
-          <h3>Dispersion</h3>
-          <p>Range, mean deviation, variance, standard deviation and CV.</p>
-        </div>
-
-        <div class="module-card">
-          <div class="module-number">Module 8</div>
-          <h3>Correlation & Regression</h3>
-          <p>Scatter diagrams, curve fitting, least squares, regression and correlation.</p>
-        </div>
-      </div>
+      <div class="modules" id="slideCards"></div>
     </section> -->
 
     <!-- WEEKLY PLAN -->
@@ -635,6 +632,49 @@
   </main>
 
   <script>
+    /* =========================================================
+       SLIDES — edit this list only.
+       When you finish a module, put the slide file in the same
+       folder as index.html and type its exact file name below
+       (e.g. "Module-1-Slides.pdf"). Leave it as null to keep
+       the module locked ("Available after Week X").
+       ========================================================= */
+    const slides = {
+      1: { title: "Mathematics Foundations",  summary: "Fractions, percentages, algebra, powers, indices, sequences and series.", week: 2,  file: null },
+      2: { title: "Equations & Graphs",       summary: "Coordinates, straight lines, quadratic and cubic equations.",             week: 3,  file: null },
+      3: { title: "Calculus",                 summary: "Differentiation, integration, stationary points and optimisation.",      week: 5,  file: null },
+      4: { title: "Linear Programming",       summary: "LP introduction, formulation and graphical solution.",                   week: 7,  file: null },
+      5: { title: "Data Presentation",        summary: "Data collection, frequency distributions and statistical graphs.",       week: 8,  file: null },
+      6: { title: "Central Tendency",         summary: "Mean, median and mode.",                                                 week: 10, file: null },
+      7: { title: "Dispersion",               summary: "Range, mean deviation, variance, standard deviation and CV.",            week: 10, file: null },
+      8: { title: "Correlation & Regression", summary: "Scatter diagrams, curve fitting, least squares, regression and correlation.", week: 11, file: null }
+    };
+
+    const downloadIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>`;
+
+    function slideButton(num, label) {
+      const s = slides[num];
+      if (s.file) {
+        return `<a class="dl-btn" href="${encodeURI(s.file)}" download>${downloadIcon}${label || `Module ${num} slides`}</a>`;
+      }
+      return `<span class="dl-btn locked" title="Released after Week ${s.week}">Available after Week ${s.week}</span>`;
+    }
+
+    // Slides section
+    const slideCards = document.getElementById("slideCards");
+    Object.keys(slides).forEach(num => {
+      const s = slides[num];
+      const card = document.createElement("div");
+      card.className = "module-card";
+      card.innerHTML = `
+        <div class="module-number">Module ${num}</div>
+        <h3>${s.title}</h3>
+        <p>${s.summary}</p>
+        ${slideButton(num, "Download slides")}
+      `;
+      slideCards.appendChild(card);
+    });
+
     const weeks = [
       {
         title: "Module 1 (Part 1): Fractions, Percentages, Algebra",
@@ -655,7 +695,8 @@
           "Geometric progression (GP)"
         ],
         hours: "2 hours",
-        notes: "Link GP to compound growth."
+        notes: "Link GP to compound growth.",
+        slidesFor: [1]
       },
       {
         title: "Module 2: Coordinates, Graphs & Equations",
@@ -666,7 +707,8 @@
           "Cubic equations"
         ],
         hours: "2 hours",
-        notes: "Compressed into one week — heavier session. Move briskly and prioritise straight lines and quadratics if time is short."
+        notes: "Compressed into one week — heavier session. Move briskly and prioritise straight lines and quadratics if time is short.",
+        slidesFor: [2]
       },
       {
         title: "Module 3 (Part 1): Introduction to Calculus & Differentiation",
@@ -686,7 +728,8 @@
           "Maximum and minimum values"
         ],
         hours: "2 hours",
-        notes: "Tie concepts to profit maximisation and cost minimisation."
+        notes: "Tie concepts to profit maximisation and cost minimisation.",
+        slidesFor: [3]
       },
       {
         title: "Module 4 (Part 1): Introduction to Linear Programming",
@@ -705,7 +748,23 @@
           "Review of Modules 1–4"
         ],
         hours: "2 hours",
-        notes: "Extra time for graphical LP, as students often need repetition. Can double as light revision before the test."
+        notes: "Extra time for graphical LP, as students often need repetition. Can double as light revision ahead of the Week 9 test.",
+        slidesFor: [4]
+      },
+      {
+        title: "Module 5: Data Collection & Presentation",
+        isAssignment: true,
+        content: [
+          "Data collection methods",
+          "Frequency distribution",
+          "Histogram",
+          "Frequency polygon",
+          "Ogive",
+          "Group assignment introduced"
+        ],
+        hours: "2 hours",
+        notes: "Assignment brief covering Modules 5–8 is issued here, giving students the full remaining teaching period to work on it.",
+        slidesFor: [5]
       },
       {
         title: "Test — Modules 1–4",
@@ -721,20 +780,6 @@
         notes: "No lecture. Full session for the test."
       },
       {
-        title: "Module 5: Data Collection & Presentation",
-        isAssignment: true,
-        content: [
-          "Data collection methods",
-          "Frequency distribution",
-          "Histogram",
-          "Frequency polygon",
-          "Ogive",
-          "Group assignment introduced"
-        ],
-        hours: "2 hours",
-        notes: "Assignment brief covering Modules 5–8 is issued here, giving students the full remaining teaching period to work on it."
-      },
-      {
         title: "Module 6 + Module 7: Central Tendency & Dispersion",
         content: [
           "Mean and median (in class)",
@@ -746,7 +791,8 @@
           "Coefficient of variation"
         ],
         hours: "2 hours",
-        notes: "Homework should include worked mode examples and practice questions, checked briefly at the start of Week 11."
+        notes: "Homework should include worked mode examples and practice questions, checked briefly at the start of Week 11.",
+        slidesFor: [6, 7]
       },
       {
         title: "Module 8: Correlation & Regression",
@@ -758,7 +804,8 @@
           "Simple correlation"
         ],
         hours: "2 hours",
-        notes: "Start with a quick recap and check on the Mode homework before moving into new content."
+        notes: "Start with a quick recap and check on the Mode homework before moving into new content.",
+        slidesFor: [8]
       },
       {
         title: "Group Assignment Presentations — Modules 5–8",
@@ -816,10 +863,14 @@
       card.setAttribute("role", "tabpanel");
 
       const label = week.isTest
-        ? "Week 8 · Assessment"
+        ? `Week ${index + 1} · Assessment`
         : week.isPresentation
-          ? "Week 12 · Presentation"
+          ? `Week ${index + 1} · Presentation`
           : `Week ${index + 1}`;
+
+      const downloads = week.slidesFor
+        ? `<div class="week-downloads">${week.slidesFor.map(n => slideButton(n)).join("")}</div>`
+        : "";
 
       card.innerHTML = `
         <div class="week-top">
@@ -843,6 +894,8 @@
             </p>
           </div>
         </div>
+
+        ${downloads}
 
         <div class="note-box">
           <strong>${week.isTest ? "Assessment note" : week.isPresentation ? "Presentation note" : "Weekly note"}:</strong>
