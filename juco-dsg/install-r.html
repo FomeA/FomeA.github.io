@@ -1,0 +1,125 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Install R and RStudio | JUCo DSRG</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0b1f3a;--teal:#0f766e;--gold:#d4af37;--bg:#eef2f8;--card:#fff;--ink:#1a1a2e;--mute:#58667a}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 Inter,system-ui,sans-serif}
+header{background:var(--navy);color:#fff;padding:32px 16px;border-bottom:4px solid var(--gold)}
+header div,main{max-width:900px;margin:0 auto}h1,h2,h3{font-family:"Source Serif 4",Georgia,serif;margin:0}
+h1{font-size:1.9rem}header p{margin:.4rem 0 0;color:#cbd8ea}
+h2{color:var(--navy);margin:2.2rem 0 .6rem;border-left:5px solid var(--gold);padding-left:12px;font-size:1.4rem}
+h3{color:var(--teal);font-size:1.1rem;margin:1.2rem 0 .3rem}
+main{padding:16px}.card{background:var(--card);border-radius:10px;padding:16px 20px;margin:14px 0;box-shadow:0 1px 4px #0b1f3a22}
+a{color:var(--teal);font-weight:600}code,pre{font-family:"Courier New",monospace}
+code{background:#e6ecf5;padding:1px 5px;border-radius:4px;font-size:.92em}
+pre{background:#10182b;color:#fff;padding:12px 14px;border-radius:8px;overflow:auto;font-size:15px;margin:.5rem 0;white-space:pre-wrap;word-break:break-word}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.tab{font:600 .95rem Inter;padding:9px 16px;border:2px solid var(--navy);border-radius:99px;background:#fff;color:var(--navy);cursor:pointer}
+.tab[aria-selected=true]{background:var(--navy);color:#fff}
+.panel{display:none}.panel.on{display:block}
+ol.steps{list-style:none;padding:0;margin:0;counter-reset:s}
+ol.steps>li{counter-increment:s;position:relative;padding:10px 0 10px 52px;border-bottom:1px solid #e3e9f2}
+ol.steps>li:last-child{border-bottom:0}
+ol.steps>li::before{content:counter(s);position:absolute;left:0;top:10px;width:36px;height:36px;border-radius:50%;background:var(--teal);color:#fff;font-weight:600;display:flex;align-items:center;justify-content:center}
+.note{background:#fff8e1;border-left:4px solid var(--gold);padding:10px 14px;border-radius:6px;font-size:.95rem;margin:10px 0}
+.ok{background:#e6f4ec;border-left:4px solid #157347;padding:10px 14px;border-radius:6px;margin:10px 0}
+table{border-collapse:collapse;width:100%;font-size:.95rem}th,td{text-align:left;padding:8px 10px;border-bottom:1px solid #e3e9f2;vertical-align:top}th{color:var(--navy)}
+.small{font-size:.9rem;color:var(--mute)}footer{padding:24px 16px;text-align:center;color:var(--mute);font-size:.9rem}
+</style></head><body>
+<header><div><h1>Install R and RStudio</h1><p>JUCo Data Science &amp; Modelling Research Group · Step-by-step installation guide</p></div></header>
+<main>
+<div class="card"><b>What are they?</b> <b>R</b> is the language that does the calculations. <b>RStudio</b> is the program you work in: it makes R easier to use. You need both, and both are free.
+<div class="note"><b>The one rule:</b> install <b>R first</b>, then <b>RStudio</b>.</div></div>
+
+<h2>Choose your computer</h2>
+<div class="tabs" role="tablist">
+<button class="tab" role="tab" data-t="win">Windows</button>
+<button class="tab" role="tab" data-t="mac">Mac</button>
+<button class="tab" role="tab" data-t="lin">Linux (Ubuntu)</button>
+<button class="tab" role="tab" data-t="cloud">No install (browser)</button>
+</div>
+
+<section class="panel card" id="win"><h3>Windows</h3>
+<ol class="steps">
+<li><b>Download R.</b> Open <a href="https://cran.r-project.org/bin/windows/base/" target="_blank" rel="noopener">cran.r-project.org/bin/windows/base</a> and click the big link <b>Download R for Windows</b> at the top.</li>
+<li><b>Install R.</b> Open the downloaded file (it ends in <code>.exe</code>). Click <b>Yes</b>, then <b>Next</b> on every screen. Keep all the default settings. Click <b>Finish</b>.</li>
+<li><b>Download RStudio.</b> Open <a href="https://posit.co/download/rstudio-desktop/" target="_blank" rel="noopener">posit.co/download/rstudio-desktop</a> and click <b>Download RStudio Desktop for Windows</b>.</li>
+<li><b>Install RStudio.</b> Open the downloaded file. Click <b>Next</b>, <b>Next</b>, <b>Install</b>, <b>Finish</b>.</li>
+<li><b>Open RStudio.</b> Click the Start menu, type <b>RStudio</b>, and open it. (Open RStudio, not “R”.)</li>
+</ol>
+<div class="note"><b>Windows 10 or older?</b> The newest RStudio is made for Windows 11. Try the steps above first. If RStudio will not install or open, use the <b>No install</b> tab, or ask a facilitator for an older RStudio version.</div></section>
+
+<section class="panel card" id="mac"><h3>Mac</h3>
+<ol class="steps">
+<li><b>Check your chip.</b> Click the Apple menu (top left) and choose <b>About This Mac</b>. Look for <b>Chip: Apple M1/M2/M3…</b> (Apple silicon) or <b>Processor: Intel</b>.</li>
+<li><b>Download R.</b> Open <a href="https://cran.r-project.org/bin/macosx/" target="_blank" rel="noopener">cran.r-project.org/bin/macosx</a>. Choose the file for your chip: <b>arm64</b> for Apple silicon, <b>x86_64</b> for Intel. The file ends in <code>.pkg</code>.</li>
+<li><b>Install R.</b> Open the <code>.pkg</code> file. Click <b>Continue</b> and <b>Install</b>, and type your Mac password when asked. If the Mac blocks the file, hold <b>Control</b>, click the file, choose <b>Open</b>, and confirm.</li>
+<li><b>Download RStudio.</b> Open <a href="https://posit.co/download/rstudio-desktop/" target="_blank" rel="noopener">posit.co/download/rstudio-desktop</a> and download the Mac file (it ends in <code>.dmg</code>).</li>
+<li><b>Install RStudio.</b> Open the <code>.dmg</code> file and drag the <b>RStudio</b> icon into the <b>Applications</b> folder.</li>
+<li><b>Open RStudio</b> from Applications or Launchpad. If the Mac asks “Are you sure?”, click <b>Open</b>.</li>
+</ol>
+<div class="note"><b>Older Mac?</b> The newest RStudio needs macOS 15 or later. If your Mac is older and RStudio will not open, use the <b>No install</b> tab, or ask a facilitator for an older RStudio version.</div></section>
+
+<section class="panel card" id="lin"><h3>Linux (Ubuntu)</h3>
+<ol class="steps">
+<li><b>Open the Terminal</b> (press <code>Ctrl</code> + <code>Alt</code> + <code>T</code>).</li>
+<li><b>Install R.</b> Type these two lines, pressing Enter after each. Type your password when asked.
+<pre>sudo apt update
+sudo apt install r-base</pre>
+<span class="small">This gives the R version that comes with your Ubuntu. For the newest R, follow the official page: <a href="https://cran.r-project.org/bin/linux/ubuntu/" target="_blank" rel="noopener">cran.r-project.org/bin/linux/ubuntu</a>.</span></li>
+<li><b>Download RStudio.</b> Open <a href="https://posit.co/download/rstudio-desktop/" target="_blank" rel="noopener">posit.co/download/rstudio-desktop</a> and download the <code>.deb</code> file for Ubuntu.</li>
+<li><b>Install RStudio.</b> In the Terminal, go to your Downloads folder and install the file:
+<pre>cd ~/Downloads
+sudo apt install ./rstudio-*.deb</pre></li>
+<li><b>Open RStudio</b> from the applications menu.</li>
+</ol>
+<div class="note">The newest RStudio is made for Ubuntu 22, 24 and 26 and Debian 13. Fedora and Red Hat use an <code>.rpm</code> file from the same page. Other Linux systems: see <a href="https://cran.r-project.org/bin/linux/" target="_blank" rel="noopener">cran.r-project.org/bin/linux</a>.</div></section>
+
+<section class="panel card" id="cloud"><h3>No install: use R in your browser</h3>
+<p>Good for: a Chromebook, a tablet, an old computer, or a computer where you cannot install programs.</p>
+<ol class="steps">
+<li>Open <a href="https://posit.cloud/" target="_blank" rel="noopener">posit.cloud</a> in your browser.</li>
+<li>Click <b>Sign Up</b> and choose the <b>free</b> plan. You can sign in with a Google account.</li>
+<li>Click <b>New Project</b>, then <b>New RStudio Project</b>.</li>
+<li>Wait a moment. RStudio opens inside the browser. It looks the same as on a computer.</li>
+</ol>
+<div class="note">The free plan has monthly limits on hours of use, and it needs internet all the time. A phone screen is too small for real work. Use this as a backup, and install on a computer when you can.</div></section>
+
+<h2>Check that it works</h2>
+<div class="card"><ol class="steps">
+<li>Open <b>RStudio</b>. Find the <b>Console</b> (bottom left, with the <code>&gt;</code> sign).</li>
+<li>Type this and press Enter:<pre>1 + 1</pre>You should see <code>[1] 2</code>.</li>
+<li>Type this and press Enter, to see your R version:<pre>R.version.string</pre></li>
+<li>Test that you can add packages (needs internet, takes a few minutes):<pre>install.packages("ggplot2")
+library(ggplot2)</pre>No red “Error” means it worked.</li>
+</ol>
+<div class="ok"><b>Done!</b> Take a screenshot of your Console showing <code>[1] 2</code> and your R version, and send it to the group before Module 5.</div></div>
+
+<h2>If something goes wrong</h2>
+<div class="card"><table>
+<tr><th>Problem</th><th>Try this</th></tr>
+<tr><td>RStudio says it cannot find R</td><td>R is not installed yet. Install R, then close and open RStudio again.</td></tr>
+<tr><td>The download is very slow or stops</td><td>Use campus Wi-Fi, or ask a facilitator for the files on a USB stick.</td></tr>
+<tr><td>“You need permission” or a password is asked</td><td>Use the computer’s owner (administrator) password. On a lab computer, ask the lab technician.</td></tr>
+<tr><td>Mac says the file “cannot be opened”</td><td>Hold Control, click the file, choose Open, then Open again.</td></tr>
+<tr><td>RStudio will not install on an older Windows or Mac</td><td>Use the <b>No install</b> option, or ask a facilitator for an older RStudio version.</td></tr>
+<tr><td><code>install.packages</code> shows a warning in red</td><td>A warning is often fine. Read it for the word “Error”. If you see “Error”, copy the message and send it to the group.</td></tr>
+<tr><td>Still stuck</td><td>Send a screenshot and your system (Windows, Mac or Linux) to the facilitators.</td></tr>
+</table></div>
+
+<h2>Other step-by-step guides</h2>
+<div class="card"><p>These sites explain the same steps:</p><ul>
+<li><a href="https://cran.r-project.org/" target="_blank" rel="noopener">CRAN</a>: the official home of R downloads (Windows, Mac and Linux).</li>
+<li><a href="https://posit.co/download/rstudio-desktop/" target="_blank" rel="noopener">Posit: Download RStudio Desktop</a>: the official RStudio download page.</li>
+<li><a href="https://docs.posit.co/ide/user/download.html" target="_blank" rel="noopener">RStudio User Guide: Download RStudio</a>: which systems the newest RStudio supports.</li>
+<li><a href="https://www.datanovia.com/learn/programming/setup/install-r-and-rstudio" target="_blank" rel="noopener">Datanovia: Install R and RStudio</a>: a step-by-step guide for Windows, Mac and Linux.</li>
+<li><a href="https://library.virginia.edu/data/research-software/r-and-r-studio" target="_blank" rel="noopener">University of Virginia Library: R and RStudio</a>: a short university guide.</li>
+<li><a href="https://posit.cloud/" target="_blank" rel="noopener">Posit Cloud</a>: RStudio in the browser, with no install.</li>
+</ul></div>
+</main><footer>JUCo DSRG · Jordan University College, Morogoro · anna.fome@juco.ac.tz</footer>
+<script>
+var tabs=document.querySelectorAll('.tab'),panels=document.querySelectorAll('.panel');
+function show(t){tabs.forEach(function(b){b.setAttribute('aria-selected',b.dataset.t===t)});panels.forEach(function(p){p.classList.toggle('on',p.id===t)})}
+tabs.forEach(function(b){b.onclick=function(){show(b.dataset.t)}});
+var ua=navigator.userAgent||'';show(/Windows/.test(ua)?'win':/Mac OS X|Macintosh/.test(ua)?'mac':/CrOS|Android|iPhone|iPad/.test(ua)?'cloud':/Linux/.test(ua)?'lin':'win');
+</script></body></html>
