@@ -738,6 +738,41 @@
     .install-note a:hover,
     .module-title small a:hover{color:var(--navy)}
 
+    /* MODULE DROP-DOWN */
+    .module-toggle{
+      background:none;
+      border:0;
+      padding:0;
+      font:inherit;
+      font-weight:700;
+      color:var(--navy);
+      text-align:left;
+      cursor:pointer;
+    }
+
+    .module-toggle::after{
+      content:"\00a0▾";
+      color:var(--teal);
+    }
+
+    .module-toggle[aria-expanded="true"]::after{content:"\00a0▴"}
+    .module-toggle:hover{color:var(--teal)}
+
+    .module-detail{display:none}
+    .module-detail.open{display:table-row}
+
+    .module-detail td{
+      background:#f8fafc;
+      color:#475569;
+      padding:11px 14px 13px 74px;
+      font-size:.78rem;
+      border-left:3px solid var(--gold);
+    }
+
+    .module-detail strong{color:var(--teal)}
+
+    .no-practice{color:#94a3b8}
+
     /* APPLIED RESEARCH */
     .applied-body{padding:25px}
 
@@ -1126,7 +1161,7 @@
       <div class="search-top">
         <div>
           <h2>Find a module</h2>
-          <p>Search by title, competency, facilitator, duration, semester, or topic.</p>
+          <p>Search by title, competency, facilitator, duration, semester, or topic. Click a module title to see what you learn.</p>
         </div>
         <div class="result-count" id="resultCount">18 modules</div>
       </div>
@@ -1271,56 +1306,61 @@
 
                 <tr id="module1">
                   <td class="module-number">01</td>
-                  <td class="module-title">Introduction to the Research Group</td>
+                  <td class="module-title"><button type="button" class="module-toggle" aria-expanded="false">Introduction to the Research Group</button></td>
                   <td class="competency">Research Foundations</td>
                   <td><span class="badge badge-duration"> 2 hours (week 1) </span></td>
                   <td><span class="badge badge-semester">I</span></td>
                   <td class="facilitator">All</td>
-                  <td><a href="module1.html" class="module-btn"> - </a></td>
+                  <td><span class="no-practice" aria-label="No practice page">–</span></td>
                 </tr>
+                <tr class="module-detail"><td colspan="7"><strong>What you learn:</strong> Meet the group, its vision, values and two research strands. See the plan for the year and how we work together.</td></tr>
 
                 <tr id="module2">
                   <td class="module-number">02</td>
-                  <td class="module-title">The Research Process</td>
+                  <td class="module-title"><button type="button" class="module-toggle" aria-expanded="false">The Research Process</button></td>
                   <td class="competency">Research Foundations</td>
                   <td><span class="badge badge-duration"> 2 hours (week 2)</span></td>
                   <td><span class="badge badge-semester">I</span></td>
                   <td class="facilitator">Dr. Mwonge · Dr. Fome</td>
-                 <td> <a href="module2_practice.html" class="module-btn">Practice</a></td>
+                  <td><a href="module2_practice.html" class="module-btn">Practice</a></td>
                 </tr>
+                <tr class="module-detail"><td colspan="7"><strong>What you learn:</strong> What research is, the kinds of research, and the 11 steps from a question to a report. Write a clear research question.</td></tr>
 
                 <tr id="module3">
                   <td class="module-number">03</td>
-                  <td class="module-title">Introduction to Data Science</td>
+                  <td class="module-title"><button type="button" class="module-toggle" aria-expanded="false">Introduction to Data Science</button></td>
                   <td class="competency">Research Foundations</td>
                   <td><span class="badge badge-duration">2 hours (week 3) </span></td>
                   <td><span class="badge badge-semester">I</span></td>
                   <td class="facilitator">Dr. Leandry · Dr. Ongoro</td>
-                  <td><a href="module3.html" class="module-btn">Practice</a></td>
+                  <td><span class="no-practice" aria-label="No practice page">–</span></td>
                 </tr>
+                <tr class="module-detail"><td colspan="7"><strong>What you learn:</strong> What data science is and how a data project flows. Kinds of data, rows and columns, and where data comes from.</td></tr>
 
                 <tr id="module4">
                   <td class="module-number">04</td>
-                  <td class="module-title">Research Ethics and Data Responsibility</td>
+                  <td class="module-title"><button type="button" class="module-toggle" aria-expanded="false">Research Ethics and Data Responsibility</button></td>
                   <td class="competency">Research Foundations</td>
                   <td><span class="badge badge-duration"> 2 hours (week 4) </span></td>
                   <td><span class="badge badge-semester">I</span></td>
                   <td class="facilitator">Dr. Mwonge · Dr. Fome</td>
-                  <td><a href="module4.html" class="module-btn">-</a></td>
+                  <td><span class="no-practice" aria-label="No practice page">–</span></td>
                 </tr>
+                <tr class="module-detail"><td colspan="7"><strong>What you learn:</strong> How to treat people and their data with respect: consent, privacy and safe storage. How to report honestly.</td></tr>
 
                 <tr id="module5">
                   <td class="module-number">05</td>
                   <td class="module-title">
-                    Introduction to R
+                    <button type="button" class="module-toggle" aria-expanded="false">Introduction to R</button>
                     <small>New to R? <a href="install-r.html">Install R and RStudio</a></small>
                   </td>
                   <td class="competency">Computational Skills</td>
                   <td><span class="badge badge-duration"> 4 hours (weeks 5&6)</span></td>
                   <td><span class="badge badge-semester">I</span></td>
                   <td class="facilitator">Dr. Fome · Dr. Mwonge</td>
-                  <td><a href="module5.html" class="module-btn">Practice</a></td>
+                  <td><a href="module5_practice.html" class="module-btn">Practice</a></td>
                 </tr>
+                <tr class="module-detail"><td colspan="7"><strong>What you learn:</strong> Start using R and RStudio: objects, vectors, functions and data frames. Read a data file and summarise it.</td></tr>
 
               </tbody>
             </table>
@@ -1348,50 +1388,54 @@
                   <th>Duration</th>
                   <th>Semester</th>
                   <th>Facilitators</th>
-                  <th>Open</th>
+                  <th>Practice</th>
                 </tr>
               </thead>
               <tbody>
 
                 <tr id="module6">
                   <td class="module-number">06</td>
-                  <td class="module-title">Data Collection and Management</td>
+                  <td class="module-title"><button type="button" class="module-toggle" aria-expanded="false">Data Collection and Management</button></td>
                   <td class="competency">Data Skills</td>
                   <td><span class="badge badge-duration"> 2 hours (week 7) </span></td>
                   <td><span class="badge badge-semester">I</span></td>
                   <td class="facilitator">Dr. Ongoro · Dr. Mwonge</td>
-                  <td><a href="module6.html" class="module-btn">-</a></td>
+                  <td><span class="no-practice" aria-label="No practice page">–</span></td>
                 </tr>
+                <tr class="module-detail"><td colspan="7"><strong>What you learn:</strong> Plan how to collect data: surveys, samples and existing records. Store and name your files well.</td></tr>
 
                 <tr id="module7">
                   <td class="module-number">07</td>
-                  <td class="module-title">Data Cleaning</td>
+                  <td class="module-title"><button type="button" class="module-toggle" aria-expanded="false">Data Cleaning</button></td>
                   <td class="competency">Data Skills</td>
                   <td><span class="badge badge-duration"> 2 hours (week 8)</span></td>
                   <td><span class="badge badge-semester">I</span></td>
                   <td class="facilitator">Dr. Fome</td>
-                  <td><a href="module7.html" class="module-btn">Practice</a></td>
+                  <td><span class="no-practice" aria-label="No practice page">–</span></td>
                 </tr>
+                <tr class="module-detail"><td colspan="7"><strong>What you learn:</strong> Find and fix problems in data: missing values, repeated rows and wrong entries. Keep a record of every change.</td></tr>
 
                 <tr id="module8">
                   <td class="module-number">08</td>
-                  <td class="module-title">Exploratory Data Analysis</td>
+                  <td class="module-title"><button type="button" class="module-toggle" aria-expanded="false">Exploratory Data Analysis</button></td>
                   <td class="competency">Data Skills / Quantitative Analysis</td>
                   <td><span class="badge badge-duration">4 hours (weeks 9&10)</span></td>
                   <td><span class="badge badge-semester">I</span></td>
                   <td class="facilitator">Dr. Fome</td>
-                  <td><a href="module8.html" class="module-btn">Practice</a></td>
+                  <td><span class="no-practice" aria-label="No practice page">–</span></td>
                 </tr>
+                <tr class="module-detail"><td colspan="7"><strong>What you learn:</strong> Describe data with tables and summaries such as the mean and median. Look for patterns and unusual values.</td></tr>
 
                 <tr id="module9">
                   <td class="module-number">09</td>
-                  <td class="module-title">Data Visualisation</td>
+                  <td class="module-title"><button type="button" class="module-toggle" aria-expanded="false">Data Visualisation</button></td>
                   <td class="competency">Data Skills / Computational Skills</td>
                   <td><span class="badge badge-duration">4 hours (weeks 11&12)</span></td>
                   <td><span class="badge badge-semester">I</span></td>
                   <td class="facilitator">Dr. Fome</td>
-                  <td><a href="module9.html" class="module-btn">Practice</a></td>
+                  <td><span class="no-practice" aria-label="No practice page">–</span></td>
                 </tr>
+                <tr class="module-detail"><td colspan="7"><strong>What you learn:</strong> Choose the right chart for your data and make clear, honest charts in R.</td></tr>
 
               </tbody>
             </table>
@@ -1419,50 +1463,54 @@
                   <th>Duration</th>
                   <th>Semester</th>
                   <th>Facilitators</th>
-                  <th>Open</th>
+                  <th>Practice</th>
                 </tr>
               </thead>
               <tbody>
 
                 <tr id="module10">
                   <td class="module-number">10</td>
-                  <td class="module-title">Models (Kinds / Types)</td>
+                  <td class="module-title"><button type="button" class="module-toggle" aria-expanded="false">Models (Kinds / Types)</button></td>
                   <td class="competency">Quantitative Analysis</td>
                   <td><span class="badge badge-duration"> 2 hours (week 13)</span></td>
                   <td><span class="badge badge-semester">I</span></td>
                   <td class="facilitator">Dr. Fome · Dr. Leandry</td>
-                  <td><a href="module10.html" class="module-btn">-</a></td>
+                  <td><span class="no-practice" aria-label="No practice page">–</span></td>
                 </tr>
+                <tr class="module-detail"><td colspan="7"><strong>What you learn:</strong> What a model is and why we use one. The main kinds of models and when each one fits.</td></tr>
 
                 <tr id="module11">
                   <td class="module-number">11</td>
-                  <td class="module-title">Correlation &amp; Simple Regression</td>
+                  <td class="module-title"><button type="button" class="module-toggle" aria-expanded="false">Correlation &amp; Simple Regression</button></td>
                   <td class="competency">Quantitative Analysis</td>
                   <td><span class="badge badge-duration"> 4 hours (weeks 14&15)</span></td>
                   <td><span class="badge badge-semester">I</span></td>
                   <td class="facilitator">Dr. Mwonge · Dr. Fome</td>
-                  <td><a href="module11.html" class="module-btn">Practice</a></td>
+                  <td><span class="no-practice" aria-label="No practice page">–</span></td>
                 </tr>
+                <tr class="module-detail"><td colspan="7"><strong>What you learn:</strong> Measure how two things move together. Fit a straight line, read the results and know the limits.</td></tr>
 
                 <tr id="module12">
                   <td class="module-number">12</td>
-                  <td class="module-title">Mathematical Modelling</td>
+                  <td class="module-title"><button type="button" class="module-toggle" aria-expanded="false">Mathematical Modelling</button></td>
                   <td class="competency">Quantitative Analysis</td>
                   <td><span class="badge badge-duration">4 hours (weeks 1&2)</span></td>
                   <td><span class="badge badge-semester">II</span></td>
                   <td class="facilitator">Dr. Leandry · Dr. Fome</td>
-                  <td><a href="module12.html" class="module-btn">-</a></td>
+                  <td><span class="no-practice" aria-label="No practice page">–</span></td>
                 </tr>
+                <tr class="module-detail"><td colspan="7"><strong>What you learn:</strong> Turn a real problem into equations. Build a simple model, such as growth over time, and check it against data.</td></tr>
 
                 <tr id="module13">
                   <td class="module-number">13</td>
-                  <td class="module-title">Simulation and Scenario Analysis</td>
+                  <td class="module-title"><button type="button" class="module-toggle" aria-expanded="false">Simulation and Scenario Analysis</button></td>
                   <td class="competency">Mathematical &amp; Simulation Modelling</td>
                   <td><span class="badge badge-duration">4 hours (weeks 3&4)</span></td>
                   <td><span class="badge badge-semester">II </span></td>
                   <td class="facilitator">Dr. Leandry · Dr. Fome</td>
-                  <td><a href="module13.html" class="module-btn">Practice</a></td>
+                  <td><span class="no-practice" aria-label="No practice page">–</span></td>
                 </tr>
+                <tr class="module-detail"><td colspan="7"><strong>What you learn:</strong> Use the computer to imitate a situation many times. Compare “what if” scenarios.</td></tr>
 
               </tbody>
             </table>
@@ -1497,7 +1545,7 @@
                   <tr>
                     <td class="module-number">14</td>
                     <td class="module-title">
-                      Independent Research Project
+                      <button type="button" class="module-toggle" aria-expanded="false">Independent Research Project</button>
                       <small>
                         Participants select one of two research strands aligned
                         with the group's research mission.
@@ -1507,6 +1555,7 @@
                     <td><span class="badge badge-semester">II</span></td>
                     <td class="facilitator">All</td>
                   </tr>
+                  <tr class="module-detail"><td colspan="5"><strong>What you learn:</strong> Plan and carry out your own research project in one of the two research strands, with a supervisor.</td></tr>
                 </tbody>
               </table>
             </div>
@@ -1559,53 +1608,57 @@
                   <th>Duration</th>
                   <th>Semester</th>
                   <th>Facilitators</th>
-                  <th>Open</th>
+                  <th>Practice</th>
                 </tr>
               </thead>
               <tbody>
 
                 <tr id="module15">
                   <td class="module-number">15</td>
-                  <td class="module-title">Scientific and Technical Writing</td>
+                  <td class="module-title"><button type="button" class="module-toggle" aria-expanded="false">Scientific and Technical Writing</button></td>
                   <td class="competency">Applied Research &amp; Communication</td>
                   <td><span class="badge badge-duration">2 hours (week 11)</span></td>
                   <td><span class="badge badge-semester">II</span></td>
                   <td class="facilitator">Dr. Leandry · Dr. Mwonge</td>
-                  <td><a href="module15.html" class="module-btn">-</a></td>
+                  <td><span class="no-practice" aria-label="No practice page">–</span></td>
                 </tr>
+                <tr class="module-detail"><td colspan="7"><strong>What you learn:</strong> Write a clear research report: structure, simple language and correct references.</td></tr>
 
                 <tr id="module16">
                   <td class="module-number">16</td>
                   <td class="module-title">
-                    Research Visualisation for Communication
+                    <button type="button" class="module-toggle" aria-expanded="false">Research Visualisation for Communication</button>
                     <small>Poster Design, etc.</small>
                   </td>
                   <td class="competency">Applied Research &amp; Communication</td>
                   <td><span class="badge badge-duration">2 hours (week 12) </span></td>
                   <td><span class="badge badge-semester">II</span></td>
                   <td class="facilitator">Dr. Fome</td>
-                  <td><a href="module16.html" class="module-btn">-</a></td>
+                  <td><span class="no-practice" aria-label="No practice page">–</span></td>
                 </tr>
+                <tr class="module-detail"><td colspan="7"><strong>What you learn:</strong> Show results for an audience: clean figures and a research poster.</td></tr>
 
                 <tr id="module17">
                   <td class="module-number">17</td>
-                  <td class="module-title">Oral Presentation Skills</td>
+                  <td class="module-title"><button type="button" class="module-toggle" aria-expanded="false">Oral Presentation Skills</button></td>
                   <td class="competency">Applied Research &amp; Communication</td>
                   <td><span class="badge badge-duration"> 2 hours (week 13) </span></td>
                   <td><span class="badge badge-semester">II</span></td>
                   <td class="facilitator">Dr. Leandry · Dr. Mwonge</td>
-                  <td><a href="module17.html" class="module-btn">-</a></td>
+                  <td><span class="no-practice" aria-label="No practice page">–</span></td>
                 </tr>
+                <tr class="module-detail"><td colspan="7"><strong>What you learn:</strong> Plan and give a short, clear talk. Answer questions with confidence.</td></tr>
 
                 <tr id="module18">
                   <td class="module-number">18</td>
-                  <td class="module-title">Internal Conference Preparation</td>
+                  <td class="module-title"><button type="button" class="module-toggle" aria-expanded="false">Internal Conference Preparation</button></td>
                   <td class="competency">Applied Research &amp; Communication</td>
                   <td><span class="badge badge-duration">2 hours (week 14) </span></td>
                   <td><span class="badge badge-semester">II</span></td>
                   <td class="facilitator">Dr. Leandry · Dr. Fome</td>
-                  <td><a href="module18.html" class="module-btn">-</a></td>
+                  <td><span class="no-practice" aria-label="No practice page">–</span></td>
                 </tr>
+                <tr class="module-detail"><td colspan="7"><strong>What you learn:</strong> Prepare your abstract and your slides or poster, and rehearse for the group’s internal conference.</td></tr>
 
               </tbody>
             </table>
@@ -1739,7 +1792,14 @@
 
         rows.forEach(row => {
 
-          const rowText = normalize(row.textContent);
+          const detail = row.nextElementSibling &&
+            row.nextElementSibling.classList.contains("module-detail")
+              ? row.nextElementSibling
+              : null;
+
+          const rowText = normalize(
+            row.textContent + " " + (detail ? detail.textContent : "")
+          );
 
           const matchesSearch =
             query === "" || rowText.includes(query);
@@ -1762,6 +1822,7 @@
             matchesPhase;
 
           row.classList.toggle("module-hidden", !visible);
+          if(detail) detail.classList.toggle("module-hidden", !visible);
 
           if(visible) visibleModules++;
         });
@@ -1809,6 +1870,16 @@
         searchModules();
         window.scrollTo({top:0,behavior:"smooth"});
       }
+
+      /* Drop-down: click a module title to show what you learn. */
+      document.querySelectorAll(".module-toggle").forEach(button => {
+        button.addEventListener("click", function(){
+          const detail = button.closest("tr").nextElementSibling;
+          if(!detail || !detail.classList.contains("module-detail")) return;
+          const open = detail.classList.toggle("open");
+          button.setAttribute("aria-expanded", open ? "true" : "false");
+        });
+      });
 
       searchInput.addEventListener("input", searchModules);
       phaseFilter.addEventListener("change", searchModules);
