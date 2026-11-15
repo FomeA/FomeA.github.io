@@ -1,0 +1,139 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Module 2 Practice: The Research Process | JUCo DSRG</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0b1f3a;--teal:#0f766e;--gold:#d4af37;--bg:#eef2f8;--card:#fff;--ink:#1a1a2e;--ok:#157347;--bad:#b42318;--mute:#58667a}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 Inter,system-ui,sans-serif}
+header{background:var(--navy);color:#fff;padding:30px 16px;border-bottom:4px solid var(--gold)}
+header div,main{max-width:820px;margin:0 auto}h1,h2{font-family:"Source Serif 4",Georgia,serif;margin:0}
+h1{font-size:1.8rem}header p{margin:.4rem 0 0;color:#cbd8ea}header a{color:#ead98e;font-size:.9rem}
+h2{color:var(--navy);margin:2rem 0 .5rem;border-left:5px solid var(--gold);padding-left:12px;font-size:1.3rem}
+main{padding:16px}.card{background:var(--card);border-radius:10px;padding:16px 20px;margin:12px 0;box-shadow:0 1px 4px #0b1f3a22}
+.q{font-weight:600}.tag{display:inline-block;background:var(--gold);color:var(--navy);font-weight:600;font-size:.75rem;padding:2px 9px;border-radius:99px;margin-right:8px}
+.opt{display:block;width:100%;text-align:left;margin:6px 0;padding:9px 12px;border:1.5px solid #c5d0e0;border-radius:8px;background:#fff;font:inherit;cursor:pointer;color:var(--ink)}
+.opt:hover{border-color:var(--teal)}.opt.right{background:#e6f4ec;border-color:var(--ok)}.opt.wrong{background:#fdecea;border-color:var(--bad)}
+.fb{margin-top:8px;font-size:.95rem;display:none}.fb.show{display:block}
+.score{position:sticky;top:0;z-index:5;background:var(--navy);color:#fff;border-radius:0 0 10px 10px;padding:8px 16px;display:flex;justify-content:space-between;align-items:center;gap:10px;font-weight:600}
+.score button,button.b{background:var(--teal);color:#fff;border:0;border-radius:8px;padding:7px 14px;font:600 .9rem Inter;cursor:pointer}
+textarea{width:100%;min-height:70px;font:inherit;padding:10px;border:1.5px solid #c5d0e0;border-radius:8px}
+label.chk{display:block;padding:5px 0;cursor:pointer}label.chk input{width:18px;height:18px;margin-right:10px;vertical-align:-3px}
+.note{background:#fff8e1;border-left:4px solid var(--gold);padding:10px 14px;border-radius:6px;font-size:.95rem;margin-top:10px}
+footer{padding:22px 16px;text-align:center;color:var(--mute);font-size:.9rem}a{color:var(--teal)}
+</style></head><body>
+<header><div><a href="curriculum.html">← Back to curriculum</a><h1>Module 2 Practice: The Research Process</h1>
+<p>JUCo Data Science &amp; Modelling Research Group · 16 short questions · about 10 minutes</p></div></header>
+<main>
+<div class="score"><span id="score">Score: 0 / 16</span><button id="reset">Start again</button></div>
+<div class="card"><b>How it works.</b> Click an answer. You see at once if it is right, and why. If it is wrong, you also see the right answer and the reason. Your first click on each question counts for the score. These are new examples, not the ones from the lesson. They are made up for practice.</div>
+<h2>A. Research or look-up?</h2><div id="A"></div>
+<h2>B. Is it good research?</h2><div id="B"></div>
+<h2>C. Aims and types</h2><div id="C"></div>
+<h2>D. The 11 steps</h2><div id="D"></div>
+<h2>E. A good question</h2><div id="E"></div>
+<h2>F. Your turn</h2>
+<div class="card"><div class="q">Write one research question about JUCo or Morogoro.</div>
+<p><textarea id="myq" placeholder="Write your question here"></textarea></p>
+<div class="q">Now test it. Tick each test your question passes:</div>
+<label class="chk"><input type="checkbox" class="t">Clear: it has one meaning, with no vague words</label>
+<label class="chk"><input type="checkbox" class="t">Focused: one topic, one group, one time</label>
+<label class="chk"><input type="checkbox" class="t">Answerable: data exists, or I can collect it</label>
+<label class="chk"><input type="checkbox" class="t">Worthwhile: someone can use the answer</label>
+<label class="chk"><input type="checkbox" class="t">Ethical: nobody is harmed</label>
+<div class="note" id="tmsg">Tick the tests to check your question.</div></div>
+</main><footer>JUCo DSRG · Jordan University College, Morogoro</footer>
+<script>
+var Q={
+A:[{q:'“What time does the JUCo library close on Saturdays?”',a:1,o:[
+ ['Research question','No. The answer already exists. You can read it on the library door.'],
+ ['Look-up question','Yes. The answer already exists. One notice or one librarian can tell you.']]},
+{q:'“Do students who use the library more get better marks?”',a:0,o:[
+ ['Research question','Yes. Nobody can simply tell you. You must collect data on library use and marks, then study it.'],
+ ['Look-up question','No. This answer is not written anywhere. You need evidence to find it.']]}],
+B:[{q:'Rehema wants to know if students like the canteen food. She asks only her three roommates. What is the problem?',a:0,o:[
+ ['Her group is too small, and they are all alike','Yes. Three roommates cannot speak for all students. Good research is careful: ask more people, from different groups.'],
+ ['Food is not a research topic','No. Food is a fine topic. The problem is who she asked, and how few.'],
+ ['She asked people instead of guessing','No. Asking people is good: it gives evidence. The problem is that she asked too few.'],
+ ['Nothing is wrong','No. Three roommates are too few and too similar to show what all students think.']]},
+{q:'Baraka tests a new fertiliser for maize. He uses the new one on a plot near the river and the old one on a dry hill. What is the problem?',a:0,o:[
+ ['The two plots differ in more than the fertiliser','Yes. Water and soil are different too, so he cannot tell what caused the result. A fair comparison changes one thing only.'],
+ ['He should use only one plot','No. With one plot there is nothing to compare. He needs two plots that are alike.'],
+ ['Maize cannot be studied','No. Maize can be studied. The problem is that the comparison is not fair.'],
+ ['He used two fertilisers','No. Comparing two fertilisers is the whole idea. The problem is that the plots are different.']]},
+{q:'Zawadi writes “the internet in the lab is slow” because she feels it is slow. What should she do?',a:0,o:[
+ ['Measure the speed several times and write it down','Yes. Good research is based on evidence. Real measurements are stronger than a feeling.'],
+ ['Ask her best friend if she agrees','No. One more opinion is still an opinion. She needs measurements.'],
+ ['Write it in bigger letters','No. Bigger letters do not make it true. She needs evidence.'],
+ ['Change the topic','No. The topic is fine. Only the evidence is missing.']]}],
+C:[{q:'Nobody has studied why students leave the evening study group. Daudi talks to six students to get first ideas. What is his aim?',a:0,o:[
+ ['Explore','Yes. He is getting to know a new problem. That is exploring.'],
+ ['Describe','No. To describe, he would count how many students leave and how often. He is still looking for ideas.'],
+ ['Find links','No. He is not yet comparing two things. He is looking for first ideas.'],
+ ['Test a cause','No. He has no guess to test yet. First he explores.']]},
+{q:'“Is more time on the phone linked to less sleep?” What is the aim?',a:1,o:[
+ ['Describe','No. Describing would only say how much phone time, or how much sleep. Here two things are compared.'],
+ ['Find links','Yes. The question asks whether two things move together: phone time and sleep.'],
+ ['Explore','No. The question is already clear. It asks about a link between two things.'],
+ ['Test a cause','No. To test a cause you would change phone time and watch what happens to sleep. This only asks if they are linked.']]},
+{q:'A team records how many litres of water each hostel uses every day for a month. This study is…',a:0,o:[
+ ['Quantitative','Yes. It uses numbers: litres per day.'],
+ ['Qualitative','No. Qualitative studies use words, feelings and reasons. This one uses numbers.'],
+ ['Conceptual','No. Conceptual work is about ideas and theory. Here they measure something real.'],
+ ['Historical','No. Historical research uses old records. Here they collect new measurements.']]},
+{q:'A mathematician studies a new kind of equation. Nobody plans to use it yet. This is…',a:1,o:[
+ ['Applied research','No. Applied research solves a practical problem now. This work has no use planned yet.'],
+ ['Fundamental (basic) research','Yes. It adds to knowledge, even if nobody uses it today.'],
+ ['A look-up','No. The answer does not exist yet. She is creating new knowledge.'],
+ ['Decision-oriented research','No. No decision-maker is waiting for this answer.']]}],
+D:[{q:'Before her survey on boda boda fares, Mary searches for earlier studies and reports on fares. Which step is this?',a:1,o:[
+ ['Collect the data','No. She is not collecting her own data yet. She is reading what others found.'],
+ ['Read what is known','Yes. This is step 2. It shows what is already known and saves time.'],
+ ['Analyse the data','No. She has no data of her own to analyse yet.'],
+ ['Write the report','No. The report comes last, after the work is done.']]},
+{q:'Which order is correct?',a:0,o:[
+ ['Question, plan, collect, analyse, report','Yes. Good research goes step by step, and the question comes first.'],
+ ['Collect, question, report','No. Without a question, you do not know what to collect.'],
+ ['Report, collect, question','No. You cannot report before you have done the work.'],
+ ['Analyse, collect, plan','No. You cannot analyse data you have not collected, and the plan comes before both.']]},
+{q:'The college has about 2,000 students. Peter picks 100 for his survey, with some from every programme. Why from every programme?',a:0,o:[
+ ['So the sample looks like the whole college','Yes. A good sample is a small copy of the population. Then the result says something about all students.'],
+ ['To make the survey longer','No. It does not change the length. It makes the sample fair.'],
+ ['Because 100 is a lucky number','No. The number is not the point. The point is who is in the sample.'],
+ ['So he does not need to analyse the data','No. He still has to analyse. A good sample only makes the result more trustworthy.']]},
+{q:'In her data, Halima writes 1 for “Yes” and 2 for “No”. Which job in analysing data is this?',a:1,o:[
+ ['Edit','No. Editing means checking and fixing mistakes.'],
+ ['Code','Yes. Coding means giving a short label or number to each answer.'],
+ ['Tabulate','No. Tabulating means putting the data into a table.'],
+ ['Write the report','No. The report comes after the analysis.']]}],
+E:[{q:'“How is health in Tanzania?” This question is…',a:0,o:[
+ ['Too wide','Yes. It covers every illness, every place and every person. Nobody can finish it.'],
+ ['Too tight','No. A too-tight question is about one person or one moment. This one is huge.'],
+ ['Just right','No. It does not say who, what, where or when.'],
+ ['Not ethical','No. The topic harms nobody. The problem is its size.']]},
+{q:'The topic is “phones and students”. Which is the best research question?',a:2,o:[
+ ['Are phones bad?','No. “Bad” is not clear. It means different things to different people.'],
+ ['Did Amina use her phone last night?','No. This is too tight: one person, one night. It is a fact, not research.'],
+ ['How many hours a day do JUCo first-year students spend on their phones?','Yes. One group, one thing to measure, and it can be answered.'],
+ ['Phones in the world','No. This is still a topic. It is not a question.']]},
+{q:'A student wants to publish the names of classmates who failed an exam, to study failure. Which test does this fail?',a:3,o:[
+ ['Clear','No. The plan is clear. The problem is the harm it does.'],
+ ['Focused','No. It is focused on one group. The problem is the harm it does.'],
+ ['Answerable','No. The data exists. But it must not be used in this way.'],
+ ['Ethical','Yes. Publishing names would shame people. Research must not harm anyone.']]}]};
+var total=0,done=0,right=0,n=0;
+function build(){['A','B','C','D','E'].forEach(function(k){var host=document.getElementById(k);host.innerHTML='';Q[k].forEach(function(it){n++;total++;
+ var c=document.createElement('div');c.className='card';var qd=document.createElement('div');qd.className='q';qd.innerHTML='<span class="tag">'+n+'</span>'+it.q;c.appendChild(qd);
+ var fb=document.createElement('div');fb.className='fb';var first=true;
+ it.o.forEach(function(op,i){var b=document.createElement('button');b.className='opt';b.textContent=op[0];
+  b.onclick=function(){var os=c.querySelectorAll('.opt');os.forEach(function(x){x.classList.remove('right','wrong')});var ok=i===it.a;
+   b.classList.add(ok?'right':'wrong');os[it.a].classList.add('right');
+   fb.innerHTML=ok?'<b style="color:var(--ok)">Correct.</b> '+op[1]:'<b style="color:var(--bad)">Not quite.</b> '+op[1].replace(/^No\. /,'')+'<br><b style="color:var(--ok)">Right answer: '+it.o[it.a][0]+'.</b> '+it.o[it.a][1].replace(/^Yes\. /,'');
+   fb.classList.add('show');
+   if(first){first=false;done++;if(ok)right++;show()}};c.appendChild(b)});
+ c.appendChild(fb);host.appendChild(c)})})}
+function show(){document.getElementById('score').textContent='Score: '+right+' / '+total+(done===total?'  ·  Finished!':'')}
+function start(){total=done=right=n=0;build();show()}
+document.getElementById('reset').onclick=function(){start();window.scrollTo({top:0})};
+var ts=document.querySelectorAll('.t');ts.forEach(function(t){t.onchange=function(){var k=0;ts.forEach(function(x){if(x.checked)k++});
+ document.getElementById('tmsg').textContent=k===5?'Well done: your question passes all five tests. Write it in your research log.':'Your question passes '+k+' of 5 tests. Improve it until it passes all five.'}});
+start();
+</script></body></html>
